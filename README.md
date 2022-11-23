@@ -1,10 +1,10 @@
 <!-- PROJECT LOGO -->
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="">
+    <img src="images/logo.png" alt="CovInsights" width="80" height="80">
   </a>
 
-  <h3 align="center">Covid Insights</h3>
+  <h3 align="center">CovInsights WS22/23</h3>
 
   <p align="center">
     A project to visualize datasets of the germans gastronomy industry in relation to corona incidences
@@ -50,7 +50,7 @@
 ## About The Project
 This project is done as part of the lecture Data Visualization (DataVis) at the LMU Munich. Our goal is to visualize the effects of the covid pandemic on the german gastronomy industry with respect to insolvency, turnover and subventions.
 ### Built With
-* [![React][React.js]][React-url]
+[![React][React.js]][React-url]
 
 <!-- GETTING STARTED -->
 ## Getting Started
