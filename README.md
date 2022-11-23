@@ -96,6 +96,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 Alexander Welling - j.welling@campus.lmu.de
+Lennard Greve - l.greve@campus.lmu.de
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
