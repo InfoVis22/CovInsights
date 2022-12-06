@@ -1,8 +1,8 @@
-import './Home.scss'
-import Card from '../../components/Card/Card'
-import Timeline from '../../components/Timeline/Timeline'
-import BeschäftigungGraph from '../../components/Graphs/BeschäftigungGraph'
-import ChartWithDim from '../../components/Graphs/ChartWithDim'
+import './Dashboard.scss'
+import Card from '../components/Card/Card'
+import Timeline from '../components/Timeline/Timeline'
+import BeschäftigungGraph from '../components/Graphs/BeschäftigungGraph'
+import ChartWithDim from '../components/Graphs/ChartWithDim'
 
 const Home = () => {
 
@@ -16,7 +16,7 @@ const Home = () => {
                     <ChartWithDim />
                 </Card>
                 <Card title="Subventionen im Gastgewerbe" subtitle="Einfluss aus Umsatz und Mitarbeiter">
-                    <BeschäftigungGraph />
+
                 </Card>
             </div>
             <div className="Middle">

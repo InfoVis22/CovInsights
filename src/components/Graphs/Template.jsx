@@ -1,6 +1,6 @@
 import * as d3 from 'd3'
 import { useState } from 'react';
-import { useAppContext } from '../../contexts/appContext'
+import { useAppContext } from '../../contexts/AppContext'
 import { useD3 } from '../../hooks/useD3';
 
 const BeschäftigungGraph = () => {

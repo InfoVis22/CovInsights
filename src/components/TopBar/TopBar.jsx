@@ -2,11 +2,9 @@
 import './TopBar.scss'
 import LogoImage from '../../images/Logo.png'
 import LogoMobileImage from '../../images/LogoMobile.png'
+import { Link } from 'react-router-dom'
 
 function TopBar() {
-    
-
-    // RENDER
 
     return (
         <div className="Topbar">
@@ -28,7 +26,8 @@ function TopBar() {
                     <h1>Insolvenzen während der Corona Pandemie</h1>
                 </div>
                 <div className="right">
-                    
+                    <Link to="dashboard">Dashboard</Link>
+                    <Link to="about">About</Link>
                 </div>
             </div>
 
