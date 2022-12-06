@@ -39,13 +39,13 @@ const BeschäftigungGraph = () => {
     const xScale = useMemo(() => (
         d3.scaleLinear()
             .domain([0, d3.max(gastgewerbeData, (d) => d["ERW012__Beschaeftigte__Anzahl"])]) //array from min to max
-            .rangeRound([0, dms.innerWidth])
+            .range([0, dms.innerWidth])
             .nice()
     ), [dms.innerWidth])
 
     const yScale = useMemo(() => (d3.scaleBand()
         .domain(gastgewerbeData.map((d) => d["2_Auspraegung_Label"]))
-        .rangeRound([dms.innerHeight, 0])
+        .range([dms.innerHeight, 0])
         .padding(0.1)
     ), [dms.innerHeight])
 
@@ -55,20 +55,64 @@ const BeschäftigungGraph = () => {
         .call(d3.axisBottom(xScale))
 
     const yAxis = (g) => g
-        .call(d3.axisLeft(yScale))
+        .call(d3.axisLeft(yScale));
 
 
-    const bars = (r) => r.data(gastgewerbeData)
-        .enter()
-        .append("rect")
-        .attr("x", xScale(0))
-        .attr("y", (d) => yScale(d["2_Auspraegung_Label"]))
-        .attr("width", (d) => xScale(d["ERW012__Beschaeftigte__Anzahl"]))
-        .attr("height", yScale.bandwidth())
-        .attr("fill", "#69b3a2")
+    // Three function that change the tooltip when user hover / move / leave a cell
+    const mouseover = (d, Tooltip) => {
+        Tooltip
+            .style("opacity", 1)
+        d3.select(this)
+            .style("stroke", "black")
+            .style("opacity", 1)
+    }
+    const mousemove = (d, Tooltip) => {
+
+        console.log(Tooltip)
+        Tooltip
+            .html("The exact value of<br>this cell is: " + d?.value)
+            .style("left", (d.clientX + 70) + "px")
+            .style("top", (d.clientY) + "px")
+    }
+    const mouseleave = (d, Tooltip) => {
+        Tooltip
+            .style("opacity", 0)
+        d3.select(this)
+            .style("stroke", "none")
+            .style("opacity", 0.8)
+    }
+
+
+
+
 
 
     useEffect(() => {
+
+        // create a tooltip
+        const Tooltip = d3.select(svgRef.current)
+            .append("div")
+            .style("opacity", 1)
+            .attr("class", "tooltip")
+            .style("background-color", "white")
+            .style("border", "solid")
+            .style("border-width", "2px")
+            .style("border-radius", "5px")
+            .style("padding", "5px")
+
+        const bars = (r) => r.data(gastgewerbeData)
+            .enter()
+            .append("rect")
+            .attr("x", dms.marginLeft)
+            .attr("y", (d) => yScale(d["2_Auspraegung_Label"]) + dms.marginTop)
+            .attr("width", (d) => xScale(d["ERW012__Beschaeftigte__Anzahl"]))
+            .attr("height", yScale.bandwidth())
+            .attr("fill", "#69b3a2")
+            .on("mouseover", (d) => mouseover(d, Tooltip))
+            .on("mousemove", (d) => mousemove(d, Tooltip))
+            .on("mouseleave", (d) => mouseleave(d, Tooltip))
+
+
 
         const svgElement = d3.select(svgRef.current)
 
@@ -80,6 +124,8 @@ const BeschäftigungGraph = () => {
 
         //Bars
         svgElement.selectAll("myRect").call(bars);
+
+
 
     }, [dms]);
 

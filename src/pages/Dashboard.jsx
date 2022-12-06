@@ -20,8 +20,12 @@ const Dashboard = () => {
         console.log("Load Data...")
 
         //load Gastgewerbe (general) Data 2005 - 2022
-        const gastgewerbeData = await d3.dsv(";", "../data/Gastgewerbe05-22.csv")
+        const rawGastgewerbeData = await d3.dsv(";", "../data/Gastgewerbe05-22.csv")
+
+
+        const gastgewerbeData = rawGastgewerbeData.filter(d => d.Zeit == 2019)
         console.log(gastgewerbeData);
+
         setGastgewerbeData(gastgewerbeData)
 
         //load Insolvenz data 2013-2022
