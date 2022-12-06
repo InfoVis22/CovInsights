@@ -10,8 +10,9 @@ export const AppContext = ({ children }) => {
 
     const [currentUser, setCurrentUser] = useState(null);
     const [time, setTime] = useState(null);
+    const [gastgewerbeData, setGastgewerbeData] = useState(null);
 
-    const AppValues = { currentUser, setCurrentUser, time, setTime }
+    const AppValues = { currentUser, setCurrentUser, time, setTime, gastgewerbeData, setGastgewerbeData }
 
     return (
         <Context.Provider value={AppValues}>

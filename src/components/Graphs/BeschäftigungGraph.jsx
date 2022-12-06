@@ -28,23 +28,23 @@ const BeschäftigungGraph = () => {
         "marginTop": 20,
         "marginRight": 30,
         "marginBottom": 30,
-        "marginLeft": 40
+        "marginLeft": 200
     }
-
+    //2_Auspraegung_Label
     const [dataset, setDataset] = useState(data)
     const [ref, dms] = useChartDimensions(chartSettings)
     const svgRef = useRef()
-    const { time } = useAppContext()
+    const { time, gastgewerbeData } = useAppContext()
 
     const xScale = useMemo(() => (
         d3.scaleLinear()
-            .domain([0, d3.max(dataset, (d) => d.sales)]) //array from min to max
+            .domain([0, d3.max(gastgewerbeData, (d) => d["ERW012__Beschaeftigte__Anzahl"])]) //array from min to max
             .rangeRound([0, dms.innerWidth])
             .nice()
     ), [dms.innerWidth])
 
     const yScale = useMemo(() => (d3.scaleBand()
-        .domain(dataset.map((d) => d.year))
+        .domain(gastgewerbeData.map((d) => d["2_Auspraegung_Label"]))
         .rangeRound([dms.innerHeight, 0])
         .padding(0.1)
     ), [dms.innerHeight])
@@ -58,6 +58,16 @@ const BeschäftigungGraph = () => {
         .call(d3.axisLeft(yScale))
 
 
+    const bars = (r) => r.data(gastgewerbeData)
+        .enter()
+        .append("rect")
+        .attr("x", xScale(0))
+        .attr("y", (d) => yScale(d["2_Auspraegung_Label"]))
+        .attr("width", (d) => xScale(d["ERW012__Beschaeftigte__Anzahl"]))
+        .attr("height", yScale.bandwidth())
+        .attr("fill", "#69b3a2")
+
+
     useEffect(() => {
 
         const svgElement = d3.select(svgRef.current)
@@ -67,7 +77,9 @@ const BeschäftigungGraph = () => {
 
         //apply styles to Y-Axis
         svgElement.select(".y-axis").call(yAxis);
-        console.log("run!")
+
+        //Bars
+        svgElement.selectAll("myRect").call(bars);
 
     }, [dms]);
 
