@@ -1,6 +1,7 @@
-import { max, scaleBand, scaleLinear } from 'd3'
-import { useState } from 'react';
+import * as d3 from 'd3'
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { useAppContext } from '../../contexts/appContext'
+import useChartDimensions from '../../hooks/useChartDimensions';
 import { useD3 } from '../../hooks/useD3';
 
 const BeschäftigungGraph = () => {
@@ -38,10 +39,17 @@ const BeschäftigungGraph = () => {
         { year: 2017, efficiency: 39.4, sales: 6081000 },
     ]
 
+    const chartSettings = {
+        "marginTop": 20,
+        "marginRight": 30,
+        "marginBottom": 30,
+        "marginLeft": 40
+    }
+
+    const [ref, dms] = useChartDimensions(chartSettings)
 
     //set margins of Graph
     const margin = { top: 20, right: 30, bottom: 30, left: 40 };
-
 
     const width = 400
     const height = 300
@@ -50,48 +58,55 @@ const BeschäftigungGraph = () => {
 
 
     const [dataset, setDataset] = useState(data)
+    const svgRef = useRef()
     const { time } = useAppContext()
 
+    const xScale = useMemo(() => (
+        d3.scaleLinear()
+            .domain([0, d3.max(dataset, (d) => d.sales)]) //array from min to max
+            .rangeRound([0, dms.innerWidth])
+            .nice()
+    ), [dms.innerWidth])
 
-    const yScale = scaleBand()
+    const yScale = useMemo(() => (d3.scaleBand()
         .domain(dataset.map((d) => d.year))
-        .rangeRound([innerHeight, 0])
+        .rangeRound([dms.innerHeight, 0])
         .padding(0.1)
+    ), [dms.innerHeight])
 
-    const xScale = scaleLinear()
-        .domain([0, max(dataset, (d) => d.sales)]) //array from min to max
-        .rangeRound([0, innerWidth])
-        .nice()
+    const xAxis = (g) => g
+        .attr("transform", `translate(0,${dms.innerHeight})`)
+        .call(d3.axisBottom(xScale))
+
+    const yAxis = (g) => g
+        .call(d3.axisLeft(yScale))
 
 
+    useEffect(() => {
 
+        const svgElement = d3.select(svgRef.current)
+
+        //apply styles to X-Axis
+        svgElement.select(".x-axis").call(xAxis);
+
+        //apply styles to Y-Axis
+        svgElement.select(".y-axis").call(yAxis);
+
+    }, [dms]);
 
 
     return (
-        <>
-            <svg width={width} height={height}>
-
-                <g transform={`translate(${margin.left}, ${margin.top})`} >
-
-
-
-                    {/* X-Axis */}
-                    <g transform={`translate(0, ${innerHeight})`} >
-                        <line x1={0} x2={innerWidth} stroke='black' />
-                        {xScale.ticks().map((tickValue) =>
-                            <g key={tickValue} transform={`translate(${xScale(tickValue)}, 0)`}>
-                                <line y1={-innerHeight} y2={-1} stroke='lightgray' />
-                                <line y1={0} y2={6} stroke='black' />
-                                <text style={{ textAnchor: 'middle' }} dy='25'>{tickValue}</text>
-                            </g>)
-                        }
-
-                    </g>
-
+        <div ref={ref} style={{ height: "100%" }}>
+            <svg width={dms.width} height={dms.height} ref={svgRef}>
+                <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
+                    <g className="x-axis" />
+                    <g className="y-axis" />
+                    <g className="plot" />
                 </g>
             </svg>
-        </>
+        </div>
     )
 }
 
 export default BeschäftigungGraph
+

@@ -2,8 +2,12 @@ import { ResizeObserver } from '@juggle/resize-observer';
 import { useEffect, useRef, useState } from 'react'
 
 const useChartDimensions = (passedSettings) => {
+
+    //callback ref
     const ref = useRef()
+
     const dimensions = combineChartDimensions(passedSettings)
+
     const [width, setWidth] = useState(0)
     const [height, setHeight] = useState(0)
 
@@ -12,6 +16,7 @@ const useChartDimensions = (passedSettings) => {
         //return if width and height are set
         if (dimensions.width && dimensions.height) return [ref, dimensions]
 
+        //select the current element
         const element = ref.current
 
         //rerender graph if size of container changes
@@ -46,6 +51,8 @@ const useChartDimensions = (passedSettings) => {
 
 
 const combineChartDimensions = (dimensions) => {
+
+    //default margins
     const parsedDimensions = {
         ...dimensions,
         marginTop: dimensions.marginTop || 10,
@@ -53,10 +60,11 @@ const combineChartDimensions = (dimensions) => {
         marginBottom: dimensions.marginBottom || 40,
         marginLeft: dimensions.marginLeft || 75,
     }
+
     return {
         ...parsedDimensions,
-        boundedHeight: Math.max(parsedDimensions.height - parsedDimensions.marginTop - parsedDimensions.marginBottom, 0),
-        boundedWidth: Math.max(parsedDimensions.width - parsedDimensions.marginLeft - parsedDimensions.marginRight, 0),
+        innerHeight: Math.max(parsedDimensions.height - parsedDimensions.marginTop - parsedDimensions.marginBottom, 0),
+        innerWidth: Math.max(parsedDimensions.width - parsedDimensions.marginLeft - parsedDimensions.marginRight, 0),
     }
 }
 
