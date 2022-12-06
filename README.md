@@ -65,9 +65,10 @@ This project is done as part of the lecture Data Visualization (DataVis) at the 
 
 <!-- ROADMAP -->
 ## Roadmap
-- [ ] Add bubble chart
+- [ ] Get all data
+- [ ] Add radar chart
 - [ ] Add time line
-- [ ] Add bar chart
+- [ ] Add bar charts
 - [ ] Blend features in and out in time line
 - [ ] Add highlights in timeline with small text
 
@@ -96,7 +97,10 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 Alexander Welling - j.welling@campus.lmu.de <br/>
-Lennard Greve - l.greve@campus.lmu.de
+Lennard Greve - l.greve@campus.lmu.de <br/>
+Sofie Henghuber - sofie.henghuber@campus.lmu.de <br/>
+Manuel Totzauer - m.totzauer@campus.lmu.de <br/>
+Maximilian Brandmaier - m.brandmaier@campus.lmu.de
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
