@@ -1,13 +1,10 @@
-// IMPORTS
 import './Home.scss'
 import Card from '../../components/Card/Card'
 import Timeline from '../../components/Timeline/Timeline'
 import BeschäftigungGraph from '../../components/Graphs/BeschäftigungGraph'
+import ChartWithDim from '../../components/Graphs/ChartWithDim'
 
-function Home() {
-
-
-    // RENDER
+const Home = () => {
 
     return (
         <div className="Page Home">
@@ -15,8 +12,12 @@ function Home() {
                 <Card title="Beschäftigung im Gastgewerbe" subtitle="In tausend, gegliedert in Vollzeit, Teilzeit und Kurzarbeit">
                     <BeschäftigungGraph />
                 </Card>
-                <Card title="Umsatz im Gastgewerbe" subtitle="In Mio €" />
-                <Card title="Subventionen im Gastgewerbe" subtitle="Einfluss aus Umsatz und Mitarbeiter" />
+                <Card title="Umsatz im Gastgewerbe" subtitle="In Mio €">
+                    <ChartWithDim />
+                </Card>
+                <Card title="Subventionen im Gastgewerbe" subtitle="Einfluss aus Umsatz und Mitarbeiter">
+                    <BeschäftigungGraph />
+                </Card>
             </div>
             <div className="Middle">
                 <Timeline />
