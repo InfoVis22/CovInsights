@@ -1,0 +1,125 @@
+@import 'Variables.scss';
+
+//Global Typo
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter'), url('./fonts/Inter-Regular.ttf') format('truetype');
+}
+
+p,a,span,label{
+  color: black;
+  font-size: $normaltext;
+  @media(max-width: $mobile){
+    font-size: $mobiletext;
+  }
+}
+
+h1{
+  font-size: $normalh1;
+  @media(max-width: $mobile){
+    font-size: $mobileh1;
+  }
+}
+
+h2{
+  font-size: $normalh2;
+  @media(max-width: $mobile){
+    font-size: $mobileh2;
+  }
+}
+
+h3{
+  font-size: $normalh3;
+  @media(max-width: $mobile){
+    font-size: $mobileh3;
+  }
+}
+
+//Fundamental structure
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter',sans-serif;
+  background-color: $lightgrey;
+  border: 1px solid transparent;
+  min-height: 100vh;
+  .App{
+    width: 100%;
+  }
+  .Page{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    @media(max-width: 1280px){
+      max-width: unset;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    @media(max-width: $mobile){
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+}
+
+//Global Normalizing
+
+input{
+  font-family: 'Inter';
+}
+input:focus-visible{
+  outline: none;
+}
+
+select:focus-visible{
+  outline: none;
+}
+
+textarea:focus-visible{
+  outline: none;
+}
+
+ul{
+  list-style-type: none;
+}
+h1,h2,h3,h4,h5,h6,p{
+  margin: 0rem;
+}
+
+img{
+  max-width: 100%;
+}
+
+div{
+  box-sizing: border-box;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+button{
+  font-family: 'Inter',sans-serif;
+  margin: 0rem;
+  padding: 0rem;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none !important;
+    margin: 0 !important; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield !important; /* Firefox */
+}

@@ -1,0 +1,46 @@
+//Colors
+$lightgrey: #FBFBFB;
+$white: #ffffff;
+$grey: #818181;
+$graphplaceholder: rgb(255, 223, 223);
+//Borders
+$borderradius: 10px;
+
+//Text sizes
+$normaltext: 15px;
+$mobiletext: 13px;
+
+//Headers
+$normalh1: 32px;
+$mobileh1: 28px;
+$normalh2: 22px;
+$mobileh2: 18px;
+$normalh3: 18px;
+$mobileh3: 16px;
+
+//Shadows
+$boxshadow: 0px 0px 10px rgba(134, 134, 134, 0.13);
+
+//Screen sizes
+$mobile: '767px';
+$tablet: '1024px';
+
+//Animations
+@keyframes pullup {
+    from {
+        margin-top: 100rem;
+    }
+    to {
+        margin-top: 0rem;
+    }
+}
+
+@keyframes barslide {
+    from {
+        width: 0%;
+    }
+    to {
+
+    }
+}
+

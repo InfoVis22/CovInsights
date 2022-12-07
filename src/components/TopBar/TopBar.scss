@@ -1,0 +1,96 @@
+//IMPORTS
+
+@import '../../Variables.scss';
+
+//SCSS
+
+.Topbar{
+    background-color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.171);
+    @media(max-width: $tablet){
+        padding: 1rem 1rem;
+    }
+
+    //Desktop and Mobile Switch
+
+    .desktop{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        @media(max-width: $tablet){
+            display: none;
+        }
+
+        .left{
+            display: flex;
+            align-items: center;
+            .Logo{
+                width: 220px;
+                height: auto;
+                object-fit: contain;
+                cursor: pointer;
+    
+            }
+            .LogoMobile{
+                width: 30px;
+                height: auto;
+                object-fit: contain;
+                display: none;
+                @media(max-width: $tablet){
+                    display: block;
+                }
+            }
+            h1{
+                margin: 0rem;
+                margin-left: 2rem;
+                font-size: 1.3rem;
+                font-weight: 300;
+                font-weight: 500;
+            }
+        }
+        .right{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            a{
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .mobile{
+        width: 100%;
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+        @media(max-width: $tablet){
+            display: flex;
+        }
+        .LogoMobile{
+            width: 60px;
+        }
+        h1{
+            margin: 0rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: -1px;
+        }
+        .EmailIcon{
+            position: relative;
+            img{
+                display: absolute;
+                margin-top: 5px;
+                width: 25px;
+                filter: black;
+            }
+ 
+        }
+    }
+}
