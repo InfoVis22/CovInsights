@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 const useChartDimensions = (passedSettings) => {
 
     //callback ref
-    const ref = useRef()
+    const wrapperRef = useRef()
 
     const dimensions = combineChartDimensions(passedSettings)
 
@@ -14,10 +14,10 @@ const useChartDimensions = (passedSettings) => {
     useEffect(() => {
 
         //return if width and height are set
-        if (dimensions.width && dimensions.height) return [ref, dimensions]
+        if (dimensions.width && dimensions.height) return [wrapperRef, dimensions]
 
         //select the current element
-        const element = ref.current
+        const element = wrapperRef.current
 
         //rerender graph if size of container changes
         const resizeObserver = new ResizeObserver(
@@ -46,7 +46,7 @@ const useChartDimensions = (passedSettings) => {
     })
 
 
-    return [ref, newSettings]
+    return [wrapperRef, newSettings]
 }
 
 

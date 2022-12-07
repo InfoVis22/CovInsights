@@ -18,9 +18,8 @@ const chartSettings = {
 }
 
 const CoronaGraph = () => {
-    const [ref, dms] = useChartDimensions(chartSettings)
-
     const svgRef = useRef()
+    const [wrapperRef, dms] = useChartDimensions(chartSettings)
     const { time, coronaData } = useAppContext()
 
     //X-Scale for graph
@@ -40,14 +39,12 @@ const CoronaGraph = () => {
     ), [dms.innerWidth])
 
 
-    const lineGenerator = useMemo(() => (d3.line()
+    const lineGenerator = d3.line()
         .x(d => xScale(d.Date))
-        .y(d => yScale(d.Inzidenz))
-        //.curve(curveMonotoneX);
-    ), [dms.innerWidth, coronaData])
+        .y(d => yScale(d.Inzidenz));
 
     return (
-        <div className="Graph" ref={ref} style={{ height: chartSettings.height }}>
+        <div className="Graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
 
             <svg width={dms.width} height={dms.height} ref={svgRef}>
                 <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
@@ -65,6 +62,8 @@ const CoronaGraph = () => {
                     </YAxisLinear>
 
                     <Line
+                        xScale={xScale}
+                        yScale={yScale}
                         data={coronaData}
                         lineGenerator={lineGenerator}
                     />
