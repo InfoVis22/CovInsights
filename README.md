@@ -65,13 +65,24 @@ This project is done as part of the lecture Data Visualization (DataVis) at the 
 
 <!-- ROADMAP -->
 ## Roadmap
-- [ ] Get all data
-- [ ] Add radar chart
-- [ ] Add time line
-- [ ] Add bar charts
-- [ ] Blend features in and out in time line
-- [ ] Add highlights in timeline with small text
+![img_1.png](img_1.png)
 
+Done
+- [ ] Find Research Question
+- [ ] Setup Projektmanagement/ Task Distribution in Asana
+- [ ] Create Paper Prototype
+- [ ] Setup Technical Infrastructure
+- [ ] Create First Structure of the Dashboard
+- [ ] Create About Us Page
+- [ ] Prioritize Features
+- [ ] Create Gantt
+
+Next Steps until Christmas
+- [ ] Finalize Research for the missing Data
+- [ ] Finalize Database Cleaning & Mapping
+- [ ] Create a first version of Graphs 
+
+GitHub: https://github.com/InfoVis22/CovInsights 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
