@@ -54,6 +54,10 @@ This project is done as part of the lecture Data Visualization (DataVis) at the 
 
 <!-- GETTING STARTED -->
 ## Getting Started
+
+See the Demo: [https://covinsight.mmt-lmu.de/]https://covinsight.mmt-lmu.de/
+
+
 ### Installation
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
