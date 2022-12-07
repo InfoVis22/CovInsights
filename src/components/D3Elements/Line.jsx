@@ -17,18 +17,14 @@ const Line = ({ data, lineGenerator }) => {
     ), [data])
 
     useEffect(() => {
-        d3.select(lineRef.current)
+        d3.select("#list")
             .datum(data)
             .attr('d', lineGenerator)
     }, [])
 
-    d3.select(lineRef.current)
-        .datum(data)
-        .transition(transition)
-        .attr('d', lineGenerator)
 
     return (
-        <path ref={lineRef} stroke="darkblue" strokeWidth="1.5" fill="none" />
+        <path id='line' ref={lineRef} stroke="darkblue" strokeWidth="1.5" fill="none" />
     )
 }
 

@@ -5,9 +5,6 @@ import { AiOutlineInfoCircle } from 'react-icons/ai';
 
 const Card = ({ title, subtitle, children }) => {
 
-
-    // RENDER
-
     return (
         <div className="Visual">
             <div className="Heading">
