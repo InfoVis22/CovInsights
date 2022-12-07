@@ -95,7 +95,6 @@ Next Steps until Christmas
 - [ ] Finalize Database Cleaning & Mapping
 - [ ] Create a first version of Graphs 
 
-GitHub: https://github.com/InfoVis22/CovInsights 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
