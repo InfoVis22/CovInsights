@@ -1,0 +1,32 @@
+//IMPORTS
+
+@import '../../Variables.scss';
+
+//SCSS
+
+.Timeline {
+    width: 100%;
+    background-color: $white;
+    padding: 1.5rem;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.171);
+    border-radius: $borderradius;
+    position: relative;
+
+    @media(max-width: $tablet) {
+        padding: 1rem 1rem;
+    }
+
+    .Heading {
+        h2 {}
+
+        p {
+            color: $grey;
+        }
+    }
+
+    .Graph {
+        height: 100px;
+        background-color: $graphplaceholder;
+    }
+
+}

@@ -1,0 +1,25 @@
+name: Mirror commits
+on: workflow_dispatch
+jobs:
+  pushmirror:
+    runs-on: ubuntu-latest
+    env:
+      SOURCE_REPO: InfoVis22/CovInsights
+      TARGET_REPO: "https://gitlab.lrz.de/iv2223-projects/team-03.git"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: ${{ env.SOURCE_REPO }}
+          token: ${{ secrets.SOURCE_PAT }}
+          fetch-depth: 0
+      - name: Push testing on external Gitlab
+        uses: adityakavalur/github-gitlab-ci@v0.1.1
+        with:
+          args: ${{ env.TARGET_REPO }}
+        env:
+          TARGET_PAT: ${{ secrets.TARGET_PAT }}
+          SOURCE_PAT: ${{ secrets.SOURCE_PAT }}
+          GITHUB_TOKEN: ${{ secrets.SOURCE_PAT }}
+          POLL_TIMEOUT: "<Optional, value in seconds, default is 10 seconds>"
+          REPO_EVENT_TYPE: push
+          BRANCH: production

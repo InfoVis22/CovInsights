@@ -1,11 +1,11 @@
 <!-- PROJECT LOGO -->
 <a name="readme-top"></a>
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="">
+    <img src="images/logo.png" alt="CovInsights" width="80" height="80">
   </a>
 
-  <h3 align="center">Covid Insights</h3>
+  <h3 align="center">CovInsights WS22/23</h3>
 
   <p align="center">
     A project to visualize datasets of the germans gastronomy industry in relation to corona incidences
@@ -51,7 +51,7 @@
 ## About The Project
 This project is done as part of the lecture Data Visualization (DataVis) at the LMU Munich. Our goal is to visualize the effects of the covid pandemic on the german gastronomy industry with respect to insolvency, turnover and subventions.
 ### Built With
-* [![React][React.js]][React-url]
+[![React][React.js]][React-url]
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -66,9 +66,10 @@ This project is done as part of the lecture Data Visualization (DataVis) at the 
 
 <!-- ROADMAP -->
 ## Roadmap
-- [ ] Add bubble chart
+- [ ] Get all data
+- [ ] Add radar chart
 - [ ] Add time line
-- [ ] Add bar chart
+- [ ] Add bar charts
 - [ ] Blend features in and out in time line
 - [ ] Add highlights in timeline with small text
 
@@ -96,7 +97,12 @@ Don't forget to give the project a star! Thanks again!
 
 <!-- CONTACT -->
 ## Contact
-Alexander Welling - j.welling@campus.lmu.de
+Alexander Welling - j.welling@campus.lmu.de <br/>
+Lennard Greve - l.greve@campus.lmu.de <br/>
+Sofie Henghuber - sofie.henghuber@campus.lmu.de <br/>
+Manuel Totzauer - m.totzauer@campus.lmu.de <br/>
+Maximilian Brandmaier - m.brandmaier@campus.lmu.de
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->

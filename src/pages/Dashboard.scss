@@ -1,0 +1,26 @@
+//IMPORTS
+
+@import '../Variables.scss';
+
+//SCSS
+
+.Home {
+    .Top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+
+        @media(max-width: $mobile) {
+            flex-direction: column;
+        }
+    }
+
+    .Middle {
+        margin-top: 2rem;
+    }
+
+    .Bottom {
+        margin-top: 2rem;
+    }
+}
