@@ -22,6 +22,11 @@ const Line = ({ data, lineGenerator }) => {
             .attr('d', lineGenerator)
     }, [])
 
+    d3.select(lineRef.current)
+        .datum(data)
+        .transition(transition)
+        .attr('d', lineGenerator)
+
     return (
         <path ref={lineRef} stroke="darkblue" strokeWidth="1.5" fill="none" />
     )

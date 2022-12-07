@@ -11,7 +11,7 @@ import InsolvenzenGraph from '../components/Graphs/InsolvenzenGraph'
 const Dashboard = () => {
 
     //---- define AppContext ----
-    const { setGastgewerbeData, setCoronaData } = useAppContext()
+    const { setGastgewerbeData, setCoronaData, setInsolvenzData } = useAppContext()
 
     //---- Dashboard State ----
     const [isLoadingData, setIsLoadingData] = useState(true)
@@ -22,15 +22,22 @@ const Dashboard = () => {
 
         //load Gastgewerbe (general) Data 2005 - 2022
         const rawGastgewerbeData = await d3.dsv(";", "../data/Gastgewerbe05-22.csv")
-
-
         const gastgewerbeData = rawGastgewerbeData.filter(d => d.Zeit == 2019)
-        console.log(gastgewerbeData);
-
         setGastgewerbeData(gastgewerbeData)
 
         //load Insolvenz data 2013-2022
+        const rawInsolvenzData = await d3.dsv(";", "../data/Insolvenzverfahren_2008_2022.csv")
 
+        let insolvenzData = rawInsolvenzData.filter(d => d["3_Auspraegung_Label"] == "eröffnet" && (d["4_Auspraegung_Code"] == "WZ08-55")) //|| d["4_Auspraegung_Code"] == "WZ08-56"
+        insolvenzData = insolvenzData.map(d => {
+            console.log(d)
+            const month = +d["2_Auspraegung_Code"].slice(-2) - 1
+            const date = new Date(d.Zeit, month)
+            return ({ ...d, Date: date })
+        })
+        console.log(insolvenzData)
+
+        setInsolvenzData(insolvenzData)
 
         //load Corona Data 2020-2022
         const rawCoronaInzidenzData = await d3.dsv(";", "../data/Coronainfektionen_7-Tage_Trend_DE20_22.csv")
@@ -38,9 +45,6 @@ const Dashboard = () => {
             Date: new Date(d.Date),
             Inzidenz: +d.Inzidenz
         }))
-
-        console.log(coronaData)
-
         setCoronaData(coronaData)
 
 

@@ -12,8 +12,9 @@ export const AppContext = ({ children }) => {
     const [time, setTime] = useState(null);
     const [gastgewerbeData, setGastgewerbeData] = useState(null);
     const [coronaData, setCoronaData] = useState(null);
+    const [insolvenzData, setInsolvenzData] = useState(null);
 
-    const AppValues = { currentUser, setCurrentUser, time, setTime, gastgewerbeData, setGastgewerbeData, coronaData, setCoronaData }
+    const AppValues = { currentUser, setCurrentUser, time, setTime, gastgewerbeData, setGastgewerbeData, coronaData, setCoronaData, insolvenzData, setInsolvenzData }
 
     return (
         <Context.Provider value={AppValues}>

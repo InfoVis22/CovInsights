@@ -9,11 +9,14 @@ const XAxisTime = ({ dms, domain = [0, 100], range = [0, 300] }) => {
 
     const ticks = useMemo(() => {
 
+        const pixelsPerTick = 70
+        const numberOfTicksTarget = Math.max(1, Math.floor(dms.innerWidth / pixelsPerTick))
+
         const xScale = d3.scaleTime()
             .domain(domain)
             .range(range)
 
-        const ticks = xScale.ticks().map(value => ({ value, xOffset: xScale(value) }))
+        const ticks = xScale.ticks(numberOfTicksTarget).map(value => ({ value, xOffset: xScale(value) }))
         return ticks
     }, [domain.join("-"), range.join("-")])
 
@@ -30,7 +33,7 @@ const XAxisTime = ({ dms, domain = [0, 100], range = [0, 300] }) => {
                 <g key={value} transform={`translate(${xOffset}, 0)`}>
                     <line y2="6" stroke="currentColor" />
                     <text key={value} style={{ fontSize: "8px", textAnchor: "middle", transform: "translateY(16px)" }}>
-                        {value.getFullYear()}
+                        {value.getMonth() + 1 + " " + value.getFullYear()}
                     </text>
                 </g>
             ))}
