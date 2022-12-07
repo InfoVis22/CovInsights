@@ -6,23 +6,6 @@ import { useD3 } from '../../hooks/useD3';
 
 const BeschäftigungGraph = () => {
 
-    const data = [
-        { year: 2004, efficiency: 29.5, sales: 7483000 },
-        { year: 2005, efficiency: 30.3, sales: 7660000 },
-        { year: 2006, efficiency: 30.1, sales: 7762000 },
-        { year: 2007, efficiency: 31.2, sales: 7562000 },
-        { year: 2008, efficiency: 31.5, sales: 6769000 },
-        { year: 2009, efficiency: 32.9, sales: 5402000 },
-        { year: 2010, efficiency: 33.9, sales: 5636000 },
-        { year: 2011, efficiency: 33.1, sales: 6093000 },
-        { year: 2012, efficiency: 35.3, sales: 7245000 },
-        { year: 2013, efficiency: 36.4, sales: 7586000 },
-        { year: 2014, efficiency: 36.5, sales: 7708000 },
-        { year: 2015, efficiency: 37.2, sales: 7517000 },
-        { year: 2016, efficiency: 37.7, sales: 6873000 },
-        { year: 2017, efficiency: 39.4, sales: 6081000 },
-    ]
-
     //set margins of Graph
     const chartSettings = {
         "marginTop": 20,
@@ -30,10 +13,11 @@ const BeschäftigungGraph = () => {
         "marginBottom": 30,
         "marginLeft": 200
     }
+
     //2_Auspraegung_Label
-    const [dataset, setDataset] = useState(data)
-    const [ref, dms] = useChartDimensions(chartSettings)
     const svgRef = useRef()
+    const tooltip = useRef()
+    const [ref, dms] = useChartDimensions(chartSettings)
     const { time, gastgewerbeData } = useAppContext()
 
     const xScale = useMemo(() => (
@@ -46,7 +30,7 @@ const BeschäftigungGraph = () => {
     const yScale = useMemo(() => (d3.scaleBand()
         .domain(gastgewerbeData.map((d) => d["2_Auspraegung_Label"]))
         .range([dms.innerHeight, 0])
-        .padding(0.1)
+        .padding(0.4)
     ), [dms.innerHeight])
 
 
@@ -66,14 +50,14 @@ const BeschäftigungGraph = () => {
             .style("stroke", "black")
             .style("opacity", 1)
     }
-    const mousemove = (d, Tooltip) => {
 
-        console.log(Tooltip)
+    const mousemove = (d, Tooltip) => {
         Tooltip
             .html("The exact value of<br>this cell is: " + d?.value)
             .style("left", (d.clientX + 70) + "px")
             .style("top", (d.clientY) + "px")
     }
+
     const mouseleave = (d, Tooltip) => {
         Tooltip
             .style("opacity", 0)
@@ -131,7 +115,8 @@ const BeschäftigungGraph = () => {
 
 
     return (
-        <div ref={ref} style={{ height: "100%" }}>
+        <div className="Graph" ref={ref}>
+
             <svg width={dms.width} height={dms.height} ref={svgRef}>
                 <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
                     <g className="x-axis" />
@@ -139,6 +124,11 @@ const BeschäftigungGraph = () => {
                     <g className="plot" />
                 </g>
             </svg>
+
+            <div className="tooltip" ref={tooltip} style={{ backgroundColor: "white", borderRadius: "5px", height: "100px", width: "100px" }}>
+                Beschäftigte: {2342}
+            </div>
+
         </div>
     )
 }

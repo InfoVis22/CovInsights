@@ -17,9 +17,7 @@ const Card = ({ title, subtitle, children }) => {
             <div className="Info">
                 <AiOutlineInfoCircle />
             </div>
-            <div className="Graph">
-                {children}
-            </div>
+            {children}
         </div>
     )
 }

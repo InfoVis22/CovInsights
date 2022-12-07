@@ -2,15 +2,16 @@ import './Dashboard.scss'
 import Card from '../components/Card/Card'
 import Timeline from '../components/Timeline/Timeline'
 import BeschäftigungGraph from '../components/Graphs/BeschäftigungGraph'
-import ChartWithDim from '../components/Graphs/ChartWithDim'
 import * as d3 from 'd3'
 import { useAppContext } from '../contexts/AppContext'
 import { useEffect, useState } from 'react'
+import CoronaGraph from '../components/Graphs/CoronaGraph'
+import InsolvenzenGraph from '../components/Graphs/InsolvenzenGraph'
 
 const Dashboard = () => {
 
     //---- define AppContext ----
-    const { setGastgewerbeData } = useAppContext()
+    const { setGastgewerbeData, setCoronaData } = useAppContext()
 
     //---- Dashboard State ----
     const [isLoadingData, setIsLoadingData] = useState(true)
@@ -32,6 +33,16 @@ const Dashboard = () => {
 
 
         //load Corona Data 2020-2022
+        const rawCoronaInzidenzData = await d3.dsv(";", "../data/Coronainfektionen_7-Tage_Trend_DE20_22.csv")
+        const coronaData = rawCoronaInzidenzData.map(d => ({
+            Date: new Date(d.Date),
+            Inzidenz: +d.Inzidenz
+        }))
+
+        console.log(coronaData)
+
+        setCoronaData(coronaData)
+
 
         setIsLoadingData(false)
         console.log("loading complete!")
@@ -50,17 +61,19 @@ const Dashboard = () => {
                     <BeschäftigungGraph />
                 </Card>
                 <Card title="Umsatz im Gastgewerbe" subtitle="In Mio €">
-                    <ChartWithDim />
                 </Card>
                 <Card title="Subventionen im Gastgewerbe" subtitle="Einfluss aus Umsatz und Mitarbeiter">
-
                 </Card>
             </div>
             <div className="Middle">
-                <Timeline />
+                <Timeline title="Insolvenzen" subtitle="im Gastgewerbe zwischen 2010 und 2022">
+                    <InsolvenzenGraph />
+                </Timeline>
             </div>
             <div className="Bottom">
-                <Timeline />
+                <Timeline title="Coronainfektionen in Deutschland" subtitle="7-Tage-Inzidenz COVID-19 Infektionen je 100.000 Einwohner">
+                    <CoronaGraph />
+                </Timeline>
             </div>
         </div>
     )

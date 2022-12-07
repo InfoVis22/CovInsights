@@ -35,4 +35,10 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
+    color: $grey;
+    cursor: pointer;
+}
+
+.Info :hover {
+    color: black
 }

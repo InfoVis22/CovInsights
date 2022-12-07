@@ -11,8 +11,9 @@ export const AppContext = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null);
     const [time, setTime] = useState(null);
     const [gastgewerbeData, setGastgewerbeData] = useState(null);
+    const [coronaData, setCoronaData] = useState(null);
 
-    const AppValues = { currentUser, setCurrentUser, time, setTime, gastgewerbeData, setGastgewerbeData }
+    const AppValues = { currentUser, setCurrentUser, time, setTime, gastgewerbeData, setGastgewerbeData, coronaData, setCoronaData }
 
     return (
         <Context.Provider value={AppValues}>
