@@ -58,25 +58,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
-            .contact{
-                display: flex;
-                align-items: center;
-                &:hover{
-                    color: black;
-                    cursor: pointer;
-                    img{
-                        filter: black;
-                    }
-                }
-
-                img{
-                    margin-right: 0.5rem;
-                    top: -1px;
-                    width: 25px;
-                }
-         
-                
+            gap: 1rem;
+            a{
+                font-size: 1rem;
             }
         }
     }
