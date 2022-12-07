@@ -30,7 +30,6 @@ const Dashboard = () => {
 
         let insolvenzData = rawInsolvenzData.filter(d => d["3_Auspraegung_Label"] == "eröffnet" && (d["4_Auspraegung_Code"] == "WZ08-55")) //|| d["4_Auspraegung_Code"] == "WZ08-56"
         insolvenzData = insolvenzData.map(d => {
-            console.log(d)
             const month = +d["2_Auspraegung_Code"].slice(-2) - 1
             const date = new Date(d.Zeit, month)
             return ({ ...d, Date: date })

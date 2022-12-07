@@ -31,12 +31,17 @@ const InsolvenzGraph = () => {
     ), [dms.innerWidth])
 
     //Y-Scale for graph
-    const yScale = useMemo(() => (
-        d3.scaleLinear()
-            .domain([0, d3.max(insolvenzData, (d) => d.Insolvenzverfahren)])
-            .range([dms.innerHeight, 0])
-            .nice()
-    ), [dms.innerWidth])
+    const yScale = useMemo(() => {
+
+        console.log(d3.max(insolvenzData, (d) => d.Insolvenzverfahren))
+        console.log(insolvenzData.map((d) => d.Insolvenzverfahren))
+        return (
+            d3.scaleLinear()
+                .domain([0, d3.max(insolvenzData, (d) => d.Insolvenzverfahren)])
+                .range([dms.innerHeight, 0])
+                .nice()
+        )
+    }, [dms.innerWidth])
 
 
     const lineGenerator = d3.line()
