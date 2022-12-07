@@ -1,4 +1,5 @@
 <!-- PROJECT LOGO -->
+<a name="readme-top"></a>
 <div align="center">
   <a href="">
     <img src="images/logo.png" alt="CovInsights" width="80" height="80">
@@ -59,7 +60,15 @@ See the Demo: [https://covinsight.mmt-lmu.de/]https://covinsight.mmt-lmu.de/
 
 
 ### Installation
+To run this application node.js and npm is required.
+node.js can be downloaded here -> https://nodejs.org/en/download/
+The installer also contains the npm package manager.
 
+- Run npm install to install the packages specified in the dependencies
+- Run one of the following commands to start the app
+  - npm start dev
+  - npm start build
+  - npm start preview
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
