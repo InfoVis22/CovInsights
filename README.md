@@ -10,10 +10,10 @@
   <p align="center">
     A project to visualize datasets of the germans gastronomy industry in relation to corona incidences
     <br />
-    <a href="https://github.com/InfoVis22/CovInsights"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/InfoVis22/CovInsights"><strong>GitHub Repo »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/InfoVis22/CovInsights">View Demo</a>
+    <a href="https://covinsight.mmt-lmu.de/">View Demo</a>
     ·
     <a href="https://github.com/InfoVis22/CovInsights/issues">Report Bug</a>
     ·
@@ -50,72 +50,54 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 This project is done as part of the lecture Data Visualization (DataVis) at the LMU Munich. Our goal is to visualize the effects of the covid pandemic on the german gastronomy industry with respect to insolvency, turnover and subventions.
-### Built With
-[![React][React.js]][React-url]
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-See the Demo: [https://covinsight.mmt-lmu.de/]https://covinsight.mmt-lmu.de/
+### Demo Application
+
+See the Demo: [Dashboard Demo](https://covinsight.mmt-lmu.de/)
 
 
 ### Installation
 To run this application node.js and npm is required.
 node.js can be downloaded here -> https://nodejs.org/en/download/
 The installer also contains the npm package manager.
+Run npm install to install the packages specified in the dependencies
 
-- Run npm install to install the packages specified in the dependencies
-- Run one of the following commands to start the app
-  - npm start dev
-  - npm start build
-  - npm start preview
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Usage
+Run one of the following commands to start the app
+- npm start dev
+- npm start build
+- npm start preview
 
-<!-- USAGE EXAMPLES -->
-## Usage
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 ## Roadmap
-![img_1.png](img_1.png)
 
-Done
-- [ ] Find Research Question
-- [ ] Setup Projektmanagement/ Task Distribution in Asana
-- [ ] Create Paper Prototype
-- [ ] Setup Technical Infrastructure
-- [ ] Create First Structure of the Dashboard
-- [ ] Create About Us Page
-- [ ] Prioritize Features
-- [ ] Create Gantt
+### Overview
+![Gant Chart](Gant.jpg)
 
-Next Steps until Christmas
-- [ ] Finalize Research for the missing Data
+### Done Features
+- [x] Find Research Question
+- [x] Setup Projektmanagement/ Task Distribution in Asana
+- [x] Create Paper Prototype
+- [x] Setup Technical Infrastructure
+- [x] Create First Structure of the Dashboard
+- [x] Create About Us Page
+- [x] Prioritize Features
+- [x] Create Gantt
+
+### In Progress Features
 - [ ] Finalize Database Cleaning & Mapping
-- [ ] Create a first version of Graphs 
+- [ ] Create line grapth to show Covid Cases
+- [ ] Create bar charts for employment, revenue and insovencies
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-## Contributing
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
-## License
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Backlog Features
+- [ ] Create time slider to select time
+- [ ] Implement play, stop and rewind controls
+- [ ] Implement tooltips
+- [ ] Implement industry filter
 
 <!-- CONTACT -->
 ## Contact
