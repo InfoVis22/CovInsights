@@ -30,28 +30,20 @@ const InsolvenzGraph = () => {
             .nice()
     ), [dms.innerWidth])
 
+    const max = d3.max(insolvenzData, (d) => d.Insolvenzverfahren)
+    console.log(max)
+
     //Y-Scale for graph
-    const yScale = useMemo(() => {
-
-        const maxInsolvenz = d3.max(insolvenzData, (d) => d.Insolvenzverfahren)
-        console.log(maxInsolvenz)
-        console.log(insolvenzData.map((d) => d.Insolvenzverfahren))
-
-        return (
-            d3.scaleLinear()
-                .domain([0, maxInsolvenz])
-                .range([dms.innerHeight, 0])
-                .nice()
-        )
-    }, [dms.innerWidth])
+    const yScale = useMemo(() => (d3.scaleLinear()
+        .domain([0, d3.max(insolvenzData, (d) => d.Insolvenzverfahren)])
+        .range([dms.innerHeight, 0])
+        .nice()
+    ), [dms.innerWidth])
 
     const lineGenerator = d3.line(d => xScale(d.Date), d => yScale(d.Insolvenzverfahren)).curve(d3.curveMonotoneX)
-    console.log(lineGenerator(insolvenzData))
-
 
     return (
         <div className="Graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
-
             <svg width={dms.width} height={dms.height} ref={svgRef}>
                 <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
@@ -68,11 +60,17 @@ const InsolvenzGraph = () => {
                     </YAxisLinear>
 
                     <Line
-                        domain={yScale.domain()}
-                        range={yScale.range()}
-                        data={insolvenzData}
+                        data={insolvenzData.filter(d => d["4_Auspraegung_Code"] !== "WZ08-56")}
                         lineGenerator={lineGenerator}
+                        color={'#B3E2D5'}
                     />
+                    <Line
+                        data={insolvenzData.filter(d => d["4_Auspraegung_Code"] === "WZ08-56")}
+                        lineGenerator={lineGenerator}
+                        color={'#FE99BD'}
+                    />
+
+
                 </g>
             </svg>
         </div >

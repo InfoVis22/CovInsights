@@ -38,10 +38,8 @@ const CoronaGraph = () => {
             .nice()
     ), [dms.innerWidth])
 
-
-    const lineGenerator = d3.line()
-        .x(d => xScale(d.Date))
-        .y(d => yScale(d.Inzidenz));
+    //define lineGenerator for the graphs line
+    const lineGenerator = d3.line(d => xScale(d.Date), d => yScale(d.Inzidenz))
 
     return (
         <div className="Graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
@@ -62,9 +60,6 @@ const CoronaGraph = () => {
                     </YAxisLinear>
 
                     <Line
-                        dms={dms}
-                        xScale={xScale}
-                        yScale={yScale}
                         data={coronaData}
                         lineGenerator={lineGenerator}
                     />

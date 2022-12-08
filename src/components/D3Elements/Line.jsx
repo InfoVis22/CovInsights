@@ -1,8 +1,8 @@
-const Line = ({ data, lineGenerator }) => {
+const Line = ({ data, lineGenerator, color = 'black' }) => {
 
     return (
         <path
-            stroke="darkblue"
+            stroke={color}
             strokeWidth="1.5"
             fill="none"
             d={lineGenerator(data)}
