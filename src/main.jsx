@@ -8,7 +8,7 @@ import ErrorPage from './pages/ErrorPage';
 
 //Import global style
 import './App.scss'
-import AppContext from './contexts/AppContext';
+import AppContext from './contexts/appContext';
 
 
 const AppLayout = () => {
