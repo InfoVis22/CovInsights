@@ -9,12 +9,14 @@ const YAxisLinear = ({ dms, domain = [0, 100], range = [0, 300] }) => {
 
     const ticks = useMemo(() => {
 
+        console.log(domain)
+
         const yScale = d3.scaleLinear()
             .domain(domain)
             .range(range)
 
-        const ticks = yScale.ticks().map(value => ({ value, yOffset: yScale(value) }))
-        return ticks
+        return yScale.ticks().map(value => ({ value, yOffset: yScale(value) }))
+
     }, [domain.join("-"), range.join("-")])
 
 

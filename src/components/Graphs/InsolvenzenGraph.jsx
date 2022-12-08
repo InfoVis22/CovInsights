@@ -33,21 +33,21 @@ const InsolvenzGraph = () => {
     //Y-Scale for graph
     const yScale = useMemo(() => {
 
-        console.log(d3.max(insolvenzData, (d) => d.Insolvenzverfahren))
+        const maxInsolvenz = d3.max(insolvenzData, (d) => d.Insolvenzverfahren)
+        console.log(maxInsolvenz)
         console.log(insolvenzData.map((d) => d.Insolvenzverfahren))
+
         return (
             d3.scaleLinear()
-                .domain([0, d3.max(insolvenzData, (d) => d.Insolvenzverfahren)])
+                .domain([0, maxInsolvenz])
                 .range([dms.innerHeight, 0])
                 .nice()
         )
     }, [dms.innerWidth])
 
+    const lineGenerator = d3.line(d => xScale(d.Date), d => yScale(d.Insolvenzverfahren)).curve(d3.curveMonotoneX)
+    console.log(lineGenerator(insolvenzData))
 
-    const lineGenerator = d3.line()
-        .x(d => xScale(d.Date))
-        .y(d => yScale(d.Insolvenzverfahren))
-        .curve(d3.curveMonotoneX);
 
     return (
         <div className="Graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
@@ -68,8 +68,8 @@ const InsolvenzGraph = () => {
                     </YAxisLinear>
 
                     <Line
-                        xScale={xScale}
-                        yScale={yScale}
+                        domain={yScale.domain()}
+                        range={yScale.range()}
                         data={insolvenzData}
                         lineGenerator={lineGenerator}
                     />

@@ -62,6 +62,7 @@ const CoronaGraph = () => {
                     </YAxisLinear>
 
                     <Line
+                        dms={dms}
                         xScale={xScale}
                         yScale={yScale}
                         data={coronaData}
