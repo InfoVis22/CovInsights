@@ -11,7 +11,7 @@ import InsolvenzenGraph from '../components/Graphs/InsolvenzenGraph'
 const Dashboard = () => {
 
     //---- define AppContext ----
-    const { setGastgewerbeData, setCoronaData, setInsolvenzData } = useAppContext()
+    const { setGastgewerbeData, setCoronaData, setInsolvenzData, setTimeFrame } = useAppContext()
 
     //---- Dashboard State ----
     const [isLoadingData, setIsLoadingData] = useState(true)
@@ -28,13 +28,17 @@ const Dashboard = () => {
         //load Insolvenz data 2013-2022
         const rawInsolvenzData = await d3.dsv(";", "../data/Insolvenzverfahren_2008_2022.csv")
 
-        let insolvenzData = rawInsolvenzData.filter(d => d["3_Auspraegung_Label"] == "eröffnet" && (d["4_Auspraegung_Code"] == "WZ08-55")) //|| d["4_Auspraegung_Code"] == "WZ08-56"
+        //Beherbergung: WZ08-55; Gastronomie: WZ08-56
+        let insolvenzData = rawInsolvenzData.filter(d => d["3_Auspraegung_Label"] == "eröffnet" && (d["4_Auspraegung_Code"] == "WZ08-55" || d["4_Auspraegung_Code"] == "WZ08-56")) //
         insolvenzData = insolvenzData.map(d => {
             const month = +d["2_Auspraegung_Code"].slice(-2) - 1
             const date = new Date(d.Zeit, month)
-            return ({ ...d, Date: date })
+            return ({
+                ...d,
+                Date: date,
+                Insolvenzverfahren: +d.Insolvenzverfahren
+            })
         })
-        console.log(insolvenzData)
 
         setInsolvenzData(insolvenzData)
 
@@ -46,12 +50,14 @@ const Dashboard = () => {
         }))
         setCoronaData(coronaData)
 
-
         setIsLoadingData(false)
         console.log("loading complete!")
     }
 
     useEffect(() => {
+        //---- Initialize State ----
+        setTimeFrame({ min: new Date(2018, 0), max: new Date() })
+
         loadData()
     }, [])
 
@@ -61,7 +67,7 @@ const Dashboard = () => {
         <div className="Page Home">
             <div className="Top">
                 <Card title="Beschäftigung im Gastgewerbe" subtitle="In tausend, gegliedert in Vollzeit, Teilzeit und Kurzarbeit">
-                    <BeschäftigungGraph />
+                    {/* <BeschäftigungGraph /> */}
                 </Card>
                 <Card title="Umsatz im Gastgewerbe" subtitle="In Mio €">
                 </Card>

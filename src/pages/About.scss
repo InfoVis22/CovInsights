@@ -5,23 +5,27 @@
 //SCSS
 
 .About {
-    h1{
+    h1 {
         text-align: center;
         margin-bottom: 2rem;
         margin-top: 3rem;
     }
-    .Cards{
-        margin: auto;
 
+    p {
+        color: rgb(81, 81, 81);
+        font-size: 0.8rem;
+    }
+
+    .Cards {
+        margin: auto;
         display: flex;
         gap: 1rem;
         flex-wrap: wrap;
         justify-content: center;
-        @media (max-width: $mobile) {
-            
-        }
-        .BusinessCard{
+
+        .BusinessCard {
             flex-basis: 17%;
+
             @media (max-width: $mobile) {
                 flex-basis: 100%;
             }

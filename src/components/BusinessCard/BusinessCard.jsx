@@ -1,9 +1,6 @@
-// IMPORTS
 import './BusinessCard.scss'
 
 const BusinessCard = ({ name, infoText, imageName }) => {
-
-    // RENDER
 
     return (
         <div className="BusinessCard">

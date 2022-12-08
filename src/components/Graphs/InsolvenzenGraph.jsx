@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { useAppContext } from "../../contexts/AppContext"
 import useChartDimensions from "../../hooks/useChartDimensions"
 import XAxisTime from "../D3Elements/XAxisTime"
@@ -20,38 +20,79 @@ const chartSettings = {
 const InsolvenzGraph = () => {
     const svgRef = useRef()
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
-    const { time, insolvenzData } = useAppContext()
+    const { hoveredTime, insolvenzData, setShowTooltipsTime, setHoveredTime, showTooltipsTime } = useAppContext()
+    const [closestXValueBeherbergung, setClosestXValueBeherbergung] = useState(0)
+    const [closestYValueBeherbergung, setClosestYValueBeherbergung] = useState(0)
+    const [closestXValueGastronomie, setClosestXValueGastronomie] = useState(0)
+    const [closestYValueGastronomie, setClosestYValueGastronomie] = useState(0)
+
+    const xAccessor = (d) => d.Date;
+    const yAccessor = (d) => d.Insolvenzverfahren;
+
 
     //X-Scale for graph
     const xScale = useMemo(() => (
         d3.scaleTime()
-            .domain([new Date(2018, 1), d3.max(insolvenzData, (d) => d.Date)])
+            .domain([new Date(2018, 1), new Date(2022, 12)])
+            // .domain([new Date(2018, 1), d3.max(insolvenzData, (d) => d.Date)])
             .range([0, dms.innerWidth])
             .nice()
     ), [dms.innerWidth])
 
     //Y-Scale for graph
-    const yScale = useMemo(() => {
+    const yScale = useMemo(() => (d3.scaleLinear()
+        .domain([0, d3.max(insolvenzData, (d) => yAccessor(d))])
+        .range([dms.innerHeight, 0])
+        .nice()
+    ), [dms.innerWidth])
 
-        console.log(d3.max(insolvenzData, (d) => d.Insolvenzverfahren))
-        console.log(insolvenzData.map((d) => d.Insolvenzverfahren))
-        return (
-            d3.scaleLinear()
-                .domain([0, d3.max(insolvenzData, (d) => d.Insolvenzverfahren)])
-                .range([dms.innerHeight, 0])
-                .nice()
-        )
-    }, [dms.innerWidth])
+    const lineGenerator = d3.line(d => xScale(xAccessor(d)), d => yScale(yAccessor(d))).curve(d3.curveMonotoneX)
 
 
-    const lineGenerator = d3.line()
-        .x(d => xScale(d.Date))
-        .y(d => yScale(d.Insolvenzverfahren))
-        .curve(d3.curveMonotoneX);
+    //mouse events
+    const mouseEnterEvent = (e) => {
+        setShowTooltipsTime(true)
+    }
+
+    const mouseMoveEvent = (e) => {
+        //get x and y position relative to hovered event element
+        const mousePosition = d3.pointer(e)
+        //get date from x and y coordinates
+        const hoveredDate = xScale.invert(mousePosition[0]);
+
+        //set global state of selected line
+        setHoveredTime(hoveredDate)
+    }
+
+    const mouseLeaveEvent = (e) => {
+        setShowTooltipsTime(false)
+    }
+
+    useMemo(() => {
+        //calculate closest data point from mouse position
+        const getDistanceFromHoveredDate = (d) => Math.abs(xAccessor(d) - hoveredTime);
+
+        //Beherbergung: WZ08-55; Gastronomie: WZ08-56
+        //.filter(d => d["4_Auspraegung_Code"] == "WZ08-55")
+        //.filter(d => d["4_Auspraegung_Code"] == "WZ08-56")
+        const closestIndexBeherbergung = d3.scan(insolvenzData, (a, b) => getDistanceFromHoveredDate(a) - getDistanceFromHoveredDate(b));
+        const closestIndexGastronomie = closestIndexBeherbergung + 1 //hahah shitty quick fix aber funktioniert
+
+
+        //Grab the data point at that index
+        const closestDataPointBeherbergung = insolvenzData[closestIndexBeherbergung];
+        const closestDataPointGastronomie = insolvenzData[closestIndexGastronomie];
+
+        setClosestXValueBeherbergung(xAccessor(closestDataPointBeherbergung))
+        setClosestYValueBeherbergung(yAccessor(closestDataPointBeherbergung))
+        setClosestXValueGastronomie(xAccessor(closestDataPointGastronomie))
+        setClosestYValueGastronomie(yAccessor(closestDataPointGastronomie))
+    }, [hoveredTime])
+
+
 
     return (
         <div className="Graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
-
             <svg width={dms.width} height={dms.height} ref={svgRef}>
                 <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
@@ -67,12 +108,45 @@ const InsolvenzGraph = () => {
                         range={yScale.range()}>
                     </YAxisLinear>
 
+
+                    {/* Line Graph for Gastgewerbe */}
                     <Line
-                        xScale={xScale}
-                        yScale={yScale}
-                        data={insolvenzData}
+                        data={insolvenzData.filter(d => d["4_Auspraegung_Code"] !== "WZ08-56")}
                         lineGenerator={lineGenerator}
+                        color={'#B3E2D5'}
                     />
+
+                    {/* Line for Beherbergung */}
+                    <Line
+                        data={insolvenzData.filter(d => d["4_Auspraegung_Code"] === "WZ08-56")}
+                        lineGenerator={lineGenerator}
+                        color={'#FE99BD'}
+                    />
+
+                    {showTooltipsTime && <>
+                        {/* hover line */}
+                        <rect x={xScale(hoveredTime)} style={{ width: ".5px", height: dms.innerHeight, stroke: '#5c5c5c', strokeDasharray: '1 1', strokeWidth: "1px" }} />
+
+                        {/* hover Beherbergung*/}
+                        <circle cx={xScale(closestXValueBeherbergung)} cy={yScale(closestYValueBeherbergung)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
+
+                        {/* hover Gastronomie*/}
+                        <circle cx={xScale(closestXValueGastronomie)} cy={yScale(closestYValueGastronomie)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
+
+
+                    </>}
+
+                    {/* hover line */}
+
+
+                    {/* actionListener rect over graph area*/}
+                    <rect className="actionListener" width={dms.innerWidth} height={dms.innerHeight}
+                        fill='transparent'
+                        onMouseEnter={mouseEnterEvent}
+                        onMouseMove={mouseMoveEvent}
+                        onMouseLeave={mouseLeaveEvent}
+                    />
+
                 </g>
             </svg>
         </div >

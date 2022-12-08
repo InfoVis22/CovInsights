@@ -42,35 +42,6 @@ const BeschäftigungGraph = () => {
         .call(d3.axisLeft(yScale));
 
 
-    // Three function that change the tooltip when user hover / move / leave a cell
-    const mouseover = (d, Tooltip) => {
-        Tooltip
-            .style("opacity", 1)
-        d3.select(this)
-            .style("stroke", "black")
-            .style("opacity", 1)
-    }
-
-    const mousemove = (d, Tooltip) => {
-        Tooltip
-            .html("The exact value of<br>this cell is: " + d?.value)
-            .style("left", (d.clientX + 70) + "px")
-            .style("top", (d.clientY) + "px")
-    }
-
-    const mouseleave = (d, Tooltip) => {
-        Tooltip
-            .style("opacity", 0)
-        d3.select(this)
-            .style("stroke", "none")
-            .style("opacity", 0.8)
-    }
-
-
-
-
-
-
     useEffect(() => {
 
         // create a tooltip
@@ -84,19 +55,6 @@ const BeschäftigungGraph = () => {
             .style("border-radius", "5px")
             .style("padding", "5px")
 
-        const bars = (r) => r.data(gastgewerbeData)
-            .enter()
-            .append("rect")
-            .attr("x", dms.marginLeft)
-            .attr("y", (d) => yScale(d["2_Auspraegung_Label"]) + dms.marginTop)
-            .attr("width", (d) => xScale(d["ERW012__Beschaeftigte__Anzahl"]))
-            .attr("height", yScale.bandwidth())
-            .attr("fill", "#69b3a2")
-            .on("mouseover", (d) => mouseover(d, Tooltip))
-            .on("mousemove", (d) => mousemove(d, Tooltip))
-            .on("mouseleave", (d) => mouseleave(d, Tooltip))
-
-
 
         const svgElement = d3.select(svgRef.current)
 
@@ -106,22 +64,28 @@ const BeschäftigungGraph = () => {
         //apply styles to Y-Axis
         svgElement.select(".y-axis").call(yAxis);
 
-        //Bars
-        svgElement.selectAll("myRect").call(bars);
-
-
 
     }, [dms]);
 
 
     return (
         <div className="Graph" ref={ref}>
-
             <svg width={dms.width} height={dms.height} ref={svgRef}>
                 <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
                     <g className="x-axis" />
                     <g className="y-axis" />
-                    <g className="plot" />
+                    <g className="plot">
+                        {gastgewerbeData.map((d, i) => (
+                            <rect
+                                key={i}
+                                x={0}
+                                y={yScale(d["2_Auspraegung_Label"])}
+                                height={yScale.bandwidth()}
+                                width={xScale(d["ERW012__Beschaeftigte__Anzahl"])}
+                                fill={"#69b3a2"}
+                            />
+                        ))}
+                    </g>
                 </g>
             </svg>
 
