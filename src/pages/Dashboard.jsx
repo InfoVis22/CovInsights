@@ -28,6 +28,7 @@ const Dashboard = () => {
         //load Insolvenz data 2013-2022
         const rawInsolvenzData = await d3.dsv(";", "../data/Insolvenzverfahren_2008_2022.csv")
 
+        //Beherbergung: WZ08-55; Gastronomie: WZ08-56
         let insolvenzData = rawInsolvenzData.filter(d => d["3_Auspraegung_Label"] == "eröffnet" && (d["4_Auspraegung_Code"] == "WZ08-55" || d["4_Auspraegung_Code"] == "WZ08-56")) //
         insolvenzData = insolvenzData.map(d => {
             const month = +d["2_Auspraegung_Code"].slice(-2) - 1
@@ -66,7 +67,7 @@ const Dashboard = () => {
         <div className="Page Home">
             <div className="Top">
                 <Card title="Beschäftigung im Gastgewerbe" subtitle="In tausend, gegliedert in Vollzeit, Teilzeit und Kurzarbeit">
-                    <BeschäftigungGraph />
+                    {/* <BeschäftigungGraph /> */}
                 </Card>
                 <Card title="Umsatz im Gastgewerbe" subtitle="In Mio €">
                 </Card>

@@ -9,11 +9,12 @@ export const useAppContext = () => useContext(Context);
 export const AppContext = ({ children }) => {
 
     const [currentUser, setCurrentUser] = useState(null);
-    const [time, setTime] = useState(null);
+    const [hoveredTime, setHoveredTime] = useState(null);
     const [gastgewerbeData, setGastgewerbeData] = useState(null);
     const [coronaData, setCoronaData] = useState(null);
     const [insolvenzData, setInsolvenzDataFiltered] = useState(null);
-    const [timeFrame, setTimeFrame] = useState({ min: new Date(1950, 0), max: new Date() });
+    const [timeFrame, setTimeFrame] = useState({ min: new Date(2018, 0), max: new Date() });
+    const [showTooltipsTime, setShowTooltipsTime] = useState(false);
 
 
     //custom functions to ensure that all data is in the timeFrame range
@@ -24,11 +25,12 @@ export const AppContext = ({ children }) => {
 
     const AppValues = {
         currentUser, setCurrentUser,
-        time, setTime,
+        hoveredTime, setHoveredTime,
         gastgewerbeData, setGastgewerbeData,
         coronaData, setCoronaData,
         insolvenzData, setInsolvenzData,
-        timeFrame, setTimeFrame
+        timeFrame, setTimeFrame,
+        showTooltipsTime, setShowTooltipsTime,
     }
 
     return (
