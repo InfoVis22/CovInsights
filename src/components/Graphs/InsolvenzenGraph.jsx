@@ -30,9 +30,6 @@ const InsolvenzGraph = () => {
             .nice()
     ), [dms.innerWidth])
 
-    const max = d3.max(insolvenzData, (d) => d.Insolvenzverfahren)
-    console.log(max)
-
     //Y-Scale for graph
     const yScale = useMemo(() => (d3.scaleLinear()
         .domain([0, d3.max(insolvenzData, (d) => d.Insolvenzverfahren)])
@@ -64,6 +61,7 @@ const InsolvenzGraph = () => {
                         lineGenerator={lineGenerator}
                         color={'#B3E2D5'}
                     />
+
                     <Line
                         data={insolvenzData.filter(d => d["4_Auspraegung_Code"] === "WZ08-56")}
                         lineGenerator={lineGenerator}

@@ -41,10 +41,29 @@ const CoronaGraph = () => {
     //define lineGenerator for the graphs line
     const lineGenerator = d3.line(d => xScale(d.Date), d => yScale(d.Inzidenz))
 
+
+
+    const mouseEnterEvent = (e) => {
+        console.log("ENTER")
+        const mousePosition = d3.pointer(e)
+        console.log(mousePosition)
+    }
+
+    const mouseMoveEvent = (e) => {
+        const mousePosition = d3.pointer(e)
+        console.log(mousePosition)
+    }
+    const mouseLeaveEvent = (e) => {
+        const mousePosition = d3.pointer(e)
+        console.log(mousePosition)
+    }
+
+
     return (
         <div className="Graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
 
-            <svg width={dms.width} height={dms.height} ref={svgRef}>
+            <svg width={dms.width} height={dms.height} ref={svgRef}
+            >
                 <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
                     <XAxisTime
@@ -62,6 +81,14 @@ const CoronaGraph = () => {
                     <Line
                         data={coronaData}
                         lineGenerator={lineGenerator}
+                        color={'#545454'}
+                    />
+
+                    <rect className="actionListener" width={dms.innerWidth} height={dms.innerHeight}
+                        fill='transparent'
+                        onMouseEnter={mouseEnterEvent}
+                        onMouseMove={mouseMoveEvent}
+                        onMouseLeave={mouseLeaveEvent}
                     />
                 </g>
             </svg>

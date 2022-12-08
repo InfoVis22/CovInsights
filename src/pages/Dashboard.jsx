@@ -11,7 +11,7 @@ import InsolvenzenGraph from '../components/Graphs/InsolvenzenGraph'
 const Dashboard = () => {
 
     //---- define AppContext ----
-    const { setGastgewerbeData, setCoronaData, setInsolvenzData } = useAppContext()
+    const { setGastgewerbeData, setCoronaData, setInsolvenzData, setTimeFrame } = useAppContext()
 
     //---- Dashboard State ----
     const [isLoadingData, setIsLoadingData] = useState(true)
@@ -49,12 +49,14 @@ const Dashboard = () => {
         }))
         setCoronaData(coronaData)
 
-
         setIsLoadingData(false)
         console.log("loading complete!")
     }
 
     useEffect(() => {
+        //---- Initialize State ----
+        setTimeFrame({ min: new Date(2018, 0), max: new Date() })
+
         loadData()
     }, [])
 

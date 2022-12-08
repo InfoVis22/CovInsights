@@ -12,9 +12,24 @@ export const AppContext = ({ children }) => {
     const [time, setTime] = useState(null);
     const [gastgewerbeData, setGastgewerbeData] = useState(null);
     const [coronaData, setCoronaData] = useState(null);
-    const [insolvenzData, setInsolvenzData] = useState(null);
+    const [insolvenzData, setInsolvenzDataFiltered] = useState(null);
+    const [timeFrame, setTimeFrame] = useState({ min: new Date(1950, 0), max: new Date() });
 
-    const AppValues = { currentUser, setCurrentUser, time, setTime, gastgewerbeData, setGastgewerbeData, coronaData, setCoronaData, insolvenzData, setInsolvenzData }
+
+    //custom functions to ensure that all data is in the timeFrame range
+    const setInsolvenzData = (data) => {
+        const filtered = data.filter(d => d.Date >= timeFrame.min && d.Date <= timeFrame.max)
+        setInsolvenzDataFiltered(filtered)
+    }
+
+    const AppValues = {
+        currentUser, setCurrentUser,
+        time, setTime,
+        gastgewerbeData, setGastgewerbeData,
+        coronaData, setCoronaData,
+        insolvenzData, setInsolvenzData,
+        timeFrame, setTimeFrame
+    }
 
     return (
         <Context.Provider value={AppValues}>
