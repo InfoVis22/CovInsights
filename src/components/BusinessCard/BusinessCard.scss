@@ -4,29 +4,36 @@
 
 //SCSS
 
-.BusinessCard{
-    background-color: white;
-    border-radius: $borderradius;
-    box-shadow: $boxshadow;
+.BusinessCard {
+  background-color: white;
+  border-radius: $borderradius;
+  box-shadow: $boxshadow;
+  width: 100%;
+
+  &:hover {
+    transform: scale(102%);
+    box-shadow: 2px 2px 12px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .Avatar {
+    border-radius: $borderradius $borderradius 0 0;
+    height: 250px;
     width: 100%;
-    &:hover{
-      transform: scale(101%);
+    object-fit: cover;
+  }
+
+  .Heading {
+    margin-top: 0.5rem;
+    padding: 1rem;
+
+    h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
     }
-    .Avatar{
-        border-radius: $borderradius;
-        height: 250px;
-        width: 100%;
-        object-fit: cover;
+
+    p {
+      color: rgb(87 87 87);
     }
-    .Heading{
-      margin-top: 0.5rem;
-      padding: 1rem;
-      h2{
-        margin-bottom: 0.5rem;
-        font-size: 1rem;
-      }
-      p{
-        color: rgb(71, 71, 71);
-      }
-    }
+  }
 }
