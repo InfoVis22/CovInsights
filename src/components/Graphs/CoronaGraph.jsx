@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react"
-import { useAppContext } from "../../contexts/AppContext"
+import { useAppContext } from "../../contexts/appContext"
 import useChartDimensions from "../../hooks/useChartDimensions"
 import * as d3 from 'd3'
 import XAxisTime from "../D3Elements/XAxisTime"

@@ -1,6 +1,6 @@
 import * as d3 from 'd3'
 import { useState, useEffect, useRef, useMemo } from 'react';
-import { useAppContext } from '../../contexts/AppContext'
+import { useAppContext } from '../../contexts/appContext'
 import useChartDimensions from '../../hooks/useChartDimensions';
 import { useD3 } from '../../hooks/useD3';
 
