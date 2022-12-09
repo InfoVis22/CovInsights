@@ -23,6 +23,10 @@ const About = () => {
           infoText={"Ich bin Alex und studiere Informatik an der LMU München im Master. In meiner Freizeit schreibe ich gerne About Pages und Masterarbeiten"}
           imageName={"alexAvatar.jpg"} />
       </div>
+
+      <div id="gant">
+        <img src="/images/gant.jpg" alt="Gant Chart" />
+      </div>
     </div>
   )
 }
