@@ -2,8 +2,6 @@ import './DateControls.scss'
 import { useEffect, useState } from 'react'
 
 const DateControls = (props) => {
-
-
     
     const handleRest = () => {
         const d = new Date("2018-01-01");
@@ -11,8 +9,16 @@ const DateControls = (props) => {
     }
 
     const handlePlay = () => {
-        const d = new Date("2022-03-25");
-        props.setSelectedDate(d)
+        setInterval(() => addADay(), 1000);
+    }
+
+    const addADay = () => {
+
+        console.log(d.toString());
+        let newd = new Date( props.selectedDate);
+        newd.setDate(newd.getDate() + 1);
+
+        props.setSelectedDate(newd);
     }
 
     return (
