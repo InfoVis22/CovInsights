@@ -12,11 +12,12 @@ const DateControls = (props) => {
     }
 
     const handlePlay = () => {
-        const id = setInterval(() => addADay(), 1000);
+        const id = setInterval(addADay, 1000);
         setplayInterval(id)
     }
 
     const addADay = () => {
+        //Todo: Find out why this does only work once
         let newdate = new Date(props.selectedDate);
         newdate.setDate(newdate.getDate() + 1);
         props.setSelectedDate(newdate);

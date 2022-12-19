@@ -6,5 +6,10 @@
 
 .DateControls {
   
-
+  button{
+    background-color: rgb(219, 219, 219);
+    border-radius: $borderradius;
+    padding: 0.2rem 0.5rem;
+    border: none;
+  }
 }

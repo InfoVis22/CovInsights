@@ -15,7 +15,7 @@ const chartSettings = {
     marginLeft: 40
 }
 
-const CoronaGraph = () => {
+const CoronaGraph = (props) => {
     const svgRef = useRef();
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
     const { setHoveredTime, hoveredTime, coronaData, showTooltipsTime, setShowTooltipsTime } = useAppContext()
@@ -75,6 +75,12 @@ const CoronaGraph = () => {
         setClosestYValue(yAccessor(closestDataPoint))
     }, [hoveredTime])
 
+    const dateToX = (date) => {
+        //Todo convert a date into the X value on the graph
+
+        return 100;
+    }
+
     return (
         <div className="Graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
 
@@ -100,11 +106,12 @@ const CoronaGraph = () => {
                         color={'#545454'}
                     />
 
+                    <rect x={dateToX(props.selectedDate)} style={{ width: ".5px", height: dms.innerHeight, stroke: '#454545', strokeDasharray: '1 1', strokeWidth: "1px" }} />
+
                     {showTooltipsTime && <>
 
                         {/* hover line */}
                         <rect x={xScale(hoveredTime)} style={{ width: ".5px", height: dms.innerHeight, stroke: '#5c5c5c', strokeDasharray: '1 1', strokeWidth: "1px" }} />
-
                         {/* hover circle*/}
                         <circle cx={xScale(closestXValue)} cy={yScale(closestYValue)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
 

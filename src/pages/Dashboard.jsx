@@ -83,7 +83,7 @@ const Dashboard = () => {
             </div>
             <div className="Bottom">
                 <Timeline title="Coronainfektionen in Deutschland" subtitle="7-Tage-Inzidenz COVID-19 Infektionen je 100.000 Einwohner">
-                    <CoronaGraph />
+                    <CoronaGraph selectedDate={selectedDate} />
                 </Timeline>
             </div>
             <DateControls selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
