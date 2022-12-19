@@ -6,6 +6,8 @@ import { useAppContext } from '../contexts/appContext'
 import { useEffect, useState } from 'react'
 import CoronaGraph from '../components/Graphs/CoronaGraph'
 import InsolvenzenGraph from '../components/Graphs/InsolvenzenGraph'
+import DateControls from '../components/DateControls/DateControls'
+
 
 const Dashboard = () => {
 
@@ -84,9 +86,11 @@ const Dashboard = () => {
                     <CoronaGraph />
                 </Timeline>
             </div>
+            <DateControls selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+
             <div className="Debug visible">
                 <h3>Debug</h3>
-                <p>selectedDate: {selectedDate}</p>
+              
             </div>
         </div>
     )
