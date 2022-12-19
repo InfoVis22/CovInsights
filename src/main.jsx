@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider, Outlet, useNavigate, useLocation, 
 import Dashboard from './pages/Dashboard'
 import TopBar from './components/TopBar/TopBar'
 import About from './pages/About'
+import Ressources from './pages/Ressources'
 import ErrorPage from './pages/ErrorPage';
 
 //Import global style
@@ -43,6 +44,9 @@ const router = createBrowserRouter([
       }, {
         path: "about",
         element: <About />
+      }, {
+        path: "ressources",
+        element: <Ressources />
       }
     ]
   },

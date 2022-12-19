@@ -28,6 +28,7 @@ function TopBar() {
                 <div className="right">
                     <Link to="dashboard">Dashboard</Link>
                     <Link to="about">About</Link>
+                    <Link to="ressources">Ressources</Link>
                 </div>
             </div>
 
