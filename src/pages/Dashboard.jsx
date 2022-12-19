@@ -14,6 +14,7 @@ const Dashboard = () => {
 
     //---- Dashboard State ----
     const [isLoadingData, setIsLoadingData] = useState(true)
+    const [selectedDate, setSelectedDate] = useState(Date(2018, 0))
 
     //---- load different data ----
     const loadData = async () => {
@@ -82,6 +83,10 @@ const Dashboard = () => {
                 <Timeline title="Coronainfektionen in Deutschland" subtitle="7-Tage-Inzidenz COVID-19 Infektionen je 100.000 Einwohner">
                     <CoronaGraph />
                 </Timeline>
+            </div>
+            <div className="Debug visible">
+                <h3>Debug</h3>
+                <p>selectedDate: {selectedDate}</p>
             </div>
         </div>
     )
