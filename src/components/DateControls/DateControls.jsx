@@ -3,24 +3,28 @@ import { useEffect, useState } from 'react'
 
 const DateControls = (props) => {
     
+ 
+    const [playInterval, setplayInterval] = useState()
+
     const handleRest = () => {
         const d = new Date("2018-01-01");
         props.setSelectedDate(d)
     }
 
     const handlePlay = () => {
-        setInterval(() => addADay(), 1000);
+        const id = setInterval(() => addADay(), 1000);
+        setplayInterval(id)
     }
 
     const addADay = () => {
-
-        console.log(d.toString());
-        let newd = new Date( props.selectedDate);
-        newd.setDate(newd.getDate() + 1);
-
-        props.setSelectedDate(newd);
+        let newdate = new Date(props.selectedDate);
+        newdate.setDate(newdate.getDate() + 1);
+        props.setSelectedDate(newdate);
     }
 
+    const handlePause = () => {
+        clearInterval(playInterval);
+    }
     return (
         <div className="DateControls">
                 <p>Date: {props.selectedDate.toString()}</p>

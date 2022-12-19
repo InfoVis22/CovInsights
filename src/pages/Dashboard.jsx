@@ -16,7 +16,7 @@ const Dashboard = () => {
 
     //---- Dashboard State ----
     const [isLoadingData, setIsLoadingData] = useState(true)
-    const [selectedDate, setSelectedDate] = useState(Date(2018, 0))
+    const [selectedDate, setSelectedDate] = useState(new Date("2018-01-01"))
 
     //---- load different data ----
     const loadData = async () => {
