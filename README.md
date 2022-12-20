@@ -67,9 +67,9 @@ Run npm install to install the packages specified in the dependencies
 
 ### Usage
 Run one of the following commands to start the app
-- npm start dev
-- npm start build
-- npm start preview
+- npm run dev
+- npm run build
+- npm run preview
 
 
 <!-- ROADMAP -->
