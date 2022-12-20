@@ -17,7 +17,7 @@ const chartSettings = {
     marginLeft: 40
 }
 
-const InsolvenzGraph = () => {
+const InsolvenzGraph = (props) => {
     const svgRef = useRef()
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
     const { hoveredTime, insolvenzData, setShowTooltipsTime, setHoveredTime, showTooltipsTime } = useAppContext()
@@ -122,6 +122,8 @@ const InsolvenzGraph = () => {
                         lineGenerator={lineGenerator}
                         color={'#FE99BD'}
                     />
+
+                    <rect x={xScale(props.selectedDate)} style={{ width: "1px", height: dms.innerHeight, stroke: '#ff8e76', strokeDasharray: '1 1', strokeWidth: "1px" }} />
 
                     {showTooltipsTime && <>
                         {/* hover line */}

@@ -78,7 +78,7 @@ const Dashboard = () => {
             </div>
             <div className="Middle">
                 <Timeline title="Insolvenzen" subtitle="im Gastgewerbe zwischen 2010 und 2022">
-                    <InsolvenzenGraph />
+                    <InsolvenzenGraph selectedDate={selectedDate} />
                 </Timeline>
             </div>
             <div className="Bottom">
