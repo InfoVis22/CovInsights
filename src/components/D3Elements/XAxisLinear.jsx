@@ -3,7 +3,7 @@ import * as d3 from 'd3'
 
 //domain: data values
 //range: pixel values
-const XAxisTime = ({ dms, domain = [0, 100], range = [0, 300] }) => {
+const XAxisLinear = ({ dms, domain = [0, 100], range = [0, 300] }) => {
 
     const axisRef = useRef()
 
@@ -12,7 +12,7 @@ const XAxisTime = ({ dms, domain = [0, 100], range = [0, 300] }) => {
         const pixelsPerTick = 70
         const numberOfTicksTarget = Math.max(1, Math.floor(dms.innerWidth / pixelsPerTick))
 
-        const xScale = d3.scaleTime()
+        const xScale = d3.scaleLinear()
             .domain(domain)
             .range(range)
 
@@ -30,10 +30,10 @@ const XAxisTime = ({ dms, domain = [0, 100], range = [0, 300] }) => {
 
             {/* Generate Ticks */}
             {ticks.map(({ value, xOffset }) => (
-                <g key={value} transform={`translate(${xOffset}, 0)`}>
+                <g key={value} transform={`translate(${xOffset}, 0)`} style={{ transition: "all 0.5s ease-in-out 0s" }}>
                     <line y2="6" stroke="currentColor" />
                     <text key={value} style={{ fontSize: "8px", textAnchor: "middle", transform: "translateY(16px)" }}>
-                        {value.getMonth() + 1 + " " + value.getFullYear()}
+                        {value}
                     </text>
                 </g>
             ))}
@@ -41,4 +41,4 @@ const XAxisTime = ({ dms, domain = [0, 100], range = [0, 300] }) => {
     )
 }
 
-export default XAxisTime
+export default XAxisLinear

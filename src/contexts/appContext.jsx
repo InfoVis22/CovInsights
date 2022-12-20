@@ -9,10 +9,12 @@ export const useAppContext = () => useContext(Context);
 export const AppContext = ({ children }) => {
 
     const [currentUser, setCurrentUser] = useState(null);
-    const [hoveredTime, setHoveredTime] = useState(null);
     const [gastgewerbeData, setGastgewerbeData] = useState(null);
-    const [coronaData, setCoronaData] = useState(null);
+    const [umsatzData, setUmsatzData] = useState(null);
     const [insolvenzData, setInsolvenzDataFiltered] = useState(null);
+    const [coronaData, setCoronaData] = useState(null);
+    const [hoveredTime, setHoveredTime] = useState(new Date(2020, 5));
+    const [selectedYearMonthString, setSelectedYearMonthString] = useState("2020-4");
     const [timeFrame, setTimeFrame] = useState({ min: new Date(2018, 0), max: new Date() });
     const [showTooltipsTime, setShowTooltipsTime] = useState(false);
 
@@ -25,10 +27,11 @@ export const AppContext = ({ children }) => {
 
     const AppValues = {
         currentUser, setCurrentUser,
-        hoveredTime, setHoveredTime,
         gastgewerbeData, setGastgewerbeData,
         coronaData, setCoronaData,
         insolvenzData, setInsolvenzData,
+        umsatzData, setUmsatzData,
+        hoveredTime, setHoveredTime,
         timeFrame, setTimeFrame,
         showTooltipsTime, setShowTooltipsTime,
     }

@@ -40,7 +40,7 @@ const CoronaGraph = () => {
             .domain([0, d3.max(coronaData, d => yAccessor(d))])
             .range([dms.innerHeight, 0])
             .nice()
-    ), [dms.innerWidth])
+    ), [dms.innerHeight])
 
     //define lineGenerator for the graphs line
     const lineGenerator = d3.line(d => xScale(xAccessor(d)), d => yScale(yAccessor(d)))
