@@ -13,7 +13,7 @@ const DateControls = (props) => {
       }, 100)
 
       //Limit of five years in days
-      if (count === 1835) clearInterval(timer)
+      //if (count === 1835) clearInterval(timer)
     }
     
     useEffect(() => {
@@ -25,6 +25,11 @@ const DateControls = (props) => {
             newDate.setDate(newDate.getDate() + 1);
             props.setSelectedDate(newDate);
 
+            //Here is the reset if the date goes at the end
+            const cutoffDate = new Date("2023-01-01")
+            if(newDate > cutoffDate){
+                handleReset();
+            }
             return () => clearInterval(timer)
         }
     }, [isPlaying,count])
