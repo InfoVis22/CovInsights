@@ -10,7 +10,7 @@ const DateControls = (props) => {
     const updateCount = () => {
       timer = !timer && setInterval(() => {
         setCount(prevCount => prevCount + 1)
-      }, 1000)
+      }, 100)
 
       //Limit of five years in days
       if (count === 1835) clearInterval(timer)
@@ -43,10 +43,17 @@ const DateControls = (props) => {
     }
     return (
         <div className="DateControls">
-                <p>Date: {props.selectedDate.toString()}</p>
+            <div className="buttons">
                 <button onClick={() => handlePlay()}>Play</button>
                 <button  onClick={() => handlePause()}>Pause</button>
                 <button  onClick={() => handleReset()}>Reset</button>
+            </div>
+
+                <p>{props.selectedDate.toLocaleString("de-DE", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+                })}</p>
 
         </div>
     )

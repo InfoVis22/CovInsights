@@ -83,10 +83,11 @@ const Dashboard = () => {
             </div>
             <div className="Bottom">
                 <Timeline title="Coronainfektionen in Deutschland" subtitle="7-Tage-Inzidenz COVID-19 Infektionen je 100.000 Einwohner">
-                    <CoronaGraph selectedDate={selectedDate} />
+                    <CoronaGraph selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
                 </Timeline>
+                <DateControls selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+
             </div>
-            <DateControls selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
 
             <div className="Debug visible">
                 <h3>Debug</h3>

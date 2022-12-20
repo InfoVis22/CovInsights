@@ -64,6 +64,11 @@ const CoronaGraph = (props) => {
         setShowTooltipsTime(false)
     }
 
+    const mouseEventDown = (e) => {
+        const clickedDate = hoveredTime;
+        props.setSelectedDate(clickedDate);
+    }
+
     useMemo(() => {
         //calculate closest data point from mouse position
         const getDistanceFromHoveredDate = (d) => Math.abs(xAccessor(d) - hoveredTime);
@@ -76,6 +81,7 @@ const CoronaGraph = (props) => {
     }, [hoveredTime])
 
     const dateToX = (date) => {
+        console.log(date)
         //Todo convert a date into the X value on the graph
 
         return 100;
@@ -106,7 +112,7 @@ const CoronaGraph = (props) => {
                         color={'#545454'}
                     />
 
-                    <rect x={dateToX(props.selectedDate)} style={{ width: ".5px", height: dms.innerHeight, stroke: '#454545', strokeDasharray: '1 1', strokeWidth: "1px" }} />
+                    <rect x={xScale(props.selectedDate)} style={{ width: "1px", height: dms.innerHeight, stroke: '#ff8e76', strokeDasharray: '1 1', strokeWidth: "1px" }} />
 
                     {showTooltipsTime && <>
 
@@ -124,6 +130,7 @@ const CoronaGraph = (props) => {
                         onMouseEnter={mouseEnterEvent}
                         onMouseMove={mouseMoveEvent}
                         onMouseLeave={mouseLeaveEvent}
+                        onMouseDown={mouseEventDown}
                     />
 
                 </g>
