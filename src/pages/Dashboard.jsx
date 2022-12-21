@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import CoronaGraph from '../components/Graphs/CoronaGraph'
 import InsolvenzenGraph from '../components/Graphs/InsolvenzenGraph'
 import DateControls from '../components/DateControls/DateControls'
+import Insolvenzen_Barchart from "../components/Graphs/Insolvenzen_Barchart";
 
 
 const Dashboard = () => {
@@ -73,7 +74,8 @@ const Dashboard = () => {
                 </Card>
                 <Card title="Umsatz im Gastgewerbe" subtitle="In Mio €">
                 </Card>
-                <Card title="Subventionen im Gastgewerbe" subtitle="Einfluss aus Umsatz und Mitarbeiter">
+                <Card title="Insolvenzen im Gastgewerbe" subtitle="Anzahl der Insolvenzen nach Gewerbekategorie">
+                    <Insolvenzen_Barchart/>
                 </Card>
             </div>
             <div className="Middle">
