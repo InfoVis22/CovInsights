@@ -67,10 +67,12 @@ const BeschäftigungGraph = () => {
 
     }, [dms]);
 
+    const svgStyle = { transition: "all 0.5s ease-in-out 0s" }
+
 
     return (
         <div className="Graph" ref={ref}>
-            <svg width={dms.width} height={dms.height} ref={svgRef}>
+            <svg width={dms.width} height={dms.height} ref={svgRef} style={svgStyle}>
                 <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
                     <g className="x-axis" />
                     <g className="y-axis" />

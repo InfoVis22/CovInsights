@@ -6,6 +6,8 @@ import { useAppContext } from '../contexts/appContext'
 import { useEffect, useState } from 'react'
 import CoronaGraph from '../components/Graphs/CoronaGraph'
 import InsolvenzenGraph from '../components/Graphs/InsolvenzenGraph'
+import UmsatzGraph from '../components/Graphs/UmsatzGraph'
+import moment from 'moment'
 import DateControls from '../components/DateControls/DateControls'
 import Insolvenzen_Barchart from "../components/Graphs/Insolvenzen_Barchart";
 
@@ -13,7 +15,7 @@ import Insolvenzen_Barchart from "../components/Graphs/Insolvenzen_Barchart";
 const Dashboard = () => {
 
     //---- define AppContext ----
-    const { setGastgewerbeData, setCoronaData, setInsolvenzData, setTimeFrame } = useAppContext()
+    const { hoveredTime, setGastgewerbeData, setCoronaData, setInsolvenzData, setTimeFrame, setUmsatzData } = useAppContext()
 
     //---- Dashboard State ----
     const [isLoadingData, setIsLoadingData] = useState(true)
@@ -27,6 +29,16 @@ const Dashboard = () => {
         const rawGastgewerbeData = await d3.dsv(";", "../data/Gastgewerbe05-22.csv")
         const gastgewerbeData = rawGastgewerbeData.filter(d => d.Zeit == 2019)
         setGastgewerbeData(gastgewerbeData)
+
+
+        //load Umsatz Data - 2022
+        const rawUmsatzData = await d3.dsv(";", "../data/Umsatz_im_Gastgewerbe1994_2022.csv")
+        const umsatzData = rawUmsatzData
+            .filter(d => +d.Jahr >= 2018 && d.Preisart === "REAL")
+            .map(d => ({ ...d, Date: new Date(d.Jahr, d.Monat - 1), Umsatz: +d.Umsatz, Umsatz_Veraenderung: +d.Umsatz_Veraenderung }))
+        console.log(umsatzData)
+        setUmsatzData(umsatzData)
+
 
         //load Insolvenz data 2013-2022
         const rawInsolvenzData = await d3.dsv(";", "../data/Insolvenzverfahren_2008_2022.csv")
@@ -42,8 +54,8 @@ const Dashboard = () => {
                 Insolvenzverfahren: +d.Insolvenzverfahren
             })
         })
-
         setInsolvenzData(insolvenzData)
+
 
         //load Corona Data 2020-2022
         const rawCoronaInzidenzData = await d3.dsv(";", "../data/Coronainfektionen_7-Tage_Trend_DE20_22.csv")
@@ -72,7 +84,8 @@ const Dashboard = () => {
                 <Card title="Beschäftigung im Gastgewerbe" subtitle="In tausend, gegliedert in Vollzeit, Teilzeit und Kurzarbeit">
                     {/* <BeschäftigungGraph /> */}
                 </Card>
-                <Card title="Umsatz im Gastgewerbe" subtitle="In Mio €">
+                <Card title="Umsatz im Gastgewerbe" subtitle={moment(hoveredTime).format("MMMM YYYY") + " (in Mio €)"}>
+                    <UmsatzGraph />
                 </Card>
                 <Card title="Insolvenzen im Gastgewerbe" subtitle="Anzahl der Insolvenzen nach Gewerbekategorie">
                     <Insolvenzen_Barchart/>
