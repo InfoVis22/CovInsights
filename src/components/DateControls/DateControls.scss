@@ -1,0 +1,30 @@
+//IMPORTS
+
+@import '../../Variables.scss';
+
+//SCSS
+
+.DateControls {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  text-align: right;
+  .buttons{
+    gap: 0.4rem;
+    display: flex;
+    
+    button{
+      background-color: #F0F0F0;
+      border-radius: 10px;
+      padding: 0.2rem 0.5rem;
+      border: none;
+      color: #636060;
+      &:hover{
+        background-color: darken(#F0F0F0, 10%);
+      }
+    }
+  }
+  p{
+    margin-top: 0.5rem;
+  }
+}

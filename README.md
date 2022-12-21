@@ -67,9 +67,9 @@ Run npm install to install the packages specified in the dependencies
 
 ### Usage
 Run one of the following commands to start the app
-- npm start dev
-- npm start build
-- npm start preview
+- npm run dev
+- npm run build
+- npm run preview
 
 
 <!-- ROADMAP -->
@@ -87,6 +87,8 @@ Run one of the following commands to start the app
 - [x] Create About Us Page
 - [x] Prioritize Features
 - [x] Create Gantt
+- [x] Create time slider to select time
+- [x] Implement play, stop and rewind controls
 
 ### In Progress Features
 - [ ] Finalize Database Cleaning & Mapping
@@ -94,8 +96,7 @@ Run one of the following commands to start the app
 - [ ] Create bar charts for employment, revenue and insovencies
 
 ### Backlog Features
-- [ ] Create time slider to select time
-- [ ] Implement play, stop and rewind controls
+
 - [ ] Implement tooltips
 - [ ] Implement industry filter
 

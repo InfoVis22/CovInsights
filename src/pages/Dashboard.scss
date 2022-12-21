@@ -22,6 +22,18 @@
 
     .Bottom {
         margin-top: 2rem;
+        position: relative;
+    }
+    .Debug{
+        margin-top: 1rem;
+        display: none;
+
+        &.visible{
+            display: block;
+        }
+        p{
+            margin-top: 1rem;
+        }
     }
 }
 

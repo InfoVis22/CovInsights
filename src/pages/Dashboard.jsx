@@ -8,6 +8,8 @@ import CoronaGraph from '../components/Graphs/CoronaGraph'
 import InsolvenzenGraph from '../components/Graphs/InsolvenzenGraph'
 import UmsatzGraph from '../components/Graphs/UmsatzGraph'
 import moment from 'moment'
+import DateControls from '../components/DateControls/DateControls'
+
 
 const Dashboard = () => {
 
@@ -16,6 +18,7 @@ const Dashboard = () => {
 
     //---- Dashboard State ----
     const [isLoadingData, setIsLoadingData] = useState(true)
+    const [selectedDate, setSelectedDate] = useState(new Date("2018-01-01"))
 
     //---- load different data ----
     const loadData = async () => {
@@ -88,13 +91,20 @@ const Dashboard = () => {
             </div>
             <div className="Middle">
                 <Timeline title="Insolvenzen" subtitle="im Gastgewerbe zwischen 2010 und 2022">
-                    <InsolvenzenGraph />
+                    <InsolvenzenGraph selectedDate={selectedDate} />
                 </Timeline>
             </div>
             <div className="Bottom">
                 <Timeline title="Coronainfektionen in Deutschland" subtitle="7-Tage-Inzidenz COVID-19 Infektionen je 100.000 Einwohner">
-                    <CoronaGraph />
+                    <CoronaGraph selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
                 </Timeline>
+                <DateControls selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+
+            </div>
+
+            <div className="Debug visible">
+                <h3>Debug</h3>
+              
             </div>
         </div>
     )

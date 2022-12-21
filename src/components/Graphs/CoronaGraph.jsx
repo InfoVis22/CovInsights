@@ -15,7 +15,7 @@ const chartSettings = {
     marginLeft: 40
 }
 
-const CoronaGraph = () => {
+const CoronaGraph = (props) => {
     const svgRef = useRef();
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
     const { setHoveredTime, hoveredTime, coronaData, showTooltipsTime, setShowTooltipsTime } = useAppContext()
@@ -64,6 +64,11 @@ const CoronaGraph = () => {
         setShowTooltipsTime(false)
     }
 
+    const mouseEventDown = (e) => {
+        const clickedDate = hoveredTime;
+        props.setSelectedDate(clickedDate);
+    }
+
     useMemo(() => {
         //calculate closest data point from mouse position
         const getDistanceFromHoveredDate = (d) => Math.abs(xAccessor(d) - hoveredTime);
@@ -74,6 +79,13 @@ const CoronaGraph = () => {
         setClosestXValue(xAccessor(closestDataPoint))
         setClosestYValue(yAccessor(closestDataPoint))
     }, [hoveredTime])
+
+    const dateToX = (date) => {
+        console.log(date)
+        //Todo convert a date into the X value on the graph
+
+        return 100;
+    }
 
     return (
         <div className="Graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
@@ -100,11 +112,12 @@ const CoronaGraph = () => {
                         color={'#545454'}
                     />
 
+                    <rect x={xScale(props.selectedDate)} style={{ width: "1px", height: dms.innerHeight, stroke: '#ff8e76', strokeDasharray: '1 1', strokeWidth: "1px" }} />
+
                     {showTooltipsTime && <>
 
                         {/* hover line */}
                         <rect x={xScale(hoveredTime)} style={{ width: ".5px", height: dms.innerHeight, stroke: '#5c5c5c', strokeDasharray: '1 1', strokeWidth: "1px" }} />
-
                         {/* hover circle*/}
                         <circle cx={xScale(closestXValue)} cy={yScale(closestYValue)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
 
@@ -117,6 +130,7 @@ const CoronaGraph = () => {
                         onMouseEnter={mouseEnterEvent}
                         onMouseMove={mouseMoveEvent}
                         onMouseLeave={mouseLeaveEvent}
+                        onMouseDown={mouseEventDown}
                     />
 
                 </g>
