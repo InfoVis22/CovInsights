@@ -14,7 +14,7 @@ const chartSettings = {
     marginLeft: 100
 }
 
-const UmsatzGraph = (props) => {
+const BeschäftigungsGraphNeu = (props) => {
 
     const svgRef = useRef();
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
@@ -132,4 +132,4 @@ const UmsatzGraph = (props) => {
     )
 }
 
-export default UmsatzGraph
+export default BeschäftigungsGraphNeu

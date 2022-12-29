@@ -32,7 +32,7 @@ const Dashboard = () => {
 
 
         //load Umsatz Data - 2022
-        const rawUmsatzData = await d3.dsv(";", "../data/Umsatz_im_Gastgewerbe1994_2022.csv")
+        const rawUmsatzData = await d3.dsv(";", "../cleaned_data/Umsatz.csv")
         const umsatzData = rawUmsatzData
             .filter(d => +d.Jahr >= 2018 && d.Preisart === "REAL")
             .map(d => ({ ...d, Date: new Date(d.Jahr, d.Monat - 1), Umsatz: +d.Umsatz, Umsatz_Veraenderung: +d.Umsatz_Veraenderung }))
@@ -84,20 +84,20 @@ const Dashboard = () => {
                 <Card title="Beschäftigung im Gastgewerbe" subtitle="In tausend, gegliedert in Vollzeit, Teilzeit und Kurzarbeit">
                     {/* <BeschäftigungGraph /> */}
                 </Card>
-                <Card title="Umsatz im Gastgewerbe" subtitle={moment(hoveredTime).format("MMMM YYYY") + " (in Mio €)"}>
-                    <UmsatzGraph />
+                <Card title="Umsatz im Gastgewerbe" subtitle={"in Mio € ( " + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+" )"}>
+                    <UmsatzGraph selectedDate={selectedDate} />
                 </Card>
                 <Card title="Insolvenzen im Gastgewerbe" subtitle="Anzahl der Insolvenzen nach Gewerbekategorie">
                     <Insolvenzen_Barchart/>
                 </Card>
             </div>
             <div className="Middle">
-                <Timeline title="Insolvenzen" subtitle="im Gastgewerbe zwischen 2010 und 2022">
+                <Timeline title="Insolvenzen" subtitle="in Anzahl">
                     <InsolvenzenGraph selectedDate={selectedDate} />
                 </Timeline>
             </div>
             <div className="Bottom">
-                <Timeline title="Coronainfektionen in Deutschland" subtitle="7-Tage-Inzidenz COVID-19 Infektionen je 100.000 Einwohner">
+                <Timeline title="Coronainfektionen in Deutschland" subtitle="als 7-Tage-Inzidenz je 100.000 Einwohner">
                     <CoronaGraph selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
                 </Timeline>
                 <DateControls selectedDate={selectedDate} setSelectedDate={setSelectedDate} />

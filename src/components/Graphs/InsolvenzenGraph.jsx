@@ -70,7 +70,7 @@ const InsolvenzGraph = (props) => {
 
     useMemo(() => {
         //calculate closest data point from mouse position
-        const getDistanceFromHoveredDate = (d) => Math.abs(xAccessor(d) - hoveredTime);
+        const getDistanceFromHoveredDate = (d) => Math.abs(xAccessor(d) - props.selectedDate);
 
         //Beherbergung: WZ08-55; Gastronomie: WZ08-56
         //.filter(d => d["4_Auspraegung_Code"] == "WZ08-55")
@@ -87,7 +87,7 @@ const InsolvenzGraph = (props) => {
         setClosestYValueBeherbergung(yAccessor(closestDataPointBeherbergung))
         setClosestXValueGastronomie(xAccessor(closestDataPointGastronomie))
         setClosestYValueGastronomie(yAccessor(closestDataPointGastronomie))
-    }, [hoveredTime])
+    }, [props.selectedDate])
 
 
 
@@ -113,30 +113,31 @@ const InsolvenzGraph = (props) => {
                     <Line
                         data={insolvenzData.filter(d => d["4_Auspraegung_Code"] !== "WZ08-56")}
                         lineGenerator={lineGenerator}
-                        color={'#B3E2D5'}
+                        color={'#EAA361'}
+                        strokeWidth={3}
                     />
 
                     {/* Line for Beherbergung */}
                     <Line
                         data={insolvenzData.filter(d => d["4_Auspraegung_Code"] === "WZ08-56")}
                         lineGenerator={lineGenerator}
-                        color={'#FE99BD'}
+                        color={'#56A3A6'}
+                        strokeWidth={3}
                     />
 
-                    <rect x={xScale(props.selectedDate)} style={{ width: "1px", height: dms.innerHeight, stroke: '#ff8e76', strokeDasharray: '1 1', strokeWidth: "1px" }} />
+                    <rect x={xScale(props.selectedDate)} style={{ width: "3px", fill:'red', height: dms.innerHeight, stroke: '#B8B8B8', strokeWidth: "3px", transform: "translateY(-3px)" }} />
+                        
 
-                    {showTooltipsTime && <>
-                        {/* hover line */}
-                        <rect x={xScale(hoveredTime)} style={{ width: ".5px", height: dms.innerHeight, stroke: '#5c5c5c', strokeDasharray: '1 1', strokeWidth: "1px" }} />
+        
+     
+                    {/* hover Beherbergung*/}
+                    <circle cx={xScale(closestXValueBeherbergung)} cy={yScale(closestYValueBeherbergung)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
 
-                        {/* hover Beherbergung*/}
-                        <circle cx={xScale(closestXValueBeherbergung)} cy={yScale(closestYValueBeherbergung)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
-
-                        {/* hover Gastronomie*/}
-                        <circle cx={xScale(closestXValueGastronomie)} cy={yScale(closestYValueGastronomie)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
+                    {/* hover Gastronomie*/}
+                    <circle cx={xScale(closestXValueGastronomie)} cy={yScale(closestYValueGastronomie)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
 
 
-                    </>}
+                   
 
                     {/* hover line */}
 

@@ -97,6 +97,7 @@ Run one of the following commands to start the app
 
 ### Backlog Features
 
+- [ ] Use accessibility colors (https://coolors.co/b5c2b7-8c93a8-62466b-45364b-2d2327)
 - [ ] Implement tooltips
 - [ ] Implement industry filter
 

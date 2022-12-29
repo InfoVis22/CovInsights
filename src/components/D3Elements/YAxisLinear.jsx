@@ -21,13 +21,13 @@ const YAxisLinear = ({ dms, domain = [0, 100], range = [0, 300] }) => {
         <g className="y-axis" ref={axisRef}>
 
             {/* Generate Line */}
-            <path d={`M -6 0 h 6 V ${dms.innerHeight} h -6`} fill="none" stroke="currentColor" />
+            <path d={`M -6 0 h 6 V ${dms.innerHeight} h -6`} fill="none" stroke="#626262" strokeWidth={1.5} />
 
             {/* Generate Ticks */}
             {ticks.map(({ value, yOffset }) => (
                 <g key={value} transform={`translate(0, ${yOffset})`}>
                     <line x2="-6" stroke="currentColor" />
-                    <text key={value} style={{ fontSize: "8px", textAnchor: "end", transform: "translate(-10px, 0.32em)" }}>
+                    <text key={value} style={{ fontSize: "11px", textAnchor: "end", transform: "translate(-10px, 0.32em)" }}>
                         {value}
                     </text>
                 </g>

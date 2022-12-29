@@ -26,13 +26,13 @@ const XAxisLinear = ({ dms, domain = [0, 100], range = [0, 300] }) => {
         <g className="x-axis" transform={`translate(0,${dms.innerHeight})`} ref={axisRef}>
 
             {/* Generate Line */}
-            <path d={`M ${range[0]} 6 v -6 H ${dms.innerWidth} v 6`} fill="none" stroke="currentColor" />
+            <path d={`M ${range[0]} 6 v -6 H ${dms.innerWidth} v 0`} fill="none" stroke="#626262" strokeWidth={1.5} />
 
             {/* Generate Ticks */}
             {ticks.map(({ value, xOffset }) => (
                 <g key={value} transform={`translate(${xOffset}, 0)`} style={{ transition: "all 0.5s ease-in-out 0s" }}>
-                    <line y2="6" stroke="currentColor" />
-                    <text key={value} style={{ fontSize: "8px", textAnchor: "middle", transform: "translateY(16px)" }}>
+                    <line y2="6" stroke="#626262" />
+                    <text key={value} style={{ fontSize: "11px", textAnchor: "middle", transform: "translateY(16px)" }}>
                         {value}
                     </text>
                 </g>

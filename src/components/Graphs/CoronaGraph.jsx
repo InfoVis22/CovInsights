@@ -22,6 +22,8 @@ const CoronaGraph = (props) => {
     const [closestXValue, setClosestXValue] = useState(0)
     const [closestYValue, setClosestYValue] = useState(0)
 
+    const [closestYValueToSelected, setclosestYValueToSelected] = useState(0)
+
     const xAccessor = (d) => d.Date;
     const yAccessor = (d) => d.Inzidenz;
 
@@ -78,7 +80,18 @@ const CoronaGraph = (props) => {
         const closestDataPoint = coronaData[closestIndex];
         setClosestXValue(xAccessor(closestDataPoint))
         setClosestYValue(yAccessor(closestDataPoint))
+
     }, [hoveredTime])
+
+    useMemo(() => {
+        //calculate closest data point from mouse position
+        const getDistanceFromHoveredDate = (d) => Math.abs(xAccessor(d) - props.selectedDate);
+        const closestIndexToSelected = d3.scan(coronaData, (a, b) => getDistanceFromHoveredDate(a) - getDistanceFromHoveredDate(b));
+
+        //Grab the data point at that index
+        const closestDataPointToSelected = coronaData[closestIndexToSelected];
+        setclosestYValueToSelected(yAccessor(closestDataPointToSelected))
+    }, [props.selectedDate])
 
     const dateToX = (date) => {
         console.log(date)
@@ -106,14 +119,18 @@ const CoronaGraph = (props) => {
                         range={yScale.range()}>
                     </YAxisLinear>
 
+                    <rect x={xScale(props.selectedDate)} style={{ width: "3px", fill:'red', height: dms.innerHeight, stroke: '#B8B8B8', strokeWidth: "3px", transform: "translateY(-3px)" }} />
+     
                     <Line
                         data={coronaData}
                         lineGenerator={lineGenerator}
-                        color={'#545454'}
+                        color={'#2D2327'}
+                        strokeWidth={3}
                     />
 
-                    <rect x={xScale(props.selectedDate)} style={{ width: "1px", height: dms.innerHeight, stroke: '#ff8e76', strokeDasharray: '1 1', strokeWidth: "1px" }} />
+                    <circle cx={xScale(props.selectedDate)+2}  cy={yScale(closestYValueToSelected)}r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
 
+    
                     {showTooltipsTime && <>
 
                         {/* hover line */}

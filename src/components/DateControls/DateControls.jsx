@@ -20,9 +20,9 @@ const DateControls = (props) => {
         if(isPlaying){
             updateCount()
 
-            //Here is the magic, adding 1 day every second
+            //Here is the magic, adding 2 day every second
             let newDate = new Date(props.selectedDate);
-            newDate.setDate(newDate.getDate() + 1);
+            newDate.setDate(newDate.getDate() + 2);
             props.setSelectedDate(newDate);
 
             //Here is the reset if the date goes at the end
