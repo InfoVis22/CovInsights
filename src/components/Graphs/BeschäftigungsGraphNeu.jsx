@@ -18,28 +18,29 @@ const BeschäftigungsGraphNeu = (props) => {
 
     const svgRef = useRef();
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
-    const { umsatzData, hoveredTime } = useAppContext()
+    const { gastgewerbeData, hoveredTime } = useAppContext()
     const [closestXValue, setClosestXValue] = useState(0)
     const [closestYValue, setClosestYValue] = useState(0)
     const [showTooltip, setShowTooltip] = useState(false)
-    const [filteredUmsatzData, setFilteredUmsatzData] = useState([])
+    const [filteredGastGewerbeData, setFilteredGastGewerbeData] = useState([])
 
-    const xAccessor = (d) => d.Umsatz;
+    const xAccessor = (d) => d.GastGewerbe;
     const yAccessor = (d) => d.Branche;
 
     useEffect(() => {
 
         const yearMonthTime = [props.selectedDate.getFullYear(), props.selectedDate.getMonth()].join("-")
-        const filteredData = umsatzData.filter(d => (d.Date.getFullYear() + "-" + d.Date.getMonth()) === yearMonthTime)
+        console.log(gastgewerbeData)
+        const filteredData = gastgewerbeData.filter(d => (d.Date.getFullYear() + "-" + d.Date.getMonth()) === yearMonthTime)
         console.log(filteredData)
 
-        setFilteredUmsatzData(filteredData)
+        setFilteredGastGewerbeData(filteredData)
     }, [props.selectedDate])
 
     //X-Scale for graph
     const xScale = useMemo(() => (
         d3.scaleLinear()
-            .domain([0, d3.max(umsatzData, d => xAccessor(d))])
+            .domain([0, d3.max(gastgewerbeData, d => xAccessor(d))])
             .range([0, dms.innerWidth])
             .nice()
     ), [dms.innerWidth])
@@ -47,7 +48,7 @@ const BeschäftigungsGraphNeu = (props) => {
     //Y-Scale for graph
     const yScale = useMemo(() => (
         d3.scaleBand()
-            .domain(umsatzData.map(d => d.Branche_Label))
+            .domain(gastgewerbeData.map(d => d.Branche_Label))
             .range([dms.innerHeight, 0])
             .padding(0.4)
 
@@ -90,7 +91,7 @@ const BeschäftigungsGraphNeu = (props) => {
                 <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
      
-                    {filteredUmsatzData.map((d, i) =>
+                    {filteredGastGewerbeData.map((d, i) =>
                     
                         <rect className="bar"
                             key={i}

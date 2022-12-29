@@ -10,6 +10,7 @@ import UmsatzGraph from '../components/Graphs/UmsatzGraph'
 import moment from 'moment'
 import DateControls from '../components/DateControls/DateControls'
 import Insolvenzen_Barchart from "../components/Graphs/Insolvenzen_Barchart";
+import BeschäftigungsGraphNeu from '../components/Graphs/BeschäftigungsGraphNeu'
 
 
 const Dashboard = () => {
@@ -28,6 +29,8 @@ const Dashboard = () => {
         //load Gastgewerbe (general) Data 2005 - 2022
         const rawGastgewerbeData = await d3.dsv(";", "../data/Gastgewerbe05-22.csv")
         const gastgewerbeData = rawGastgewerbeData.filter(d => d.Zeit == 2019)
+        console.log("heuir")
+        console.log(gastgewerbeData)
         setGastgewerbeData(gastgewerbeData)
 
 
@@ -36,7 +39,6 @@ const Dashboard = () => {
         const umsatzData = rawUmsatzData
             .filter(d => +d.Jahr >= 2018 && d.Preisart === "REAL")
             .map(d => ({ ...d, Date: new Date(d.Jahr, d.Monat - 1), Umsatz: +d.Umsatz, Umsatz_Veraenderung: +d.Umsatz_Veraenderung }))
-        console.log(umsatzData)
         setUmsatzData(umsatzData)
 
 
@@ -82,7 +84,7 @@ const Dashboard = () => {
         <div className="Page Home">
             <div className="Top">
                 <Card title="Beschäftigung im Gastgewerbe" subtitle="In tausend, gegliedert in Vollzeit, Teilzeit und Kurzarbeit">
-                    {/* <BeschäftigungGraph /> */}
+                    
                 </Card>
                 <Card title="Umsatz im Gastgewerbe" subtitle={"in Mio € ( " + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+" )"}>
                     <UmsatzGraph selectedDate={selectedDate} />
