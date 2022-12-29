@@ -91,13 +91,14 @@ Run one of the following commands to start the app
 - [x] Implement play, stop and rewind controls
 
 ### In Progress Features
-- [ ] Finalize Database Cleaning & Mapping
+- [ ] Clean and add data for Insolvencies (per Month and per type of establishment)
+- [ ] Clean and add data for Employment (per Month and per type of establishment)
 - [ ] Create line grapth to show Covid Cases
 - [ ] Create bar charts for employment, revenue and insovencies
 
 ### Backlog Features
 
-- [ ] Use accessibility colors (https://coolors.co/b5c2b7-8c93a8-62466b-45364b-2d2327)
+- [ ] Use accessibility colors (Current: https://coolors.co/eaa361-56a3a6-b8b8b8-45364b-2d2327)
 - [ ] Implement tooltips
 - [ ] Implement industry filter
 
