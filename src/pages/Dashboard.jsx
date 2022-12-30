@@ -110,14 +110,14 @@ const Dashboard = () => {
             </div>
             <div className="Middle">
                 <Timeline title="Insolvenzen" subtitle="in Anzahl">
-                    <InsolvenzenGraph selectedDate={selectedDate} />
+                    <InsolvenzenGraph />
                 </Timeline>
             </div>
             <div className="Bottom">
                 <Timeline title="Coronainfektionen in Deutschland" subtitle="als 7-Tage-Inzidenz je 100.000 Einwohner">
-                    <CoronaGraph selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+                    <CoronaGraph />
                 </Timeline>
-                <DateControls selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+                <DateControls />
 
             </div>
 
