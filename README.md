@@ -89,18 +89,19 @@ Run one of the following commands to start the app
 - [x] Create Gantt
 - [x] Create time slider to select time
 - [x] Implement play, stop and rewind controls
+- [x] Create line grapth to show Covid Cases
+- [x] Create bar charts for employment, revenue and insovencies
 
 ### In Progress Features
-- [ ] Clean and add data for Insolvencies (per Month and per type of establishment)
-- [ ] Clean and add data for Employment (per Month and per type of establishment)
-- [ ] Create line grapth to show Covid Cases
-- [ ] Create bar charts for employment, revenue and insovencies
+- [x] Clean and add data for Insolvencies (per Month and per type of establishment) > Double Check
+- [x] Clean and add data for Employment (per Month and per type of establishment) > Double Check
+- [] Add different types of employement to middle bar chart?
 
 ### Backlog Features
 
 - [ ] Use accessibility colors (Current: https://coolors.co/eaa361-56a3a6-b8b8b8-45364b-2d2327)
 - [ ] Implement tooltips
-- [ ] Implement industry filter
+- [ ] Implement industry filter > Do we even need it? The current categories are already easy to read
 
 <!-- CONTACT -->
 ## Contact
