@@ -4,34 +4,47 @@ import Timeline from '../components/Timeline/Timeline'
 import * as d3 from 'd3'
 import { useAppContext } from '../contexts/appContext'
 import { useEffect, useState } from 'react'
-import CoronaGraph from '../components/Graphs/CoronaGraph'
-import InsolvenzenGraph from '../components/Graphs/InsolvenzenGraph'
-import UmsatzGraph from '../components/Graphs/UmsatzGraph'
 import moment from 'moment'
-import DateControls from '../components/DateControls/DateControls'
-import Insolvenzen_Barchart from "../components/Graphs/Insolvenzen_Barchart";
-import BeschäftigungsGraphNeu from '../components/Graphs/BeschäftigungsGraphNeu'
 
+//Barcharts
+
+import Insolvenzen_Barchart from "../components/Graphs/Insolvenzen_Barchart";
+import EmploymentGraph from '../components/Graphs/EmploymentGraph'
+
+//Timeline
+import InsolvenzenGraph from '../components/Graphs/InsolvenzenGraph'
+import CoronaGraph from '../components/Graphs/CoronaGraph'
+
+//Controls
+import DateControls from '../components/DateControls/DateControls'
+import RevenueGraph from '../components/Graphs/RevenueGraph'
 
 const Dashboard = () => {
 
     //---- define AppContext ----
-    const { hoveredTime, setGastgewerbeData, setCoronaData, setInsolvenzData, setTimeFrame, setUmsatzData } = useAppContext()
+    const { hoveredTime, setEmploymentData, setCoronaData, setInsolvenzData, setTimeFrame, setUmsatzData, selectedDate, setSelectedDate } = useAppContext()
 
     //---- Dashboard State ----
     const [isLoadingData, setIsLoadingData] = useState(true)
-    const [selectedDate, setSelectedDate] = useState(new Date("2018-01-01"))
 
     //---- load different data ----
     const loadData = async () => {
         console.log("Load Data...")
 
-        //load Gastgewerbe (general) Data 2005 - 2022
-        const rawGastgewerbeData = await d3.dsv(";", "../data/Gastgewerbe05-22.csv")
-        const gastgewerbeData = rawGastgewerbeData.filter(d => d.Zeit == 2019)
-        console.log("heuir")
-        console.log(gastgewerbeData)
-        setGastgewerbeData(gastgewerbeData)
+        //load Employment 
+        const rawEmployment = await d3.dsv(";", "../cleaned_data/Beschäftigung.csv")
+        const employmentData = rawEmployment.filter((row) => {
+            if(row.Jahr >= 2018){
+                return true;
+            }
+        }).map((row) => {
+            const newRow = row
+            newRow.BeschaeftigteGesamt = parseFloat(row.BeschaeftigteGesamt)
+            return newRow
+        })
+        console.log("Beschäftigte")
+        console.log(employmentData)
+        setEmploymentData(employmentData)
 
 
         //load Umsatz Data - 2022
@@ -39,6 +52,8 @@ const Dashboard = () => {
         const umsatzData = rawUmsatzData
             .filter(d => +d.Jahr >= 2018 && d.Preisart === "REAL")
             .map(d => ({ ...d, Date: new Date(d.Jahr, d.Monat - 1), Umsatz: +d.Umsatz, Umsatz_Veraenderung: +d.Umsatz_Veraenderung }))
+        console.log("Umsatz")
+        console.log(umsatzData)
         setUmsatzData(umsatzData)
 
 
@@ -84,10 +99,10 @@ const Dashboard = () => {
         <div className="Page Home">
             <div className="Top">
                 <Card title="Beschäftigung im Gastgewerbe" subtitle="In tausend, gegliedert in Vollzeit, Teilzeit und Kurzarbeit">
-                    
+                    <EmploymentGraph />
                 </Card>
                 <Card title="Umsatz im Gastgewerbe" subtitle={"in Mio € ( " + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+" )"}>
-                    <UmsatzGraph selectedDate={selectedDate} />
+                    <RevenueGraph />
                 </Card>
                 <Card title="Insolvenzen im Gastgewerbe" subtitle="Anzahl der Insolvenzen nach Gewerbekategorie">
                     <Insolvenzen_Barchart/>

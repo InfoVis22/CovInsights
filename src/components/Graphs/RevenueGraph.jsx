@@ -14,33 +14,31 @@ const chartSettings = {
     marginLeft: 100
 }
 
-const BeschäftigungsGraphNeu = (props) => {
+const RevenueGraph = () => {
 
     const svgRef = useRef();
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
-    const { gastgewerbeData, hoveredTime } = useAppContext()
+    const { umsatzData, hoveredTime, selectedDate, setSelectedDate } = useAppContext()
     const [closestXValue, setClosestXValue] = useState(0)
     const [closestYValue, setClosestYValue] = useState(0)
     const [showTooltip, setShowTooltip] = useState(false)
-    const [filteredGastGewerbeData, setFilteredGastGewerbeData] = useState([])
+    const [filteredUmsatzData, setFilteredUmsatzData] = useState([])
 
-    const xAccessor = (d) => d.GastGewerbe;
+    const xAccessor = (d) => d.Umsatz;
     const yAccessor = (d) => d.Branche;
 
     useEffect(() => {
 
-        const yearMonthTime = [props.selectedDate.getFullYear(), props.selectedDate.getMonth()].join("-")
-        console.log(gastgewerbeData)
-        const filteredData = gastgewerbeData.filter(d => (d.Date.getFullYear() + "-" + d.Date.getMonth()) === yearMonthTime)
-        console.log(filteredData)
-
-        setFilteredGastGewerbeData(filteredData)
-    }, [props.selectedDate])
+        const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth()+1].join("-")
+        const filteredData = umsatzData.filter(d => (d.Date.getFullYear() + "-" + d.Date.getMonth()) === yearMonthTime)
+        
+        setFilteredUmsatzData(filteredData)
+    }, [selectedDate])
 
     //X-Scale for graph
     const xScale = useMemo(() => (
         d3.scaleLinear()
-            .domain([0, d3.max(gastgewerbeData, d => xAccessor(d))])
+            .domain([0, d3.max(umsatzData, d => xAccessor(d))])
             .range([0, dms.innerWidth])
             .nice()
     ), [dms.innerWidth])
@@ -48,7 +46,7 @@ const BeschäftigungsGraphNeu = (props) => {
     //Y-Scale for graph
     const yScale = useMemo(() => (
         d3.scaleBand()
-            .domain(gastgewerbeData.map(d => d.Branche_Label))
+            .domain(umsatzData.map(d => d.Branche_Label))
             .range([dms.innerHeight, 0])
             .padding(0.4)
 
@@ -91,7 +89,7 @@ const BeschäftigungsGraphNeu = (props) => {
                 <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
      
-                    {filteredGastGewerbeData.map((d, i) =>
+                    {filteredUmsatzData.map((d, i) =>
                     
                         <rect className="bar"
                             key={i}
@@ -133,4 +131,4 @@ const BeschäftigungsGraphNeu = (props) => {
     )
 }
 
-export default BeschäftigungsGraphNeu
+export default RevenueGraph

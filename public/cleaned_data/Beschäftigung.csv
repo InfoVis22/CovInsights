@@ -1,0 +1,2089 @@
+﻿Jahr;Monat;Branche_Label;BeschaeftigteGesamt;Vollzeitbeschaeftigte;Teilzeitbeschaeftigte;Typ
+1994;1;Hotels;106,1;133,1;74,1;Beherbergung
+1994;2;Hotels;106,2;132,5;74,8;Beherbergung
+1994;3;Hotels;108,6;134,3;77,7;Beherbergung
+1994;4;Hotels;110,7;135,9;80,4;Beherbergung
+1994;5;Hotels;113,1;138,3;83,2;Beherbergung
+1994;6;Hotels;114,1;138,8;84,4;Beherbergung
+1994;7;Hotels;113,8;138,4;84,5;Beherbergung
+1994;8;Hotels;114,6;140,4;83,5;Beherbergung
+1994;9;Hotels;115,4;141;84,8;Beherbergung
+1994;10;Hotels;113,3;138,7;83,2;Beherbergung
+1994;11;Hotels;109,1;134,1;79,5;Beherbergung
+1994;12;Hotels;109;133,2;80;Beherbergung
+1994;1;Ferienunterkünfte;104,6;129,8;79,7;Beherbergung
+1994;2;Ferienunterkünfte;106,3;128,4;84,8;Beherbergung
+1994;3;Ferienunterkünfte;116,3;143,1;91;Beherbergung
+1994;4;Ferienunterkünfte;123,4;151,3;98,5;Beherbergung
+1994;5;Ferienunterkünfte;127,1;154,3;102,5;Beherbergung
+1994;6;Ferienunterkünfte;127,8;156,3;101,7;Beherbergung
+1994;7;Ferienunterkünfte;128,3;157;101,1;Beherbergung
+1994;8;Ferienunterkünfte;128,9;158,7;100,1;Beherbergung
+1994;9;Ferienunterkünfte;128,3;157,5;101,2;Beherbergung
+1994;10;Ferienunterkünfte;125,9;153,9;100,7;Beherbergung
+1994;11;Ferienunterkünfte;112,7;134,2;92,4;Beherbergung
+1994;12;Ferienunterkünfte;109,1;131,8;87,9;Beherbergung
+1994;1;Campingplätze;66,2;79,3;54;Beherbergung
+1994;2;Campingplätze;66,4;78,5;55,2;Beherbergung
+1994;3;Campingplätze;72,5;88,3;57,9;Beherbergung
+1994;4;Campingplätze;87;104,3;71,1;Beherbergung
+1994;5;Campingplätze;91,9;107,9;76,9;Beherbergung
+1994;6;Campingplätze;96,7;110,2;83,7;Beherbergung
+1994;7;Campingplätze;99,7;111,8;87,8;Beherbergung
+1994;8;Campingplätze;100,1;111,6;88,6;Beherbergung
+1994;9;Campingplätze;93,5;109,3;78,6;Beherbergung
+1994;10;Campingplätze;82,4;99,3;66,9;Beherbergung
+1994;11;Campingplätze;70,6;83,9;58,2;Beherbergung
+1994;12;Campingplätze;66,7;78;56,2;Beherbergung
+1994;1;Restaurants / Cafe;115,3;161,9;89,1;Gastronomie
+1994;2;Restaurants / Cafe;116,2;163,1;89,9;Gastronomie
+1994;3;Restaurants / Cafe;119,2;168,7;91,4;Gastronomie
+1994;4;Restaurants / Cafe;122;172,1;94;Gastronomie
+1994;5;Restaurants / Cafe;124,8;174,9;96,9;Gastronomie
+1994;6;Restaurants / Cafe;124,1;174,7;95,8;Gastronomie
+1994;7;Restaurants / Cafe;124,5;174,1;96,9;Gastronomie
+1994;8;Restaurants / Cafe;124,7;173,6;97,5;Gastronomie
+1994;9;Restaurants / Cafe;124,4;173,7;96,9;Gastronomie
+1994;10;Restaurants / Cafe;122,4;170,5;95,5;Gastronomie
+1994;11;Restaurants / Cafe;118,7;164,1;93,3;Gastronomie
+1994;12;Restaurants / Cafe;119,2;162,8;94,7;Gastronomie
+1994;1;Caterer;82,2;115,6;60,1;Gastronomie
+1994;2;Caterer;82;116,1;59,3;Gastronomie
+1994;3;Caterer;81,9;116,1;59,3;Gastronomie
+1994;4;Caterer;82,8;116,2;60,5;Gastronomie
+1994;5;Caterer;84;116,9;62,1;Gastronomie
+1994;6;Caterer;86,6;117,2;66,6;Gastronomie
+1994;7;Caterer;83,7;117,1;61,2;Gastronomie
+1994;8;Caterer;84,1;117,2;61,8;Gastronomie
+1994;9;Caterer;84,1;117,7;61,8;Gastronomie
+1994;10;Caterer;84,3;117,8;62,1;Gastronomie
+1994;11;Caterer;85,1;117,5;63,6;Gastronomie
+1994;12;Caterer;85,2;116,9;64,3;Gastronomie
+1994;1;Bar;140,3;221,7;116,2;Gastronomie
+1994;2;Bar;141,7;222,7;117,8;Gastronomie
+1994;3;Bar;142,3;224,9;117,8;Gastronomie
+1994;4;Bar;143,4;226,3;118,9;Gastronomie
+1994;5;Bar;144,2;227,9;119,6;Gastronomie
+1994;6;Bar;144,9;229,3;119,9;Gastronomie
+1994;7;Bar;144,7;230,8;119,4;Gastronomie
+1994;8;Bar;145,3;230;120,4;Gastronomie
+1994;9;Bar;146,9;238,1;120,1;Gastronomie
+1994;10;Bar;146,3;228,9;121,9;Gastronomie
+1994;11;Bar;145,6;227,3;121,6;Gastronomie
+1994;12;Bar;146,1;228,9;121,5;Gastronomie
+1995;1;Hotels;102,9;127,1;73,9;Beherbergung
+1995;2;Hotels;103,5;127,5;75;Beherbergung
+1995;3;Hotels;105,5;129,6;76,6;Beherbergung
+1995;4;Hotels;108,1;131,3;80;Beherbergung
+1995;5;Hotels;111,1;133,8;83,8;Beherbergung
+1995;6;Hotels;111,5;133,6;84,5;Beherbergung
+1995;7;Hotels;111,3;134,5;83,2;Beherbergung
+1995;8;Hotels;113,4;137;84,8;Beherbergung
+1995;9;Hotels;114,4;137,3;86,7;Beherbergung
+1995;10;Hotels;111,5;134,7;83,8;Beherbergung
+1995;11;Hotels;105,6;127,2;79,5;Beherbergung
+1995;12;Hotels;104,8;126,4;79,1;Beherbergung
+1995;1;Ferienunterkünfte;100,1;122,4;79,2;Beherbergung
+1995;2;Ferienunterkünfte;104,4;124,6;84,5;Beherbergung
+1995;3;Ferienunterkünfte;108,4;129,5;88,2;Beherbergung
+1995;4;Ferienunterkünfte;119,7;138,2;102,8;Beherbergung
+1995;5;Ferienunterkünfte;119,7;138,5;104;Beherbergung
+1995;6;Ferienunterkünfte;120,7;140,7;102,9;Beherbergung
+1995;7;Ferienunterkünfte;123,6;142,8;104,8;Beherbergung
+1995;8;Ferienunterkünfte;125,9;144,1;107,5;Beherbergung
+1995;9;Ferienunterkünfte;121,1;141,7;102,6;Beherbergung
+1995;10;Ferienunterkünfte;119;138,7;100,7;Beherbergung
+1995;11;Ferienunterkünfte;105,9;126,8;85;Beherbergung
+1995;12;Ferienunterkünfte;103,3;121,7;86,2;Beherbergung
+1995;1;Campingplätze;56;63;49,2;Beherbergung
+1995;2;Campingplätze;55,3;61,1;49,5;Beherbergung
+1995;3;Campingplätze;61;67,6;54,3;Beherbergung
+1995;4;Campingplätze;79,9;85,7;73,6;Beherbergung
+1995;5;Campingplätze;85,1;90,5;79;Beherbergung
+1995;6;Campingplätze;91;95,9;85,4;Beherbergung
+1995;7;Campingplätze;98,5;100,5;95;Beherbergung
+1995;8;Campingplätze;95,2;97,4;91,8;Beherbergung
+1995;9;Campingplätze;83,8;91,5;75,7;Beherbergung
+1995;10;Campingplätze;72,8;78,7;66,5;Beherbergung
+1995;11;Campingplätze;57,5;66,9;48,5;Beherbergung
+1995;12;Campingplätze;57,8;64,5;51,3;Beherbergung
+1995;1;Restaurants / Cafe;113,1;155,8;89,1;Gastronomie
+1995;2;Restaurants / Cafe;113,7;158,1;88,9;Gastronomie
+1995;3;Restaurants / Cafe;115,6;160,6;90,8;Gastronomie
+1995;4;Restaurants / Cafe;119,3;166;93,2;Gastronomie
+1995;5;Restaurants / Cafe;122,1;168,7;96,1;Gastronomie
+1995;6;Restaurants / Cafe;122,9;170,2;96,7;Gastronomie
+1995;7;Restaurants / Cafe;123,4;170,5;97;Gastronomie
+1995;8;Restaurants / Cafe;124,1;170,1;98,4;Gastronomie
+1995;9;Restaurants / Cafe;123;169,2;97,4;Gastronomie
+1995;10;Restaurants / Cafe;120,3;164,4;95,9;Gastronomie
+1995;11;Restaurants / Cafe;116,5;157,8;93,5;Gastronomie
+1995;12;Restaurants / Cafe;116,6;156,3;94,6;Gastronomie
+1995;1;Caterer;83;115;61,9;Gastronomie
+1995;2;Caterer;84,3;116,8;62,8;Gastronomie
+1995;3;Caterer;82,7;114,7;61,4;Gastronomie
+1995;4;Caterer;84,5;118,1;62,2;Gastronomie
+1995;5;Caterer;84,1;117,2;62,1;Gastronomie
+1995;6;Caterer;86,2;118,7;64,9;Gastronomie
+1995;7;Caterer;84,4;119,4;61,1;Gastronomie
+1995;8;Caterer;84,5;120,8;60;Gastronomie
+1995;9;Caterer;85,2;118,9;62,8;Gastronomie
+1995;10;Caterer;85,1;118,6;62,9;Gastronomie
+1995;11;Caterer;84,3;117,3;62,6;Gastronomie
+1995;12;Caterer;84,5;117,4;62,6;Gastronomie
+1995;1;Bar;138,7;214,6;116;Gastronomie
+1995;2;Bar;141;215,7;118,3;Gastronomie
+1995;3;Bar;138,2;215,5;114,6;Gastronomie
+1995;4;Bar;141,1;214,6;118,7;Gastronomie
+1995;5;Bar;144,7;216,1;123,1;Gastronomie
+1995;6;Bar;143,5;216,8;121,3;Gastronomie
+1995;7;Bar;140,4;215,2;117,5;Gastronomie
+1995;8;Bar;140,3;214,2;117,7;Gastronomie
+1995;9;Bar;142,9;224,7;118,3;Gastronomie
+1995;10;Bar;142,4;219,6;119,4;Gastronomie
+1995;11;Bar;141,1;211,9;119,6;Gastronomie
+1995;12;Bar;141,5;210,4;120,6;Gastronomie
+1996;1;Hotels;100,5;122,8;73,9;Beherbergung
+1996;2;Hotels;100,5;123;73,7;Beherbergung
+1996;3;Hotels;102,8;125;76,2;Beherbergung
+1996;4;Hotels;104,5;126,8;77,7;Beherbergung
+1996;5;Hotels;107,3;129,2;81;Beherbergung
+1996;6;Hotels;108;129,8;81,8;Beherbergung
+1996;7;Hotels;107,6;129,6;81,3;Beherbergung
+1996;8;Hotels;108,8;131,7;81,3;Beherbergung
+1996;9;Hotels;109,4;132,3;82;Beherbergung
+1996;10;Hotels;107,7;130,5;80,3;Beherbergung
+1996;11;Hotels;102,2;124,5;75,7;Beherbergung
+1996;12;Hotels;102,4;123,5;77,4;Beherbergung
+1996;1;Ferienunterkünfte;106;132,2;80,1;Beherbergung
+1996;2;Ferienunterkünfte;107,4;130,7;84,9;Beherbergung
+1996;3;Ferienunterkünfte;116,5;137,4;97,2;Beherbergung
+1996;4;Ferienunterkünfte;120,2;140,1;101,9;Beherbergung
+1996;5;Ferienunterkünfte;121,5;142,3;103,2;Beherbergung
+1996;6;Ferienunterkünfte;121,2;141,5;102,4;Beherbergung
+1996;7;Ferienunterkünfte;123;141,6;105,8;Beherbergung
+1996;8;Ferienunterkünfte;126,2;143,9;109,8;Beherbergung
+1996;9;Ferienunterkünfte;124,4;141;109,4;Beherbergung
+1996;10;Ferienunterkünfte;121,1;138,9;105,7;Beherbergung
+1996;11;Ferienunterkünfte;106,3;127,3;87,8;Beherbergung
+1996;12;Ferienunterkünfte;108,9;127,3;93,6;Beherbergung
+1996;1;Campingplätze;56,2;63,1;49,5;Beherbergung
+1996;2;Campingplätze;57,6;63,8;51,5;Beherbergung
+1996;3;Campingplätze;62;69,4;54,6;Beherbergung
+1996;4;Campingplätze;80,1;86,6;73,5;Beherbergung
+1996;5;Campingplätze;85,3;93;77,5;Beherbergung
+1996;6;Campingplätze;90,2;97,8;82;Beherbergung
+1996;7;Campingplätze;97,3;101,9;91,8;Beherbergung
+1996;8;Campingplätze;94,7;99,4;88,9;Beherbergung
+1996;9;Campingplätze;88,6;95,1;81,7;Beherbergung
+1996;10;Campingplätze;79,3;82,5;75,2;Beherbergung
+1996;11;Campingplätze;67,2;70,9;62,8;Beherbergung
+1996;12;Campingplätze;62,2;65,1;58,8;Beherbergung
+1996;1;Restaurants / Cafe;110,5;149;89,1;Gastronomie
+1996;2;Restaurants / Cafe;111,2;150,4;89,2;Gastronomie
+1996;3;Restaurants / Cafe;114,6;156,4;91,6;Gastronomie
+1996;4;Restaurants / Cafe;117,5;160,1;93,9;Gastronomie
+1996;5;Restaurants / Cafe;119,6;161,4;96,6;Gastronomie
+1996;6;Restaurants / Cafe;120,6;162,9;97,3;Gastronomie
+1996;7;Restaurants / Cafe;120,4;162,5;97,2;Gastronomie
+1996;8;Restaurants / Cafe;120,9;161,4;98,5;Gastronomie
+1996;9;Restaurants / Cafe;120,1;161,3;97,4;Gastronomie
+1996;10;Restaurants / Cafe;117,6;157;95,9;Gastronomie
+1996;11;Restaurants / Cafe;113,4;148,6;94;Gastronomie
+1996;12;Restaurants / Cafe;113,4;148,3;94,4;Gastronomie
+1996;1;Caterer;80;109,6;60,6;Gastronomie
+1996;2;Caterer;81,6;110,8;62,5;Gastronomie
+1996;3;Caterer;80,2;109,6;60,8;Gastronomie
+1996;4;Caterer;80,2;109,1;61,4;Gastronomie
+1996;5;Caterer;81,6;108,6;64,1;Gastronomie
+1996;6;Caterer;82,9;108,4;66,6;Gastronomie
+1996;7;Caterer;80,3;108,1;62,3;Gastronomie
+1996;8;Caterer;80,8;107,1;64;Gastronomie
+1996;9;Caterer;81,7;108,7;64,2;Gastronomie
+1996;10;Caterer;84,4;113,5;65,5;Gastronomie
+1996;11;Caterer;83,3;110,3;66,1;Gastronomie
+1996;12;Caterer;83,2;110,2;66,1;Gastronomie
+1996;1;Bar;135,9;205,6;114,6;Gastronomie
+1996;2;Bar;138,3;205,8;117,5;Gastronomie
+1996;3;Bar;139;204,8;118,8;Gastronomie
+1996;4;Bar;140,9;207,4;120,2;Gastronomie
+1996;5;Bar;142;207,7;121,6;Gastronomie
+1996;6;Bar;139,8;207,5;119;Gastronomie
+1996;7;Bar;137,6;208,9;115,6;Gastronomie
+1996;8;Bar;139,1;206,5;117,8;Gastronomie
+1996;9;Bar;139,7;217,7;116,2;Gastronomie
+1996;10;Bar;143,6;213,9;121,9;Gastronomie
+1996;11;Bar;137,7;201,2;118,3;Gastronomie
+1996;12;Bar;140,3;201,1;121,5;Gastronomie
+1997;1;Hotels;97,5;117,6;73,6;Beherbergung
+1997;2;Hotels;97;116,3;74;Beherbergung
+1997;3;Hotels;99,6;118,2;77,4;Beherbergung
+1997;4;Hotels;101,8;120,6;79,3;Beherbergung
+1997;5;Hotels;104,5;123,7;81,8;Beherbergung
+1997;6;Hotels;105,4;124,2;83,3;Beherbergung
+1997;7;Hotels;105,2;124,5;82,3;Beherbergung
+1997;8;Hotels;107,3;126,8;84,1;Beherbergung
+1997;9;Hotels;107,6;127,9;83,4;Beherbergung
+1997;10;Hotels;106,2;126;82,7;Beherbergung
+1997;11;Hotels;100,7;119,9;78;Beherbergung
+1997;12;Hotels;101,5;119,9;80,1;Beherbergung
+1997;1;Ferienunterkünfte;101,3;119,3;84,1;Beherbergung
+1997;2;Ferienunterkünfte;101,1;119,4;83,1;Beherbergung
+1997;3;Ferienunterkünfte;107,1;122,3;92,6;Beherbergung
+1997;4;Ferienunterkünfte;111,9;127,1;96,4;Beherbergung
+1997;5;Ferienunterkünfte;114,1;129,1;99,6;Beherbergung
+1997;6;Ferienunterkünfte;114,5;129,3;99,8;Beherbergung
+1997;7;Ferienunterkünfte;115,6;132;99,5;Beherbergung
+1997;8;Ferienunterkünfte;114;130,7;97,3;Beherbergung
+1997;9;Ferienunterkünfte;111,6;127,7;96,4;Beherbergung
+1997;10;Ferienunterkünfte;111,4;128,2;96;Beherbergung
+1997;11;Ferienunterkünfte;98,8;114,4;84,8;Beherbergung
+1997;12;Ferienunterkünfte;99,7;117,1;83,9;Beherbergung
+1997;1;Campingplätze;55,8;56,5;54,2;Beherbergung
+1997;2;Campingplätze;55,8;57,2;53,6;Beherbergung
+1997;3;Campingplätze;63,7;70,3;56,7;Beherbergung
+1997;4;Campingplätze;81,9;89,8;73,9;Beherbergung
+1997;5;Campingplätze;89,2;98,8;79,6;Beherbergung
+1997;6;Campingplätze;93,5;99,9;86,4;Beherbergung
+1997;7;Campingplätze;97,7;104;90,9;Beherbergung
+1997;8;Campingplätze;98,8;98,1;97,7;Beherbergung
+1997;9;Campingplätze;93,1;95,4;89,5;Beherbergung
+1997;10;Campingplätze;83;85,7;79,1;Beherbergung
+1997;11;Campingplätze;66,3;69,9;62,2;Beherbergung
+1997;12;Campingplätze;64,4;65,8;62;Beherbergung
+1997;1;Restaurants / Cafe;108,4;142,6;89,5;Gastronomie
+1997;2;Restaurants / Cafe;109,7;143,5;90,9;Gastronomie
+1997;3;Restaurants / Cafe;113,4;150,6;93;Gastronomie
+1997;4;Restaurants / Cafe;116,9;153,8;96,5;Gastronomie
+1997;5;Restaurants / Cafe;119,7;155,6;100;Gastronomie
+1997;6;Restaurants / Cafe;119,6;155,8;99,6;Gastronomie
+1997;7;Restaurants / Cafe;118,8;155,4;98,6;Gastronomie
+1997;8;Restaurants / Cafe;119,4;154,6;99,9;Gastronomie
+1997;9;Restaurants / Cafe;119,3;154,6;99,7;Gastronomie
+1997;10;Restaurants / Cafe;117,1;150,8;98,5;Gastronomie
+1997;11;Restaurants / Cafe;112,4;142,9;95,8;Gastronomie
+1997;12;Restaurants / Cafe;113,1;143,1;96,8;Gastronomie
+1997;1;Caterer;84,3;114,4;64,8;Gastronomie
+1997;2;Caterer;84,3;114,1;65,1;Gastronomie
+1997;3;Caterer;84,3;112,1;66,6;Gastronomie
+1997;4;Caterer;87,1;113,7;70,3;Gastronomie
+1997;5;Caterer;89,4;113;75,1;Gastronomie
+1997;6;Caterer;87,8;112,3;72,5;Gastronomie
+1997;7;Caterer;88,2;114;72;Gastronomie
+1997;8;Caterer;85,8;112,7;68,7;Gastronomie
+1997;9;Caterer;87,9;114,3;71,4;Gastronomie
+1997;10;Caterer;86,5;113,1;69,7;Gastronomie
+1997;11;Caterer;86,4;111,8;70,4;Gastronomie
+1997;12;Caterer;85,6;111,2;69,7;Gastronomie
+1997;1;Bar;129,6;191;110,9;Gastronomie
+1997;2;Bar;130;191,8;111,2;Gastronomie
+1997;3;Bar;133,3;190,1;116;Gastronomie
+1997;4;Bar;132,8;192,2;115;Gastronomie
+1997;5;Bar;136,5;192,2;119,6;Gastronomie
+1997;6;Bar;135,7;191,2;118,8;Gastronomie
+1997;7;Bar;133,2;190,2;116,1;Gastronomie
+1997;8;Bar;131,6;189,7;114;Gastronomie
+1997;9;Bar;132,5;190,9;115;Gastronomie
+1997;10;Bar;132;190,9;114,2;Gastronomie
+1997;11;Bar;131,6;188,5;114,2;Gastronomie
+1997;12;Bar;131,9;189,4;114,3;Gastronomie
+1998;1;Hotels;96,8;115;75,2;Beherbergung
+1998;2;Hotels;97,1;114,4;76,8;Beherbergung
+1998;3;Hotels;98,3;115,7;77,7;Beherbergung
+1998;4;Hotels;101;118,5;80,2;Beherbergung
+1998;5;Hotels;103,8;121,3;83,3;Beherbergung
+1998;6;Hotels;104,3;121,7;83,5;Beherbergung
+1998;7;Hotels;104,4;121,9;83,7;Beherbergung
+1998;8;Hotels;105,1;124,4;82,2;Beherbergung
+1998;9;Hotels;105;124,9;81,3;Beherbergung
+1998;10;Hotels;104,1;122,9;81,8;Beherbergung
+1998;11;Hotels;98,2;116,7;76,2;Beherbergung
+1998;12;Hotels;98,9;116,8;78;Beherbergung
+1998;1;Ferienunterkünfte;95,5;112,8;78,8;Beherbergung
+1998;2;Ferienunterkünfte;96,6;113,9;79,5;Beherbergung
+1998;3;Ferienunterkünfte;99,6;116,1;82,9;Beherbergung
+1998;4;Ferienunterkünfte;105,4;124,4;86,8;Beherbergung
+1998;5;Ferienunterkünfte;109,8;128,3;91,8;Beherbergung
+1998;6;Ferienunterkünfte;110,5;128;93,6;Beherbergung
+1998;7;Ferienunterkünfte;112,7;129,8;95,9;Beherbergung
+1998;8;Ferienunterkünfte;112,7;130;95,8;Beherbergung
+1998;9;Ferienunterkünfte;108,6;126,6;91,5;Beherbergung
+1998;10;Ferienunterkünfte;106,8;124,7;88,8;Beherbergung
+1998;11;Ferienunterkünfte;93,8;112,9;74,2;Beherbergung
+1998;12;Ferienunterkünfte;96,1;112,1;79,4;Beherbergung
+1998;1;Campingplätze;58,6;59,3;56,9;Beherbergung
+1998;2;Campingplätze;58,9;62,6;54,8;Beherbergung
+1998;3;Campingplätze;64;70,8;57,3;Beherbergung
+1998;4;Campingplätze;81,9;90,9;73;Beherbergung
+1998;5;Campingplätze;85,9;92,5;79;Beherbergung
+1998;6;Campingplätze;88,6;94,3;82,3;Beherbergung
+1998;7;Campingplätze;91;98;83,7;Beherbergung
+1998;8;Campingplätze;91,9;95,5;87,1;Beherbergung
+1998;9;Campingplätze;85,2;90,1;79,8;Beherbergung
+1998;10;Campingplätze;72,3;81,3;63,4;Beherbergung
+1998;11;Campingplätze;63,2;68,6;57,7;Beherbergung
+1998;12;Campingplätze;60,3;63,4;56,5;Beherbergung
+1998;1;Restaurants / Cafe;108,4;138,5;91,9;Gastronomie
+1998;2;Restaurants / Cafe;108,7;138,9;92,1;Gastronomie
+1998;3;Restaurants / Cafe;112,4;145,1;94,4;Gastronomie
+1998;4;Restaurants / Cafe;116,2;149,3;98;Gastronomie
+1998;5;Restaurants / Cafe;118,6;151;100,7;Gastronomie
+1998;6;Restaurants / Cafe;117,8;150,8;99,7;Gastronomie
+1998;7;Restaurants / Cafe;117,1;150,3;98,9;Gastronomie
+1998;8;Restaurants / Cafe;117,8;150,4;100;Gastronomie
+1998;9;Restaurants / Cafe;117,7;151,3;99,3;Gastronomie
+1998;10;Restaurants / Cafe;115,1;146,9;97,7;Gastronomie
+1998;11;Restaurants / Cafe;110,5;138,4;95,2;Gastronomie
+1998;12;Restaurants / Cafe;111,3;138,5;96,4;Gastronomie
+1998;1;Caterer;85,5;112,8;68,1;Gastronomie
+1998;2;Caterer;86,1;113,2;68,7;Gastronomie
+1998;3;Caterer;87,3;115,2;69,7;Gastronomie
+1998;4;Caterer;86,7;113;70,2;Gastronomie
+1998;5;Caterer;87,5;112,2;72,1;Gastronomie
+1998;6;Caterer;86,2;112;69,9;Gastronomie
+1998;7;Caterer;86,8;112,3;70,8;Gastronomie
+1998;8;Caterer;86,2;113,1;69;Gastronomie
+1998;9;Caterer;87,2;114,1;70,2;Gastronomie
+1998;10;Caterer;87,4;113,3;71,2;Gastronomie
+1998;11;Caterer;88,7;115,4;71,7;Gastronomie
+1998;12;Caterer;87,3;114,1;70,4;Gastronomie
+1998;1;Bar;126,2;176,6;111,2;Gastronomie
+1998;2;Bar;126,2;174,8;111,5;Gastronomie
+1998;3;Bar;127,2;176,1;112,6;Gastronomie
+1998;4;Bar;129,4;175,2;115,4;Gastronomie
+1998;5;Bar;129,8;178,1;115,2;Gastronomie
+1998;6;Bar;126,9;181,5;110,6;Gastronomie
+1998;7;Bar;129,2;177,4;114,3;Gastronomie
+1998;8;Bar;128,1;176,7;113;Gastronomie
+1998;9;Bar;124,4;179,1;108;Gastronomie
+1998;10;Bar;125,2;176,6;109,9;Gastronomie
+1998;11;Bar;124,1;174,1;108,9;Gastronomie
+1998;12;Bar;124,7;174,1;110;Gastronomie
+1999;1;Hotels;96,5;116,1;73,2;Beherbergung
+1999;2;Hotels;96,1;114,9;73,9;Beherbergung
+1999;3;Hotels;96,8;116,5;73,2;Beherbergung
+1999;4;Hotels;95,3;118,8;67;Beherbergung
+1999;5;Hotels;97,5;121,6;68,6;Beherbergung
+1999;6;Hotels;98;123,2;67,7;Beherbergung
+1999;7;Hotels;99,7;123,7;70,7;Beherbergung
+1999;8;Hotels;100,8;126,7;69,7;Beherbergung
+1999;9;Hotels;101,4;128,3;69,1;Beherbergung
+1999;10;Hotels;100,1;126,1;69,2;Beherbergung
+1999;11;Hotels;95,6;120,3;66,2;Beherbergung
+1999;12;Hotels;95,8;120,1;66,7;Beherbergung
+1999;1;Ferienunterkünfte;94,1;112;76,2;Beherbergung
+1999;2;Ferienunterkünfte;95;111,5;78,5;Beherbergung
+1999;3;Ferienunterkünfte;98;114,1;83,3;Beherbergung
+1999;4;Ferienunterkünfte;100,9;119;84,5;Beherbergung
+1999;5;Ferienunterkünfte;102;120,1;85,5;Beherbergung
+1999;6;Ferienunterkünfte;104,9;121,7;89;Beherbergung
+1999;7;Ferienunterkünfte;106,4;123,3;90,5;Beherbergung
+1999;8;Ferienunterkünfte;107,6;124,8;91,5;Beherbergung
+1999;9;Ferienunterkünfte;107,4;125,7;91;Beherbergung
+1999;10;Ferienunterkünfte;102,8;121,5;86;Beherbergung
+1999;11;Ferienunterkünfte;94,1;113,4;73,9;Beherbergung
+1999;12;Ferienunterkünfte;93;112,2;74,2;Beherbergung
+1999;1;Campingplätze;55,5;59,5;51,3;Beherbergung
+1999;2;Campingplätze;54;61,2;46,9;Beherbergung
+1999;3;Campingplätze;57,5;65,6;49,8;Beherbergung
+1999;4;Campingplätze;65,5;81,1;51,2;Beherbergung
+1999;5;Campingplätze;72;88;57,5;Beherbergung
+1999;6;Campingplätze;83;100,1;67;Beherbergung
+1999;7;Campingplätze;94,3;115,8;75,1;Beherbergung
+1999;8;Campingplätze;91,5;112,4;72,4;Beherbergung
+1999;9;Campingplätze;88,9;110,8;68,9;Beherbergung
+1999;10;Campingplätze;77,1;101;55,9;Beherbergung
+1999;11;Campingplätze;67,7;85;52,1;Beherbergung
+1999;12;Campingplätze;61,3;78,9;45,6;Beherbergung
+1999;1;Restaurants / Cafe;106,7;135,5;90,9;Gastronomie
+1999;2;Restaurants / Cafe;106,1;135,6;89,9;Gastronomie
+1999;3;Restaurants / Cafe;108,9;140,3;91,7;Gastronomie
+1999;4;Restaurants / Cafe;105,6;144,9;83,8;Gastronomie
+1999;5;Restaurants / Cafe;108,1;148,1;85,9;Gastronomie
+1999;6;Restaurants / Cafe;108,3;149,7;85,3;Gastronomie
+1999;7;Restaurants / Cafe;109,7;151,1;86,5;Gastronomie
+1999;8;Restaurants / Cafe;110,4;151;87,7;Gastronomie
+1999;9;Restaurants / Cafe;109,4;152,1;85,8;Gastronomie
+1999;10;Restaurants / Cafe;106,1;147,8;83;Gastronomie
+1999;11;Restaurants / Cafe;102,6;140,5;81,5;Gastronomie
+1999;12;Restaurants / Cafe;102,6;139,8;81,9;Gastronomie
+1999;1;Caterer;84,3;104,4;72,5;Gastronomie
+1999;2;Caterer;84;104,9;71,6;Gastronomie
+1999;3;Caterer;85,5;105,5;73,7;Gastronomie
+1999;4;Caterer;83,3;104,5;70,5;Gastronomie
+1999;5;Caterer;82,6;105,2;69;Gastronomie
+1999;6;Caterer;84,1;106,4;70,5;Gastronomie
+1999;7;Caterer;84,1;106,7;70,3;Gastronomie
+1999;8;Caterer;83,8;107,2;69,4;Gastronomie
+1999;9;Caterer;83,7;106,7;69,4;Gastronomie
+1999;10;Caterer;84,1;106,2;70,6;Gastronomie
+1999;11;Caterer;82,8;106,1;68,4;Gastronomie
+1999;12;Caterer;82,1;105,4;67,7;Gastronomie
+1999;1;Bar;117,6;161,8;104,7;Gastronomie
+1999;2;Bar;117,1;162,2;103,7;Gastronomie
+1999;3;Bar;118,9;161,7;105,8;Gastronomie
+1999;4;Bar;111,9;165,3;95,4;Gastronomie
+1999;5;Bar;112,6;166,7;96,1;Gastronomie
+1999;6;Bar;110,4;170,3;92;Gastronomie
+1999;7;Bar;115,4;169,6;97,9;Gastronomie
+1999;8;Bar;110,9;172,9;91,7;Gastronomie
+1999;9;Bar;108,2;169,9;89,2;Gastronomie
+1999;10;Bar;107,4;167;88,9;Gastronomie
+1999;11;Bar;106,1;165,3;88,1;Gastronomie
+1999;12;Bar;106,1;165,3;88,1;Gastronomie
+2000;1;Hotels;92,7;116,8;64,1;Beherbergung
+2000;2;Hotels;92,7;116,9;64;Beherbergung
+2000;3;Hotels;94;117,9;65,6;Beherbergung
+2000;4;Hotels;97;121;68,5;Beherbergung
+2000;5;Hotels;99,4;123,6;70,4;Beherbergung
+2000;6;Hotels;100,2;125,2;70,2;Beherbergung
+2000;7;Hotels;101,2;126;71,4;Beherbergung
+2000;8;Hotels;103;128,9;72;Beherbergung
+2000;9;Hotels;103,4;130,2;71,2;Beherbergung
+2000;10;Hotels;101,2;126,9;70,1;Beherbergung
+2000;11;Hotels;95,7;120,8;65,9;Beherbergung
+2000;12;Hotels;96,3;121,1;66,8;Beherbergung
+2000;1;Ferienunterkünfte;95,5;115,1;75,3;Beherbergung
+2000;2;Ferienunterkünfte;96,5;115,7;77,8;Beherbergung
+2000;3;Ferienunterkünfte;98,8;116,8;80,7;Beherbergung
+2000;4;Ferienunterkünfte;106,9;122,4;93,2;Beherbergung
+2000;5;Ferienunterkünfte;108,3;123,4;95;Beherbergung
+2000;6;Ferienunterkünfte;107,8;124,1;94,1;Beherbergung
+2000;7;Ferienunterkünfte;108,9;126,2;94,6;Beherbergung
+2000;8;Ferienunterkünfte;109,3;126,2;95,7;Beherbergung
+2000;9;Ferienunterkünfte;107,6;127,2;92,4;Beherbergung
+2000;10;Ferienunterkünfte;106,4;125,3;91,6;Beherbergung
+2000;11;Ferienunterkünfte;92,3;114,2;71,7;Beherbergung
+2000;12;Ferienunterkünfte;94,3;113,4;75,1;Beherbergung
+2000;1;Campingplätze;58,4;69,1;48;Beherbergung
+2000;2;Campingplätze;56,7;68,1;46;Beherbergung
+2000;3;Campingplätze;57;77,9;37,9;Beherbergung
+2000;4;Campingplätze;73,7;98,2;51,3;Beherbergung
+2000;5;Campingplätze;80,7;104,3;59,1;Beherbergung
+2000;6;Campingplätze;84,1;102,6;66,9;Beherbergung
+2000;7;Campingplätze;85,4;100,4;71,1;Beherbergung
+2000;8;Campingplätze;88,6;106,3;71,7;Beherbergung
+2000;9;Campingplätze;85,2;104,3;67,4;Beherbergung
+2000;10;Campingplätze;77,1;95,9;59,4;Beherbergung
+2000;11;Campingplätze;59,3;76,3;43,7;Beherbergung
+2000;12;Campingplätze;54,2;70,9;38,9;Beherbergung
+2000;1;Restaurants / Cafe;98;134,3;77,9;Gastronomie
+2000;2;Restaurants / Cafe;98,3;133,8;78,5;Gastronomie
+2000;3;Restaurants / Cafe;101,1;137,4;81;Gastronomie
+2000;4;Restaurants / Cafe;104,8;142,5;83,8;Gastronomie
+2000;5;Restaurants / Cafe;106,7;145,2;85,1;Gastronomie
+2000;6;Restaurants / Cafe;106,4;145,8;84,4;Gastronomie
+2000;7;Restaurants / Cafe;106,9;147,3;84,3;Gastronomie
+2000;8;Restaurants / Cafe;106,1;146,3;83,8;Gastronomie
+2000;9;Restaurants / Cafe;105,7;147;82,7;Gastronomie
+2000;10;Restaurants / Cafe;102,9;143,6;80,1;Gastronomie
+2000;11;Restaurants / Cafe;98,6;136,2;77,7;Gastronomie
+2000;12;Restaurants / Cafe;99,1;135,8;78,6;Gastronomie
+2000;1;Caterer;80,9;103,3;67,1;Gastronomie
+2000;2;Caterer;81;103,4;67;Gastronomie
+2000;3;Caterer;82,5;104,7;69;Gastronomie
+2000;4;Caterer;82,5;105,6;68,3;Gastronomie
+2000;5;Caterer;83,3;105,7;69,4;Gastronomie
+2000;6;Caterer;83,1;106,7;68,4;Gastronomie
+2000;7;Caterer;83,6;107;69;Gastronomie
+2000;8;Caterer;83,4;107,2;68,4;Gastronomie
+2000;9;Caterer;83,8;108,3;68,5;Gastronomie
+2000;10;Caterer;82,9;108,9;66,5;Gastronomie
+2000;11;Caterer;82,8;108;66,9;Gastronomie
+2000;12;Caterer;81,9;107,4;65,8;Gastronomie
+2000;1;Bar;101,1;153;85;Gastronomie
+2000;2;Bar;102,7;152,3;87,6;Gastronomie
+2000;3;Bar;103,2;153;88;Gastronomie
+2000;4;Bar;103,9;156,8;87,9;Gastronomie
+2000;5;Bar;104,7;155,6;89,1;Gastronomie
+2000;6;Bar;107,5;157,7;91,5;Gastronomie
+2000;7;Bar;103,9;156,6;87,3;Gastronomie
+2000;8;Bar;103,9;159,5;86,9;Gastronomie
+2000;9;Bar;106;158,5;89,9;Gastronomie
+2000;10;Bar;105,7;158,7;89,3;Gastronomie
+2000;11;Bar;103,7;157,5;87,2;Gastronomie
+2000;12;Bar;103,7;153,7;88,2;Gastronomie
+2001;1;Hotels;94,8;118,5;66,5;Beherbergung
+2001;2;Hotels;93,9;116,7;66,5;Beherbergung
+2001;3;Hotels;95,7;119,3;67,7;Beherbergung
+2001;4;Hotels;98,5;122,4;70;Beherbergung
+2001;5;Hotels;100,3;124,3;71,5;Beherbergung
+2001;6;Hotels;101,2;125,6;71,7;Beherbergung
+2001;7;Hotels;102,9;126,6;74,3;Beherbergung
+2001;8;Hotels;103,9;129,6;73,1;Beherbergung
+2001;9;Hotels;104,5;130,3;73,6;Beherbergung
+2001;10;Hotels;102,4;127,6;72,1;Beherbergung
+2001;11;Hotels;97,1;120,7;68,7;Beherbergung
+2001;12;Hotels;97,5;120,4;70,2;Beherbergung
+2001;1;Ferienunterkünfte;90,3;111,2;69,5;Beherbergung
+2001;2;Ferienunterkünfte;90,4;111,6;69,7;Beherbergung
+2001;3;Ferienunterkünfte;95,3;116,3;75;Beherbergung
+2001;4;Ferienunterkünfte;102,8;124,2;82,3;Beherbergung
+2001;5;Ferienunterkünfte;106,3;130,9;82,5;Beherbergung
+2001;6;Ferienunterkünfte;107,6;130,7;85,7;Beherbergung
+2001;7;Ferienunterkünfte;109,2;133;86,9;Beherbergung
+2001;8;Ferienunterkünfte;108,9;133,9;84;Beherbergung
+2001;9;Ferienunterkünfte;107,5;133,7;82,6;Beherbergung
+2001;10;Ferienunterkünfte;101,8;125,5;78,7;Beherbergung
+2001;11;Ferienunterkünfte;92,7;114,1;71,8;Beherbergung
+2001;12;Ferienunterkünfte;91,9;113;71,1;Beherbergung
+2001;1;Campingplätze;56,2;72;41,5;Beherbergung
+2001;2;Campingplätze;54;69,7;39,2;Beherbergung
+2001;3;Campingplätze;61,7;78,6;45,9;Beherbergung
+2001;4;Campingplätze;75,3;97,6;54,3;Beherbergung
+2001;5;Campingplätze;86,2;111;63,1;Beherbergung
+2001;6;Campingplätze;94,3;120;70,5;Beherbergung
+2001;7;Campingplätze;99,4;124,9;75,6;Beherbergung
+2001;8;Campingplätze;99,2;124,8;75,3;Beherbergung
+2001;9;Campingplätze;91,5;118,8;65,8;Beherbergung
+2001;10;Campingplätze;80;107,3;54,7;Beherbergung
+2001;11;Campingplätze;65,7;82,4;50,2;Beherbergung
+2001;12;Campingplätze;61,2;76,1;47,2;Beherbergung
+2001;1;Restaurants / Cafe;97;134,4;75,9;Gastronomie
+2001;2;Restaurants / Cafe;98,8;135,8;78,1;Gastronomie
+2001;3;Restaurants / Cafe;100,9;139;79,5;Gastronomie
+2001;4;Restaurants / Cafe;103,1;143,2;80,7;Gastronomie
+2001;5;Restaurants / Cafe;105,6;146;83;Gastronomie
+2001;6;Restaurants / Cafe;106,1;146,3;83,6;Gastronomie
+2001;7;Restaurants / Cafe;106,2;146,6;83,6;Gastronomie
+2001;8;Restaurants / Cafe;106,6;147,1;83,8;Gastronomie
+2001;9;Restaurants / Cafe;105,4;146,6;82,2;Gastronomie
+2001;10;Restaurants / Cafe;103,9;143,4;81,6;Gastronomie
+2001;11;Restaurants / Cafe;99,7;134,9;79,8;Gastronomie
+2001;12;Restaurants / Cafe;99,2;134,1;79,6;Gastronomie
+2001;1;Caterer;83,3;107,3;68,4;Gastronomie
+2001;2;Caterer;84,1;108,1;69;Gastronomie
+2001;3;Caterer;83,6;107,6;68,7;Gastronomie
+2001;4;Caterer;83,3;107,7;68;Gastronomie
+2001;5;Caterer;84,7;107,9;70,4;Gastronomie
+2001;6;Caterer;84,7;108,3;70;Gastronomie
+2001;7;Caterer;85,7;108,7;71,7;Gastronomie
+2001;8;Caterer;84,9;108,5;70,3;Gastronomie
+2001;9;Caterer;85,2;108,4;70,8;Gastronomie
+2001;10;Caterer;84,6;108,3;69,8;Gastronomie
+2001;11;Caterer;84,2;107,6;69,8;Gastronomie
+2001;12;Caterer;83,5;105,9;69,7;Gastronomie
+2001;1;Bar;107,4;159,1;91,1;Gastronomie
+2001;2;Bar;108,5;158,9;92,7;Gastronomie
+2001;3;Bar;109,7;160,9;93,7;Gastronomie
+2001;4;Bar;109,8;164,1;92,8;Gastronomie
+2001;5;Bar;109,4;162,1;93;Gastronomie
+2001;6;Bar;109,7;162,5;93;Gastronomie
+2001;7;Bar;110,6;163,6;93,6;Gastronomie
+2001;8;Bar;107,1;164;89,3;Gastronomie
+2001;9;Bar;108,5;163,7;91,4;Gastronomie
+2001;10;Bar;109,4;163,8;92,6;Gastronomie
+2001;11;Bar;105,2;160,8;88,1;Gastronomie
+2001;12;Bar;106,9;162,4;89,6;Gastronomie
+2002;1;Hotels;93,3;115,6;66,5;Beherbergung
+2002;2;Hotels;92,8;115,3;66,1;Beherbergung
+2002;3;Hotels;95,2;117,7;68,3;Beherbergung
+2002;4;Hotels;97;119,7;70,2;Beherbergung
+2002;5;Hotels;99,2;121,8;72,1;Beherbergung
+2002;6;Hotels;100,2;122,1;73,9;Beherbergung
+2002;7;Hotels;100,9;123,3;74,1;Beherbergung
+2002;8;Hotels;101,5;125,2;73;Beherbergung
+2002;9;Hotels;100,8;125,2;71,5;Beherbergung
+2002;10;Hotels;99,1;122,9;70,7;Beherbergung
+2002;11;Hotels;94,2;116,7;67,4;Beherbergung
+2002;12;Hotels;93,6;115,4;67,4;Beherbergung
+2002;1;Ferienunterkünfte;92,5;111,3;74,5;Beherbergung
+2002;2;Ferienunterkünfte;89,8;111,5;68,2;Beherbergung
+2002;3;Ferienunterkünfte;96,8;117,6;77;Beherbergung
+2002;4;Ferienunterkünfte;102;122,6;82,9;Beherbergung
+2002;5;Ferienunterkünfte;106,1;125,5;88;Beherbergung
+2002;6;Ferienunterkünfte;108,6;131;88,6;Beherbergung
+2002;7;Ferienunterkünfte;110,8;131,8;91,5;Beherbergung
+2002;8;Ferienunterkünfte;110,2;132,4;89,8;Beherbergung
+2002;9;Ferienunterkünfte;110,2;133,5;88,8;Beherbergung
+2002;10;Ferienunterkünfte;108,9;130,7;88,8;Beherbergung
+2002;11;Ferienunterkünfte;94,6;113,7;76;Beherbergung
+2002;12;Ferienunterkünfte;94;112,8;75,9;Beherbergung
+2002;1;Campingplätze;61,4;74,8;49;Beherbergung
+2002;2;Campingplätze;61,8;74,8;49,6;Beherbergung
+2002;3;Campingplätze;67,7;82,9;53,5;Beherbergung
+2002;4;Campingplätze;80;103,1;58,6;Beherbergung
+2002;5;Campingplätze;87;109,5;65,9;Beherbergung
+2002;6;Campingplätze;92,1;112,4;73,3;Beherbergung
+2002;7;Campingplätze;95,5;118,3;73,9;Beherbergung
+2002;8;Campingplätze;96,9;117,9;77,5;Beherbergung
+2002;9;Campingplätze;87,8;107,1;69,6;Beherbergung
+2002;10;Campingplätze;79,5;99,7;60,7;Beherbergung
+2002;11;Campingplätze;62,8;78,1;48,4;Beherbergung
+2002;12;Campingplätze;61,7;74,8;49,4;Beherbergung
+2002;1;Restaurants / Cafe;94;128,6;74,4;Gastronomie
+2002;2;Restaurants / Cafe;95;129;75,8;Gastronomie
+2002;3;Restaurants / Cafe;99,4;135,3;79,3;Gastronomie
+2002;4;Restaurants / Cafe;100,8;136,2;81;Gastronomie
+2002;5;Restaurants / Cafe;102;138;81,8;Gastronomie
+2002;6;Restaurants / Cafe;102,6;138,2;82,6;Gastronomie
+2002;7;Restaurants / Cafe;101,6;137,1;81,6;Gastronomie
+2002;8;Restaurants / Cafe;101,4;136,7;81,5;Gastronomie
+2002;9;Restaurants / Cafe;100,4;135,9;80,6;Gastronomie
+2002;10;Restaurants / Cafe;97;130,7;78,1;Gastronomie
+2002;11;Restaurants / Cafe;93,2;122;77,2;Gastronomie
+2002;12;Restaurants / Cafe;92,5;120,2;77;Gastronomie
+2002;1;Caterer;81;106,4;64,9;Gastronomie
+2002;2;Caterer;81;103,5;67;Gastronomie
+2002;3;Caterer;81,9;103,9;68,4;Gastronomie
+2002;4;Caterer;82,3;104,4;68,9;Gastronomie
+2002;5;Caterer;82,2;103,8;69,1;Gastronomie
+2002;6;Caterer;81,2;102,5;68,3;Gastronomie
+2002;7;Caterer;81,1;103,3;67,6;Gastronomie
+2002;8;Caterer;79,5;102,1;65,5;Gastronomie
+2002;9;Caterer;79,5;100,9;66,5;Gastronomie
+2002;10;Caterer;79,4;102;65,3;Gastronomie
+2002;11;Caterer;79,3;102,5;64,8;Gastronomie
+2002;12;Caterer;78,6;102,4;63,6;Gastronomie
+2002;1;Bar;104,4;157,3;88;Gastronomie
+2002;2;Bar;104,2;156,8;87,9;Gastronomie
+2002;3;Bar;105,4;158,3;89;Gastronomie
+2002;4;Bar;105,5;158,3;89,1;Gastronomie
+2002;5;Bar;106,9;156,8;91,2;Gastronomie
+2002;6;Bar;106,4;157,1;90,4;Gastronomie
+2002;7;Bar;105,4;158,4;88,6;Gastronomie
+2002;8;Bar;103,3;156,7;86,6;Gastronomie
+2002;9;Bar;102,2;156,4;85,5;Gastronomie
+2002;10;Bar;103;156,4;86,3;Gastronomie
+2002;11;Bar;100,6;152,1;84,5;Gastronomie
+2002;12;Bar;100,5;149,4;85,2;Gastronomie
+2003;1;Hotels;91,8;113,4;66,1;Beherbergung
+2003;2;Hotels;91,7;112,8;66,4;Beherbergung
+2003;3;Hotels;92,2;113,5;66,6;Beherbergung
+2003;4;Hotels;93,6;114,4;68,9;Beherbergung
+2003;5;Hotels;95,1;115,3;70,8;Beherbergung
+2003;6;Hotels;95,9;116;72,1;Beherbergung
+2003;7;Hotels;96,2;115,7;72,9;Beherbergung
+2003;8;Hotels;97,2;117,1;73,6;Beherbergung
+2003;9;Hotels;97,9;118,4;73,4;Beherbergung
+2003;10;Hotels;97,2;117,8;72,8;Beherbergung
+2003;11;Hotels;94,5;114,8;70,3;Beherbergung
+2003;12;Hotels;95;114,8;71,5;Beherbergung
+2003;1;Ferienunterkünfte;102;120,3;85,1;Beherbergung
+2003;2;Ferienunterkünfte;101;118;85,2;Beherbergung
+2003;3;Ferienunterkünfte;101,1;118,3;85,2;Beherbergung
+2003;4;Ferienunterkünfte;104,1;120,8;88,9;Beherbergung
+2003;5;Ferienunterkünfte;107,1;124,9;90,7;Beherbergung
+2003;6;Ferienunterkünfte;108,2;125,5;92,1;Beherbergung
+2003;7;Ferienunterkünfte;109;126,1;93,5;Beherbergung
+2003;8;Ferienunterkünfte;108,9;125,4;93,7;Beherbergung
+2003;9;Ferienunterkünfte;107,7;125,4;91,6;Beherbergung
+2003;10;Ferienunterkünfte;107,3;124,5;91,6;Beherbergung
+2003;11;Ferienunterkünfte;103,8;121,1;87,9;Beherbergung
+2003;12;Ferienunterkünfte;104,5;120,9;89,3;Beherbergung
+2003;1;Campingplätze;76,5;91;62,9;Beherbergung
+2003;2;Campingplätze;72,2;89,7;55,9;Beherbergung
+2003;3;Campingplätze;74,3;92,9;57,3;Beherbergung
+2003;4;Campingplätze;82,7;99,9;66,9;Beherbergung
+2003;5;Campingplätze;86,9;103,3;71,7;Beherbergung
+2003;6;Campingplätze;89,7;104,5;75,9;Beherbergung
+2003;7;Campingplätze;93,2;105,9;81,4;Beherbergung
+2003;8;Campingplätze;93,2;104,6;82,6;Beherbergung
+2003;9;Campingplätze;87,8;102,3;74,2;Beherbergung
+2003;10;Campingplätze;83,7;99,7;69;Beherbergung
+2003;11;Campingplätze;72,6;89,4;57,1;Beherbergung
+2003;12;Campingplätze;72,2;87,5;57,9;Beherbergung
+2003;1;Restaurants / Cafe;90,3;116,1;75,9;Gastronomie
+2003;2;Restaurants / Cafe;90,6;116;76,5;Gastronomie
+2003;3;Restaurants / Cafe;91,3;117,5;76,9;Gastronomie
+2003;4;Restaurants / Cafe;93;118,7;78,9;Gastronomie
+2003;5;Restaurants / Cafe;94,6;119,8;80,6;Gastronomie
+2003;6;Restaurants / Cafe;95,8;121,2;81,8;Gastronomie
+2003;7;Restaurants / Cafe;96,5;121,2;83;Gastronomie
+2003;8;Restaurants / Cafe;96,2;120,9;82,7;Gastronomie
+2003;9;Restaurants / Cafe;96;121,9;81,9;Gastronomie
+2003;10;Restaurants / Cafe;95,1;120,5;81,2;Gastronomie
+2003;11;Restaurants / Cafe;93,6;117,5;80,5;Gastronomie
+2003;12;Restaurants / Cafe;93,5;117,1;80,5;Gastronomie
+2003;1;Caterer;79,5;101,9;66;Gastronomie
+2003;2;Caterer;79,9;101,9;66,5;Gastronomie
+2003;3;Caterer;80;101,8;66,7;Gastronomie
+2003;4;Caterer;79,8;101,5;66,6;Gastronomie
+2003;5;Caterer;80,7;101,6;68,1;Gastronomie
+2003;6;Caterer;80,3;101,7;67,4;Gastronomie
+2003;7;Caterer;80,6;101,8;67,8;Gastronomie
+2003;8;Caterer;80;101,4;66,9;Gastronomie
+2003;9;Caterer;81;101,8;68,3;Gastronomie
+2003;10;Caterer;82,2;102;70,3;Gastronomie
+2003;11;Caterer;81,7;101,7;69,7;Gastronomie
+2003;12;Caterer;81,9;100,2;70,9;Gastronomie
+2003;1;Bar;97,7;139,9;84,6;Gastronomie
+2003;2;Bar;98,8;142,7;85,1;Gastronomie
+2003;3;Bar;98,1;139,5;85,3;Gastronomie
+2003;4;Bar;99,3;141,9;86;Gastronomie
+2003;5;Bar;100,5;143,2;87,2;Gastronomie
+2003;6;Bar;100,8;143,5;87,3;Gastronomie
+2003;7;Bar;100,9;143,6;87,5;Gastronomie
+2003;8;Bar;100,2;144;86,7;Gastronomie
+2003;9;Bar;101,6;145,9;87,9;Gastronomie
+2003;10;Bar;101,4;145,1;87,8;Gastronomie
+2003;11;Bar;100,6;142,1;87,6;Gastronomie
+2003;12;Bar;100,9;142,4;87,9;Gastronomie
+2004;1;Hotels;90;108,5;68;Beherbergung
+2004;2;Hotels;89,5;107,6;67,7;Beherbergung
+2004;3;Hotels;91,1;108,7;69,9;Beherbergung
+2004;4;Hotels;93,5;111,6;71,9;Beherbergung
+2004;5;Hotels;95,6;113,5;74;Beherbergung
+2004;6;Hotels;96,1;113,9;74,7;Beherbergung
+2004;7;Hotels;95,9;112,5;75,7;Beherbergung
+2004;8;Hotels;97,2;115,3;75,6;Beherbergung
+2004;9;Hotels;97,8;115,4;76,7;Beherbergung
+2004;10;Hotels;96,1;112,7;76,2;Beherbergung
+2004;11;Hotels;91,4;106,9;72,7;Beherbergung
+2004;12;Hotels;91,4;106,3;73,6;Beherbergung
+2004;1;Ferienunterkünfte;100,6;111,8;90,6;Beherbergung
+2004;2;Ferienunterkünfte;99,6;111;89,2;Beherbergung
+2004;3;Ferienunterkünfte;104,5;115,3;94,6;Beherbergung
+2004;4;Ferienunterkünfte;109,8;120,3;100,5;Beherbergung
+2004;5;Ferienunterkünfte;114,1;122,9;106,4;Beherbergung
+2004;6;Ferienunterkünfte;115,3;124;107,5;Beherbergung
+2004;7;Ferienunterkünfte;118,6;121,8;116;Beherbergung
+2004;8;Ferienunterkünfte;118;125;111,8;Beherbergung
+2004;9;Ferienunterkünfte;115,3;122,2;109,2;Beherbergung
+2004;10;Ferienunterkünfte;111,3;118;105,6;Beherbergung
+2004;11;Ferienunterkünfte;104,8;109,4;100,8;Beherbergung
+2004;12;Ferienunterkünfte;102,3;108,2;97,5;Beherbergung
+2004;1;Campingplätze;60;73,1;47,6;Beherbergung
+2004;2;Campingplätze;61,2;74,4;48,7;Beherbergung
+2004;3;Campingplätze;68;84,3;52,7;Beherbergung
+2004;4;Campingplätze;79,2;95,4;64,1;Beherbergung
+2004;5;Campingplätze;84;98,9;70,2;Beherbergung
+2004;6;Campingplätze;86,5;96,4;77,4;Beherbergung
+2004;7;Campingplätze;99,3;104;95;Beherbergung
+2004;8;Campingplätze;95,2;101,3;89,6;Beherbergung
+2004;9;Campingplätze;85;95,3;75,4;Beherbergung
+2004;10;Campingplätze;72,1;80,8;64;Beherbergung
+2004;11;Campingplätze;54,5;60,1;49,3;Beherbergung
+2004;12;Campingplätze;48,9;55,5;43;Beherbergung
+2004;1;Restaurants / Cafe;89,8;109,1;79,2;Gastronomie
+2004;2;Restaurants / Cafe;90,5;109;80,4;Gastronomie
+2004;3;Restaurants / Cafe;92,2;111;81,9;Gastronomie
+2004;4;Restaurants / Cafe;95,9;114,7;85,6;Gastronomie
+2004;5;Restaurants / Cafe;97,8;116,1;87,7;Gastronomie
+2004;6;Restaurants / Cafe;98,1;117;87,8;Gastronomie
+2004;7;Restaurants / Cafe;98,3;117,1;88;Gastronomie
+2004;8;Restaurants / Cafe;97,9;117,2;87,2;Gastronomie
+2004;9;Restaurants / Cafe;97;116,8;86,3;Gastronomie
+2004;10;Restaurants / Cafe;94,7;113,4;84,2;Gastronomie
+2004;11;Restaurants / Cafe;92,1;107,5;83,7;Gastronomie
+2004;12;Restaurants / Cafe;91,4;106,3;83,5;Gastronomie
+2004;1;Caterer;81,7;98,1;71,8;Gastronomie
+2004;2;Caterer;82,4;98,6;72,7;Gastronomie
+2004;3;Caterer;81,9;98,9;71,8;Gastronomie
+2004;4;Caterer;82,2;97,7;73;Gastronomie
+2004;5;Caterer;82,5;97,6;73,8;Gastronomie
+2004;6;Caterer;83,4;98;74,9;Gastronomie
+2004;7;Caterer;83,7;98,3;75,1;Gastronomie
+2004;8;Caterer;83,7;98,5;74,9;Gastronomie
+2004;9;Caterer;84,4;99,3;75,7;Gastronomie
+2004;10;Caterer;84,7;98,8;76,3;Gastronomie
+2004;11;Caterer;84,7;99,1;76,2;Gastronomie
+2004;12;Caterer;85,5;98;78,3;Gastronomie
+2004;1;Bar;99,7;133,4;89,2;Gastronomie
+2004;2;Bar;101,6;133,7;91,6;Gastronomie
+2004;3;Bar;101,6;133,8;91,5;Gastronomie
+2004;4;Bar;103,9;135,3;94,2;Gastronomie
+2004;5;Bar;105,5;134,1;96,7;Gastronomie
+2004;6;Bar;104,5;134,1;95,3;Gastronomie
+2004;7;Bar;105;134,1;96,1;Gastronomie
+2004;8;Bar;103,9;134,6;94,5;Gastronomie
+2004;9;Bar;105,4;133,6;96,6;Gastronomie
+2004;10;Bar;105,4;131,6;97,2;Gastronomie
+2004;11;Bar;103,9;128,8;96,3;Gastronomie
+2004;12;Bar;103,9;128,3;96,5;Gastronomie
+2005;1;Hotels;88,6;103,7;70,5;Beherbergung
+2005;2;Hotels;88,3;103,1;70,5;Beherbergung
+2005;3;Hotels;90,6;105,4;72,7;Beherbergung
+2005;4;Hotels;92,6;107,3;74,7;Beherbergung
+2005;5;Hotels;95,2;109,5;77,9;Beherbergung
+2005;6;Hotels;96,2;110,4;79,1;Beherbergung
+2005;7;Hotels;97,1;110,4;80,8;Beherbergung
+2005;8;Hotels;98,5;113,5;80,4;Beherbergung
+2005;9;Hotels;98,8;113,4;81,3;Beherbergung
+2005;10;Hotels;96,9;111,8;78,8;Beherbergung
+2005;11;Hotels;92,5;106,4;75,6;Beherbergung
+2005;12;Hotels;92,4;105,5;76,5;Beherbergung
+2005;1;Ferienunterkünfte;104,8;106,1;104;Beherbergung
+2005;2;Ferienunterkünfte;103,6;105,8;101,9;Beherbergung
+2005;3;Ferienunterkünfte;107,3;110,6;104,6;Beherbergung
+2005;4;Ferienunterkünfte;111;113,2;109,5;Beherbergung
+2005;5;Ferienunterkünfte;113,9;116,9;111,4;Beherbergung
+2005;6;Ferienunterkünfte;115,4;117,8;113,7;Beherbergung
+2005;7;Ferienunterkünfte;117,7;117,2;118,8;Beherbergung
+2005;8;Ferienunterkünfte;117,7;120,9;115,4;Beherbergung
+2005;9;Ferienunterkünfte;114,6;117,9;112;Beherbergung
+2005;10;Ferienunterkünfte;114;114,6;113,9;Beherbergung
+2005;11;Ferienunterkünfte;107,8;109;107,2;Beherbergung
+2005;12;Ferienunterkünfte;102,4;104,3;101,2;Beherbergung
+2005;1;Campingplätze;49,1;55,3;43,3;Beherbergung
+2005;2;Campingplätze;51;56;46,3;Beherbergung
+2005;3;Campingplätze;63,9;72,8;55,7;Beherbergung
+2005;4;Campingplätze;79,2;85,1;73,6;Beherbergung
+2005;5;Campingplätze;89,2;95;83,9;Beherbergung
+2005;6;Campingplätze;91,2;95,9;86,9;Beherbergung
+2005;7;Campingplätze;97,6;100,5;95;Beherbergung
+2005;8;Campingplätze;98;104,4;92,1;Beherbergung
+2005;9;Campingplätze;90,8;100,3;81,9;Beherbergung
+2005;10;Campingplätze;78,8;88,8;69,5;Beherbergung
+2005;11;Campingplätze;59,5;68,7;50,9;Beherbergung
+2005;12;Campingplätze;53,9;57,8;50,2;Beherbergung
+2005;1;Restaurants / Cafe;89,5;103,6;81,5;Gastronomie
+2005;2;Restaurants / Cafe;89,5;102,6;82,2;Gastronomie
+2005;3;Restaurants / Cafe;91,9;106,2;83,9;Gastronomie
+2005;4;Restaurants / Cafe;94,6;109,5;86,5;Gastronomie
+2005;5;Restaurants / Cafe;97,1;112;89;Gastronomie
+2005;6;Restaurants / Cafe;97,7;113;89,3;Gastronomie
+2005;7;Restaurants / Cafe;98,6;113,7;90,2;Gastronomie
+2005;8;Restaurants / Cafe;98,2;113,2;90;Gastronomie
+2005;9;Restaurants / Cafe;98;113,6;89,5;Gastronomie
+2005;10;Restaurants / Cafe;95,9;110,6;87,8;Gastronomie
+2005;11;Restaurants / Cafe;93,1;104,2;87;Gastronomie
+2005;12;Restaurants / Cafe;91,9;102,4;86,1;Gastronomie
+2005;1;Caterer;82,5;98,4;73;Gastronomie
+2005;2;Caterer;82,6;98,2;73,4;Gastronomie
+2005;3;Caterer;83,4;99,1;74;Gastronomie
+2005;4;Caterer;83,6;98,5;74,9;Gastronomie
+2005;5;Caterer;84;98,1;75,7;Gastronomie
+2005;6;Caterer;83,8;97,9;75,5;Gastronomie
+2005;7;Caterer;83,8;98,1;75,4;Gastronomie
+2005;8;Caterer;84,2;98,5;75,9;Gastronomie
+2005;9;Caterer;85,5;96,8;79,1;Gastronomie
+2005;10;Caterer;85,6;96,6;79,3;Gastronomie
+2005;11;Caterer;85,8;96,8;79,5;Gastronomie
+2005;12;Caterer;86;96,5;80,2;Gastronomie
+2005;1;Bar;104,2;123,4;98,4;Gastronomie
+2005;2;Bar;104,2;121,2;99,1;Gastronomie
+2005;3;Bar;104,7;123,2;99;Gastronomie
+2005;4;Bar;107,1;124,5;101,7;Gastronomie
+2005;5;Bar;108,2;126,7;102,5;Gastronomie
+2005;6;Bar;107,1;128,1;100,7;Gastronomie
+2005;7;Bar;105,7;126,4;99,4;Gastronomie
+2005;8;Bar;105,5;130,8;97,6;Gastronomie
+2005;9;Bar;105,6;131,4;97,7;Gastronomie
+2005;10;Bar;106,1;128;99,5;Gastronomie
+2005;11;Bar;104,2;123,6;98,3;Gastronomie
+2005;12;Bar;103,5;123;97,5;Gastronomie
+2006;1;Hotels;89,2;102,7;72,7;Beherbergung
+2006;2;Hotels;89,4;102,4;73,5;Beherbergung
+2006;3;Hotels;89,9;103,1;74;Beherbergung
+2006;4;Hotels;94,2;107,2;78,4;Beherbergung
+2006;5;Hotels;97,3;110,3;81,5;Beherbergung
+2006;6;Hotels;97,8;111,3;81,4;Beherbergung
+2006;7;Hotels;98;110,7;82,4;Beherbergung
+2006;8;Hotels;99,5;113,6;82,4;Beherbergung
+2006;9;Hotels;100,6;114,5;83,8;Beherbergung
+2006;10;Hotels;99,2;113,1;82,3;Beherbergung
+2006;11;Hotels;94,4;107,9;78,1;Beherbergung
+2006;12;Hotels;94,8;107,8;79,1;Beherbergung
+2006;1;Ferienunterkünfte;101,4;99,3;103,6;Beherbergung
+2006;2;Ferienunterkünfte;100;99,4;100,8;Beherbergung
+2006;3;Ferienunterkünfte;101,9;102,2;101,8;Beherbergung
+2006;4;Ferienunterkünfte;108,2;107,6;109,1;Beherbergung
+2006;5;Ferienunterkünfte;113,8;115,3;112,6;Beherbergung
+2006;6;Ferienunterkünfte;116,6;116,2;117,1;Beherbergung
+2006;7;Ferienunterkünfte;118,4;117,2;119,7;Beherbergung
+2006;8;Ferienunterkünfte;120;118;121,9;Beherbergung
+2006;9;Ferienunterkünfte;118,5;117,6;119,7;Beherbergung
+2006;10;Ferienunterkünfte;115,1;116,3;114;Beherbergung
+2006;11;Ferienunterkünfte;103,7;106,1;101,8;Beherbergung
+2006;12;Ferienunterkünfte;103,1;105,3;101,5;Beherbergung
+2006;1;Campingplätze;53,5;59;48,4;Beherbergung
+2006;2;Campingplätze;53,3;60,6;46,5;Beherbergung
+2006;3;Campingplätze;60,6;70,2;51,9;Beherbergung
+2006;4;Campingplätze;72,1;83,8;61,3;Beherbergung
+2006;5;Campingplätze;80,2;92,9;68,5;Beherbergung
+2006;6;Campingplätze;94,6;97,3;92,4;Beherbergung
+2006;7;Campingplätze;92,6;98;88;Beherbergung
+2006;8;Campingplätze;93,8;98,1;90,1;Beherbergung
+2006;9;Campingplätze;90,2;96,5;84,4;Beherbergung
+2006;10;Campingplätze;80;87,3;73,4;Beherbergung
+2006;11;Campingplätze;66,8;72,5;61,6;Beherbergung
+2006;12;Campingplätze;60,4;64;57,2;Beherbergung
+2006;1;Restaurants / Cafe;87,8;98,9;81,8;Gastronomie
+2006;2;Restaurants / Cafe;88,7;98,8;83,2;Gastronomie
+2006;3;Restaurants / Cafe;89,5;100,3;83,6;Gastronomie
+2006;4;Restaurants / Cafe;92,9;104,3;86,5;Gastronomie
+2006;5;Restaurants / Cafe;95,8;107,7;89,4;Gastronomie
+2006;6;Restaurants / Cafe;97,3;108,7;91,1;Gastronomie
+2006;7;Restaurants / Cafe;97,7;108,7;91,8;Gastronomie
+2006;8;Restaurants / Cafe;97;109,2;90,2;Gastronomie
+2006;9;Restaurants / Cafe;96,9;110,3;89,5;Gastronomie
+2006;10;Restaurants / Cafe;94,2;107,9;86,7;Gastronomie
+2006;11;Restaurants / Cafe;91,4;102,4;85,6;Gastronomie
+2006;12;Restaurants / Cafe;90,9;100,9;85,6;Gastronomie
+2006;1;Caterer;84,5;96,1;78;Gastronomie
+2006;2;Caterer;84,1;96,6;77,2;Gastronomie
+2006;3;Caterer;83,7;96,3;76,6;Gastronomie
+2006;4;Caterer;84,4;98,6;76,2;Gastronomie
+2006;5;Caterer;85,8;98,4;78,7;Gastronomie
+2006;6;Caterer;85,3;98,5;77,7;Gastronomie
+2006;7;Caterer;85,6;98,6;78,2;Gastronomie
+2006;8;Caterer;86,1;98,3;79,3;Gastronomie
+2006;9;Caterer;87,7;98,9;81,4;Gastronomie
+2006;10;Caterer;85,3;94,8;80,1;Gastronomie
+2006;11;Caterer;86,2;94,8;81,5;Gastronomie
+2006;12;Caterer;86;94,6;81,4;Gastronomie
+2006;1;Bar;103,5;124,7;96,8;Gastronomie
+2006;2;Bar;105,4;123,9;99,5;Gastronomie
+2006;3;Bar;104,6;123,8;98,6;Gastronomie
+2006;4;Bar;106,1;125;100,3;Gastronomie
+2006;5;Bar;107,3;127,2;100,9;Gastronomie
+2006;6;Bar;107,9;127,7;101,7;Gastronomie
+2006;7;Bar;106,6;128,7;99,7;Gastronomie
+2006;8;Bar;105,1;128,7;97,7;Gastronomie
+2006;9;Bar;105,9;129,6;98,5;Gastronomie
+2006;10;Bar;105,7;128,7;98,6;Gastronomie
+2006;11;Bar;103,2;124,1;96,8;Gastronomie
+2006;12;Bar;103,3;123,4;97;Gastronomie
+2007;1;Hotels;91,4;105;75;Beherbergung
+2007;2;Hotels;91,2;103,9;75,7;Beherbergung
+2007;3;Hotels;92,4;105,4;76,7;Beherbergung
+2007;4;Hotels;95;108,1;79,2;Beherbergung
+2007;5;Hotels;96,9;110;80,8;Beherbergung
+2007;6;Hotels;97,4;110,1;82,1;Beherbergung
+2007;7;Hotels;97,7;110,1;82,5;Beherbergung
+2007;8;Hotels;98,9;113;82;Beherbergung
+2007;9;Hotels;99,3;113,6;82,3;Beherbergung
+2007;10;Hotels;99,4;113,4;82,6;Beherbergung
+2007;11;Hotels;95,9;109,2;79,7;Beherbergung
+2007;12;Hotels;95,7;108,6;80,2;Beherbergung
+2007;1;Ferienunterkünfte;96,4;101,3;92,1;Beherbergung
+2007;2;Ferienunterkünfte;96,8;101,3;92,8;Beherbergung
+2007;3;Ferienunterkünfte;99,2;102,2;96,6;Beherbergung
+2007;4;Ferienunterkünfte;104,5;106,9;102,4;Beherbergung
+2007;5;Ferienunterkünfte;109,8;112;108;Beherbergung
+2007;6;Ferienunterkünfte;110,2;111,5;109,4;Beherbergung
+2007;7;Ferienunterkünfte;113,2;115,3;111,6;Beherbergung
+2007;8;Ferienunterkünfte;112,9;115,4;110,9;Beherbergung
+2007;9;Ferienunterkünfte;111;113,8;108,7;Beherbergung
+2007;10;Ferienunterkünfte;111,9;114,4;110,1;Beherbergung
+2007;11;Ferienunterkünfte;103,8;106,8;101,5;Beherbergung
+2007;12;Ferienunterkünfte;99,4;101;98,5;Beherbergung
+2007;1;Campingplätze;55,6;60,6;51,1;Beherbergung
+2007;2;Campingplätze;57,5;61,1;54,2;Beherbergung
+2007;3;Campingplätze;65;70,3;60,2;Beherbergung
+2007;4;Campingplätze;83,1;88,9;77,9;Beherbergung
+2007;5;Campingplätze;85,4;92,9;78,6;Beherbergung
+2007;6;Campingplätze;87,9;97,4;79,2;Beherbergung
+2007;7;Campingplätze;94,1;100;88,5;Beherbergung
+2007;8;Campingplätze;96,9;101,1;93,2;Beherbergung
+2007;9;Campingplätze;90,2;96;84,8;Beherbergung
+2007;10;Campingplätze;80,5;86,8;74,6;Beherbergung
+2007;11;Campingplätze;61;67,9;54,6;Beherbergung
+2007;12;Campingplätze;53,5;56,6;50,7;Beherbergung
+2007;1;Restaurants / Cafe;88,5;96,3;84;Gastronomie
+2007;2;Restaurants / Cafe;89;96,8;84,7;Gastronomie
+2007;3;Restaurants / Cafe;90,8;99,2;86,4;Gastronomie
+2007;4;Restaurants / Cafe;95,2;103,4;90,7;Gastronomie
+2007;5;Restaurants / Cafe;96,2;104,3;91,9;Gastronomie
+2007;6;Restaurants / Cafe;96,7;105;92,1;Gastronomie
+2007;7;Restaurants / Cafe;96,5;105;91,7;Gastronomie
+2007;8;Restaurants / Cafe;96,5;105,6;91,5;Gastronomie
+2007;9;Restaurants / Cafe;95,1;105,2;89,5;Gastronomie
+2007;10;Restaurants / Cafe;94,7;104,4;89,3;Gastronomie
+2007;11;Restaurants / Cafe;91,8;99,8;87,3;Gastronomie
+2007;12;Restaurants / Cafe;91,4;98,7;87,4;Gastronomie
+2007;1;Caterer;86,5;100,9;78,2;Gastronomie
+2007;2;Caterer;85,4;100,5;76,8;Gastronomie
+2007;3;Caterer;87,2;103,3;78;Gastronomie
+2007;4;Caterer;85,6;100,1;77,4;Gastronomie
+2007;5;Caterer;87,2;100,7;79,4;Gastronomie
+2007;6;Caterer;87,2;100,7;79,4;Gastronomie
+2007;7;Caterer;85,4;100,6;76,4;Gastronomie
+2007;8;Caterer;85,9;100,7;77,4;Gastronomie
+2007;9;Caterer;87,3;102,6;78,7;Gastronomie
+2007;10;Caterer;87,2;96,6;82,2;Gastronomie
+2007;11;Caterer;87,9;96,8;83;Gastronomie
+2007;12;Caterer;88,8;96,5;84,7;Gastronomie
+2007;1;Bar;99,8;116,3;94,7;Gastronomie
+2007;2;Bar;101;116,7;96,2;Gastronomie
+2007;3;Bar;102,1;118,1;97,2;Gastronomie
+2007;4;Bar;103,5;120,5;98,1;Gastronomie
+2007;5;Bar;105,6;120,7;101;Gastronomie
+2007;6;Bar;104,7;121,7;99,3;Gastronomie
+2007;7;Bar;104,6;121,3;99,4;Gastronomie
+2007;8;Bar;103,9;122,6;98,2;Gastronomie
+2007;9;Bar;105,5;124,1;99,8;Gastronomie
+2007;10;Bar;104,8;122,6;99,4;Gastronomie
+2007;11;Bar;101,6;118,4;96,5;Gastronomie
+2007;12;Bar;101,4;117,8;96,3;Gastronomie
+2008;1;Hotels;92,2;105,1;76,4;Beherbergung
+2008;2;Hotels;92,4;104,3;77,7;Beherbergung
+2008;3;Hotels;93,6;106,1;78,3;Beherbergung
+2008;4;Hotels;95,5;108;80,1;Beherbergung
+2008;5;Hotels;97,9;110,3;82,5;Beherbergung
+2008;6;Hotels;98,3;110,3;83,3;Beherbergung
+2008;7;Hotels;98,3;109,8;83,9;Beherbergung
+2008;8;Hotels;99,9;113,5;83,2;Beherbergung
+2008;9;Hotels;99,9;113,6;83,2;Beherbergung
+2008;10;Hotels;97,4;110,6;81,3;Beherbergung
+2008;11;Hotels;94,1;106,2;79,2;Beherbergung
+2008;12;Hotels;93,2;105,4;78,1;Beherbergung
+2008;1;Ferienunterkünfte;97,9;101,6;94,5;Beherbergung
+2008;2;Ferienunterkünfte;98,5;99,3;97,6;Beherbergung
+2008;3;Ferienunterkünfte;102,2;102,5;101,9;Beherbergung
+2008;4;Ferienunterkünfte;103,5;103,9;102,9;Beherbergung
+2008;5;Ferienunterkünfte;109,8;110,9;108,7;Beherbergung
+2008;6;Ferienunterkünfte;110,3;112,4;108,2;Beherbergung
+2008;7;Ferienunterkünfte;113,7;114,8;112,6;Beherbergung
+2008;8;Ferienunterkünfte;113,6;115,2;111,9;Beherbergung
+2008;9;Ferienunterkünfte;112,6;114;111,2;Beherbergung
+2008;10;Ferienunterkünfte;108,4;112,3;105;Beherbergung
+2008;11;Ferienunterkünfte;100;102,2;98;Beherbergung
+2008;12;Ferienunterkünfte;97,8;100,1;95,6;Beherbergung
+2008;1;Campingplätze;64,7;67;62,6;Beherbergung
+2008;2;Campingplätze;67,5;69,7;65,6;Beherbergung
+2008;3;Campingplätze;79,9;81,3;78,6;Beherbergung
+2008;4;Campingplätze;89,9;92,4;87,8;Beherbergung
+2008;5;Campingplätze;101,1;101,3;101,2;Beherbergung
+2008;6;Campingplätze;105,4;105;105,9;Beherbergung
+2008;7;Campingplätze;112,5;107,3;117,6;Beherbergung
+2008;8;Campingplätze;111,2;110,1;112,4;Beherbergung
+2008;9;Campingplätze;104,5;105,4;103,9;Beherbergung
+2008;10;Campingplätze;90,8;92,3;89,5;Beherbergung
+2008;11;Campingplätze;74,2;73,1;75;Beherbergung
+2008;12;Campingplätze;68,4;68,6;68,2;Beherbergung
+2008;1;Restaurants / Cafe;88,3;95,8;84,1;Gastronomie
+2008;2;Restaurants / Cafe;88,8;96,3;84,7;Gastronomie
+2008;3;Restaurants / Cafe;89,9;98,7;85,2;Gastronomie
+2008;4;Restaurants / Cafe;91,8;100,2;87;Gastronomie
+2008;5;Restaurants / Cafe;94,2;102,6;89,4;Gastronomie
+2008;6;Restaurants / Cafe;94,2;102,5;89,5;Gastronomie
+2008;7;Restaurants / Cafe;94,5;103,2;89,7;Gastronomie
+2008;8;Restaurants / Cafe;94,7;103,6;89,8;Gastronomie
+2008;9;Restaurants / Cafe;94,3;104,3;88,9;Gastronomie
+2008;10;Restaurants / Cafe;92,5;102,8;86,9;Gastronomie
+2008;11;Restaurants / Cafe;90,2;98,1;85,9;Gastronomie
+2008;12;Restaurants / Cafe;89,9;97,3;85,9;Gastronomie
+2008;1;Caterer;88;94,4;84,5;Gastronomie
+2008;2;Caterer;87,5;94,8;83,5;Gastronomie
+2008;3;Caterer;87,5;94,4;83,7;Gastronomie
+2008;4;Caterer;88,7;94,3;85,6;Gastronomie
+2008;5;Caterer;88,9;94,5;85,9;Gastronomie
+2008;6;Caterer;88,8;94,6;85,7;Gastronomie
+2008;7;Caterer;88,7;94,8;85,3;Gastronomie
+2008;8;Caterer;88,8;95,5;85,2;Gastronomie
+2008;9;Caterer;90,1;94,4;87,8;Gastronomie
+2008;10;Caterer;89,9;94,6;87,4;Gastronomie
+2008;11;Caterer;90,2;94,3;88;Gastronomie
+2008;12;Caterer;89,7;93,6;87,8;Gastronomie
+2008;1;Bar;99;112,3;94,9;Gastronomie
+2008;2;Bar;100;111,9;96,4;Gastronomie
+2008;3;Bar;100,8;112;97,3;Gastronomie
+2008;4;Bar;101,1;114,5;97;Gastronomie
+2008;5;Bar;102,2;116,9;97,8;Gastronomie
+2008;6;Bar;100,3;116,5;95,4;Gastronomie
+2008;7;Bar;101;115,9;96,4;Gastronomie
+2008;8;Bar;100,7;113,9;96,6;Gastronomie
+2008;9;Bar;99,9;114,8;95,3;Gastronomie
+2008;10;Bar;100,6;114,4;96,3;Gastronomie
+2008;11;Bar;98,9;110;95,5;Gastronomie
+2008;12;Bar;98,2;108,5;95,1;Gastronomie
+2009;1;Hotels;89,8;100,9;75,8;Beherbergung
+2009;2;Hotels;89,1;100,1;75,5;Beherbergung
+2009;3;Hotels;90,2;100,8;76,9;Beherbergung
+2009;4;Hotels;92,5;102,4;80;Beherbergung
+2009;5;Hotels;94,6;104;82,9;Beherbergung
+2009;6;Hotels;95,4;104,6;83,9;Beherbergung
+2009;7;Hotels;95,6;104;85;Beherbergung
+2009;8;Hotels;96,5;105,7;85;Beherbergung
+2009;9;Hotels;96,7;106,5;84,6;Beherbergung
+2009;10;Hotels;95,5;105,4;83,1;Beherbergung
+2009;11;Hotels;92,7;102,2;80,8;Beherbergung
+2009;12;Hotels;92,7;101,4;82,1;Beherbergung
+2009;1;Ferienunterkünfte;90,5;90,8;90;Beherbergung
+2009;2;Ferienunterkünfte;89,2;92;86,5;Beherbergung
+2009;3;Ferienunterkünfte;92,3;93,3;91,5;Beherbergung
+2009;4;Ferienunterkünfte;97;101;93,5;Beherbergung
+2009;5;Ferienunterkünfte;101,7;105,2;98,6;Beherbergung
+2009;6;Ferienunterkünfte;104,7;108,3;101,4;Beherbergung
+2009;7;Ferienunterkünfte;106,6;108,7;104,6;Beherbergung
+2009;8;Ferienunterkünfte;105,2;108,4;102,4;Beherbergung
+2009;9;Ferienunterkünfte;105;108,7;101,7;Beherbergung
+2009;10;Ferienunterkünfte;101,5;103,9;99,4;Beherbergung
+2009;11;Ferienunterkünfte;92;93,6;90,5;Beherbergung
+2009;12;Ferienunterkünfte;92;92,9;91,2;Beherbergung
+2009;1;Campingplätze;62,2;64,6;59,9;Beherbergung
+2009;2;Campingplätze;62,5;63,1;61,9;Beherbergung
+2009;3;Campingplätze;68,4;70,9;66,1;Beherbergung
+2009;4;Campingplätze;85,5;86,8;84,3;Beherbergung
+2009;5;Campingplätze;93,4;94,7;92,4;Beherbergung
+2009;6;Campingplätze;98,8;96,9;101;Beherbergung
+2009;7;Campingplätze;104,7;103,1;106,5;Beherbergung
+2009;8;Campingplätze;104,8;104,5;105,3;Beherbergung
+2009;9;Campingplätze;95,9;96,5;95,4;Beherbergung
+2009;10;Campingplätze;87,8;88,6;87,3;Beherbergung
+2009;11;Campingplätze;71,6;73;70,4;Beherbergung
+2009;12;Campingplätze;67,3;67,5;67,2;Beherbergung
+2009;1;Restaurants / Cafe;84,7;91,1;81,2;Gastronomie
+2009;2;Restaurants / Cafe;86;91,3;83,2;Gastronomie
+2009;3;Restaurants / Cafe;88,5;93,3;85,8;Gastronomie
+2009;4;Restaurants / Cafe;92,3;96,1;90,1;Gastronomie
+2009;5;Restaurants / Cafe;94,9;98,1;93;Gastronomie
+2009;6;Restaurants / Cafe;94,8;98;93;Gastronomie
+2009;7;Restaurants / Cafe;95,8;99,2;93,9;Gastronomie
+2009;8;Restaurants / Cafe;95,5;99,4;93,4;Gastronomie
+2009;9;Restaurants / Cafe;94,7;99,2;92,1;Gastronomie
+2009;10;Restaurants / Cafe;92,7;97,3;90,1;Gastronomie
+2009;11;Restaurants / Cafe;89,8;93,4;87,8;Gastronomie
+2009;12;Restaurants / Cafe;89,4;92;87,9;Gastronomie
+2009;1;Caterer;86,2;91,6;83,3;Gastronomie
+2009;2;Caterer;86,5;91,3;84,1;Gastronomie
+2009;3;Caterer;86,7;91;84,4;Gastronomie
+2009;4;Caterer;87,7;92,7;85,1;Gastronomie
+2009;5;Caterer;89;92,1;87,4;Gastronomie
+2009;6;Caterer;88,3;92,6;86,1;Gastronomie
+2009;7;Caterer;87,2;91,9;84,7;Gastronomie
+2009;8;Caterer;88;92,6;85,7;Gastronomie
+2009;9;Caterer;88,8;92,3;87;Gastronomie
+2009;10;Caterer;88,3;92,2;86,2;Gastronomie
+2009;11;Caterer;88,5;91,7;86,8;Gastronomie
+2009;12;Caterer;88,2;90,7;87,1;Gastronomie
+2009;1;Bar;93,9;100;92,1;Gastronomie
+2009;2;Bar;95;99,6;93,6;Gastronomie
+2009;3;Bar;95,5;99,5;94,5;Gastronomie
+2009;4;Bar;98,3;101,6;97,4;Gastronomie
+2009;5;Bar;100,3;102,7;99,8;Gastronomie
+2009;6;Bar;99,1;101,7;98,4;Gastronomie
+2009;7;Bar;98,4;101,6;97,7;Gastronomie
+2009;8;Bar;99,3;102,2;98,5;Gastronomie
+2009;9;Bar;98,4;102,9;97,1;Gastronomie
+2009;10;Bar;97,5;101,3;96,5;Gastronomie
+2009;11;Bar;95,6;97,1;95,3;Gastronomie
+2009;12;Bar;95,5;97;95,1;Gastronomie
+2010;1;Hotels;89,8;98,7;78,7;Beherbergung
+2010;2;Hotels;89,7;97,7;79,5;Beherbergung
+2010;3;Hotels;90,4;98,3;80,4;Beherbergung
+2010;4;Hotels;92,8;101,2;82,3;Beherbergung
+2010;5;Hotels;94,2;102,6;83,8;Beherbergung
+2010;6;Hotels;95,1;103,2;84,9;Beherbergung
+2010;7;Hotels;95,6;102,6;86,8;Beherbergung
+2010;8;Hotels;96,6;105,1;85,8;Beherbergung
+2010;9;Hotels;97;105,6;86;Beherbergung
+2010;10;Hotels;96;104,1;85,8;Beherbergung
+2010;11;Hotels;93;100,9;83;Beherbergung
+2010;12;Hotels;92,8;99,9;83,8;Beherbergung
+2010;1;Ferienunterkünfte;90,4;88,1;92,1;Beherbergung
+2010;2;Ferienunterkünfte;90,6;89;91,7;Beherbergung
+2010;3;Ferienunterkünfte;92,2;90,5;93,5;Beherbergung
+2010;4;Ferienunterkünfte;96,1;94,4;97,5;Beherbergung
+2010;5;Ferienunterkünfte;100,7;101,9;99,6;Beherbergung
+2010;6;Ferienunterkünfte;104,7;107;102,7;Beherbergung
+2010;7;Ferienunterkünfte;107,7;108,5;106,9;Beherbergung
+2010;8;Ferienunterkünfte;107,2;109,8;104,9;Beherbergung
+2010;9;Ferienunterkünfte;105,9;107,2;104,6;Beherbergung
+2010;10;Ferienunterkünfte;102,5;103,8;101,3;Beherbergung
+2010;11;Ferienunterkünfte;93,5;92,2;94,5;Beherbergung
+2010;12;Ferienunterkünfte;92,2;89,6;94,3;Beherbergung
+2010;1;Campingplätze;63;61,2;65,2;Beherbergung
+2010;2;Campingplätze;63,4;61,7;65,5;Beherbergung
+2010;3;Campingplätze;71,4;71;71,8;Beherbergung
+2010;4;Campingplätze;86,6;87,9;85,3;Beherbergung
+2010;5;Campingplätze;94,3;95,2;93,6;Beherbergung
+2010;6;Campingplätze;101,6;102,4;101;Beherbergung
+2010;7;Campingplätze;109,8;108,7;111,3;Beherbergung
+2010;8;Campingplätze;109,2;109,1;109,7;Beherbergung
+2010;9;Campingplätze;99,6;101,9;97,4;Beherbergung
+2010;10;Campingplätze;87,3;90,6;84,1;Beherbergung
+2010;11;Campingplätze;69,4;68,8;70,3;Beherbergung
+2010;12;Campingplätze;65,1;62,2;68,2;Beherbergung
+2010;1;Restaurants / Cafe;86,2;88,2;85,2;Gastronomie
+2010;2;Restaurants / Cafe;86,3;88,1;85,4;Gastronomie
+2010;3;Restaurants / Cafe;88,1;90,6;86,8;Gastronomie
+2010;4;Restaurants / Cafe;91,3;93,1;90,4;Gastronomie
+2010;5;Restaurants / Cafe;93,1;95,3;91,9;Gastronomie
+2010;6;Restaurants / Cafe;94;95,7;93,1;Gastronomie
+2010;7;Restaurants / Cafe;94,9;96,8;93,8;Gastronomie
+2010;8;Restaurants / Cafe;94,9;98,1;93,2;Gastronomie
+2010;9;Restaurants / Cafe;94,1;98,1;92,1;Gastronomie
+2010;10;Restaurants / Cafe;92;96,2;90;Gastronomie
+2010;11;Restaurants / Cafe;89,6;92,5;88;Gastronomie
+2010;12;Restaurants / Cafe;88,9;91,5;87,6;Gastronomie
+2010;1;Caterer;86,8;89,2;85,5;Gastronomie
+2010;2;Caterer;87,3;89,1;86,4;Gastronomie
+2010;3;Caterer;87,8;89,9;86,5;Gastronomie
+2010;4;Caterer;88,7;90,2;87,8;Gastronomie
+2010;5;Caterer;88,7;90,4;87,7;Gastronomie
+2010;6;Caterer;88;90,7;86,5;Gastronomie
+2010;7;Caterer;88,3;90,7;87,1;Gastronomie
+2010;8;Caterer;89,9;91,3;89,1;Gastronomie
+2010;9;Caterer;90,1;92,1;89,1;Gastronomie
+2010;10;Caterer;88,9;91,7;87,5;Gastronomie
+2010;11;Caterer;89,5;91,8;88,1;Gastronomie
+2010;12;Caterer;88,8;91,6;87,4;Gastronomie
+2010;1;Bar;92,3;90,2;92,8;Gastronomie
+2010;2;Bar;92,9;89,9;93,6;Gastronomie
+2010;3;Bar;92,9;91,6;93,1;Gastronomie
+2010;4;Bar;95,9;96,4;95,8;Gastronomie
+2010;5;Bar;97,3;98,3;97;Gastronomie
+2010;6;Bar;97,1;96,3;97,3;Gastronomie
+2010;7;Bar;96,2;97,9;95,8;Gastronomie
+2010;8;Bar;97;101,4;96;Gastronomie
+2010;9;Bar;97;104,5;95,1;Gastronomie
+2010;10;Bar;95,3;101,3;93,8;Gastronomie
+2010;11;Bar;93,3;94,5;92,9;Gastronomie
+2010;12;Bar;93,9;94,3;93,8;Gastronomie
+2011;1;Hotels;89,8;97,7;79,8;Beherbergung
+2011;2;Hotels;89,4;96,9;79,9;Beherbergung
+2011;3;Hotels;90,8;98,1;81,4;Beherbergung
+2011;4;Hotels;93,8;100,6;84,9;Beherbergung
+2011;5;Hotels;96,2;102,4;88,3;Beherbergung
+2011;6;Hotels;96,6;102,1;89,5;Beherbergung
+2011;7;Hotels;97,2;102,8;90,3;Beherbergung
+2011;8;Hotels;98,8;104,2;92;Beherbergung
+2011;9;Hotels;98,7;105;90,8;Beherbergung
+2011;10;Hotels;97,5;103,7;89,8;Beherbergung
+2011;11;Hotels;94,9;100,8;87,3;Beherbergung
+2011;12;Hotels;94,7;100,3;87,7;Beherbergung
+2011;1;Ferienunterkünfte;86,9;83,9;89,3;Beherbergung
+2011;2;Ferienunterkünfte;87,3;84,5;89,4;Beherbergung
+2011;3;Ferienunterkünfte;89,6;86,6;91,8;Beherbergung
+2011;4;Ferienunterkünfte;96,7;93,6;99;Beherbergung
+2011;5;Ferienunterkünfte;101,5;98,9;103,6;Beherbergung
+2011;6;Ferienunterkünfte;104;103,3;104,5;Beherbergung
+2011;7;Ferienunterkünfte;107,1;107;107,4;Beherbergung
+2011;8;Ferienunterkünfte;108,1;108;108,3;Beherbergung
+2011;9;Ferienunterkünfte;105,4;105,3;105,6;Beherbergung
+2011;10;Ferienunterkünfte;101,1;98,8;102,9;Beherbergung
+2011;11;Ferienunterkünfte;96,3;93,4;98,5;Beherbergung
+2011;12;Ferienunterkünfte;94,5;93;95,8;Beherbergung
+2011;1;Campingplätze;68,5;69,8;67,1;Beherbergung
+2011;2;Campingplätze;68,6;69,4;68;Beherbergung
+2011;3;Campingplätze;74,1;76,8;71,5;Beherbergung
+2011;4;Campingplätze;93,5;98,2;89,2;Beherbergung
+2011;5;Campingplätze;101,6;105,5;97,9;Beherbergung
+2011;6;Campingplätze;109;110,5;107,7;Beherbergung
+2011;7;Campingplätze;114;116;112,1;Beherbergung
+2011;8;Campingplätze;115,4;116,6;114,2;Beherbergung
+2011;9;Campingplätze;104,2;107,2;101,5;Beherbergung
+2011;10;Campingplätze;92,7;94,7;90,8;Beherbergung
+2011;11;Campingplätze;76,3;77,6;75;Beherbergung
+2011;12;Campingplätze;69,7;70,4;69,1;Beherbergung
+2011;1;Restaurants / Cafe;87,1;89,7;85,8;Gastronomie
+2011;2;Restaurants / Cafe;87,2;89,6;86;Gastronomie
+2011;3;Restaurants / Cafe;89,7;92,3;88,2;Gastronomie
+2011;4;Restaurants / Cafe;92,3;95,6;90,7;Gastronomie
+2011;5;Restaurants / Cafe;95,2;98;93,7;Gastronomie
+2011;6;Restaurants / Cafe;96,7;98,8;95,6;Gastronomie
+2011;7;Restaurants / Cafe;96,8;98,7;95,8;Gastronomie
+2011;8;Restaurants / Cafe;97,3;99,6;96,1;Gastronomie
+2011;9;Restaurants / Cafe;97,1;100,8;95,2;Gastronomie
+2011;10;Restaurants / Cafe;95,1;98,9;93,2;Gastronomie
+2011;11;Restaurants / Cafe;93,2;95,8;91,8;Gastronomie
+2011;12;Restaurants / Cafe;93,2;95,1;92,2;Gastronomie
+2011;1;Caterer;86,1;90,8;83,5;Gastronomie
+2011;2;Caterer;86,4;91,1;83,8;Gastronomie
+2011;3;Caterer;90,2;91,9;89,3;Gastronomie
+2011;4;Caterer;90,8;92,2;90,1;Gastronomie
+2011;5;Caterer;91,3;92,7;90,5;Gastronomie
+2011;6;Caterer;90,8;93,5;89,2;Gastronomie
+2011;7;Caterer;91,2;93,1;90,2;Gastronomie
+2011;8;Caterer;90,1;93,4;88,4;Gastronomie
+2011;9;Caterer;91,8;94;90,5;Gastronomie
+2011;10;Caterer;92,1;94,3;90,9;Gastronomie
+2011;11;Caterer;92,7;94,1;92;Gastronomie
+2011;12;Caterer;92,2;94,4;91,1;Gastronomie
+2011;1;Bar;90;91,6;89,6;Gastronomie
+2011;2;Bar;91,5;91,2;91,6;Gastronomie
+2011;3;Bar;93,2;92,7;93,2;Gastronomie
+2011;4;Bar;94,7;96,3;94,4;Gastronomie
+2011;5;Bar;96,1;99,1;95,4;Gastronomie
+2011;6;Bar;98,1;98,7;98;Gastronomie
+2011;7;Bar;98,6;100,3;98,1;Gastronomie
+2011;8;Bar;99,5;104,5;98,1;Gastronomie
+2011;9;Bar;97,3;103,4;95,8;Gastronomie
+2011;10;Bar;97,7;103,8;96,3;Gastronomie
+2011;11;Bar;95,1;97,1;94,5;Gastronomie
+2011;12;Bar;95,7;94,6;96;Gastronomie
+2012;1;Hotels;91,7;98,5;83,1;Beherbergung
+2012;2;Hotels;91,3;98,1;82,8;Beherbergung
+2012;3;Hotels;92,4;98,8;84,2;Beherbergung
+2012;4;Hotels;94,8;101,5;86,3;Beherbergung
+2012;5;Hotels;97,5;102,8;90,8;Beherbergung
+2012;6;Hotels;98,6;103,3;92,8;Beherbergung
+2012;7;Hotels;99,2;103,6;93,7;Beherbergung
+2012;8;Hotels;101,2;105,5;95,6;Beherbergung
+2012;9;Hotels;100,4;105,3;94,2;Beherbergung
+2012;10;Hotels;99;104,7;91,7;Beherbergung
+2012;11;Hotels;95,6;101,1;88,5;Beherbergung
+2012;12;Hotels;95,8;100,9;89,2;Beherbergung
+2012;1;Ferienunterkünfte;92,1;92;92,3;Beherbergung
+2012;2;Ferienunterkünfte;92,8;93;92,7;Beherbergung
+2012;3;Ferienunterkünfte;95,6;94,8;96,3;Beherbergung
+2012;4;Ferienunterkünfte;100,2;99,6;100,8;Beherbergung
+2012;5;Ferienunterkünfte;107,2;105,9;108,4;Beherbergung
+2012;6;Ferienunterkünfte;108,1;106,7;109,2;Beherbergung
+2012;7;Ferienunterkünfte;110,9;108,2;112,9;Beherbergung
+2012;8;Ferienunterkünfte;110,1;108,1;111,6;Beherbergung
+2012;9;Ferienunterkünfte;108,8;107,8;109,7;Beherbergung
+2012;10;Ferienunterkünfte;104,7;105,2;104,5;Beherbergung
+2012;11;Ferienunterkünfte;97,3;96,9;97,7;Beherbergung
+2012;12;Ferienunterkünfte;96,5;95,6;97,2;Beherbergung
+2012;1;Campingplätze;65,3;68,2;62,6;Beherbergung
+2012;2;Campingplätze;64,8;69,4;60,6;Beherbergung
+2012;3;Campingplätze;76,5;81,9;71,4;Beherbergung
+2012;4;Campingplätze;98,2;105;91,9;Beherbergung
+2012;5;Campingplätze;109,3;114,3;104,6;Beherbergung
+2012;6;Campingplätze;116,4;116,1;116,7;Beherbergung
+2012;7;Campingplätze;123,6;122,7;124,3;Beherbergung
+2012;8;Campingplätze;124,1;123,7;124,6;Beherbergung
+2012;9;Campingplätze;112,9;112,8;113,2;Beherbergung
+2012;10;Campingplätze;98,2;102,7;93,9;Beherbergung
+2012;11;Campingplätze;75,4;78,7;72,3;Beherbergung
+2012;12;Campingplätze;68,8;72,2;65,7;Beherbergung
+2012;1;Restaurants / Cafe;90,6;91,6;90;Gastronomie
+2012;2;Restaurants / Cafe;89,9;91,5;89,1;Gastronomie
+2012;3;Restaurants / Cafe;93,2;93,7;92,9;Gastronomie
+2012;4;Restaurants / Cafe;95,2;97,2;94,2;Gastronomie
+2012;5;Restaurants / Cafe;97,3;99,6;96,1;Gastronomie
+2012;6;Restaurants / Cafe;98;100,7;96,4;Gastronomie
+2012;7;Restaurants / Cafe;98,5;101,2;97;Gastronomie
+2012;8;Restaurants / Cafe;98,4;101,7;96,8;Gastronomie
+2012;9;Restaurants / Cafe;98,7;102,2;96,9;Gastronomie
+2012;10;Restaurants / Cafe;96,7;100,1;94,9;Gastronomie
+2012;11;Restaurants / Cafe;94,4;96,9;93,1;Gastronomie
+2012;12;Restaurants / Cafe;94,9;96;94,2;Gastronomie
+2012;1;Caterer;90,3;93,2;88,6;Gastronomie
+2012;2;Caterer;90,4;92,6;89,2;Gastronomie
+2012;3;Caterer;90,8;93,1;89,5;Gastronomie
+2012;4;Caterer;90,5;93,5;88,9;Gastronomie
+2012;5;Caterer;90,3;93,5;88,6;Gastronomie
+2012;6;Caterer;90,8;93,6;89,2;Gastronomie
+2012;7;Caterer;90,3;93,8;88,4;Gastronomie
+2012;8;Caterer;90,3;93,7;88,5;Gastronomie
+2012;9;Caterer;93,3;94,6;92,6;Gastronomie
+2012;10;Caterer;93,9;94,4;93,7;Gastronomie
+2012;11;Caterer;93,7;95,2;92,9;Gastronomie
+2012;12;Caterer;93,7;94,8;93,2;Gastronomie
+2012;1;Bar;93,5;95,8;92,8;Gastronomie
+2012;2;Bar;94,6;95,2;94,5;Gastronomie
+2012;3;Bar;95;95,3;94,9;Gastronomie
+2012;4;Bar;96,6;98,9;96,1;Gastronomie
+2012;5;Bar;99,5;101,8;98,8;Gastronomie
+2012;6;Bar;99,9;104;98,9;Gastronomie
+2012;7;Bar;99,6;101,2;99,2;Gastronomie
+2012;8;Bar;100,1;104,7;99;Gastronomie
+2012;9;Bar;99,3;104,9;97,9;Gastronomie
+2012;10;Bar;96,9;102,4;95,5;Gastronomie
+2012;11;Bar;94,8;98,1;94;Gastronomie
+2012;12;Bar;96,1;96;96,2;Gastronomie
+2013;1;Hotels;92,2;97,2;85,7;Beherbergung
+2013;2;Hotels;91,5;96,5;85,2;Beherbergung
+2013;3;Hotels;93,1;97,9;87,1;Beherbergung
+2013;4;Hotels;95,4;99,5;90,1;Beherbergung
+2013;5;Hotels;97,7;100,9;93,4;Beherbergung
+2013;6;Hotels;98;100,9;94,2;Beherbergung
+2013;7;Hotels;98,5;101,2;95,3;Beherbergung
+2013;8;Hotels;99,6;102,8;95,5;Beherbergung
+2013;9;Hotels;99,9;103,6;95,1;Beherbergung
+2013;10;Hotels;98,3;102,4;92,9;Beherbergung
+2013;11;Hotels;95,4;99,2;90,5;Beherbergung
+2013;12;Hotels;95,5;98,9;91,2;Beherbergung
+2013;1;Ferienunterkünfte;86,6;83,8;88,9;Beherbergung
+2013;2;Ferienunterkünfte;86,3;83,5;88,6;Beherbergung
+2013;3;Ferienunterkünfte;91,9;90,8;92,6;Beherbergung
+2013;4;Ferienunterkünfte;99,6;103,4;96,5;Beherbergung
+2013;5;Ferienunterkünfte;103,8;104,4;103,3;Beherbergung
+2013;6;Ferienunterkünfte;106;106,1;105,9;Beherbergung
+2013;7;Ferienunterkünfte;109,7;110,1;109,3;Beherbergung
+2013;8;Ferienunterkünfte;109,9;108;111,5;Beherbergung
+2013;9;Ferienunterkünfte;108,5;106,7;110;Beherbergung
+2013;10;Ferienunterkünfte;104,3;103,9;104,6;Beherbergung
+2013;11;Ferienunterkünfte;93,7;87,1;99;Beherbergung
+2013;12;Ferienunterkünfte;91,9;86;96,6;Beherbergung
+2013;1;Campingplätze;65,6;69;62,5;Beherbergung
+2013;2;Campingplätze;64,9;68,7;61,4;Beherbergung
+2013;3;Campingplätze;76,4;84,1;69,2;Beherbergung
+2013;4;Campingplätze;94,1;101,4;87,3;Beherbergung
+2013;5;Campingplätze;104,9;108,6;101,4;Beherbergung
+2013;6;Campingplätze;108,7;113,6;104;Beherbergung
+2013;7;Campingplätze;119;120,7;117,5;Beherbergung
+2013;8;Campingplätze;122;125,5;118,7;Beherbergung
+2013;9;Campingplätze;111,5;118;105,4;Beherbergung
+2013;10;Campingplätze;95,8;107,2;85;Beherbergung
+2013;11;Campingplätze;77,4;85,6;69,6;Beherbergung
+2013;12;Campingplätze;72,1;77;67,6;Beherbergung
+2013;1;Restaurants / Cafe;91;91,5;90,8;Gastronomie
+2013;2;Restaurants / Cafe;92;92,2;91,9;Gastronomie
+2013;3;Restaurants / Cafe;93,4;94,8;92,6;Gastronomie
+2013;4;Restaurants / Cafe;95,9;97,1;95,2;Gastronomie
+2013;5;Restaurants / Cafe;98,1;98,8;97,7;Gastronomie
+2013;6;Restaurants / Cafe;98,5;99,1;98,2;Gastronomie
+2013;7;Restaurants / Cafe;99,9;100;99,8;Gastronomie
+2013;8;Restaurants / Cafe;100;101;99,4;Gastronomie
+2013;9;Restaurants / Cafe;99,5;101,5;98,5;Gastronomie
+2013;10;Restaurants / Cafe;97,7;99,8;96,6;Gastronomie
+2013;11;Restaurants / Cafe;95,9;95,8;95,9;Gastronomie
+2013;12;Restaurants / Cafe;96;95,1;96,4;Gastronomie
+2013;1;Caterer;92;93,6;91,2;Gastronomie
+2013;2;Caterer;91,9;93,6;91,1;Gastronomie
+2013;3;Caterer;92,4;94,1;91,4;Gastronomie
+2013;4;Caterer;93;94,2;92,4;Gastronomie
+2013;5;Caterer;93,1;94,7;92,3;Gastronomie
+2013;6;Caterer;92,8;94,9;91,8;Gastronomie
+2013;7;Caterer;91,6;93,9;90,3;Gastronomie
+2013;8;Caterer;91,8;94,7;90,2;Gastronomie
+2013;9;Caterer;93,8;95,6;92,9;Gastronomie
+2013;10;Caterer;95,4;96;95,2;Gastronomie
+2013;11;Caterer;95,6;96;95,4;Gastronomie
+2013;12;Caterer;94,7;96,1;94;Gastronomie
+2013;1;Bar;92,5;93;92,4;Gastronomie
+2013;2;Bar;94,1;93,5;94,4;Gastronomie
+2013;3;Bar;94,1;94,6;94,1;Gastronomie
+2013;4;Bar;97,7;97,8;97,6;Gastronomie
+2013;5;Bar;99,8;98;100,3;Gastronomie
+2013;6;Bar;101,6;98,5;102,2;Gastronomie
+2013;7;Bar;99,7;98,3;99,9;Gastronomie
+2013;8;Bar;102,1;103,2;101,8;Gastronomie
+2013;9;Bar;102;107,1;100,7;Gastronomie
+2013;10;Bar;99,2;104,3;98;Gastronomie
+2013;11;Bar;96,7;96,3;96,8;Gastronomie
+2013;12;Bar;96,8;94,9;97,2;Gastronomie
+2014;1;Hotels;92,7;96,6;87,8;Beherbergung
+2014;2;Hotels;92;95,4;87,7;Beherbergung
+2014;3;Hotels;93,7;96,9;89,5;Beherbergung
+2014;4;Hotels;95,8;98,7;92,1;Beherbergung
+2014;5;Hotels;98,3;100,9;94,8;Beherbergung
+2014;6;Hotels;100,2;101,5;98,6;Beherbergung
+2014;7;Hotels;100,7;101,8;99,4;Beherbergung
+2014;8;Hotels;101,7;103,7;99,2;Beherbergung
+2014;9;Hotels;101,9;104,1;99,1;Beherbergung
+2014;10;Hotels;101,5;102,8;99,9;Beherbergung
+2014;11;Hotels;98,5;99,9;96,8;Beherbergung
+2014;12;Hotels;97,9;98,8;96,7;Beherbergung
+2014;1;Ferienunterkünfte;92,2;91,8;92,7;Beherbergung
+2014;2;Ferienunterkünfte;92,7;91,5;93,7;Beherbergung
+2014;3;Ferienunterkünfte;94,7;93,5;95,8;Beherbergung
+2014;4;Ferienunterkünfte;100,8;97,8;103,1;Beherbergung
+2014;5;Ferienunterkünfte;104,3;101,6;106,4;Beherbergung
+2014;6;Ferienunterkünfte;106,7;104;108,8;Beherbergung
+2014;7;Ferienunterkünfte;107,4;103,8;110,2;Beherbergung
+2014;8;Ferienunterkünfte;108,5;103,9;112,2;Beherbergung
+2014;9;Ferienunterkünfte;107,9;105,9;109,7;Beherbergung
+2014;10;Ferienunterkünfte;104,6;102,2;106,4;Beherbergung
+2014;11;Ferienunterkünfte;97,7;97,4;98,1;Beherbergung
+2014;12;Ferienunterkünfte;94,3;95,5;93,5;Beherbergung
+2014;1;Campingplätze;64,9;73;57,5;Beherbergung
+2014;2;Campingplätze;67;73,5;61;Beherbergung
+2014;3;Campingplätze;75,6;85,6;66,3;Beherbergung
+2014;4;Campingplätze;97,6;105,7;90;Beherbergung
+2014;5;Campingplätze;109,2;113,6;105,2;Beherbergung
+2014;6;Campingplätze;120;118,1;121,7;Beherbergung
+2014;7;Campingplätze;127,2;122,1;132;Beherbergung
+2014;8;Campingplätze;127,2;125,1;129,3;Beherbergung
+2014;9;Campingplätze;114,9;117,8;112,2;Beherbergung
+2014;10;Campingplätze;99,9;103,9;96,1;Beherbergung
+2014;11;Campingplätze;79,8;83,4;76,4;Beherbergung
+2014;12;Campingplätze;72,5;77,1;68,2;Beherbergung
+2014;1;Restaurants / Cafe;94,6;91,8;96,1;Gastronomie
+2014;2;Restaurants / Cafe;92,8;91,9;93,2;Gastronomie
+2014;3;Restaurants / Cafe;96;95,3;96,5;Gastronomie
+2014;4;Restaurants / Cafe;98;98,7;97,8;Gastronomie
+2014;5;Restaurants / Cafe;100,4;100,9;100,1;Gastronomie
+2014;6;Restaurants / Cafe;101,8;101,9;101,7;Gastronomie
+2014;7;Restaurants / Cafe;102,3;102,8;102,1;Gastronomie
+2014;8;Restaurants / Cafe;101,9;102,6;101,4;Gastronomie
+2014;9;Restaurants / Cafe;101,7;104;100,5;Gastronomie
+2014;10;Restaurants / Cafe;100;101,8;98,9;Gastronomie
+2014;11;Restaurants / Cafe;98;97,6;98,2;Gastronomie
+2014;12;Restaurants / Cafe;98;97,3;98,3;Gastronomie
+2014;1;Caterer;92,6;95,6;90,9;Gastronomie
+2014;2;Caterer;93,9;96,3;92,6;Gastronomie
+2014;3;Caterer;95,3;96,5;94,7;Gastronomie
+2014;4;Caterer;94,9;96,9;94;Gastronomie
+2014;5;Caterer;95,6;97,3;94,7;Gastronomie
+2014;6;Caterer;94,9;96,7;94,1;Gastronomie
+2014;7;Caterer;94,4;96,4;93,4;Gastronomie
+2014;8;Caterer;95,6;96,4;95,2;Gastronomie
+2014;9;Caterer;97,3;97,8;97;Gastronomie
+2014;10;Caterer;98,4;98,5;98,3;Gastronomie
+2014;11;Caterer;98,4;98,5;98,3;Gastronomie
+2014;12;Caterer;98;98,4;98;Gastronomie
+2014;1;Bar;94,6;91,9;95,3;Gastronomie
+2014;2;Bar;93,8;92,3;94,2;Gastronomie
+2014;3;Bar;95,8;94,1;96,3;Gastronomie
+2014;4;Bar;99,7;99,5;99,9;Gastronomie
+2014;5;Bar;102,3;102,3;102,3;Gastronomie
+2014;6;Bar;104,9;101,9;105,6;Gastronomie
+2014;7;Bar;103,9;101;104,7;Gastronomie
+2014;8;Bar;104,7;104,6;104,7;Gastronomie
+2014;9;Bar;104;110,1;102,4;Gastronomie
+2014;10;Bar;102,1;108;100,5;Gastronomie
+2014;11;Bar;98,1;95,8;98,7;Gastronomie
+2014;12;Bar;98,5;94,1;99,8;Gastronomie
+2015;1;Hotels;94,9;95,9;93,8;Beherbergung
+2015;2;Hotels;94,7;95,3;94;Beherbergung
+2015;3;Hotels;96,4;97,2;95,4;Beherbergung
+2015;4;Hotels;98,9;99,4;98,3;Beherbergung
+2015;5;Hotels;101,6;100,9;102,6;Beherbergung
+2015;6;Hotels;102,3;101,3;103,6;Beherbergung
+2015;7;Hotels;102,4;101,3;103,9;Beherbergung
+2015;8;Hotels;103,5;103,1;104,1;Beherbergung
+2015;9;Hotels;103,6;103,7;103,5;Beherbergung
+2015;10;Hotels;102,2;102,5;101,8;Beherbergung
+2015;11;Hotels;99,7;100;99,2;Beherbergung
+2015;12;Hotels;99,7;99,5;99,9;Beherbergung
+2015;1;Ferienunterkünfte;92,5;92,7;92,3;Beherbergung
+2015;2;Ferienunterkünfte;92,3;93,8;91,3;Beherbergung
+2015;3;Ferienunterkünfte;95,1;95,5;94,8;Beherbergung
+2015;4;Ferienunterkünfte;99,5;97,5;100,8;Beherbergung
+2015;5;Ferienunterkünfte;102,7;101;103,9;Beherbergung
+2015;6;Ferienunterkünfte;104;103,4;104,5;Beherbergung
+2015;7;Ferienunterkünfte;106,3;105,2;107,1;Beherbergung
+2015;8;Ferienunterkünfte;108,1;105,8;109,7;Beherbergung
+2015;9;Ferienunterkünfte;105,2;104,9;105,4;Beherbergung
+2015;10;Ferienunterkünfte;103,2;105;102;Beherbergung
+2015;11;Ferienunterkünfte;96;98,7;94,1;Beherbergung
+2015;12;Ferienunterkünfte;95,2;96,6;94,2;Beherbergung
+2015;1;Campingplätze;71,3;74,7;68,5;Beherbergung
+2015;2;Campingplätze;72,7;76,8;69,2;Beherbergung
+2015;3;Campingplätze;83;89,7;77,4;Beherbergung
+2015;4;Campingplätze;101,9;105,5;98,9;Beherbergung
+2015;5;Campingplätze;112,8;112,4;113,1;Beherbergung
+2015;6;Campingplätze;120,2;116,1;123,6;Beherbergung
+2015;7;Campingplätze;129,9;120,8;137,6;Beherbergung
+2015;8;Campingplätze;128,9;120,4;136;Beherbergung
+2015;9;Campingplätze;118,5;116,7;120;Beherbergung
+2015;10;Campingplätze;101,7;103,3;100,3;Beherbergung
+2015;11;Campingplätze;82,1;84,8;79,7;Beherbergung
+2015;12;Campingplätze;77,1;78,7;75,8;Beherbergung
+2015;1;Restaurants / Cafe;92,3;92,1;92,4;Gastronomie
+2015;2;Restaurants / Cafe;93,3;92,9;93,5;Gastronomie
+2015;3;Restaurants / Cafe;96,4;96,2;96,5;Gastronomie
+2015;4;Restaurants / Cafe;99,8;99;100,3;Gastronomie
+2015;5;Restaurants / Cafe;102,2;102;102,3;Gastronomie
+2015;6;Restaurants / Cafe;103,6;102,7;104;Gastronomie
+2015;7;Restaurants / Cafe;104,3;103,8;104,5;Gastronomie
+2015;8;Restaurants / Cafe;104,4;104,6;104,3;Gastronomie
+2015;9;Restaurants / Cafe;103,8;105;103,2;Gastronomie
+2015;10;Restaurants / Cafe;101,8;103,5;100,9;Gastronomie
+2015;11;Restaurants / Cafe;99,3;99,8;99,1;Gastronomie
+2015;12;Restaurants / Cafe;98,9;98,5;99,1;Gastronomie
+2015;1;Caterer;95,8;98,6;94,4;Gastronomie
+2015;2;Caterer;98,1;98,9;97,7;Gastronomie
+2015;3;Caterer;98,3;98,9;97,9;Gastronomie
+2015;4;Caterer;98,9;99,7;98,5;Gastronomie
+2015;5;Caterer;100,5;99,7;101;Gastronomie
+2015;6;Caterer;100,1;100,2;100;Gastronomie
+2015;7;Caterer;100,8;99,3;101,6;Gastronomie
+2015;8;Caterer;101,3;99,3;102,3;Gastronomie
+2015;9;Caterer;102,3;101,1;103;Gastronomie
+2015;10;Caterer;101,8;101,6;101,9;Gastronomie
+2015;11;Caterer;101,4;101,4;101,4;Gastronomie
+2015;12;Caterer;100,8;101,4;100,5;Gastronomie
+2015;1;Bar;94,7;92,5;95,3;Gastronomie
+2015;2;Bar;94,7;92;95,4;Gastronomie
+2015;3;Bar;95,8;94,8;96,1;Gastronomie
+2015;4;Bar;100,1;99,1;100,3;Gastronomie
+2015;5;Bar;103,1;101,7;103,5;Gastronomie
+2015;6;Bar;104,3;101;105,2;Gastronomie
+2015;7;Bar;101,7;101,2;101,9;Gastronomie
+2015;8;Bar;104;106,6;103,3;Gastronomie
+2015;9;Bar;103,4;109,5;101,7;Gastronomie
+2015;10;Bar;101,4;107,8;99,6;Gastronomie
+2015;11;Bar;97,5;97,7;97,4;Gastronomie
+2015;12;Bar;99,3;96,1;100,2;Gastronomie
+2016;1;Hotels;95,5;96,4;94,4;Beherbergung
+2016;2;Hotels;96,1;96,9;95,2;Beherbergung
+2016;3;Hotels;98,1;98,7;97,3;Beherbergung
+2016;4;Hotels;99,5;99,9;98,9;Beherbergung
+2016;5;Hotels;101,3;100,6;102,2;Beherbergung
+2016;6;Hotels;102,6;101,3;104,4;Beherbergung
+2016;7;Hotels;103,2;101,8;105;Beherbergung
+2016;8;Hotels;104,1;103;105,5;Beherbergung
+2016;9;Hotels;103,9;103,3;104,6;Beherbergung
+2016;10;Hotels;103,1;102,9;103,3;Beherbergung
+2016;11;Hotels;101,2;101,1;101,3;Beherbergung
+2016;12;Hotels;101,4;100,2;102,8;Beherbergung
+2016;1;Ferienunterkünfte;88,6;93,8;85,4;Beherbergung
+2016;2;Ferienunterkünfte;88,5;94,2;84,8;Beherbergung
+2016;3;Ferienunterkünfte;95,1;98,6;92,8;Beherbergung
+2016;4;Ferienunterkünfte;99,9;102;98,4;Beherbergung
+2016;5;Ferienunterkünfte;103,6;104,4;102,9;Beherbergung
+2016;6;Ferienunterkünfte;105;106;104,1;Beherbergung
+2016;7;Ferienunterkünfte;108,3;108,8;107,8;Beherbergung
+2016;8;Ferienunterkünfte;108;109,1;107,2;Beherbergung
+2016;9;Ferienunterkünfte;106,8;107,6;106,1;Beherbergung
+2016;10;Ferienunterkünfte;102,5;105,3;100,7;Beherbergung
+2016;11;Ferienunterkünfte;97;99,6;95,2;Beherbergung
+2016;12;Ferienunterkünfte;94,2;98,4;91,5;Beherbergung
+2016;1;Campingplätze;74,9;75,3;74,6;Beherbergung
+2016;2;Campingplätze;75,4;77,4;73,6;Beherbergung
+2016;3;Campingplätze;91,1;97,2;85,6;Beherbergung
+2016;4;Campingplätze;109,2;113,5;105,5;Beherbergung
+2016;5;Campingplätze;120,2;120,7;119,9;Beherbergung
+2016;6;Campingplätze;124,7;124,9;124,5;Beherbergung
+2016;7;Campingplätze;135;131,2;138,5;Beherbergung
+2016;8;Campingplätze;134,4;130,7;137,7;Beherbergung
+2016;9;Campingplätze;127,6;123,9;131;Beherbergung
+2016;10;Campingplätze;111,7;115,2;108,5;Beherbergung
+2016;11;Campingplätze;89,5;92,8;86,6;Beherbergung
+2016;12;Campingplätze;81,2;85,5;77,4;Beherbergung
+2016;1;Restaurants / Cafe;94;95;93,4;Gastronomie
+2016;2;Restaurants / Cafe;94,5;95,3;94;Gastronomie
+2016;3;Restaurants / Cafe;97,2;98,5;96,6;Gastronomie
+2016;4;Restaurants / Cafe;99,3;100,9;98,4;Gastronomie
+2016;5;Restaurants / Cafe;102,2;102,5;102;Gastronomie
+2016;6;Restaurants / Cafe;103,1;102,3;103,5;Gastronomie
+2016;7;Restaurants / Cafe;104;103,5;104,2;Gastronomie
+2016;8;Restaurants / Cafe;103,8;104,5;103,5;Gastronomie
+2016;9;Restaurants / Cafe;103,5;104,5;103;Gastronomie
+2016;10;Restaurants / Cafe;101,8;103,3;101;Gastronomie
+2016;11;Restaurants / Cafe;98,7;99,1;98,4;Gastronomie
+2016;12;Restaurants / Cafe;97,8;98,3;97,5;Gastronomie
+2016;1;Caterer;97,4;101,4;95,3;Gastronomie
+2016;2;Caterer;97,7;101;96;Gastronomie
+2016;3;Caterer;98,9;102,4;97,1;Gastronomie
+2016;4;Caterer;99,7;102,7;98,2;Gastronomie
+2016;5;Caterer;100,6;102,9;99,4;Gastronomie
+2016;6;Caterer;100,6;102,9;99,5;Gastronomie
+2016;7;Caterer;100,4;103,7;98,7;Gastronomie
+2016;8;Caterer;100,1;104;98,1;Gastronomie
+2016;9;Caterer;102,4;104,7;101,3;Gastronomie
+2016;10;Caterer;102;104,7;100,6;Gastronomie
+2016;11;Caterer;101,6;105,1;99,7;Gastronomie
+2016;12;Caterer;102,2;105,4;100,6;Gastronomie
+2016;1;Bar;94,8;91,7;95,7;Gastronomie
+2016;2;Bar;94,4;90,7;95,5;Gastronomie
+2016;3;Bar;97,1;94,3;97,9;Gastronomie
+2016;4;Bar;101,3;98,4;102,2;Gastronomie
+2016;5;Bar;102,9;101,6;103,3;Gastronomie
+2016;6;Bar;102,1;98;103,2;Gastronomie
+2016;7;Bar;103,8;97,1;105,6;Gastronomie
+2016;8;Bar;102,6;99,9;103,4;Gastronomie
+2016;9;Bar;103,2;107,3;102;Gastronomie
+2016;10;Bar;101,4;105,5;100,3;Gastronomie
+2016;11;Bar;96,4;93,7;97,2;Gastronomie
+2016;12;Bar;97,7;93,1;99;Gastronomie
+2017;1;Hotels;98,7;97,8;99,8;Beherbergung
+2017;2;Hotels;98,7;97,6;100,1;Beherbergung
+2017;3;Hotels;100;98,6;101,9;Beherbergung
+2017;4;Hotels;101,7;100,2;103,7;Beherbergung
+2017;5;Hotels;103,5;100,9;106,7;Beherbergung
+2017;6;Hotels;104,5;101,6;108,2;Beherbergung
+2017;7;Hotels;105;101,8;108,9;Beherbergung
+2017;8;Hotels;105,8;103,7;108,5;Beherbergung
+2017;9;Hotels;106,2;104,1;109;Beherbergung
+2017;10;Hotels;105,4;102,9;108,5;Beherbergung
+2017;11;Hotels;103,2;101,3;105,7;Beherbergung
+2017;12;Hotels;103;100,6;106;Beherbergung
+2017;1;Ferienunterkünfte;88,8;93,5;85,7;Beherbergung
+2017;2;Ferienunterkünfte;88,9;93,5;85,9;Beherbergung
+2017;3;Ferienunterkünfte;93,1;95,6;91,4;Beherbergung
+2017;4;Ferienunterkünfte;98,7;98,9;98,4;Beherbergung
+2017;5;Ferienunterkünfte;101,1;100,6;101,1;Beherbergung
+2017;6;Ferienunterkünfte;104,9;102;106,5;Beherbergung
+2017;7;Ferienunterkünfte;107,4;105,1;108,6;Beherbergung
+2017;8;Ferienunterkünfte;107,4;105;108,7;Beherbergung
+2017;9;Ferienunterkünfte;105,3;103,9;105,9;Beherbergung
+2017;10;Ferienunterkünfte;104;102,7;104,6;Beherbergung
+2017;11;Ferienunterkünfte;96,8;97,8;96;Beherbergung
+2017;12;Ferienunterkünfte;93,9;95,5;92,7;Beherbergung
+2017;1;Campingplätze;83,4;82,8;83,9;Beherbergung
+2017;2;Campingplätze;83,8;83,8;83,8;Beherbergung
+2017;3;Campingplätze;92;97,2;87,6;Beherbergung
+2017;4;Campingplätze;115;115,3;114,7;Beherbergung
+2017;5;Campingplätze;124,8;125,3;124,4;Beherbergung
+2017;6;Campingplätze;137,1;131,6;141,9;Beherbergung
+2017;7;Campingplätze;145,1;137,1;152,2;Beherbergung
+2017;8;Campingplätze;143,5;136;150,1;Beherbergung
+2017;9;Campingplätze;134,2;126,5;141;Beherbergung
+2017;10;Campingplätze;122,5;120,6;124,2;Beherbergung
+2017;11;Campingplätze;99,9;101,7;98,2;Beherbergung
+2017;12;Campingplätze;90,3;90,8;89,9;Beherbergung
+2017;1;Restaurants / Cafe;95;95,3;94,9;Gastronomie
+2017;2;Restaurants / Cafe;95,9;95,8;96;Gastronomie
+2017;3;Restaurants / Cafe;98,8;99,2;98,7;Gastronomie
+2017;4;Restaurants / Cafe;102,5;102,5;102,4;Gastronomie
+2017;5;Restaurants / Cafe;104,5;103,7;104,9;Gastronomie
+2017;6;Restaurants / Cafe;106,1;104,4;107;Gastronomie
+2017;7;Restaurants / Cafe;106,3;105,4;106,8;Gastronomie
+2017;8;Restaurants / Cafe;105,6;105,8;105,5;Gastronomie
+2017;9;Restaurants / Cafe;105,2;107;104,3;Gastronomie
+2017;10;Restaurants / Cafe;103,4;103,9;103,1;Gastronomie
+2017;11;Restaurants / Cafe;100,8;99,4;101,6;Gastronomie
+2017;12;Restaurants / Cafe;100,4;99;101,2;Gastronomie
+2017;1;Caterer;100,1;105,1;97,5;Gastronomie
+2017;2;Caterer;100,7;104,9;98,5;Gastronomie
+2017;3;Caterer;101,6;105,9;99,4;Gastronomie
+2017;4;Caterer;102,3;105,5;100,6;Gastronomie
+2017;5;Caterer;103,4;105;102,6;Gastronomie
+2017;6;Caterer;104,3;105,5;103,7;Gastronomie
+2017;7;Caterer;104,3;105,8;103,5;Gastronomie
+2017;8;Caterer;104,1;106;103,1;Gastronomie
+2017;9;Caterer;105,7;107,6;104,6;Gastronomie
+2017;10;Caterer;104,1;107,5;102,4;Gastronomie
+2017;11;Caterer;104,4;108,5;102,3;Gastronomie
+2017;12;Caterer;106,3;109;104,9;Gastronomie
+2017;1;Bar;94,6;93,8;94,8;Gastronomie
+2017;2;Bar;94,8;93,1;95,3;Gastronomie
+2017;3;Bar;96,2;93,6;96,9;Gastronomie
+2017;4;Bar;99,4;97,7;99,9;Gastronomie
+2017;5;Bar;100,8;99,4;101,2;Gastronomie
+2017;6;Bar;101,9;98,6;102,8;Gastronomie
+2017;7;Bar;103,7;104,2;103,5;Gastronomie
+2017;8;Bar;102,5;103,9;102;Gastronomie
+2017;9;Bar;104,2;108,2;103;Gastronomie
+2017;10;Bar;102,6;105,2;101,8;Gastronomie
+2017;11;Bar;98,2;94,6;99,2;Gastronomie
+2017;12;Bar;99;94,2;100,3;Gastronomie
+2018;1;Hotels;98,8;97,2;100,8;Beherbergung
+2018;2;Hotels;98,4;97;100,2;Beherbergung
+2018;3;Hotels;100,4;98,3;103,1;Beherbergung
+2018;4;Hotels;101,6;99,4;104,4;Beherbergung
+2018;5;Hotels;103,5;100,5;107,4;Beherbergung
+2018;6;Hotels;104,3;100,8;108,8;Beherbergung
+2018;7;Hotels;104,8;100,3;110,6;Beherbergung
+2018;8;Hotels;106,2;102,5;110,9;Beherbergung
+2018;9;Hotels;106;102,8;110,2;Beherbergung
+2018;10;Hotels;105,2;102;109,3;Beherbergung
+2018;11;Hotels;103,4;100;107,7;Beherbergung
+2018;12;Hotels;103,1;100,1;107;Beherbergung
+2018;1;Ferienunterkünfte;90,3;95,2;87,2;Beherbergung
+2018;2;Ferienunterkünfte;90,5;96,3;86,9;Beherbergung
+2018;3;Ferienunterkünfte;95,5;98,8;93,3;Beherbergung
+2018;4;Ferienunterkünfte;99,2;100,2;98,3;Beherbergung
+2018;5;Ferienunterkünfte;102,5;102,7;102,1;Beherbergung
+2018;6;Ferienunterkünfte;102,9;102,9;102,6;Beherbergung
+2018;7;Ferienunterkünfte;104,2;102,6;104,7;Beherbergung
+2018;8;Ferienunterkünfte;104,8;104,1;104,9;Beherbergung
+2018;9;Ferienunterkünfte;103,8;103,8;103,4;Beherbergung
+2018;10;Ferienunterkünfte;102,3;102,1;102,1;Beherbergung
+2018;11;Ferienunterkünfte;95,9;98,9;93,9;Beherbergung
+2018;12;Ferienunterkünfte;93,7;97,5;91,3;Beherbergung
+2018;1;Campingplätze;83,1;84,4;82;Beherbergung
+2018;2;Campingplätze;84,1;85,7;82,7;Beherbergung
+2018;3;Campingplätze;96,5;97,3;95,7;Beherbergung
+2018;4;Campingplätze;117,9;112,8;122,5;Beherbergung
+2018;5;Campingplätze;130,2;116,8;142,1;Beherbergung
+2018;6;Campingplätze;136,1;122,5;148,2;Beherbergung
+2018;7;Campingplätze;143,7;127,5;158,1;Beherbergung
+2018;8;Campingplätze;143,3;128;157,1;Beherbergung
+2018;9;Campingplätze;133,1;121,3;143,5;Beherbergung
+2018;10;Campingplätze;121;116,5;125,1;Beherbergung
+2018;11;Campingplätze;96;98,6;93,5;Beherbergung
+2018;12;Campingplätze;90;92,1;88,2;Beherbergung
+2018;1;Restaurants / Cafe;97,5;97,1;97,7;Gastronomie
+2018;2;Restaurants / Cafe;97,2;96,9;97,4;Gastronomie
+2018;3;Restaurants / Cafe;100,3;100,2;100,4;Gastronomie
+2018;4;Restaurants / Cafe;103,5;103;103,8;Gastronomie
+2018;5;Restaurants / Cafe;105,5;105,2;105,7;Gastronomie
+2018;6;Restaurants / Cafe;107,3;106,9;107,5;Gastronomie
+2018;7;Restaurants / Cafe;108;107,6;108,3;Gastronomie
+2018;8;Restaurants / Cafe;107,9;108,2;107,7;Gastronomie
+2018;9;Restaurants / Cafe;106,6;107;106,4;Gastronomie
+2018;10;Restaurants / Cafe;104,5;106,4;103,5;Gastronomie
+2018;11;Restaurants / Cafe;101,8;102,3;101,6;Gastronomie
+2018;12;Restaurants / Cafe;101,2;101,3;101,2;Gastronomie
+2018;1;Caterer;100,4;106,1;97,4;Gastronomie
+2018;2;Caterer;99,8;105;97,2;Gastronomie
+2018;3;Caterer;100,7;106,1;97,9;Gastronomie
+2018;4;Caterer;101,2;106,3;98,6;Gastronomie
+2018;5;Caterer;103,3;107,4;101,2;Gastronomie
+2018;6;Caterer;104;107,2;102,4;Gastronomie
+2018;7;Caterer;104,1;107,4;102,4;Gastronomie
+2018;8;Caterer;104,5;107,6;102,9;Gastronomie
+2018;9;Caterer;105,4;108,2;103,9;Gastronomie
+2018;10;Caterer;105;109,4;102,7;Gastronomie
+2018;11;Caterer;106,5;109,5;104,9;Gastronomie
+2018;12;Caterer;106,6;109,3;105,2;Gastronomie
+2018;1;Bar;95,6;90,7;96,9;Gastronomie
+2018;2;Bar;96,6;91;98,1;Gastronomie
+2018;3;Bar;97,6;93,5;98,8;Gastronomie
+2018;4;Bar;99,4;94,3;100,9;Gastronomie
+2018;5;Bar;105,3;97,7;107,4;Gastronomie
+2018;6;Bar;109,2;96,6;112,5;Gastronomie
+2018;7;Bar;103,3;95,7;105,3;Gastronomie
+2018;8;Bar;102;102,6;102;Gastronomie
+2018;9;Bar;102;108,1;100,7;Gastronomie
+2018;10;Bar;98,6;104,2;97,3;Gastronomie
+2018;11;Bar;99,2;92,6;101;Gastronomie
+2018;12;Bar;96,4;93,8;97,1;Gastronomie
+2019;1;Hotels;100,8;98,5;103,8;Beherbergung
+2019;2;Hotels;100,2;98,1;102,9;Beherbergung
+2019;3;Hotels;101,9;99,8;104,5;Beherbergung
+2019;4;Hotels;103,2;100,5;106,6;Beherbergung
+2019;5;Hotels;104,3;100,9;108,5;Beherbergung
+2019;6;Hotels;104,1;101,1;107,9;Beherbergung
+2019;7;Hotels;105,1;101,7;109,5;Beherbergung
+2019;8;Hotels;105,9;103,5;109;Beherbergung
+2019;9;Hotels;106;103,6;109,1;Beherbergung
+2019;10;Hotels;105,4;103,2;108,3;Beherbergung
+2019;11;Hotels;103,2;100,6;106,5;Beherbergung
+2019;12;Hotels;103,3;100,3;107,1;Beherbergung
+2019;1;Ferienunterkünfte;90,2;95,3;86,7;Beherbergung
+2019;2;Ferienunterkünfte;91,5;97,3;87,6;Beherbergung
+2019;3;Ferienunterkünfte;96,2;100;93,6;Beherbergung
+2019;4;Ferienunterkünfte;101;101,1;100,8;Beherbergung
+2019;5;Ferienunterkünfte;102,7;103,3;102,2;Beherbergung
+2019;6;Ferienunterkünfte;104,5;105,3;103,8;Beherbergung
+2019;7;Ferienunterkünfte;105,8;105,7;105,6;Beherbergung
+2019;8;Ferienunterkünfte;106,2;106;106;Beherbergung
+2019;9;Ferienunterkünfte;104;105,6;102,9;Beherbergung
+2019;10;Ferienunterkünfte;103;104,3;101,9;Beherbergung
+2019;11;Ferienunterkünfte;98,1;99,7;96,8;Beherbergung
+2019;12;Ferienunterkünfte;95,6;98,6;93,4;Beherbergung
+2019;1;Campingplätze;88,1;83;92,6;Beherbergung
+2019;2;Campingplätze;88,7;83,6;93,3;Beherbergung
+2019;3;Campingplätze;96,5;96,7;96,3;Beherbergung
+2019;4;Campingplätze;119,1;116,9;121;Beherbergung
+2019;5;Campingplätze;128,1;125,2;130,7;Beherbergung
+2019;6;Campingplätze;139,8;130,9;147,8;Beherbergung
+2019;7;Campingplätze;145,5;135,8;154,1;Beherbergung
+2019;8;Campingplätze;146,2;136,3;155;Beherbergung
+2019;9;Campingplätze;132,3;123,6;140,1;Beherbergung
+2019;10;Campingplätze;118,2;115,3;120,8;Beherbergung
+2019;11;Campingplätze;100,5;100,1;101;Beherbergung
+2019;12;Campingplätze;94,3;92,3;96,1;Beherbergung
+2019;1;Restaurants / Cafe;98;99;97,5;Gastronomie
+2019;2;Restaurants / Cafe;99,3;99,4;99,2;Gastronomie
+2019;3;Restaurants / Cafe;101,5;101,9;101,3;Gastronomie
+2019;4;Restaurants / Cafe;105;104,2;105,4;Gastronomie
+2019;5;Restaurants / Cafe;106,8;104,9;107,7;Gastronomie
+2019;6;Restaurants / Cafe;109;107;110,1;Gastronomie
+2019;7;Restaurants / Cafe;109,4;109;109,6;Gastronomie
+2019;8;Restaurants / Cafe;110;109,4;110,3;Gastronomie
+2019;9;Restaurants / Cafe;109,3;110;108,9;Gastronomie
+2019;10;Restaurants / Cafe;105,8;108,1;104,6;Gastronomie
+2019;11;Restaurants / Cafe;103,5;103,4;103,5;Gastronomie
+2019;12;Restaurants / Cafe;103,4;103,6;103,3;Gastronomie
+2019;1;Caterer;104,4;108,6;102,2;Gastronomie
+2019;2;Caterer;105,8;109,6;103,8;Gastronomie
+2019;3;Caterer;106,2;110,2;104,2;Gastronomie
+2019;4;Caterer;106,9;109,9;105,4;Gastronomie
+2019;5;Caterer;108,4;110,5;107,2;Gastronomie
+2019;6;Caterer;108,5;111,5;106,9;Gastronomie
+2019;7;Caterer;108,2;111,8;106,3;Gastronomie
+2019;8;Caterer;109,7;111,6;108,7;Gastronomie
+2019;9;Caterer;110,4;112,9;109,1;Gastronomie
+2019;10;Caterer;109,8;113,6;107,8;Gastronomie
+2019;11;Caterer;108,8;113,4;106,5;Gastronomie
+2019;12;Caterer;111,2;113,1;110,2;Gastronomie
+2019;1;Bar;94,3;90,7;95,2;Gastronomie
+2019;2;Bar;93,6;90,9;94,4;Gastronomie
+2019;3;Bar;95;92,7;95,6;Gastronomie
+2019;4;Bar;97;95,4;97,5;Gastronomie
+2019;5;Bar;100,2;97,8;100,8;Gastronomie
+2019;6;Bar;97,9;99,2;97,7;Gastronomie
+2019;7;Bar;99,2;97,9;99,6;Gastronomie
+2019;8;Bar;99,2;103,8;98,2;Gastronomie
+2019;9;Bar;100,4;110,4;98,1;Gastronomie
+2019;10;Bar;100,3;103,7;99,6;Gastronomie
+2019;11;Bar;97,1;93,1;98,2;Gastronomie
+2019;12;Bar;98,7;92,9;100,2;Gastronomie
+2020;1;Hotels;101;99,2;103,4;Beherbergung
+2020;2;Hotels;100,4;99;102,1;Beherbergung
+2020;3;Hotels;96,4;97,5;94,9;Beherbergung
+2020;4;Hotels;80,7;90,6;68,1;Beherbergung
+2020;5;Hotels;81,5;90,5;70,1;Beherbergung
+2020;6;Hotels;86,1;93,2;77;Beherbergung
+2020;7;Hotels;89,2;94,2;82,9;Beherbergung
+2020;8;Hotels;91,3;94,8;86,8;Beherbergung
+2020;9;Hotels;91,7;95,4;87;Beherbergung
+2020;10;Hotels;90,1;94,2;84,9;Beherbergung
+2020;11;Hotels;81,2;90,6;69,1;Beherbergung
+2020;12;Hotels;77;87,5;63,5;Beherbergung
+2020;1;Ferienunterkünfte;93,3;98,2;90,1;Beherbergung
+2020;2;Ferienunterkünfte;92,7;98,9;88,6;Beherbergung
+2020;3;Ferienunterkünfte;93,9;98,9;90,5;Beherbergung
+2020;4;Ferienunterkünfte;80,6;92;73,2;Beherbergung
+2020;5;Ferienunterkünfte;81,4;92,4;74,3;Beherbergung
+2020;6;Ferienunterkünfte;88,7;96,3;83,6;Beherbergung
+2020;7;Ferienunterkünfte;93,2;100,3;88,5;Beherbergung
+2020;8;Ferienunterkünfte;95,1;102;90,6;Beherbergung
+2020;9;Ferienunterkünfte;93,7;100,5;89,1;Beherbergung
+2020;10;Ferienunterkünfte;90,8;97,8;86,2;Beherbergung
+2020;11;Ferienunterkünfte;81,3;93,4;73,4;Beherbergung
+2020;12;Ferienunterkünfte;76,1;91,3;66,3;Beherbergung
+2020;1;Campingplätze;89,3;87;91,4;Beherbergung
+2020;2;Campingplätze;87,4;84,9;89,7;Beherbergung
+2020;3;Campingplätze;91,3;93,4;89,4;Beherbergung
+2020;4;Campingplätze;91,3;94,7;88,3;Beherbergung
+2020;5;Campingplätze;111,2;112;110,6;Beherbergung
+2020;6;Campingplätze;127;125,7;128,1;Beherbergung
+2020;7;Campingplätze;137,4;132,6;141,8;Beherbergung
+2020;8;Campingplätze;138,7;135,3;141,8;Beherbergung
+2020;9;Campingplätze;133,5;126,7;139,6;Beherbergung
+2020;10;Campingplätze;120,8;117,6;123,7;Beherbergung
+2020;11;Campingplätze;99,7;103,7;96,2;Beherbergung
+2020;12;Campingplätze;89,2;94;84,9;Beherbergung
+2020;1;Restaurants / Cafe;100,1;102;99,2;Gastronomie
+2020;2;Restaurants / Cafe;100,9;102,5;100;Gastronomie
+2020;3;Restaurants / Cafe;95,4;101,1;92,6;Gastronomie
+2020;4;Restaurants / Cafe;75,1;92,7;66,3;Gastronomie
+2020;5;Restaurants / Cafe;83;96,5;76,2;Gastronomie
+2020;6;Restaurants / Cafe;88,6;99,7;83;Gastronomie
+2020;7;Restaurants / Cafe;93,2;101,9;88,8;Gastronomie
+2020;8;Restaurants / Cafe;95,3;103,6;91,1;Gastronomie
+2020;9;Restaurants / Cafe;96,2;103,3;92,7;Gastronomie
+2020;10;Restaurants / Cafe;93,4;101;89,6;Gastronomie
+2020;11;Restaurants / Cafe;78,2;94,7;70;Gastronomie
+2020;12;Restaurants / Cafe;73,1;90,7;64,3;Gastronomie
+2020;1;Caterer;106,6;113,2;103,1;Gastronomie
+2020;2;Caterer;107,4;112,8;104,5;Gastronomie
+2020;3;Caterer;103,8;111,8;99,6;Gastronomie
+2020;4;Caterer;94,9;107,4;88,6;Gastronomie
+2020;5;Caterer;94,2;106,2;88;Gastronomie
+2020;6;Caterer;93,3;105,7;87;Gastronomie
+2020;7;Caterer;92,6;104,3;86,5;Gastronomie
+2020;8;Caterer;94,4;104,7;89,1;Gastronomie
+2020;9;Caterer;94,2;104,4;89;Gastronomie
+2020;10;Caterer;93,2;103,9;87,7;Gastronomie
+2020;11;Caterer;89,9;102,2;83,7;Gastronomie
+2020;12;Caterer;88,2;100,1;82,1;Gastronomie
+2020;1;Bar;93,2;90,2;94;Gastronomie
+2020;2;Bar;94,7;89,9;96;Gastronomie
+2020;3;Bar;83,5;91,4;81,7;Gastronomie
+2020;4;Bar;54,6;83,1;47,8;Gastronomie
+2020;5;Bar;56,9;85,5;50,2;Gastronomie
+2020;6;Bar;61,4;88,6;54,9;Gastronomie
+2020;7;Bar;64;89,1;58,1;Gastronomie
+2020;8;Bar;66,4;89,9;60,9;Gastronomie
+2020;9;Bar;67,6;89,3;62,5;Gastronomie
+2020;10;Bar;64,5;89,8;58,6;Gastronomie
+2020;11;Bar;49,9;84,1;41,8;Gastronomie
+2020;12;Bar;46,7;83,9;37,9;Gastronomie
+2021;1;Hotels;78,8;-;-;Beherbergung
+2021;2;Hotels;77,5;-;-;Beherbergung
+2021;3;Hotels;76,8;-;-;Beherbergung
+2021;4;Hotels;76,3;-;-;Beherbergung
+2021;5;Hotels;76,9;-;-;Beherbergung
+2021;6;Hotels;79,9;-;-;Beherbergung
+2021;7;Hotels;81,2;-;-;Beherbergung
+2021;8;Hotels;83,2;-;-;Beherbergung
+2021;9;Hotels;84,3;-;-;Beherbergung
+2021;10;Hotels;84,8;-;-;Beherbergung
+2021;11;Hotels;84,1;-;-;Beherbergung
+2021;12;Hotels;82,6;-;-;Beherbergung
+2021;1;Ferienunterkünfte;77,8;-;-;Beherbergung
+2021;2;Ferienunterkünfte;77,1;-;-;Beherbergung
+2021;3;Ferienunterkünfte;78;-;-;Beherbergung
+2021;4;Ferienunterkünfte;78;-;-;Beherbergung
+2021;5;Ferienunterkünfte;80,6;-;-;Beherbergung
+2021;6;Ferienunterkünfte;86,9;-;-;Beherbergung
+2021;7;Ferienunterkünfte;93,2;-;-;Beherbergung
+2021;8;Ferienunterkünfte;95,8;-;-;Beherbergung
+2021;9;Ferienunterkünfte;94,3;-;-;Beherbergung
+2021;10;Ferienunterkünfte;94;-;-;Beherbergung
+2021;11;Ferienunterkünfte;90,6;-;-;Beherbergung
+2021;12;Ferienunterkünfte;87,9;-;-;Beherbergung
+2021;1;Campingplätze;87,1;-;-;Beherbergung
+2021;2;Campingplätze;85,4;-;-;Beherbergung
+2021;3;Campingplätze;88,8;-;-;Beherbergung
+2021;4;Campingplätze;97,4;-;-;Beherbergung
+2021;5;Campingplätze;111,9;-;-;Beherbergung
+2021;6;Campingplätze;129,8;-;-;Beherbergung
+2021;7;Campingplätze;142,4;-;-;Beherbergung
+2021;8;Campingplätze;144;-;-;Beherbergung
+2021;9;Campingplätze;134,7;-;-;Beherbergung
+2021;10;Campingplätze;125,3;-;-;Beherbergung
+2021;11;Campingplätze;105,9;-;-;Beherbergung
+2021;12;Campingplätze;99;-;-;Beherbergung
+2021;1;Restaurants / Cafe;76,7;-;-;Gastronomie
+2021;2;Restaurants / Cafe;75,9;-;-;Gastronomie
+2021;3;Restaurants / Cafe;76,6;-;-;Gastronomie
+2021;4;Restaurants / Cafe;76,2;-;-;Gastronomie
+2021;5;Restaurants / Cafe;78,2;-;-;Gastronomie
+2021;6;Restaurants / Cafe;83,5;-;-;Gastronomie
+2021;7;Restaurants / Cafe;87,3;-;-;Gastronomie
+2021;8;Restaurants / Cafe;88,9;-;-;Gastronomie
+2021;9;Restaurants / Cafe;89,4;-;-;Gastronomie
+2021;10;Restaurants / Cafe;89,4;-;-;Gastronomie
+2021;11;Restaurants / Cafe;88,9;-;-;Gastronomie
+2021;12;Restaurants / Cafe;87,3;-;-;Gastronomie
+2021;1;Caterer;89,7;-;-;Gastronomie
+2021;2;Caterer;89,1;-;-;Gastronomie
+2021;3;Caterer;88,8;-;-;Gastronomie
+2021;4;Caterer;88,1;-;-;Gastronomie
+2021;5;Caterer;88,3;-;-;Gastronomie
+2021;6;Caterer;88,7;-;-;Gastronomie
+2021;7;Caterer;89,5;-;-;Gastronomie
+2021;8;Caterer;90,1;-;-;Gastronomie
+2021;9;Caterer;91,5;-;-;Gastronomie
+2021;10;Caterer;92;-;-;Gastronomie
+2021;11;Caterer;92,3;-;-;Gastronomie
+2021;12;Caterer;90,7;-;-;Gastronomie
+2021;1;Bar;47,2;-;-;Gastronomie
+2021;2;Bar;46,6;-;-;Gastronomie
+2021;3;Bar;46,5;-;-;Gastronomie
+2021;4;Bar;45,8;-;-;Gastronomie
+2021;5;Bar;48;-;-;Gastronomie
+2021;6;Bar;57,5;-;-;Gastronomie
+2021;7;Bar;61,3;-;-;Gastronomie
+2021;8;Bar;63,3;-;-;Gastronomie
+2021;9;Bar;65,4;-;-;Gastronomie
+2021;10;Bar;69,6;-;-;Gastronomie
+2021;11;Bar;68,8;-;-;Gastronomie
+2021;12;Bar;63,1;-;-;Gastronomie
+2022;1;Hotels;80,6;-;-;Beherbergung
+2022;2;Hotels;80,8;-;-;Beherbergung
+2022;3;Hotels;81,7;-;-;Beherbergung
+2022;4;Hotels;83,7;-;-;Beherbergung
+2022;5;Hotels;85,4;-;-;Beherbergung
+2022;6;Hotels;87,3;-;-;Beherbergung
+2022;7;Hotels;88,5;-;-;Beherbergung
+2022;8;Hotels;90,3;-;-;Beherbergung
+2022;9;Hotels;...;-;-;Beherbergung
+2022;10;Hotels;...;-;-;Beherbergung
+2022;11;Hotels;...;-;-;Beherbergung
+2022;12;Hotels;...;-;-;Beherbergung
+2022;1;Ferienunterkünfte;85,7;-;-;Beherbergung
+2022;2;Ferienunterkünfte;85,3;-;-;Beherbergung
+2022;3;Ferienunterkünfte;88,9;-;-;Beherbergung
+2022;4;Ferienunterkünfte;94,1;-;-;Beherbergung
+2022;5;Ferienunterkünfte;98,1;-;-;Beherbergung
+2022;6;Ferienunterkünfte;100,3;-;-;Beherbergung
+2022;7;Ferienunterkünfte;104,3;-;-;Beherbergung
+2022;8;Ferienunterkünfte;105,4;-;-;Beherbergung
+2022;9;Ferienunterkünfte;...;-;-;Beherbergung
+2022;10;Ferienunterkünfte;...;-;-;Beherbergung
+2022;11;Ferienunterkünfte;...;-;-;Beherbergung
+2022;12;Ferienunterkünfte;...;-;-;Beherbergung
+2022;1;Campingplätze;94,4;-;-;Beherbergung
+2022;2;Campingplätze;93;-;-;Beherbergung
+2022;3;Campingplätze;104,5;-;-;Beherbergung
+2022;4;Campingplätze;126,8;-;-;Beherbergung
+2022;5;Campingplätze;134,8;-;-;Beherbergung
+2022;6;Campingplätze;145,2;-;-;Beherbergung
+2022;7;Campingplätze;151,8;-;-;Beherbergung
+2022;8;Campingplätze;153;-;-;Beherbergung
+2022;9;Campingplätze;...;-;-;Beherbergung
+2022;10;Campingplätze;...;-;-;Beherbergung
+2022;11;Campingplätze;...;-;-;Beherbergung
+2022;12;Campingplätze;...;-;-;Beherbergung
+2022;1;Restaurants / Cafe;86,4;-;-;Gastronomie
+2022;2;Restaurants / Cafe;86;-;-;Gastronomie
+2022;3;Restaurants / Cafe;88,9;-;-;Gastronomie
+2022;4;Restaurants / Cafe;91,9;-;-;Gastronomie
+2022;5;Restaurants / Cafe;93,5;-;-;Gastronomie
+2022;6;Restaurants / Cafe;101,1;-;-;Gastronomie
+2022;7;Restaurants / Cafe;98,4;-;-;Gastronomie
+2022;8;Restaurants / Cafe;98,5;-;-;Gastronomie
+2022;9;Restaurants / Cafe;...;-;-;Gastronomie
+2022;10;Restaurants / Cafe;...;-;-;Gastronomie
+2022;11;Restaurants / Cafe;...;-;-;Gastronomie
+2022;12;Restaurants / Cafe;...;-;-;Gastronomie
+2022;1;Caterer;90;-;-;Gastronomie
+2022;2;Caterer;90,3;-;-;Gastronomie
+2022;3;Caterer;91;-;-;Gastronomie
+2022;4;Caterer;92,4;-;-;Gastronomie
+2022;5;Caterer;93,2;-;-;Gastronomie
+2022;6;Caterer;94,2;-;-;Gastronomie
+2022;7;Caterer;94,3;-;-;Gastronomie
+2022;8;Caterer;95;-;-;Gastronomie
+2022;9;Caterer;...;-;-;Gastronomie
+2022;10;Caterer;...;-;-;Gastronomie
+2022;11;Caterer;...;-;-;Gastronomie
+2022;12;Caterer;...;-;-;Gastronomie
+2022;1;Bar;60,7;-;-;Gastronomie
+2022;2;Bar;60,8;-;-;Gastronomie
+2022;3;Bar;69,6;-;-;Gastronomie
+2022;4;Bar;74,8;-;-;Gastronomie
+2022;5;Bar;77,7;-;-;Gastronomie
+2022;6;Bar;81,8;-;-;Gastronomie
+2022;7;Bar;81,8;-;-;Gastronomie
+2022;8;Bar;82,6;-;-;Gastronomie
+2022;9;Bar;...;-;-;Gastronomie
+2022;10;Bar;...;-;-;Gastronomie
+2022;11;Bar;...;-;-;Gastronomie
+2022;12;Bar;...;-;-;Gastronomie
