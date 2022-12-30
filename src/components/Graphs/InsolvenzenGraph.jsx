@@ -17,10 +17,10 @@ const chartSettings = {
     marginLeft: 40
 }
 
-const InsolvenzGraph = (props) => {
+const InsolvenzGraph = () => {
     const svgRef = useRef()
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
-    const { hoveredTime, insolvenzData, setShowTooltipsTime, setHoveredTime, showTooltipsTime } = useAppContext()
+    const { hoveredTime, insolvenzData, setShowTooltipsTime, setHoveredTime, showTooltipsTime, selectedDate, setSelectedDate } = useAppContext()
     const [closestXValueBeherbergung, setClosestXValueBeherbergung] = useState(0)
     const [closestYValueBeherbergung, setClosestYValueBeherbergung] = useState(0)
     const [closestXValueGastronomie, setClosestXValueGastronomie] = useState(0)
@@ -70,7 +70,7 @@ const InsolvenzGraph = (props) => {
 
     useMemo(() => {
         //calculate closest data point from mouse position
-        const getDistanceFromHoveredDate = (d) => Math.abs(xAccessor(d) - props.selectedDate);
+        const getDistanceFromHoveredDate = (d) => Math.abs(xAccessor(d) - selectedDate);
 
         //Beherbergung: WZ08-55; Gastronomie: WZ08-56
         //.filter(d => d["4_Auspraegung_Code"] == "WZ08-55")
@@ -87,7 +87,7 @@ const InsolvenzGraph = (props) => {
         setClosestYValueBeherbergung(yAccessor(closestDataPointBeherbergung))
         setClosestXValueGastronomie(xAccessor(closestDataPointGastronomie))
         setClosestYValueGastronomie(yAccessor(closestDataPointGastronomie))
-    }, [props.selectedDate])
+    }, [selectedDate])
 
 
 
@@ -108,7 +108,7 @@ const InsolvenzGraph = (props) => {
                         range={yScale.range()}>
                     </YAxisLinear>
 
-                    <rect x={xScale(props.selectedDate)} style={{ width: "3px", fill:'none', height: dms.innerHeight, stroke: '#B8B8B87f', strokeWidth: "18px", transform: "translateY(-3px)" }} />
+                    <rect x={xScale(selectedDate)} style={{ width: "3px", fill:'none', height: dms.innerHeight, stroke: '#B8B8B87f', strokeWidth: "18px", transform: "translateY(-3px)" }} />
                         
 
 
