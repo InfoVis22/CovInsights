@@ -97,7 +97,7 @@ const RevenueGraph = () => {
                             y={yScale(d.Branche_Label) - yScale.bandwidth() / 2}
                             width={xScale(xAccessor(d))}
                             height={yScale.bandwidth()}
-                            style={{ ...transitionStyle, fill: getFill(d.Type)}} />
+                            style={{ ...transitionStyle, fill: getFill(d.Typ)}} />
                     )}
 
                     <XAxisLinear
