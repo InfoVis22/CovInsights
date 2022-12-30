@@ -118,9 +118,10 @@ const CoronaGraph = (props) => {
                         domain={yScale.domain()}
                         range={yScale.range()}>
                     </YAxisLinear>
+                    
+                    <rect x={xScale(props.selectedDate)} style={{ width: "3px", fill:'none', height: dms.innerHeight, stroke: '#B8B8B87f', strokeWidth: "18px", transform: "translateY(-3px)" }} />
+                        
 
-                    <rect x={xScale(props.selectedDate)} style={{ width: "3px", fill:'red', height: dms.innerHeight, stroke: '#B8B8B8', strokeWidth: "3px", transform: "translateY(-3px)" }} />
-     
                     <Line
                         data={coronaData}
                         lineGenerator={lineGenerator}

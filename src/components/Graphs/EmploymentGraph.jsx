@@ -81,7 +81,7 @@ const EmploymentGraph = (props) => {
     }
 
 
-    const transitionStyle = { transition: "all 0.5s ease-in-out 0s" }
+    const transitionStyle = { transition: "all 2s ease-in-out 0s" }
 
     const getFill = (IndustryType) => {
         if(IndustryType == "Beherbergung"){

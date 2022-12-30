@@ -98,11 +98,11 @@ const Dashboard = () => {
     return (
         <div className="Page Home">
             <div className="Top">
-                <Card title="Beschäftigung im Gastgewerbe" subtitle="In tausend, gegliedert in Vollzeit, Teilzeit und Kurzarbeit">
-                    <EmploymentGraph />
-                </Card>
                 <Card title="Umsatz im Gastgewerbe" subtitle={"in Mio € ( " + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+" )"}>
                     <RevenueGraph />
+                </Card>
+                <Card title="Beschäftigung im Gastgewerbe" subtitle={"in Tausend Mitarbeiter ( " + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+" )"}>
+                    <EmploymentGraph />
                 </Card>
                 <Card title="Insolvenzen im Gastgewerbe" subtitle="Anzahl der Insolvenzen nach Gewerbekategorie">
                     <Insolvenzen_Barchart/>

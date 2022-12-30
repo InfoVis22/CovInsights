@@ -1,12 +1,14 @@
 import './DateControls.scss'
 import { useEffect, useState, useRef } from 'react'
+import { useAppContext } from '../../contexts/appContext'
 
-const DateControls = (props) => {
+const DateControls = () => {
     
     let timer
     const [count, setCount] = useState(0)
     const [isPlaying, setPlaying] = useState(false)
-    
+    const {selectedDate, setSelectedDate} = useAppContext();
+
     const updateCount = () => {
       timer = !timer && setInterval(() => {
         setCount(prevCount => prevCount + 1)
@@ -21,9 +23,9 @@ const DateControls = (props) => {
             updateCount()
 
             //Here is the magic, adding 2 day every second
-            let newDate = new Date(props.selectedDate);
+            let newDate = new Date(selectedDate);
             newDate.setDate(newDate.getDate() + 2);
-            props.setSelectedDate(newDate);
+            setSelectedDate(newDate);
 
             //Here is the reset if the date goes at the end
             const cutoffDate = new Date("2023-01-01")
@@ -44,7 +46,7 @@ const DateControls = (props) => {
 
     const handleReset = () =>{
         const resetDate = new Date("2018-01-01")
-        props.setSelectedDate(resetDate)
+        setSelectedDate(resetDate)
     }
     return (
         <div className="DateControls">
@@ -54,7 +56,7 @@ const DateControls = (props) => {
                 <button  onClick={() => handleReset()}>Reset</button>
             </div>
 
-                <p>{props.selectedDate.toLocaleString("de-DE", {
+                <p>{selectedDate.toLocaleString("de-DE", {
                 day: "numeric",
                 month: "short",
                 year: "numeric",

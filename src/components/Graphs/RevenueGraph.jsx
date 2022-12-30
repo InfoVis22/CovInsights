@@ -4,6 +4,7 @@ import { useAppContext } from "../../contexts/appContext"
 import * as d3 from 'd3'
 import YAxisNominal from "../D3Elements/YAxisNominal";
 import XAxisLinear from "../D3Elements/XAxisLinear";
+import { filter } from "d3";
 
 //set margins of Graph
 const chartSettings = {
@@ -22,7 +23,7 @@ const RevenueGraph = () => {
     const [closestXValue, setClosestXValue] = useState(0)
     const [closestYValue, setClosestYValue] = useState(0)
     const [showTooltip, setShowTooltip] = useState(false)
-    const [filteredUmsatzData, setFilteredUmsatzData] = useState([])
+    const [filteredData, setFilteredData] = useState([])
 
     const xAccessor = (d) => d.Umsatz;
     const yAccessor = (d) => d.Branche;
@@ -30,9 +31,11 @@ const RevenueGraph = () => {
     useEffect(() => {
 
         const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth()+1].join("-")
-        const filteredData = umsatzData.filter(d => (d.Date.getFullYear() + "-" + d.Date.getMonth()) === yearMonthTime)
-        
-        setFilteredUmsatzData(filteredData)
+        const filteredData = umsatzData.filter((row) => {
+            if((row.Jahr + "-" + row.Monat) === yearMonthTime){ return true }
+        })
+
+        setFilteredData(filteredData)
     }, [selectedDate])
 
     //X-Scale for graph
@@ -73,7 +76,7 @@ const RevenueGraph = () => {
     }
 
 
-    const transitionStyle = { transition: "all 0.5s ease-in-out 0s" }
+    const transitionStyle = { transition: "all 2s ease-in-out 0s" }
 
     const getFill = (IndustryType) => {
         if(IndustryType == "Beherbergung"){
@@ -89,7 +92,7 @@ const RevenueGraph = () => {
                 <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
      
-                    {filteredUmsatzData.map((d, i) =>
+                    {filteredData.map((d, i) =>
                     
                         <rect className="bar"
                             key={i}

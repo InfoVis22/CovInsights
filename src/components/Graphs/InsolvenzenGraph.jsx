@@ -108,6 +108,9 @@ const InsolvenzGraph = (props) => {
                         range={yScale.range()}>
                     </YAxisLinear>
 
+                    <rect x={xScale(props.selectedDate)} style={{ width: "3px", fill:'none', height: dms.innerHeight, stroke: '#B8B8B87f', strokeWidth: "18px", transform: "translateY(-3px)" }} />
+                        
+
 
                     {/* Line Graph for Gastgewerbe */}
                     <Line
@@ -125,8 +128,6 @@ const InsolvenzGraph = (props) => {
                         strokeWidth={3}
                     />
 
-                    <rect x={xScale(props.selectedDate)} style={{ width: "3px", fill:'red', height: dms.innerHeight, stroke: '#B8B8B8', strokeWidth: "3px", transform: "translateY(-3px)" }} />
-                        
 
         
      
