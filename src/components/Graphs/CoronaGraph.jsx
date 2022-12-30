@@ -15,10 +15,10 @@ const chartSettings = {
     marginLeft: 40
 }
 
-const CoronaGraph = (props) => {
+const CoronaGraph = () => {
     const svgRef = useRef();
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
-    const { setHoveredTime, hoveredTime, coronaData, showTooltipsTime, setShowTooltipsTime } = useAppContext()
+    const { setHoveredTime, hoveredTime, coronaData, showTooltipsTime, setShowTooltipsTime , selectedDate, setSelectedDate} = useAppContext()
     const [closestXValue, setClosestXValue] = useState(0)
     const [closestYValue, setClosestYValue] = useState(0)
 
@@ -68,7 +68,7 @@ const CoronaGraph = (props) => {
 
     const mouseEventDown = (e) => {
         const clickedDate = hoveredTime;
-        props.setSelectedDate(clickedDate);
+        setSelectedDate(clickedDate);
     }
 
     useMemo(() => {
@@ -85,13 +85,13 @@ const CoronaGraph = (props) => {
 
     useMemo(() => {
         //calculate closest data point from mouse position
-        const getDistanceFromHoveredDate = (d) => Math.abs(xAccessor(d) - props.selectedDate);
+        const getDistanceFromHoveredDate = (d) => Math.abs(xAccessor(d) - selectedDate);
         const closestIndexToSelected = d3.scan(coronaData, (a, b) => getDistanceFromHoveredDate(a) - getDistanceFromHoveredDate(b));
 
         //Grab the data point at that index
         const closestDataPointToSelected = coronaData[closestIndexToSelected];
         setclosestYValueToSelected(yAccessor(closestDataPointToSelected))
-    }, [props.selectedDate])
+    }, [selectedDate])
 
     const dateToX = (date) => {
         console.log(date)
@@ -118,8 +118,8 @@ const CoronaGraph = (props) => {
                         domain={yScale.domain()}
                         range={yScale.range()}>
                     </YAxisLinear>
-                    
-                    <rect x={xScale(props.selectedDate)} style={{ width: "3px", fill:'none', height: dms.innerHeight, stroke: '#B8B8B87f', strokeWidth: "18px", transform: "translateY(-3px)" }} />
+
+                    <rect x={xScale(selectedDate)} style={{ width: "3px", fill:'none', height: dms.innerHeight, stroke: '#B8B8B87f', strokeWidth: "18px", transform: "translateY(-3px)" }} />
                         
 
                     <Line
@@ -129,7 +129,7 @@ const CoronaGraph = (props) => {
                         strokeWidth={3}
                     />
 
-                    <circle cx={xScale(props.selectedDate)+2}  cy={yScale(closestYValueToSelected)}r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
+                    <circle cx={xScale(selectedDate)+2}  cy={yScale(closestYValueToSelected)}r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
 
     
                     {showTooltipsTime && <>
