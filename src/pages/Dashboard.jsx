@@ -7,9 +7,9 @@ import { useEffect, useState } from 'react'
 import moment from 'moment'
 
 //Barcharts
-
-import Insolvenzen_Barchart from "../components/Graphs/Insolvenzen_Barchart";
-import EmploymentGraph from '../components/Graphs/EmploymentGraph'
+import InsolvenciesBarChart from "../components/Graphs/InsolvenciesBarChart";
+import EmploymentBarChart from '../components/Graphs/EmploymentBarChart'
+import RevenueBarChart from '../components/Graphs/RevenueBarChart'
 
 //Timeline
 import InsolvenzenGraph from '../components/Graphs/InsolvenzenGraph'
@@ -17,12 +17,12 @@ import CoronaGraph from '../components/Graphs/CoronaGraph'
 
 //Controls
 import DateControls from '../components/DateControls/DateControls'
-import RevenueGraph from '../components/Graphs/RevenueGraph'
+
 
 const Dashboard = () => {
 
     //---- define AppContext ----
-    const { hoveredTime, setEmploymentData, setCoronaData, setInsolvenzData, setTimeFrame, setUmsatzData, selectedDate, setSelectedDate } = useAppContext()
+    const { hoveredTime, setEmploymentData, setInsolvencyBarData, setCoronaData, setInsolvenzData, setTimeFrame, setUmsatzData, selectedDate, setSelectedDate } = useAppContext()
 
     //---- Dashboard State ----
     const [isLoadingData, setIsLoadingData] = useState(true)
@@ -31,7 +31,7 @@ const Dashboard = () => {
     const loadData = async () => {
         console.log("Load Data...")
 
-        //load Employment 
+        //load Employment BarChart
         const rawEmployment = await d3.dsv(";", "../cleaned_data/Beschäftigung.csv")
         const employmentData = rawEmployment.filter((row) => {
             if(row.Jahr >= 2018){
@@ -42,22 +42,37 @@ const Dashboard = () => {
             newRow.BeschaeftigteGesamt = parseFloat(row.BeschaeftigteGesamt)
             return newRow
         })
-        console.log("Beschäftigte")
+        console.log("Beschäftigte Bar")
         console.log(employmentData)
         setEmploymentData(employmentData)
 
 
-        //load Umsatz Data - 2022
+        //load Revenue BarChart
         const rawUmsatzData = await d3.dsv(";", "../cleaned_data/Umsatz.csv")
         const umsatzData = rawUmsatzData
             .filter(d => +d.Jahr >= 2018 && d.Preisart === "REAL")
             .map(d => ({ ...d, Date: new Date(d.Jahr, d.Monat - 1), Umsatz: +d.Umsatz, Umsatz_Veraenderung: +d.Umsatz_Veraenderung }))
-        console.log("Umsatz")
+        console.log("Umsatz Bar")
         console.log(umsatzData)
         setUmsatzData(umsatzData)
 
+        //load Insolvency BarChart
+        const rawInsolvencyBarData = await d3.dsv(";", "../cleaned_data/Insolvenzen.csv")
+        const InsolvencyBarData = rawInsolvencyBarData.filter((row) => {
+            if(row.Jahr >= 2018){
+                return true;
+            }
+        }).map((row) => {
+            const newRow = row
+            newRow.Total = parseFloat(row.Total)
+            return newRow
+        })
+        console.log("Insolvencies Bar")
+        console.log(InsolvencyBarData)
+        setInsolvencyBarData(InsolvencyBarData)
 
-        //load Insolvenz data 2013-2022
+
+        //load Insolvenz data timeline
         const rawInsolvenzData = await d3.dsv(";", "../data/Insolvenzverfahren_2008_2022.csv")
 
         //Beherbergung: WZ08-55; Gastronomie: WZ08-56
@@ -99,13 +114,13 @@ const Dashboard = () => {
         <div className="Page Home">
             <div className="Top">
                 <Card title="Umsatz im Gastgewerbe" subtitle={"in Mio € ( " + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+" )"}>
-                    <RevenueGraph />
+                    <RevenueBarChart />
                 </Card>
                 <Card title="Beschäftigung im Gastgewerbe" subtitle={"in Tausend Mitarbeiter ( " + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+" )"}>
-                    <EmploymentGraph />
+                    <EmploymentBarChart />
                 </Card>
-                <Card title="Insolvenzen im Gastgewerbe" subtitle="Anzahl der Insolvenzen nach Gewerbekategorie">
-                    <Insolvenzen_Barchart/>
+                <Card title="Insolvenzen im Gastgewerbe" subtitle={"in Anzahl der Insolvenzen ( " + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+" )"}>
+                    <InsolvenciesBarChart />
                 </Card>
             </div>
             <div className="Middle">
@@ -119,11 +134,6 @@ const Dashboard = () => {
                 </Timeline>
                 <DateControls />
 
-            </div>
-
-            <div className="Debug visible">
-                <h3>Debug</h3>
-              
             </div>
         </div>
     )

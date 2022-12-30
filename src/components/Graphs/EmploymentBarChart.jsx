@@ -15,41 +15,46 @@ const chartSettings = {
     marginLeft: 100
 }
 
-const RevenueGraph = () => {
+const EmploymentBarChart = (props) => {
 
+    //Context
+    const { employmentData, setEmploymentData, selectedDate, setSelectedDate } = useAppContext()
+
+    //Component State
     const svgRef = useRef();
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
-    const { umsatzData, hoveredTime, selectedDate, setSelectedDate } = useAppContext()
     const [closestXValue, setClosestXValue] = useState(0)
     const [closestYValue, setClosestYValue] = useState(0)
     const [showTooltip, setShowTooltip] = useState(false)
     const [filteredData, setFilteredData] = useState([])
 
-    const xAccessor = (d) => d.Umsatz;
+    const xAccessor = (d) => d.BeschaeftigteGesamt;
     const yAccessor = (d) => d.Branche;
 
     useEffect(() => {
 
         const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth()+1].join("-")
-        const filteredData = umsatzData.filter((row) => {
+        const filteredDataCreate = employmentData.filter((row) => {
             if((row.Jahr + "-" + row.Monat) === yearMonthTime){ return true }
         })
 
-        setFilteredData(filteredData)
+        setFilteredData(filteredDataCreate)
     }, [selectedDate])
 
     //X-Scale for graph
     const xScale = useMemo(() => (
+
         d3.scaleLinear()
-            .domain([0, d3.max(umsatzData, d => xAccessor(d))])
+            .domain([0, d3.max(employmentData, row => xAccessor(row))])
             .range([0, dms.innerWidth])
             .nice()
+
     ), [dms.innerWidth])
 
     //Y-Scale for graph
     const yScale = useMemo(() => (
         d3.scaleBand()
-            .domain(umsatzData.map(d => d.Branche_Label))
+            .domain(employmentData.map(d => d.Branche_Label))
             .range([dms.innerHeight, 0])
             .padding(0.4)
 
@@ -92,15 +97,16 @@ const RevenueGraph = () => {
                 <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
      
-                    {filteredData.map((d, i) =>
-                    
+                    {filteredData.map((row, i) =>
+                    <>
                         <rect className="bar"
                             key={i}
                             x={0}
-                            y={yScale(d.Branche_Label) - yScale.bandwidth() / 2}
-                            width={xScale(xAccessor(d))}
+                            y={yScale(row.Branche_Label) - yScale.bandwidth() / 2}
+                            width={xScale(xAccessor(row))}
                             height={yScale.bandwidth()}
-                            style={{ ...transitionStyle, fill: getFill(d.Typ)}} />
+                            style={{ ...transitionStyle, fill: getFill(row.Typ)}} />
+                        </>
                     )}
 
                     <XAxisLinear
@@ -134,4 +140,4 @@ const RevenueGraph = () => {
     )
 }
 
-export default RevenueGraph
+export default EmploymentBarChart
