@@ -8,7 +8,7 @@ const About = () => {
       <h1>Unser Team</h1>
       <div className="Cards">
         <BusinessCard name={"Manuel Totzauer"}
-          infoText={"In meiner Freizeit reise ich gerne, spiele Schach und Akkordeon."}
+          infoText={"Ich studiere MMT an der LMU München. In meiner Freizeit reise ich gerne, spiele Schach und Akkordeon."}
           imageName={"manuelAvatar.jpeg"} />
         <BusinessCard name={"Sofie Henghuber"}
           infoText={"Ich bin Sofie, 27 Jahre alt und studiere Informatik im Master. Mein Schwerpunkt liegt im Quantencomputing und Machine Learning. In meiner Freizeit studiere ich nebenbei noch Schauspiel."}
