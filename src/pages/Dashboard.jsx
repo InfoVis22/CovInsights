@@ -113,13 +113,13 @@ const Dashboard = () => {
     return (
         <div className="Page Home">
             <div className="Top">
-                <Card title="Umsatz im Gastgewerbe" subtitle={"in Mio € ( " + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+" )"}>
+                <Card title="Umsatz im Gastgewerbe" subtitle={"in Mio € (" + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+")"}>
                     <RevenueBarChart />
                 </Card>
-                <Card title="Beschäftigung im Gastgewerbe" subtitle={"in Tausend Mitarbeiter ( " + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+" )"}>
+                <Card title="Beschäftigung im Gastgewerbe" subtitle={"in Tausend Mitarbeiter (" + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+")"}>
                     <EmploymentBarChart />
                 </Card>
-                <Card title="Insolvenzen im Gastgewerbe" subtitle={"in Anzahl der Insolvenzen ( " + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+" )"}>
+                <Card title="Insolvenzen im Gastgewerbe" subtitle={"in Anzahl der Insolvenzen (" + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+")"}>
                     <InsolvenciesBarChart />
                 </Card>
             </div>
