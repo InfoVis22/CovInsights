@@ -1,9 +1,7 @@
 <!-- PROJECT LOGO -->
 <a name="readme-top"></a>
 <div align="center">
-  <a href="">
-    <img src="images/logo.png" alt="CovInsights" width="80" height="80">
-  </a>
+  ![CovInsights](https://github.com/InfoVis22/CovInsights/tree/sourceSpecifications/public/images/logo.png?raw=true)
 
   <h3 align="center">CovInsights WS22/23</h3>
 
