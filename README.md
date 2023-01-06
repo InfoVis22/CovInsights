@@ -96,7 +96,7 @@ Run one of the following commands to start the app
 ### In Progress Features
 - [x] Clean and add data for Insolvencies (per Month and per type of establishment) > Double Check
 - [x] Clean and add data for Employment (per Month and per type of establishment) > Double Check
-- [] Add different types of employement to middle bar chart?
+- [ ] Add different types of employement to middle bar chart?
 
 ### Backlog Features
 
