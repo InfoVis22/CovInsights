@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
+![CovInsights](https://github.com/InfoVis22/CovInsights/tree/sourceSpecifications/public/images/logo.png?raw=true)
 <a name="readme-top"></a>
 <div align="center">
-  ![CovInsights](https://github.com/InfoVis22/CovInsights/tree/sourceSpecifications/public/images/logo.png?raw=true)
 
   <h3 align="center">CovInsights WS22/23</h3>
 
