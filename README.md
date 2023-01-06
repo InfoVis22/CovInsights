@@ -1,7 +1,8 @@
 <!-- PROJECT LOGO -->
-![CovInsights](https://github.com/InfoVis22/CovInsights/tree/sourceSpecifications/public/images/logo.png?raw=true)
+![CovInsights]()
 <a name="readme-top"></a>
 <div align="center">
+  <a href="https://github.com/InfoVis22/CovInsights/tree/main"><img src="https://github.com/InfoVis22/CovInsights/tree/sourceSpecifications/public/images/logo.png?raw=true"></a>
 
   <h3 align="center">CovInsights WS22/23</h3>
 
