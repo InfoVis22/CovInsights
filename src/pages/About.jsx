@@ -1,5 +1,6 @@
 import React from 'react'
 import BusinessCard from '../components/BusinessCard/BusinessCard'
+import SourceSpec from '../components/SourceSpec/SourceSpec'
 import './About.scss'
 
 const About = () => {
@@ -26,6 +27,15 @@ const About = () => {
 
       <div id="gant">
         <img src="/images/gant.jpg" alt="Gant Chart" />
+      </div>
+
+      <div className="SourceSpecifications">
+        <h1>Sources</h1>
+        <table>
+            <SourceSpec sourceDescription={"Test Description"} sourceLink={"https://stackoverflow.com/questions/39523040/concatenating-variables-and-strings-in-react"} lastTimeVisited={"Heute"}/>
+            <SourceSpec sourceDescription={"Tescription"} sourceLink={"https://stackoverflow.com/questions/39523riables-and-strings-in-react"} lastTimeVisited={"Heusfsate"}/>
+            <SourceSpec sourceDescription={"Test Desription"} sourceLink={"https://stackoverflow.com/questions/39523040/concatenating-variables-and-strings-in-react"} lastTimeVisited={"Heusafdafte"}/>
+        </table>
       </div>
     </div>
   )
