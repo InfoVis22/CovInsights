@@ -84,13 +84,14 @@ Run one of the following commands to start the app
 - [x] Create Paper Prototype
 - [x] Setup Technical Infrastructure
 - [x] Create First Structure of the Dashboard
-- [x] Create About Us Page
+- [x] Create About Us Page with little facts about the team
 - [x] Prioritize Features
 - [x] Create Gantt
 - [x] Create time slider to select time
 - [x] Implement play, stop and rewind controls
 - [x] Create line grapth to show Covid Cases
 - [x] Create bar charts for employment, revenue and insovencies
+- [x] List used sources on about page
 
 ### In Progress Features
 - [x] Clean and add data for Insolvencies (per Month and per type of establishment) > Double Check
