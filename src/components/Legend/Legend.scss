@@ -1,0 +1,31 @@
+//IMPORTS
+
+@import '../../Variables.scss';
+
+//SCSS
+
+.Legend {
+  background-color: white;
+  border-radius: $borderradius;
+  box-shadow: $boxshadow;
+  align-content: center;
+  width: 100%;
+
+  .LegendColorCircle{
+    background-color: aquamarine;
+  }
+
+  .Heading {
+    margin-top: 0.5rem;
+    padding: 1rem;
+
+    h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    p {
+      color: rgb(87 87 87);
+    }
+  }
+}

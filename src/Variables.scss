@@ -3,6 +3,12 @@ $lightgrey: #FBFBFB;
 $white: #ffffff;
 $grey: #818181;
 $graphplaceholder: rgb(255, 223, 223);
+
+// Topic Colors
+$turquoise: #0B6262;
+$blue: #124188;
+$black: #000000;
+
 //Borders
 $borderradius: 10px;
 
@@ -44,3 +50,8 @@ $tablet: '1024px';
     }
 }
 
+:export{
+    turquoise: $turquoise;
+    blue: $blue;
+    black: $black;
+}

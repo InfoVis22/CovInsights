@@ -1,5 +1,6 @@
 import './Dashboard.scss'
 import Card from '../components/Card/Card'
+import Legend from '../components/Legend/Legend'
 import Timeline from '../components/Timeline/Timeline'
 import * as d3 from 'd3'
 import { useAppContext } from '../contexts/appContext'
@@ -122,6 +123,7 @@ const Dashboard = () => {
                 <Card title="Insolvenzen im Gastgewerbe" subtitle={"in Anzahl der Insolvenzen (" + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+")"}>
                     <InsolvenciesBarChart />
                 </Card>
+                <Legend></Legend>
             </div>
             <div className="Middle">
                 <Timeline title="Insolvenzen" subtitle="in Anzahl">
@@ -140,3 +142,4 @@ const Dashboard = () => {
 }
 
 export default Dashboard
+
