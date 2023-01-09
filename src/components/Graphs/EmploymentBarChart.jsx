@@ -5,6 +5,8 @@ import * as d3 from 'd3'
 import YAxisNominal from "../D3Elements/YAxisNominal";
 import XAxisLinear from "../D3Elements/XAxisLinear";
 import { filter } from "d3";
+import { categories } from "../../settings.js"
+
 
 //set margins of Graph
 const chartSettings = {
@@ -33,9 +35,9 @@ const EmploymentBarChart = (props) => {
 
     useEffect(() => {
 
-        const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth()+1].join("-")
+        const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth() + 1].join("-")
         const filteredDataCreate = employmentData.filter((row) => {
-            if((row.Jahr + "-" + row.Monat) === yearMonthTime){ return true }
+            if ((row.Jahr + "-" + row.Monat) === yearMonthTime) { return true }
         })
 
         setFilteredData(filteredDataCreate)
@@ -83,12 +85,9 @@ const EmploymentBarChart = (props) => {
 
     const transitionStyle = { transition: "all 2s ease-in-out 0s" }
 
-    const getFill = (IndustryType) => {
-        if(IndustryType == "Beherbergung"){
-            return "#56A3A6";
-        }else if(IndustryType == "Gastronomie"){
-            return "#EAA361";
-        }
+    const getFill = (dataType) => {
+        const category = categories.find(category => category.name === dataType)
+        return category.color
     }
 
     return (
@@ -96,16 +95,16 @@ const EmploymentBarChart = (props) => {
             <svg width={dms.width} height={dms.height} ref={svgRef}>
                 <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
-     
+
                     {filteredData.map((row, i) =>
-                    <>
-                        <rect className="bar"
-                            key={i}
-                            x={0}
-                            y={yScale(row.Branche_Label) - yScale.bandwidth() / 2}
-                            width={xScale(xAccessor(row))}
-                            height={yScale.bandwidth()}
-                            style={{ ...transitionStyle, fill: getFill(row.Typ)}} />
+                        <>
+                            <rect className="bar"
+                                key={i}
+                                x={0}
+                                y={yScale(row.Branche_Label) - yScale.bandwidth() / 2}
+                                width={xScale(xAccessor(row))}
+                                height={yScale.bandwidth()}
+                                style={{ ...transitionStyle, fill: getFill(row.Typ) }} />
                         </>
                     )}
 

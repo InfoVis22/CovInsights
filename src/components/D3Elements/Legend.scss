@@ -1,0 +1,25 @@
+.legend {
+
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+
+    .legend-item {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        .legendColorBox {
+            height: 10px;
+            width: 10px;
+            border-radius: 5px;
+        }
+
+        .legendLabelText {
+            font-size: 0.8rem;
+        }
+
+    }
+
+
+}
