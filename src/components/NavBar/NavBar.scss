@@ -1,0 +1,39 @@
+//IMPORTS
+
+@import '../../Variables.scss';
+
+//SCSS
+
+.NavBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: white;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.171);
+    height: 50px;
+
+    img {
+        height: 40px;
+        object-fit: cover;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+        font-weight: 600;
+
+        @media (max-width: 800px) {
+            display: none;
+        }
+    }
+
+    .links {
+        display: flex;
+        gap: 10px;
+
+    }
+
+}

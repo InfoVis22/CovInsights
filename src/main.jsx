@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, Outlet, useNavigate, useLocation, } from "react-router-dom";
 import Dashboard from './pages/Dashboard'
-import TopBar from './components/TopBar/TopBar'
 import About from './pages/About'
 import ErrorPage from './pages/ErrorPage';
+import NavBar from './components/NavBar/NavBar';
 
 //Import global style
 import './App.scss'
@@ -24,7 +24,7 @@ const AppLayout = () => {
   return (
     <AppContext>
       <div className="App" >
-        <TopBar />
+        <NavBar />
         <Outlet />
       </div>
     </AppContext>
