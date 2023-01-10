@@ -4,6 +4,7 @@ import useChartDimensions from "../../hooks/useChartDimensions"
 import XAxisTime from "../D3Elements/XAxisTime"
 import YAxisLinear from "../D3Elements/YAxisLinear"
 import Line from "../D3Elements/Line"
+import { categories } from "../../settings.js"
 import * as d3 from 'd3'
 
 
@@ -20,7 +21,7 @@ const chartSettings = {
 const InsolvenzGraph = () => {
     const svgRef = useRef()
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
-    const { hoveredTime, insolvenzData, setShowTooltipsTime, setHoveredTime, showTooltipsTime, selectedDate, setSelectedDate } = useAppContext()
+    const { insolvenzData, setShowTooltipsTime, hoveredTime, setHoveredTime, showTooltipsTime, selectedDate, setSelectedDate } = useAppContext()
     const [closestXValueBeherbergung, setClosestXValueBeherbergung] = useState(0)
     const [closestYValueBeherbergung, setClosestYValueBeherbergung] = useState(0)
     const [closestXValueGastronomie, setClosestXValueGastronomie] = useState(0)
@@ -59,7 +60,6 @@ const InsolvenzGraph = () => {
         const mousePosition = d3.pointer(e)
         //get date from x and y coordinates
         const hoveredDate = xScale.invert(mousePosition[0]);
-
         //set global state of selected line
         setHoveredTime(hoveredDate)
     }
@@ -73,11 +73,8 @@ const InsolvenzGraph = () => {
         const getDistanceFromHoveredDate = (d) => Math.abs(xAccessor(d) - selectedDate);
 
         //Beherbergung: WZ08-55; Gastronomie: WZ08-56
-        //.filter(d => d["4_Auspraegung_Code"] == "WZ08-55")
-        //.filter(d => d["4_Auspraegung_Code"] == "WZ08-56")
         const closestIndexBeherbergung = d3.scan(insolvenzData, (a, b) => getDistanceFromHoveredDate(a) - getDistanceFromHoveredDate(b));
         const closestIndexGastronomie = closestIndexBeherbergung + 1 //hahah shitty quick fix aber funktioniert
-
 
         //Grab the data point at that index
         const closestDataPointBeherbergung = insolvenzData[closestIndexBeherbergung];
@@ -108,39 +105,39 @@ const InsolvenzGraph = () => {
                         range={yScale.range()}>
                     </YAxisLinear>
 
-                    <rect x={xScale(selectedDate)} style={{ width: "3px", fill:'none', height: dms.innerHeight, stroke: '#B8B8B87f', strokeWidth: "18px", transform: "translateY(-3px)" }} />
-                        
-
+                    {/* Line for Beherbergung */}
+                    <Line
+                        data={insolvenzData.filter(d => d["4_Auspraegung_Code"] === "WZ08-56")}
+                        lineGenerator={lineGenerator}
+                        color={categories.Beherbergung.color}
+                        strokeWidth={3}
+                    />
 
                     {/* Line Graph for Gastgewerbe */}
                     <Line
                         data={insolvenzData.filter(d => d["4_Auspraegung_Code"] !== "WZ08-56")}
                         lineGenerator={lineGenerator}
-                        color={'#EAA361'}
-                        strokeWidth={3}
-                    />
-
-                    {/* Line for Beherbergung */}
-                    <Line
-                        data={insolvenzData.filter(d => d["4_Auspraegung_Code"] === "WZ08-56")}
-                        lineGenerator={lineGenerator}
-                        color={'#56A3A6'}
+                        color={categories.Gastronomie.color}
                         strokeWidth={3}
                     />
 
 
-        
-     
-                    {/* hover Beherbergung*/}
+                    {/* selected grey rectangle */}
+                    <rect x={xScale(selectedDate)} style={{ width: "10px", fill: '#B8B8B87f', height: dms.innerHeight }} />
+
+                    {showTooltipsTime && <>
+                        {/* hover dotted line */}
+                        <rect x={xScale(hoveredTime)} style={{ width: ".5px", height: dms.innerHeight, stroke: '#5c5c5c', strokeDasharray: '1 1', strokeWidth: "1px" }} />
+                    </>}
+
+                    {/* hover Beherbergung circle*/}
                     <circle cx={xScale(closestXValueBeherbergung)} cy={yScale(closestYValueBeherbergung)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
 
-                    {/* hover Gastronomie*/}
+                    {/* hover Gastronomie circle*/}
                     <circle cx={xScale(closestXValueGastronomie)} cy={yScale(closestYValueGastronomie)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
 
 
-                   
 
-                    {/* hover line */}
 
 
                     {/* actionListener rect over graph area*/}

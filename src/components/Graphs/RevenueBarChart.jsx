@@ -5,13 +5,13 @@ import * as d3 from 'd3'
 import YAxisNominal from "../D3Elements/YAxisNominal";
 import XAxisLinear from "../D3Elements/XAxisLinear";
 import { filter } from "d3";
-import Legend from "../D3Elements/legend";
+import Legend from "../D3Elements/Legend.jsx";
 import { categories } from "../../settings.js"
 
 
 //set margins of Graph
 const chartSettings = {
-    height: 300,
+    height: 250,
     marginTop: 20,
     marginRight: 30,
     marginBottom: 30,
@@ -22,7 +22,7 @@ const RevenueBarChart = () => {
 
     const svgRef = useRef();
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
-    const { umsatzData, hoveredTime, selectedDate, setSelectedDate } = useAppContext()
+    const { umsatzData, hoveredTime, selectedDate } = useAppContext()
     const [closestXValue, setClosestXValue] = useState(0)
     const [closestYValue, setClosestYValue] = useState(0)
     const [showTooltip, setShowTooltip] = useState(false)
@@ -79,11 +79,10 @@ const RevenueBarChart = () => {
     }
 
 
-    const transitionStyle = { transition: "all 2s ease-in-out 0s" }
+    const transitionStyle = { transition: "all 1s ease-in-out 0s" }
 
     const getFill = (dataType) => {
-        const category = categories.find(category => category.name === dataType)
-        return category.color
+        return (dataType === "Gastronomie") ? categories.Gastronomie.color : categories.Beherbergung.color
     }
 
     return (
@@ -133,7 +132,7 @@ const RevenueBarChart = () => {
                 </svg>
             </div >
 
-            <Legend vertical={true} />
+            <Legend vertical={false} />
         </>
     )
 }

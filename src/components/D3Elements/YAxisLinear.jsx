@@ -3,7 +3,7 @@ import * as d3 from 'd3'
 
 //domain: data values
 //range: pixel values
-const YAxisLinear = ({ dms, domain = [0, 100], range = [0, 300] }) => {
+const YAxisLinear = ({ dms, domain = [0, 100], range = [0, 300], labelSuffix }) => {
 
     const axisRef = useRef()
 
@@ -28,7 +28,7 @@ const YAxisLinear = ({ dms, domain = [0, 100], range = [0, 300] }) => {
                 <g key={value} transform={`translate(0, ${yOffset})`}>
                     <line x2="-6" stroke="currentColor" />
                     <text key={value} style={{ fontSize: "11px", textAnchor: "end", transform: "translate(-10px, 0.32em)" }}>
-                        {value}
+                        {value}{labelSuffix}
                     </text>
                 </g>
             ))}

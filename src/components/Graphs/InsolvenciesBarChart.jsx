@@ -8,7 +8,7 @@ import { filter } from "d3";
 
 //set margins of Graph
 const chartSettings = {
-    height: 300,
+    height: 250,
     marginTop: 20,
     marginRight: 30,
     marginBottom: 30,
@@ -33,9 +33,9 @@ const InsolvenciesBarChart = (props) => {
 
     useEffect(() => {
 
-        const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth()+1].join("-")
+        const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth() + 1].join("-")
         const filteredDataCreate = InsolvencyBarData.filter((row) => {
-            if((row.Jahr + "-" + row.Monat) === yearMonthTime){ return true }
+            if ((row.Jahr + "-" + row.Monat) === yearMonthTime) { return true }
         })
 
         setFilteredData(filteredDataCreate)
@@ -73,7 +73,7 @@ const InsolvenciesBarChart = (props) => {
         //console.log(yScale.step())
 
         //const band = d3.select(this.parentNode).datum().key;
-       
+
     }
 
     const mouseLeaveEvent = (e) => {
@@ -84,9 +84,9 @@ const InsolvenciesBarChart = (props) => {
     const transitionStyle = { transition: "all 2s ease-in-out 0s" }
 
     const getFill = (IndustryType) => {
-        if(IndustryType == "Beherbergung"){
+        if (IndustryType == "Beherbergung") {
             return "#56A3A6";
-        }else if(IndustryType == "Gastronomie"){
+        } else if (IndustryType == "Gastronomie") {
             return "#EAA361";
         }
     }
@@ -96,16 +96,16 @@ const InsolvenciesBarChart = (props) => {
             <svg width={dms.width} height={dms.height} ref={svgRef}>
                 <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
-     
+
                     {filteredData.map((row, i) =>
-                    <>
-                        <rect className="bar"
-                            key={i}
-                            x={0}
-                            y={yScale(row.Branche_Label) - yScale.bandwidth() / 2}
-                            width={xScale(xAccessor(row))}
-                            height={yScale.bandwidth()}
-                            style={{ ...transitionStyle, fill: getFill(row.Typ)}} />
+                        <>
+                            <rect className="bar"
+                                key={i}
+                                x={0}
+                                y={yScale(row.Branche_Label) - yScale.bandwidth() / 2}
+                                width={xScale(xAccessor(row))}
+                                height={yScale.bandwidth()}
+                                style={{ ...transitionStyle, fill: getFill(row.Typ) }} />
                         </>
                     )}
 

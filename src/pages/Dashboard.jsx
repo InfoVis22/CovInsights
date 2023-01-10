@@ -17,6 +17,7 @@ import CoronaGraph from '../components/Graphs/CoronaGraph'
 
 //Controls
 import DateControls from '../components/DateControls/DateControls'
+import InsolvenzenProzent from '../components/Graphs/InsolvenzenProzent'
 
 
 const Dashboard = () => {
@@ -34,7 +35,7 @@ const Dashboard = () => {
         //load Employment BarChart
         const rawEmployment = await d3.dsv(";", "../cleaned_data/Beschäftigung.csv")
         const employmentData = rawEmployment.filter((row) => {
-            if(row.Jahr >= 2018){
+            if (row.Jahr >= 2018) {
                 return true;
             }
         }).map((row) => {
@@ -59,7 +60,7 @@ const Dashboard = () => {
         //load Insolvency BarChart
         const rawInsolvencyBarData = await d3.dsv(";", "../cleaned_data/Insolvenzen.csv")
         const InsolvencyBarData = rawInsolvencyBarData.filter((row) => {
-            if(row.Jahr >= 2018){
+            if (row.Jahr >= 2018) {
                 return true;
             }
         }).map((row) => {
@@ -113,14 +114,14 @@ const Dashboard = () => {
     return (
         <div className="Page Home">
             <div className="Top">
-                <Card title="Umsatz im Gastgewerbe" subtitle={"in Mio € (" + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+")"}>
+                <Card title="Umsatz im Gastgewerbe" subtitle={"in Mio € (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
                     <RevenueBarChart />
                 </Card>
-                <Card title="Beschäftigung im Gastgewerbe" subtitle={"in Tausend Mitarbeiter (" + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+")"}>
+                <Card title="Beschäftigung im Gastgewerbe" subtitle={"in Tausend Mitarbeiter (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
                     <EmploymentBarChart />
                 </Card>
-                <Card title="Insolvenzen im Gastgewerbe" subtitle={"in Anzahl der Insolvenzen (" + selectedDate.toLocaleString("de-DE", {month: "short",year: "numeric"})+")"}>
-                    <InsolvenciesBarChart />
+                <Card title="Insolvenzen im Gastgewerbe" subtitle={"in Anzahl der Insolvenzen (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
+                    <InsolvenzenProzent />
                 </Card>
             </div>
             <div className="Middle">

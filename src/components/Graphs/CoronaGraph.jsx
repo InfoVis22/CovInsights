@@ -18,7 +18,7 @@ const chartSettings = {
 const CoronaGraph = () => {
     const svgRef = useRef();
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
-    const { setHoveredTime, hoveredTime, coronaData, showTooltipsTime, setShowTooltipsTime , selectedDate, setSelectedDate} = useAppContext()
+    const { setHoveredTime, hoveredTime, coronaData, showTooltipsTime, setShowTooltipsTime, selectedDate, setSelectedDate } = useAppContext()
     const [closestXValue, setClosestXValue] = useState(0)
     const [closestYValue, setClosestYValue] = useState(0)
 
@@ -119,9 +119,6 @@ const CoronaGraph = () => {
                         range={yScale.range()}>
                     </YAxisLinear>
 
-                    <rect x={xScale(selectedDate)} style={{ width: "3px", fill:'none', height: dms.innerHeight, stroke: '#B8B8B87f', strokeWidth: "18px", transform: "translateY(-3px)" }} />
-                        
-
                     <Line
                         data={coronaData}
                         lineGenerator={lineGenerator}
@@ -129,16 +126,18 @@ const CoronaGraph = () => {
                         strokeWidth={3}
                     />
 
-                    <circle cx={xScale(selectedDate)+2}  cy={yScale(closestYValueToSelected)}r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
 
-    
+                    {/* selected grey rectangle */}
+                    <rect x={xScale(selectedDate)} style={{ width: "10px", fill: '#B8B8B87f', height: dms.innerHeight }} />
+
+                    <circle cx={xScale(selectedDate) + 2} cy={yScale(closestYValueToSelected)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
+
+
                     {showTooltipsTime && <>
-
                         {/* hover line */}
                         <rect x={xScale(hoveredTime)} style={{ width: ".5px", height: dms.innerHeight, stroke: '#5c5c5c', strokeDasharray: '1 1', strokeWidth: "1px" }} />
                         {/* hover circle*/}
                         <circle cx={xScale(closestXValue)} cy={yScale(closestYValue)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
-
                     </>}
 
 

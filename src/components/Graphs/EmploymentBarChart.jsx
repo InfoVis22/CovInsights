@@ -10,7 +10,7 @@ import { categories } from "../../settings.js"
 
 //set margins of Graph
 const chartSettings = {
-    height: 300,
+    height: 250,
     marginTop: 20,
     marginRight: 30,
     marginBottom: 30,
@@ -75,7 +75,6 @@ const EmploymentBarChart = (props) => {
         //console.log(yScale.step())
 
         //const band = d3.select(this.parentNode).datum().key;
-        console.log(e)
     }
 
     const mouseLeaveEvent = (e) => {
@@ -83,18 +82,17 @@ const EmploymentBarChart = (props) => {
     }
 
 
-    const transitionStyle = { transition: "all 2s ease-in-out 0s" }
+    const transitionStyle = { transition: "all 1s ease-in-out 0s" }
 
     const getFill = (dataType) => {
-        const category = categories.find(category => category.name === dataType)
-        return category.color
+        if (dataType === "Gastronomie") return categories.Gastronomie.color
+        else return categories.Beherbergung.color
     }
 
     return (
         <div className="graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
             <svg width={dms.width} height={dms.height} ref={svgRef}>
                 <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
-
 
                     {filteredData.map((row, i) =>
                         <>

@@ -1,12 +1,11 @@
-export const categories = [
-    {
-        name: "Beherbergung",
+export const categories =
+{
+    Beherbergung: {
         subCategories: ["Hotels", "Campingplätze", "Ferienunterkünfte"],
         color: "#0B6262"
     },
-    {
-        name: "Gastronomie",
+    Gastronomie: {
         subCategories: ["Restaurant /Cafe", "Bars", "Caterer"],
         color: "#124188"
     }
-]
+}
