@@ -1,9 +1,10 @@
 
-import React, { useMemo, useRef } from 'react'
+import React, { useMemo, useRef, useState } from 'react'
 import { useAppContext } from '../../contexts/appContext';
 import useChartDimensions from '../../hooks/useChartDimensions';
 import * as d3 from 'd3'
 import YAxisLinear from '../D3Elements/YAxisLinear';
+import { useEffect } from 'react';
 
 
 //set margins of Graph
@@ -21,13 +22,24 @@ const InsolvenzenProzent = () => {
     const svgRef = useRef();
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
     const { InsolvencyBarData, hoveredTime, selectedDate } = useAppContext()
+    const [insolvenzData, setInsolvenzData] = useState([])
+
+
+    useEffect(() => {
+        const filteredData = InsolvencyBarData.filter((d) => {
+            return (d.Wirtschaftsbereich !== "Beherbergung" && d.Wirtschaftsbereich !== "Gastronomie" && (d.Date.getMonth() + "-" + d.Date.getYear() === selectedDate.getMonth() + "-" + selectedDate.getYear()))
+        })
+
+        setInsolvenzData(filteredData)
+
+    }, [InsolvencyBarData, selectedDate])
 
 
     //X-Scale for graph
     const xScale = d3.scaleBand()
-        .domain(InsolvencyBarData.map(d => d.Branche_Label))
+        .domain(insolvenzData.map(d => d.Wirtschaftsbereich))
         .range([0, dms.innerWidth])
-        .padding(0.8)
+        .padding(0.6)
 
 
     //Y-Scale for graph
@@ -36,11 +48,10 @@ const InsolvenzenProzent = () => {
         .range([0, dms.innerHeight])
         .nice()
 
-    console.log("range: " + yScale.range())
-    console.log(yScale.range())
-
     const ticks = xScale.domain().map(value => ({ value, xOffset: xScale(value) }))
-    console.log(ticks)
+
+    console.log(xScale.bandwidth())
+    yScale(insolvenzData[0]?.Veraenderung)
 
     const transitionStyle = { transition: "all 1s ease-in-out 0s" }
 
@@ -75,14 +86,14 @@ const InsolvenzenProzent = () => {
 
 
                     {/* Create Prozent Bars */}
-                    {InsolvencyBarData.map((row, i) => (
+                    {insolvenzData.map((row, i) => (
                         <rect className="bar"
                             key={i}
-                            x={0}
-                            y={xScale(row.Wirtschaftsbereich) - xScale.bandwidth() / 2}
+                            x={xScale(row.Wirtschaftsbereich)}
+                            y={dms.innerHeight / 2}
                             width={xScale.bandwidth()}
-                            height={yScale((d) => d.Veraenderung)}
-                            style={{ ...transitionStyle, fill: "black" }} />
+                            height={yScale(row.Veraenderung ? row.Veraenderung : 0)}
+                            style={{ ...transitionStyle, fill: "#000" }} />
                     )
                     )}
 

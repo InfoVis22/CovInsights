@@ -7,7 +7,7 @@ import Legend from '../D3Elements/legend';
 const Card = ({ title, subtitle, children }) => {
 
     return (
-        <div className="Visual">
+        <div className="Card">
             <div className="Heading">
                 <h2>{title}</h2>
                 <p>{subtitle}</p>
