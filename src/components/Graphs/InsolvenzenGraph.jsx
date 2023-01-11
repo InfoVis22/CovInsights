@@ -4,6 +4,7 @@ import useChartDimensions from "../../hooks/useChartDimensions"
 import XAxisTime from "../D3Elements/XAxisTime"
 import YAxisLinear from "../D3Elements/YAxisLinear"
 import Line from "../D3Elements/Line"
+import Legend from "../D3Elements/Legend.jsx";
 import { categories } from "../../settings.js"
 import * as d3 from 'd3'
 
@@ -90,6 +91,7 @@ const InsolvenzGraph = () => {
 
 
     return (
+        <>
         <div className="Graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
             <svg width={dms.width} height={dms.height} ref={svgRef}>
                 <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
@@ -155,6 +157,9 @@ const InsolvenzGraph = () => {
                 </g>
             </svg>
         </div >
+        <div style={{height: "20px"}}></div>
+        <Legend vertical={false} />
+        </>
     )
 }
 

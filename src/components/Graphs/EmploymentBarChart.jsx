@@ -5,6 +5,7 @@ import * as d3 from 'd3'
 import YAxisNominal from "../D3Elements/YAxisNominal";
 import XAxisLinear from "../D3Elements/XAxisLinear";
 import { filter } from "d3";
+import Legend from "../D3Elements/Legend.jsx";
 import { categories } from "../../settings.js"
 
 
@@ -90,6 +91,7 @@ const EmploymentBarChart = (props) => {
     }
 
     return (
+        <>
         <div className="graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
             <svg width={dms.width} height={dms.height} ref={svgRef}>
                 <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
@@ -134,6 +136,8 @@ const EmploymentBarChart = (props) => {
                 </g>
             </svg>
         </div >
+        <Legend vertical={false} />
+        </>
     )
 }
 
