@@ -65,6 +65,7 @@ const InsolvenzGraph = () => {
     }
 
     const mouseLeaveEvent = (e) => {
+        setHoveredTime(null)
         setShowTooltipsTime(false)
     }
 

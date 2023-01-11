@@ -58,15 +58,13 @@ const Dashboard = () => {
         setUmsatzData(umsatzData)
 
         //load Insolvency BarChart
-        const rawInsolvencyBarData = await d3.dsv(";", "../cleaned_data/Insolvenzen.csv")
+        const rawInsolvencyBarData = await d3.dsv(";", "../data/Insolvenzen_veränderung.csv")
         const InsolvencyBarData = rawInsolvencyBarData.filter((row) => {
             if (row.Jahr >= 2018) {
                 return true;
             }
         }).map((row) => {
-            const newRow = row
-            newRow.Total = parseFloat(row.Total)
-            return newRow
+            return { ...row, Date: new Date(row.Jahr, row.Monat - 1), Veraenderung: (+row.Veraenderung) * 100 }
         })
         console.log("Insolvencies Bar")
         console.log(InsolvencyBarData)

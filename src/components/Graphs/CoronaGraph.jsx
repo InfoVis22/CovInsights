@@ -52,6 +52,11 @@ const CoronaGraph = () => {
         setShowTooltipsTime(true)
     }
 
+    const mouseEventDown = (e) => {
+        const clickedDate = hoveredTime;
+        setSelectedDate(clickedDate);
+    }
+
     const mouseMoveEvent = (e) => {
         //get x and y position relative to hovered event element
         const mousePosition = d3.pointer(e)
@@ -63,13 +68,10 @@ const CoronaGraph = () => {
     }
 
     const mouseLeaveEvent = (e) => {
+        setHoveredTime(null)
         setShowTooltipsTime(false)
     }
 
-    const mouseEventDown = (e) => {
-        const clickedDate = hoveredTime;
-        setSelectedDate(clickedDate);
-    }
 
     useMemo(() => {
         //calculate closest data point from mouse position
@@ -93,12 +95,6 @@ const CoronaGraph = () => {
         setclosestYValueToSelected(yAccessor(closestDataPointToSelected))
     }, [selectedDate])
 
-    const dateToX = (date) => {
-        console.log(date)
-        //Todo convert a date into the X value on the graph
-
-        return 100;
-    }
 
     return (
         <div className="Graph" ref={wrapperRef} style={{ height: chartSettings.height }}>

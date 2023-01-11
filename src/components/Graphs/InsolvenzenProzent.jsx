@@ -27,12 +27,12 @@ const InsolvenzenProzent = () => {
     const xScale = d3.scaleBand()
         .domain(InsolvencyBarData.map(d => d.Branche_Label))
         .range([0, dms.innerWidth])
-        .padding(0.4)
+        .padding(0.8)
 
 
     //Y-Scale for graph
     const yScale = d3.scaleLinear()
-        .domain([-10, 10])
+        .domain([-100, 100])
         .range([0, dms.innerHeight])
         .nice()
 
@@ -42,6 +42,7 @@ const InsolvenzenProzent = () => {
     const ticks = xScale.domain().map(value => ({ value, xOffset: xScale(value) }))
     console.log(ticks)
 
+    const transitionStyle = { transition: "all 1s ease-in-out 0s" }
 
     return (
         <div className="graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
@@ -65,7 +66,7 @@ const InsolvenzenProzent = () => {
                         {ticks.map(({ value, xOffset }) => (
                             <g key={value} transform={`translate(${xOffset}, ${dms.innerHeight})`}>
                                 <line y1="0" y2="6" stroke="currentColor" />
-                                <text style={{ fontSize: "11px", textAnchor: "middle", fontWeight: "500" }}>
+                                <text style={{ fontSize: "11px", textAnchor: "middle", fontWeight: "500", transform: "translateY(16px)" }}>
                                     {value}
                                 </text>
                             </g>
@@ -74,8 +75,16 @@ const InsolvenzenProzent = () => {
 
 
                     {/* Create Prozent Bars */}
-
-
+                    {InsolvencyBarData.map((row, i) => (
+                        <rect className="bar"
+                            key={i}
+                            x={0}
+                            y={xScale(row.Wirtschaftsbereich) - xScale.bandwidth() / 2}
+                            width={xScale.bandwidth()}
+                            height={yScale((d) => d.Veraenderung)}
+                            style={{ ...transitionStyle, fill: "black" }} />
+                    )
+                    )}
 
                 </g>
             </svg>
