@@ -49,10 +49,10 @@ const Dashboard = () => {
 
 
         //load Revenue BarChart
-        const rawUmsatzData = await d3.dsv(";", "../cleaned_data/Umsatz.csv")
+        const rawUmsatzData = await d3.dsv(";", "../data/UmsatzGastgewerbe.csv")
         const umsatzData = rawUmsatzData
-            .filter(d => +d.Jahr >= 2018 && d.Preisart === "REAL")
-            .map(d => ({ ...d, Date: new Date(d.Jahr, d.Monat - 1), Umsatz: +d.Umsatz, Umsatz_Veraenderung: +d.Umsatz_Veraenderung }))
+            .filter(d => +d.Jahr >= 2018 && (d.Branche_Code !== "WZ08-55" && d.Branche_Code !== "WZ08-56"))
+            .map(d => ({ ...d, Date: new Date(d.Jahr, (+d.Monat - 1)), Umsatz: +d.Umsatz, Veraenderung: +d.Veraenderung }))
         console.log("Umsatz Bar")
         console.log(umsatzData)
         setUmsatzData(umsatzData)

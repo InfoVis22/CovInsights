@@ -28,23 +28,20 @@ const RevenueBarChart = () => {
     const [showTooltip, setShowTooltip] = useState(false)
     const [filteredData, setFilteredData] = useState([])
 
-    const xAccessor = (d) => d.Umsatz;
-    const yAccessor = (d) => d.Branche;
-
     useEffect(() => {
 
         const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth() + 1].join("-")
-        const filteredData = umsatzData.filter((row) => {
-            if ((row.Jahr + "-" + row.Monat) === yearMonthTime) { return true }
-        })
+        const filteredData = umsatzData.filter((row) => ((row.Jahr + "-" + row.Monat) === yearMonthTime))
 
         setFilteredData(filteredData)
-    }, [selectedDate])
+        console.log(filteredData)
+
+    }, [selectedDate.getMonth()])
 
     //X-Scale for graph
     const xScale = useMemo(() => (
         d3.scaleLinear()
-            .domain([0, d3.max(umsatzData, d => xAccessor(d))])
+            .domain([0, d3.max(umsatzData, d => d.Umsatz)])
             .range([0, dms.innerWidth])
             .nice()
     ), [dms.innerWidth])
@@ -55,7 +52,6 @@ const RevenueBarChart = () => {
             .domain(umsatzData.map(d => d.Branche_Label))
             .range([dms.innerHeight, 0])
             .padding(0.4)
-
     ), [dms.innerHeight])
 
     //mouse events
@@ -81,8 +77,8 @@ const RevenueBarChart = () => {
 
     const transitionStyle = { transition: "all 1s ease-in-out 0s" }
 
-    const getFill = (dataType) => {
-        return (dataType === "Gastronomie") ? categories.Gastronomie.color : categories.Beherbergung.color
+    const getFill = (type) => {
+        return (type.includes("WZ08-56")) ? categories.Gastronomie.color : categories.Beherbergung.color
     }
 
     return (
@@ -90,18 +86,6 @@ const RevenueBarChart = () => {
             <div className="graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
                 <svg width={dms.width} height={dms.height} ref={svgRef}>
                     <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
-
-
-                        {filteredData.map((d, i) =>
-
-                            <rect className="bar"
-                                key={i}
-                                x={0}
-                                y={yScale(d.Branche_Label) - yScale.bandwidth() / 2}
-                                width={xScale(xAccessor(d))}
-                                height={yScale.bandwidth()}
-                                style={{ ...transitionStyle, fill: getFill(d.Typ) }} />
-                        )}
 
                         <XAxisLinear
                             dms={dms}
@@ -114,6 +98,21 @@ const RevenueBarChart = () => {
                             domain={yScale.domain()}
                             range={yScale.range()}>
                         </YAxisNominal>
+
+                        {filteredData.map((d, i) => <>
+                            <rect className="bar"
+                                key={i}
+                                x={0}
+                                y={yScale(d.Branche_Label) - yScale.bandwidth() / 2}
+                                width={xScale(d.Umsatz)}
+                                height={yScale.bandwidth()}
+                                style={{ ...transitionStyle, fill: getFill(d.Branche_Code) }} />
+
+                            <text x={xScale(d.Umsatz) + 10} y={yScale(d.Branche_Label) + 3} style={{ ...transitionStyle, fontSize: "11px" }} >{d.Umsatz}</text>
+
+                        </>
+
+                        )}
 
                         {/* Tooltip */}
                         <div className="tooltip" style={{ display: showTooltip ? "block" : "none" }}>

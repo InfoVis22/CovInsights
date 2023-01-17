@@ -1,0 +1,753 @@
+﻿Jahr;Monat;Branche_Code;Branche_Label;Umsatz;Veraenderung
+2015;1;WZ08-55;Beherbergung;73.9;3.6
+2015;1;WZ08-551;Hotels;74;3.1
+2015;1;WZ08-552;Ferienunterkünfte;63.8;19.3
+2015;1;WZ08-553;Campingplätze;99.9;-4.2
+2015;1;WZ08-56;Gastronomie;84;1.8
+2015;1;WZ08-561;Restaurants & Cafes;82.7;0.9
+2015;1;WZ08-562;Caterer;88.3;4.7
+2015;1;WZ08-563;Bars & Clubs;84.2;2.9
+2015;2;WZ08-55;Beherbergung;77.2;5.8
+2015;2;WZ08-551;Hotels;77.8;5.3
+2015;2;WZ08-552;Ferienunterkünfte;70.2;17
+2015;2;WZ08-553;Campingplätze;59.3;11.5
+2015;2;WZ08-56;Gastronomie;82.7;1
+2015;2;WZ08-561;Restaurants & Cafes;80.8;1.4
+2015;2;WZ08-562;Caterer;89.5;1.2
+2015;2;WZ08-563;Bars & Clubs;80.6;-1.2
+2015;3;WZ08-55;Beherbergung;88.7;5.1
+2015;3;WZ08-551;Hotels;89.3;4.4
+2015;3;WZ08-552;Ferienunterkünfte;82.7;19.5
+2015;3;WZ08-553;Campingplätze;70.5;6.8
+2015;3;WZ08-56;Gastronomie;92.3;-1.1
+2015;3;WZ08-561;Restaurants & Cafes;90.5;-2.6
+2015;3;WZ08-562;Caterer;99;4.9
+2015;3;WZ08-563;Bars & Clubs;88.7;-4.8
+2015;4;WZ08-55;Beherbergung;91.9;4.9
+2015;4;WZ08-551;Hotels;91.6;5.4
+2015;4;WZ08-552;Ferienunterkünfte;95.5;3.2
+2015;4;WZ08-553;Campingplätze;94;-10.8
+2015;4;WZ08-56;Gastronomie;96.2;4.1
+2015;4;WZ08-561;Restaurants & Cafes;96.4;3.5
+2015;4;WZ08-562;Caterer;94.3;6.3
+2015;4;WZ08-563;Bars & Clubs;99.4;3.6
+2015;5;WZ08-55;Beherbergung;108.7;0.1
+2015;5;WZ08-551;Hotels;108.6;-0.7
+2015;5;WZ08-552;Ferienunterkünfte;111.2;6.5
+2015;5;WZ08-553;Campingplätze;110.8;24.5
+2015;5;WZ08-56;Gastronomie;106;3.6
+2015;5;WZ08-561;Restaurants & Cafes;108.7;4.6
+2015;5;WZ08-562;Caterer;96.7;1.5
+2015;5;WZ08-563;Bars & Clubs;108.7;1
+2015;6;WZ08-55;Beherbergung;113.1;8
+2015;6;WZ08-551;Hotels;113;9.3
+2015;6;WZ08-552;Ferienunterkünfte;114.3;-1.7
+2015;6;WZ08-553;Campingplätze;118.2;-15.4
+2015;6;WZ08-56;Gastronomie;104.1;5.2
+2015;6;WZ08-561;Restaurants & Cafes;104;4.3
+2015;6;WZ08-562;Caterer;105.8;10.7
+2015;6;WZ08-563;Bars & Clubs;100.7;-2.2
+2015;7;WZ08-55;Beherbergung;111.9;4.7
+2015;7;WZ08-551;Hotels;108.8;4.6
+2015;7;WZ08-552;Ferienunterkünfte;140.5;3.8
+2015;7;WZ08-553;Campingplätze;180.2;1.9
+2015;7;WZ08-56;Gastronomie;109.1;5.2
+2015;7;WZ08-561;Restaurants & Cafes;111.4;5.4
+2015;7;WZ08-562;Caterer;103.8;6.8
+2015;7;WZ08-563;Bars & Clubs;104.1;-0.3
+2015;8;WZ08-55;Beherbergung;114.1;3
+2015;8;WZ08-551;Hotels;111.1;3.5
+2015;8;WZ08-552;Ferienunterkünfte;140.7;-4.5
+2015;8;WZ08-553;Campingplätze;201.1;4.3
+2015;8;WZ08-56;Gastronomie;109.2;4.3
+2015;8;WZ08-561;Restaurants & Cafes;113.6;4
+2015;8;WZ08-562;Caterer;93.2;6.9
+2015;8;WZ08-563;Bars & Clubs;115.5;2.2
+2015;9;WZ08-55;Beherbergung;121.1;0.4
+2015;9;WZ08-551;Hotels;121.8;0.5
+2015;9;WZ08-552;Ferienunterkünfte;116.4;-2.6
+2015;9;WZ08-553;Campingplätze;109.9;6.6
+2015;9;WZ08-56;Gastronomie;105;2.7
+2015;9;WZ08-561;Restaurants & Cafes;104.2;2
+2015;9;WZ08-562;Caterer;108;7.2
+2015;9;WZ08-563;Bars & Clubs;103.4;-2.2
+2015;10;WZ08-55;Beherbergung;114.7;2.6
+2015;10;WZ08-551;Hotels;115.1;2.3
+2015;10;WZ08-552;Ferienunterkünfte;118.1;5.5
+2015;10;WZ08-553;Campingplätze;74.9;3.6
+2015;10;WZ08-56;Gastronomie;105.2;2.8
+2015;10;WZ08-561;Restaurants & Cafes;104.1;2.3
+2015;10;WZ08-562;Caterer;107.9;6
+2015;10;WZ08-563;Bars & Clubs;106.9;0.8
+2015;11;WZ08-55;Beherbergung;92.9;1.8
+2015;11;WZ08-551;Hotels;95.2;1.7
+2015;11;WZ08-552;Ferienunterkünfte;71.1;6.6
+2015;11;WZ08-553;Campingplätze;39.5;-3.9
+2015;11;WZ08-56;Gastronomie;96.7;1.6
+2015;11;WZ08-561;Restaurants & Cafes;94.3;0.2
+2015;11;WZ08-562;Caterer;106.2;7.6
+2015;11;WZ08-563;Bars & Clubs;92.1;-3.1
+2015;12;WZ08-55;Beherbergung;91.7;3.4
+2015;12;WZ08-551;Hotels;93.6;3.1
+2015;12;WZ08-552;Ferienunterkünfte;75.5;9.9
+2015;12;WZ08-553;Campingplätze;41.4;1.7
+2015;12;WZ08-56;Gastronomie;109.4;3.5
+2015;12;WZ08-561;Restaurants & Cafes;109.3;2
+2015;12;WZ08-562;Caterer;107.5;8.4
+2015;12;WZ08-563;Bars & Clubs;115.9;4.5
+2016;1;WZ08-55;Beherbergung;76.7;3.8
+2016;1;WZ08-551;Hotels;77.2;4.3
+2016;1;WZ08-552;Ferienunterkünfte;60.3;-5.5
+2016;1;WZ08-553;Campingplätze;100;0.1
+2016;1;WZ08-56;Gastronomie;86.4;2.9
+2016;1;WZ08-561;Restaurants & Cafes;84.4;2.1
+2016;1;WZ08-562;Caterer;93.8;6.2
+2016;1;WZ08-563;Bars & Clubs;83.8;-0.5
+2016;2;WZ08-55;Beherbergung;80.7;4.5
+2016;2;WZ08-551;Hotels;82.2;5.7
+2016;2;WZ08-552;Ferienunterkünfte;62.6;-10.8
+2016;2;WZ08-553;Campingplätze;59.4;0.2
+2016;2;WZ08-56;Gastronomie;86.9;5.1
+2016;2;WZ08-561;Restaurants & Cafes;84;4
+2016;2;WZ08-562;Caterer;97.1;8.5
+2016;2;WZ08-563;Bars & Clubs;84;4.2
+2016;3;WZ08-55;Beherbergung;92.2;3.9
+2016;3;WZ08-551;Hotels;93.2;4.4
+2016;3;WZ08-552;Ferienunterkünfte;77.9;-5.8
+2016;3;WZ08-553;Campingplätze;86.4;22.6
+2016;3;WZ08-56;Gastronomie;95.2;3.1
+2016;3;WZ08-561;Restaurants & Cafes;93.8;3.6
+2016;3;WZ08-562;Caterer;101;2
+2016;3;WZ08-563;Bars & Clubs;92.1;3.8
+2016;4;WZ08-55;Beherbergung;100.5;9.4
+2016;4;WZ08-551;Hotels;101.6;10.9
+2016;4;WZ08-552;Ferienunterkünfte;83.7;-12.4
+2016;4;WZ08-553;Campingplätze;96.5;2.7
+2016;4;WZ08-56;Gastronomie;100.3;4.3
+2016;4;WZ08-561;Restaurants & Cafes;99.1;2.8
+2016;4;WZ08-562;Caterer;104.2;10.5
+2016;4;WZ08-563;Bars & Clubs;100.8;1.4
+2016;5;WZ08-55;Beherbergung;110.7;1.8
+2016;5;WZ08-551;Hotels;110.2;1.5
+2016;5;WZ08-552;Ferienunterkünfte;111.4;0.2
+2016;5;WZ08-553;Campingplätze;127.6;15.2
+2016;5;WZ08-56;Gastronomie;107.1;1
+2016;5;WZ08-561;Restaurants & Cafes;109.2;0.5
+2016;5;WZ08-562;Caterer;100.1;3.5
+2016;5;WZ08-563;Bars & Clubs;107.5;-1.1
+2016;6;WZ08-55;Beherbergung;113.7;0.5
+2016;6;WZ08-551;Hotels;113.8;0.7
+2016;6;WZ08-552;Ferienunterkünfte;112.3;-1.7
+2016;6;WZ08-553;Campingplätze;112.5;-4.8
+2016;6;WZ08-56;Gastronomie;105;0.9
+2016;6;WZ08-561;Restaurants & Cafes;104.4;0.4
+2016;6;WZ08-562;Caterer;109.9;3.9
+2016;6;WZ08-563;Bars & Clubs;97.6;-3.1
+2016;7;WZ08-55;Beherbergung;116.8;4.4
+2016;7;WZ08-551;Hotels;113.3;4.1
+2016;7;WZ08-552;Ferienunterkünfte;143.4;2.1
+2016;7;WZ08-553;Campingplätze;194.9;8.2
+2016;7;WZ08-56;Gastronomie;112.8;3.4
+2016;7;WZ08-561;Restaurants & Cafes;116.9;4.9
+2016;7;WZ08-562;Caterer;101;-2.7
+2016;7;WZ08-563;Bars & Clubs;109.2;4.9
+2016;8;WZ08-55;Beherbergung;116;1.7
+2016;8;WZ08-551;Hotels;112.1;0.9
+2016;8;WZ08-552;Ferienunterkünfte;147.4;4.8
+2016;8;WZ08-553;Campingplätze;203.5;1.2
+2016;8;WZ08-56;Gastronomie;109.1;-0.1
+2016;8;WZ08-561;Restaurants & Cafes;113.9;0.3
+2016;8;WZ08-562;Caterer;94.8;1.7
+2016;8;WZ08-563;Bars & Clubs;106.4;-7.9
+2016;9;WZ08-55;Beherbergung;130.6;7.8
+2016;9;WZ08-551;Hotels;131.5;8
+2016;9;WZ08-552;Ferienunterkünfte;123.3;5.9
+2016;9;WZ08-553;Campingplätze;121;10.1
+2016;9;WZ08-56;Gastronomie;111.4;6.1
+2016;9;WZ08-561;Restaurants & Cafes;111.2;6.7
+2016;9;WZ08-562;Caterer;112.3;4
+2016;9;WZ08-563;Bars & Clubs;110.3;6.7
+2016;10;WZ08-55;Beherbergung;117.8;2.7
+2016;10;WZ08-551;Hotels;119;3.4
+2016;10;WZ08-552;Ferienunterkünfte;113.1;-4.2
+2016;10;WZ08-553;Campingplätze;76;1.5
+2016;10;WZ08-56;Gastronomie;106.7;1.4
+2016;10;WZ08-561;Restaurants & Cafes;107.1;2.9
+2016;10;WZ08-562;Caterer;104;-3.6
+2016;10;WZ08-563;Bars & Clubs;109.9;2.8
+2016;11;WZ08-55;Beherbergung;95.4;2.7
+2016;11;WZ08-551;Hotels;98.7;3.7
+2016;11;WZ08-552;Ferienunterkünfte;62;-12.8
+2016;11;WZ08-553;Campingplätze;35.4;-10.4
+2016;11;WZ08-56;Gastronomie;97.1;0.4
+2016;11;WZ08-561;Restaurants & Cafes;94.4;0.1
+2016;11;WZ08-562;Caterer;107.5;1.2
+2016;11;WZ08-563;Bars & Clubs;92.2;0.1
+2016;12;WZ08-55;Beherbergung;94.2;2.7
+2016;12;WZ08-551;Hotels;97.5;4.2
+2016;12;WZ08-552;Ferienunterkünfte;62;-17.9
+2016;12;WZ08-553;Campingplätze;39.2;-5.3
+2016;12;WZ08-56;Gastronomie;110.8;1.3
+2016;12;WZ08-561;Restaurants & Cafes;110.8;1.4
+2016;12;WZ08-562;Caterer;108.7;1.1
+2016;12;WZ08-563;Bars & Clubs;117.1;1
+2017;1;WZ08-55;Beherbergung;79.5;3.7
+2017;1;WZ08-551;Hotels;80.2;3.9
+2017;1;WZ08-552;Ferienunterkünfte;56.5;-6.3
+2017;1;WZ08-553;Campingplätze;115.9;15.9
+2017;1;WZ08-56;Gastronomie;87.7;1.5
+2017;1;WZ08-561;Restaurants & Cafes;86.1;2
+2017;1;WZ08-562;Caterer;95.5;1.8
+2017;1;WZ08-563;Bars & Clubs;81.4;-2.9
+2017;2;WZ08-55;Beherbergung;80.8;0.1
+2017;2;WZ08-551;Hotels;82.6;0.5
+2017;2;WZ08-552;Ferienunterkünfte;61.5;-1.8
+2017;2;WZ08-553;Campingplätze;53.6;-9.8
+2017;2;WZ08-56;Gastronomie;88.9;2.3
+2017;2;WZ08-561;Restaurants & Cafes;86.7;3.2
+2017;2;WZ08-562;Caterer;97;-0.1
+2017;2;WZ08-563;Bars & Clubs;86.4;2.9
+2017;3;WZ08-55;Beherbergung;98.4;6.7
+2017;3;WZ08-551;Hotels;100.5;7.8
+2017;3;WZ08-552;Ferienunterkünfte;74;-5
+2017;3;WZ08-553;Campingplätze;77.5;-10.3
+2017;3;WZ08-56;Gastronomie;101.8;6.9
+2017;3;WZ08-561;Restaurants & Cafes;100.7;7.4
+2017;3;WZ08-562;Caterer;108.4;7.3
+2017;3;WZ08-563;Bars & Clubs;94;2.1
+2017;4;WZ08-55;Beherbergung;99.4;-1.1
+2017;4;WZ08-551;Hotels;98.7;-2.9
+2017;4;WZ08-552;Ferienunterkünfte;94.4;12.8
+2017;4;WZ08-553;Campingplätze;142.2;47.4
+2017;4;WZ08-56;Gastronomie;104.3;4
+2017;4;WZ08-561;Restaurants & Cafes;107.1;8.1
+2017;4;WZ08-562;Caterer;96.5;-7.4
+2017;4;WZ08-563;Bars & Clubs;101.1;0.3
+2017;5;WZ08-55;Beherbergung;120.2;8.6
+2017;5;WZ08-551;Hotels;121.2;10
+2017;5;WZ08-552;Ferienunterkünfte;108.8;-2.3
+2017;5;WZ08-553;Campingplätze;109.5;-14.2
+2017;5;WZ08-56;Gastronomie;110.9;3.5
+2017;5;WZ08-561;Restaurants & Cafes;112.6;3.1
+2017;5;WZ08-562;Caterer;108.6;8.5
+2017;5;WZ08-563;Bars & Clubs;103;-4.2
+2017;6;WZ08-55;Beherbergung;115.9;1.9
+2017;6;WZ08-551;Hotels;114.5;0.6
+2017;6;WZ08-552;Ferienunterkünfte;124.8;11.1
+2017;6;WZ08-553;Campingplätze;150.1;33.4
+2017;6;WZ08-56;Gastronomie;112.5;7.1
+2017;6;WZ08-561;Restaurants & Cafes;114.7;9.9
+2017;6;WZ08-562;Caterer;108.2;-1.5
+2017;6;WZ08-563;Bars & Clubs;104.7;7.3
+2017;7;WZ08-55;Beherbergung;120.8;3.4
+2017;7;WZ08-551;Hotels;117.5;3.7
+2017;7;WZ08-552;Ferienunterkünfte;145.9;1.7
+2017;7;WZ08-553;Campingplätze;188.8;-3.1
+2017;7;WZ08-56;Gastronomie;116.5;3.3
+2017;7;WZ08-561;Restaurants & Cafes;121.1;3.6
+2017;7;WZ08-562;Caterer;104;3
+2017;7;WZ08-563;Bars & Clubs;109.5;0.3
+2017;8;WZ08-55;Beherbergung;116.6;0.5
+2017;8;WZ08-551;Hotels;112.9;0.7
+2017;8;WZ08-552;Ferienunterkünfte;145.7;-1.2
+2017;8;WZ08-553;Campingplätze;194.3;-4.5
+2017;8;WZ08-56;Gastronomie;113;3.6
+2017;8;WZ08-561;Restaurants & Cafes;117.3;3
+2017;8;WZ08-562;Caterer;101.6;7.2
+2017;8;WZ08-563;Bars & Clubs;105.8;-0.6
+2017;9;WZ08-55;Beherbergung;131.5;0.7
+2017;9;WZ08-551;Hotels;132.7;0.9
+2017;9;WZ08-552;Ferienunterkünfte;121.7;-1.3
+2017;9;WZ08-553;Campingplätze;109.5;-9.5
+2017;9;WZ08-56;Gastronomie;114.2;2.5
+2017;9;WZ08-561;Restaurants & Cafes;114.1;2.6
+2017;9;WZ08-562;Caterer;116.2;3.5
+2017;9;WZ08-563;Bars & Clubs;110.8;0.5
+2017;10;WZ08-55;Beherbergung;120.3;2.1
+2017;10;WZ08-551;Hotels;122;2.5
+2017;10;WZ08-552;Ferienunterkünfte;108.1;-4.4
+2017;10;WZ08-553;Campingplätze;77.1;1.4
+2017;10;WZ08-56;Gastronomie;111.1;4.1
+2017;10;WZ08-561;Restaurants & Cafes;112.6;5.1
+2017;10;WZ08-562;Caterer;106.6;2.5
+2017;10;WZ08-563;Bars & Clubs;110;0.1
+2017;11;WZ08-55;Beherbergung;98.2;2.9
+2017;11;WZ08-551;Hotels;101.8;3.1
+2017;11;WZ08-552;Ferienunterkünfte;64.6;4.2
+2017;11;WZ08-553;Campingplätze;37.1;4.8
+2017;11;WZ08-56;Gastronomie;101.2;4.2
+2017;11;WZ08-561;Restaurants & Cafes;99;4.9
+2017;11;WZ08-562;Caterer;111.4;3.6
+2017;11;WZ08-563;Bars & Clubs;93.3;1.2
+2017;12;WZ08-55;Beherbergung;100.1;6.3
+2017;12;WZ08-551;Hotels;103.3;5.9
+2017;12;WZ08-552;Ferienunterkünfte;66.5;7.3
+2017;12;WZ08-553;Campingplätze;60.4;54.1
+2017;12;WZ08-56;Gastronomie;116;4.7
+2017;12;WZ08-561;Restaurants & Cafes;116.1;4.8
+2017;12;WZ08-562;Caterer;114.4;5.2
+2017;12;WZ08-563;Bars & Clubs;118.1;0.9
+2018;1;WZ08-55;Beherbergung;83.8;5.4
+2018;1;WZ08-551;Hotels;84.2;5
+2018;1;WZ08-552;Ferienunterkünfte;62;9.7
+2018;1;WZ08-553;Campingplätze;131;13
+2018;1;WZ08-56;Gastronomie;92.9;5.9
+2018;1;WZ08-561;Restaurants & Cafes;92.8;7.8
+2018;1;WZ08-562;Caterer;96.9;1.5
+2018;1;WZ08-563;Bars & Clubs;83.4;2.5
+2018;2;WZ08-55;Beherbergung;85;5.2
+2018;2;WZ08-551;Hotels;86.6;4.8
+2018;2;WZ08-552;Ferienunterkünfte;69.4;12.8
+2018;2;WZ08-553;Campingplätze;52.6;-1.9
+2018;2;WZ08-56;Gastronomie;90.7;2
+2018;2;WZ08-561;Restaurants & Cafes;89.2;2.9
+2018;2;WZ08-562;Caterer;97.3;0.3
+2018;2;WZ08-563;Bars & Clubs;85.2;-1.4
+2018;3;WZ08-55;Beherbergung;98.7;0.3
+2018;3;WZ08-551;Hotels;99.9;-0.6
+2018;3;WZ08-552;Ferienunterkünfte;83.6;13
+2018;3;WZ08-553;Campingplätze;90.5;16.8
+2018;3;WZ08-56;Gastronomie;103;1.2
+2018;3;WZ08-561;Restaurants & Cafes;103.4;2.7
+2018;3;WZ08-562;Caterer;104.6;-3.5
+2018;3;WZ08-563;Bars & Clubs;95.6;1.7
+2018;4;WZ08-55;Beherbergung;107.8;8.5
+2018;4;WZ08-551;Hotels;108.8;10.2
+2018;4;WZ08-552;Ferienunterkünfte;89.6;-5.1
+2018;4;WZ08-553;Campingplätze;124;-12.8
+2018;4;WZ08-56;Gastronomie;108.8;4.3
+2018;4;WZ08-561;Restaurants & Cafes;111.4;4
+2018;4;WZ08-562;Caterer;103.6;7.4
+2018;4;WZ08-563;Bars & Clubs;100.7;-0.4
+2018;5;WZ08-55;Beherbergung;115.6;-3.8
+2018;5;WZ08-551;Hotels;115;-5.1
+2018;5;WZ08-552;Ferienunterkünfte;114;4.8
+2018;5;WZ08-553;Campingplätze;146;33.3
+2018;5;WZ08-56;Gastronomie;114.7;3.4
+2018;5;WZ08-561;Restaurants & Cafes;118.9;5.6
+2018;5;WZ08-562;Caterer;105.1;-3.2
+2018;5;WZ08-563;Bars & Clubs;105.7;2.6
+2018;6;WZ08-55;Beherbergung;123.6;6.6
+2018;6;WZ08-551;Hotels;123.3;7.7
+2018;6;WZ08-552;Ferienunterkünfte;121;-3
+2018;6;WZ08-553;Campingplätze;143.5;-4.4
+2018;6;WZ08-56;Gastronomie;115.5;2.7
+2018;6;WZ08-561;Restaurants & Cafes;115.8;1
+2018;6;WZ08-562;Caterer;117;8.1
+2018;6;WZ08-563;Bars & Clubs;107.9;3.1
+2018;7;WZ08-55;Beherbergung;123.9;2.6
+2018;7;WZ08-551;Hotels;120.4;2.5
+2018;7;WZ08-552;Ferienunterkünfte;142.3;-2.5
+2018;7;WZ08-553;Campingplätze;221.8;17.5
+2018;7;WZ08-56;Gastronomie;118.6;1.8
+2018;7;WZ08-561;Restaurants & Cafes;123.3;1.8
+2018;7;WZ08-562;Caterer;109.3;5.1
+2018;7;WZ08-563;Bars & Clubs;104.6;-4.5
+2018;8;WZ08-55;Beherbergung;123;5.5
+2018;8;WZ08-551;Hotels;119.7;6
+2018;8;WZ08-552;Ferienunterkünfte;140.6;-3.5
+2018;8;WZ08-553;Campingplätze;219.4;12.9
+2018;8;WZ08-56;Gastronomie;117.5;4
+2018;8;WZ08-561;Restaurants & Cafes;121.7;3.8
+2018;8;WZ08-562;Caterer;106.6;4.9
+2018;8;WZ08-563;Bars & Clubs;111.5;5.4
+2018;9;WZ08-55;Beherbergung;137.4;4.5
+2018;9;WZ08-551;Hotels;138.2;4.1
+2018;9;WZ08-552;Ferienunterkünfte;130.1;6.9
+2018;9;WZ08-553;Campingplätze;126.2;15.3
+2018;9;WZ08-56;Gastronomie;117.2;2.6
+2018;9;WZ08-561;Restaurants & Cafes;117.8;3.2
+2018;9;WZ08-562;Caterer;116.6;0.3
+2018;9;WZ08-563;Bars & Clubs;112.9;1.9
+2018;10;WZ08-55;Beherbergung;124.5;3.5
+2018;10;WZ08-551;Hotels;126.1;3.4
+2018;10;WZ08-552;Ferienunterkünfte;111.6;3.2
+2018;10;WZ08-553;Campingplätze;88.7;15
+2018;10;WZ08-56;Gastronomie;114.2;2.8
+2018;10;WZ08-561;Restaurants & Cafes;114.7;1.9
+2018;10;WZ08-562;Caterer;114;6.9
+2018;10;WZ08-563;Bars & Clubs;109.5;-0.5
+2018;11;WZ08-55;Beherbergung;103.8;5.7
+2018;11;WZ08-551;Hotels;107.4;5.5
+2018;11;WZ08-552;Ferienunterkünfte;70.3;8.8
+2018;11;WZ08-553;Campingplätze;40.6;9.4
+2018;11;WZ08-56;Gastronomie;108.5;7.2
+2018;11;WZ08-561;Restaurants & Cafes;106.8;7.9
+2018;11;WZ08-562;Caterer;116.7;4.8
+2018;11;WZ08-563;Bars & Clubs;99.5;6.6
+2018;12;WZ08-55;Beherbergung;101.6;1.5
+2018;12;WZ08-551;Hotels;104.8;1.5
+2018;12;WZ08-552;Ferienunterkünfte;69.6;4.7
+2018;12;WZ08-553;Campingplätze;55.6;-7.9
+2018;12;WZ08-56;Gastronomie;121;4.3
+2018;12;WZ08-561;Restaurants & Cafes;121.8;4.9
+2018;12;WZ08-562;Caterer;118.8;3.8
+2018;12;WZ08-563;Bars & Clubs;120.3;1.9
+2019;1;WZ08-55;Beherbergung;86.4;3.1
+2019;1;WZ08-551;Hotels;87.4;3.8
+2019;1;WZ08-552;Ferienunterkünfte;62.2;0.3
+2019;1;WZ08-553;Campingplätze;112.3;-14.3
+2019;1;WZ08-56;Gastronomie;95;2.3
+2019;1;WZ08-561;Restaurants & Cafes;94.1;1.4
+2019;1;WZ08-562;Caterer;102.1;5.4
+2019;1;WZ08-563;Bars & Clubs;84.5;1.3
+2019;2;WZ08-55;Beherbergung;88.2;3.8
+2019;2;WZ08-551;Hotels;90;3.9
+2019;2;WZ08-552;Ferienunterkünfte;68.4;-1.4
+2019;2;WZ08-553;Campingplätze;62.3;18.4
+2019;2;WZ08-56;Gastronomie;97.4;7.4
+2019;2;WZ08-561;Restaurants & Cafes;96.5;8.2
+2019;2;WZ08-562;Caterer;104.1;7
+2019;2;WZ08-563;Bars & Clubs;88.3;3.6
+2019;3;WZ08-55;Beherbergung;104.5;5.9
+2019;3;WZ08-551;Hotels;106.5;6.6
+2019;3;WZ08-552;Ferienunterkünfte;77.3;-7.5
+2019;3;WZ08-553;Campingplätze;102.7;13.5
+2019;3;WZ08-56;Gastronomie;108.6;5.4
+2019;3;WZ08-561;Restaurants & Cafes;108.6;5
+2019;3;WZ08-562;Caterer;111.6;6.7
+2019;3;WZ08-563;Bars & Clubs;101.2;5.9
+2019;4;WZ08-55;Beherbergung;108.6;0.7
+2019;4;WZ08-551;Hotels;107.9;-0.8
+2019;4;WZ08-552;Ferienunterkünfte;106;18.3
+2019;4;WZ08-553;Campingplätze;143;15.3
+2019;4;WZ08-56;Gastronomie;110.5;1.6
+2019;4;WZ08-561;Restaurants & Cafes;112.4;0.9
+2019;4;WZ08-562;Caterer;106.9;3.2
+2019;4;WZ08-563;Bars & Clubs;104.2;3.5
+2019;5;WZ08-55;Beherbergung;122.6;6.1
+2019;5;WZ08-551;Hotels;123.5;7.4
+2019;5;WZ08-552;Ferienunterkünfte;112.1;-1.7
+2019;5;WZ08-553;Campingplätze;113.5;-22.3
+2019;5;WZ08-56;Gastronomie;118.2;3.1
+2019;5;WZ08-561;Restaurants & Cafes;119.6;0.6
+2019;5;WZ08-562;Caterer;117.8;12.1
+2019;5;WZ08-563;Bars & Clubs;107.6;1.8
+2019;6;WZ08-55;Beherbergung;126.9;2.7
+2019;6;WZ08-551;Hotels;125.1;1.5
+2019;6;WZ08-552;Ferienunterkünfte;134.8;11.4
+2019;6;WZ08-553;Campingplätze;180.1;25.5
+2019;6;WZ08-56;Gastronomie;120.1;4
+2019;6;WZ08-561;Restaurants & Cafes;122.7;6
+2019;6;WZ08-562;Caterer;115.9;-0.9
+2019;6;WZ08-563;Bars & Clubs;109.2;1.2
+2019;7;WZ08-55;Beherbergung;124.8;0.7
+2019;7;WZ08-551;Hotels;120.7;0.2
+2019;7;WZ08-552;Ferienunterkünfte;150.1;5.5
+2019;7;WZ08-553;Campingplätze;221.1;-0.3
+2019;7;WZ08-56;Gastronomie;121.4;2.4
+2019;7;WZ08-561;Restaurants & Cafes;125.5;1.8
+2019;7;WZ08-562;Caterer;112.7;3.1
+2019;7;WZ08-563;Bars & Clubs;109.7;4.9
+2019;8;WZ08-55;Beherbergung;124.3;1.1
+2019;8;WZ08-551;Hotels;120.5;0.7
+2019;8;WZ08-552;Ferienunterkünfte;146.6;4.3
+2019;8;WZ08-553;Campingplätze;221.7;1
+2019;8;WZ08-56;Gastronomie;123.1;4.8
+2019;8;WZ08-561;Restaurants & Cafes;128;5.2
+2019;8;WZ08-562;Caterer;109.6;2.8
+2019;8;WZ08-563;Bars & Clubs;116.3;4.3
+2019;9;WZ08-55;Beherbergung;135.5;-1.4
+2019;9;WZ08-551;Hotels;136.2;-1.4
+2019;9;WZ08-552;Ferienunterkünfte;128.3;-1.4
+2019;9;WZ08-553;Campingplätze;128.5;1.8
+2019;9;WZ08-56;Gastronomie;120;2.4
+2019;9;WZ08-561;Restaurants & Cafes;119.7;1.6
+2019;9;WZ08-562;Caterer;124.4;6.7
+2019;9;WZ08-563;Bars & Clubs;111.1;-1.6
+2019;10;WZ08-55;Beherbergung;128.6;3.3
+2019;10;WZ08-551;Hotels;130.3;3.3
+2019;10;WZ08-552;Ferienunterkünfte;115;3
+2019;10;WZ08-553;Campingplätze;88;-0.8
+2019;10;WZ08-56;Gastronomie;118.5;3.8
+2019;10;WZ08-561;Restaurants & Cafes;119;3.7
+2019;10;WZ08-562;Caterer;118.5;3.9
+2019;10;WZ08-563;Bars & Clubs;114.4;4.5
+2019;11;WZ08-55;Beherbergung;109.2;5.2
+2019;11;WZ08-551;Hotels;113.4;5.6
+2019;11;WZ08-552;Ferienunterkünfte;68.1;-3.1
+2019;11;WZ08-553;Campingplätze;46.8;15.3
+2019;11;WZ08-56;Gastronomie;113.4;4.5
+2019;11;WZ08-561;Restaurants & Cafes;111.8;4.7
+2019;11;WZ08-562;Caterer;121.2;3.9
+2019;11;WZ08-563;Bars & Clubs;107.3;7.8
+2019;12;WZ08-55;Beherbergung;104.5;2.9
+2019;12;WZ08-551;Hotels;108;3.1
+2019;12;WZ08-552;Ferienunterkünfte;72.9;4.7
+2019;12;WZ08-553;Campingplätze;44.4;-20.1
+2019;12;WZ08-56;Gastronomie;124.4;2.8
+2019;12;WZ08-561;Restaurants & Cafes;126.1;3.5
+2019;12;WZ08-562;Caterer;117.9;-0.8
+2019;12;WZ08-563;Bars & Clubs;126.2;4.9
+2020;1;WZ08-55;Beherbergung;86.4;-
+2020;1;WZ08-551;Hotels;87.4;-
+2020;1;WZ08-552;Ferienunterkünfte;60;-3.5
+2020;1;WZ08-553;Campingplätze;115.3;2.7
+2020;1;WZ08-56;Gastronomie;99.9;5.2
+2020;1;WZ08-561;Restaurants & Cafes;100.4;6.7
+2020;1;WZ08-562;Caterer;101.8;-0.3
+2020;1;WZ08-563;Bars & Clubs;92.7;9.7
+2020;2;WZ08-55;Beherbergung;91.9;4.2
+2020;2;WZ08-551;Hotels;93.5;3.9
+2020;2;WZ08-552;Ferienunterkünfte;73.2;7
+2020;2;WZ08-553;Campingplätze;67.1;7.7
+2020;2;WZ08-56;Gastronomie;100.3;3
+2020;2;WZ08-561;Restaurants & Cafes;100.2;3.8
+2020;2;WZ08-562;Caterer;103.7;-0.4
+2020;2;WZ08-563;Bars & Clubs;95.6;8.3
+2020;3;WZ08-55;Beherbergung;53.3;-49
+2020;3;WZ08-551;Hotels;53.1;-50.1
+2020;3;WZ08-552;Ferienunterkünfte;45.8;-40.8
+2020;3;WZ08-553;Campingplätze;70.3;-31.5
+2020;3;WZ08-56;Gastronomie;64.1;-41
+2020;3;WZ08-561;Restaurants & Cafes;60.6;-44.2
+2020;3;WZ08-562;Caterer;81.7;-26.8
+2020;3;WZ08-563;Bars & Clubs;48.8;-51.8
+2020;4;WZ08-55;Beherbergung;14.7;-86.5
+2020;4;WZ08-551;Hotels;12.6;-88.3
+2020;4;WZ08-552;Ferienunterkünfte;17.1;-83.9
+2020;4;WZ08-553;Campingplätze;85.8;-40
+2020;4;WZ08-56;Gastronomie;35.8;-67.6
+2020;4;WZ08-561;Restaurants & Cafes;33.2;-70.5
+2020;4;WZ08-562;Caterer;51.2;-52.1
+2020;4;WZ08-563;Bars & Clubs;16.9;-83.8
+2020;5;WZ08-55;Beherbergung;26;-78.8
+2020;5;WZ08-551;Hotels;23.5;-81
+2020;5;WZ08-552;Ferienunterkünfte;36.5;-67.4
+2020;5;WZ08-553;Campingplätze;87.1;-23.3
+2020;5;WZ08-56;Gastronomie;55.6;-53
+2020;5;WZ08-561;Restaurants & Cafes;58.2;-51.3
+2020;5;WZ08-562;Caterer;55.8;-52.6
+2020;5;WZ08-563;Bars & Clubs;31.4;-70.8
+2020;6;WZ08-55;Beherbergung;61.7;-51.4
+2020;6;WZ08-551;Hotels;57.9;-53.7
+2020;6;WZ08-552;Ferienunterkünfte;80.6;-40.2
+2020;6;WZ08-553;Campingplätze;168.1;-6.7
+2020;6;WZ08-56;Gastronomie;80;-33.4
+2020;6;WZ08-561;Restaurants & Cafes;87.3;-28.9
+2020;6;WZ08-562;Caterer;65;-43.9
+2020;6;WZ08-563;Bars & Clubs;55.5;-49.2
+2020;7;WZ08-55;Beherbergung;92.7;-25.7
+2020;7;WZ08-551;Hotels;87;-27.9
+2020;7;WZ08-552;Ferienunterkünfte;129.1;-14
+2020;7;WZ08-553;Campingplätze;235.6;6.6
+2020;7;WZ08-56;Gastronomie;101.3;-16.6
+2020;7;WZ08-561;Restaurants & Cafes;113.8;-9.3
+2020;7;WZ08-562;Caterer;71.2;-36.8
+2020;7;WZ08-563;Bars & Clubs;72.7;-33.7
+2020;8;WZ08-55;Beherbergung;104;-16.3
+2020;8;WZ08-551;Hotels;98;-18.7
+2020;8;WZ08-552;Ferienunterkünfte;143.1;-2.4
+2020;8;WZ08-553;Campingplätze;255.8;15.4
+2020;8;WZ08-56;Gastronomie;104.6;-15
+2020;8;WZ08-561;Restaurants & Cafes;116.8;-8.8
+2020;8;WZ08-562;Caterer;75.7;-30.9
+2020;8;WZ08-563;Bars & Clubs;76;-34.7
+2020;9;WZ08-55;Beherbergung;102.3;-24.5
+2020;9;WZ08-551;Hotels;100.1;-26.5
+2020;9;WZ08-552;Ferienunterkünfte;113.5;-11.5
+2020;9;WZ08-553;Campingplätze;164.7;28.2
+2020;9;WZ08-56;Gastronomie;103.3;-13.9
+2020;9;WZ08-561;Restaurants & Cafes;111.1;-7.2
+2020;9;WZ08-562;Caterer;89.1;-28.4
+2020;9;WZ08-563;Bars & Clubs;73.1;-34.2
+2020;10;WZ08-55;Beherbergung;83;-35.5
+2020;10;WZ08-551;Hotels;81.2;-37.7
+2020;10;WZ08-552;Ferienunterkünfte;96.3;-16.3
+2020;10;WZ08-553;Campingplätze;109.9;24.9
+2020;10;WZ08-56;Gastronomie;92.9;-21.6
+2020;10;WZ08-561;Restaurants & Cafes;99.6;-16.3
+2020;10;WZ08-562;Caterer;82.1;-30.7
+2020;10;WZ08-563;Bars & Clubs;62.7;-45.2
+2020;11;WZ08-55;Beherbergung;21.9;-79.9
+2020;11;WZ08-551;Hotels;21;-81.5
+2020;11;WZ08-552;Ferienunterkünfte;22.5;-67
+2020;11;WZ08-553;Campingplätze;36.5;-22
+2020;11;WZ08-56;Gastronomie;47.8;-57.8
+2020;11;WZ08-561;Restaurants & Cafes;43.1;-61.4
+2020;11;WZ08-562;Caterer;73.5;-39.4
+2020;11;WZ08-563;Bars & Clubs;19.3;-82
+2020;12;WZ08-55;Beherbergung;19.3;-81.5
+2020;12;WZ08-551;Hotels;18.4;-83
+2020;12;WZ08-552;Ferienunterkünfte;20.3;-72.2
+2020;12;WZ08-553;Campingplätze;36.4;-18
+2020;12;WZ08-56;Gastronomie;45.5;-63.4
+2020;12;WZ08-561;Restaurants & Cafes;41;-67.5
+2020;12;WZ08-562;Caterer;70.5;-40.2
+2020;12;WZ08-563;Bars & Clubs;16.8;-86.7
+2021;1;WZ08-55;Beherbergung;17.3;-80
+2021;1;WZ08-551;Hotels;13.5;-84.6
+2021;1;WZ08-552;Ferienunterkünfte;16.9;-71.8
+2021;1;WZ08-553;Campingplätze;112.5;-2.4
+2021;1;WZ08-56;Gastronomie;45.1;-54.9
+2021;1;WZ08-561;Restaurants & Cafes;42.2;-58
+2021;1;WZ08-562;Caterer;58.7;-42.3
+2021;1;WZ08-563;Bars & Clubs;14.4;-84.5
+2021;2;WZ08-55;Beherbergung;16.4;-82.2
+2021;2;WZ08-551;Hotels;14.9;-84.1
+2021;2;WZ08-552;Ferienunterkünfte;14.2;-80.6
+2021;2;WZ08-553;Campingplätze;47.8;-28.8
+2021;2;WZ08-56;Gastronomie;44.9;-55.2
+2021;2;WZ08-561;Restaurants & Cafes;40.8;-59.3
+2021;2;WZ08-562;Caterer;60.6;-41.6
+2021;2;WZ08-563;Bars & Clubs;15.1;-84.2
+2021;3;WZ08-55;Beherbergung;21.7;-59.3
+2021;3;WZ08-551;Hotels;20;-62.3
+2021;3;WZ08-552;Ferienunterkünfte;15.3;-66.6
+2021;3;WZ08-553;Campingplätze;74;5.3
+2021;3;WZ08-56;Gastronomie;53.2;-17
+2021;3;WZ08-561;Restaurants & Cafes;49.4;-18.5
+2021;3;WZ08-562;Caterer;69.5;-14.9
+2021;3;WZ08-563;Bars & Clubs;18.1;-62.9
+2021;4;WZ08-55;Beherbergung;20.6;40.1
+2021;4;WZ08-551;Hotels;18.8;49.2
+2021;4;WZ08-552;Ferienunterkünfte;17.4;1.8
+2021;4;WZ08-553;Campingplätze;65.4;-23.8
+2021;4;WZ08-56;Gastronomie;50.7;41.6
+2021;4;WZ08-561;Restaurants & Cafes;47.5;43.1
+2021;4;WZ08-562;Caterer;65.3;27.5
+2021;4;WZ08-563;Bars & Clubs;18;6.5
+2021;5;WZ08-55;Beherbergung;31.1;19.6
+2021;5;WZ08-551;Hotels;28.2;20
+2021;5;WZ08-552;Ferienunterkünfte;37.2;1.9
+2021;5;WZ08-553;Campingplätze;89.9;3.2
+2021;5;WZ08-56;Gastronomie;62.1;11.7
+2021;5;WZ08-561;Restaurants & Cafes;62.1;6.7
+2021;5;WZ08-562;Caterer;70.6;26.5
+2021;5;WZ08-563;Bars & Clubs;26.9;-14.3
+2021;6;WZ08-55;Beherbergung;71.3;15.6
+2021;6;WZ08-551;Hotels;67.3;16.2
+2021;6;WZ08-552;Ferienunterkünfte;87;7.9
+2021;6;WZ08-553;Campingplätze;177.5;5.6
+2021;6;WZ08-56;Gastronomie;87.9;9.9
+2021;6;WZ08-561;Restaurants & Cafes;94.5;8.2
+2021;6;WZ08-562;Caterer;80.1;23.2
+2021;6;WZ08-563;Bars & Clubs;63.2;13.9
+2021;7;WZ08-55;Beherbergung;100.3;8.2
+2021;7;WZ08-551;Hotels;91.7;5.4
+2021;7;WZ08-552;Ferienunterkünfte;155.4;20.4
+2021;7;WZ08-553;Campingplätze;254.3;7.9
+2021;7;WZ08-56;Gastronomie;102.4;1.1
+2021;7;WZ08-561;Restaurants & Cafes;115.5;1.5
+2021;7;WZ08-562;Caterer;80.8;13.5
+2021;7;WZ08-563;Bars & Clubs;79.8;9.8
+2021;8;WZ08-55;Beherbergung;116.6;12.1
+2021;8;WZ08-551;Hotels;107.6;9.8
+2021;8;WZ08-552;Ferienunterkünfte;184.5;28.9
+2021;8;WZ08-553;Campingplätze;260.1;1.7
+2021;8;WZ08-56;Gastronomie;103.3;-1.2
+2021;8;WZ08-561;Restaurants & Cafes;116.6;-0.2
+2021;8;WZ08-562;Caterer;81.4;7.5
+2021;8;WZ08-563;Bars & Clubs;79.8;5
+2021;9;WZ08-55;Beherbergung;119;16.3
+2021;9;WZ08-551;Hotels;118.2;18.1
+2021;9;WZ08-552;Ferienunterkünfte;136.2;20
+2021;9;WZ08-553;Campingplätze;171.6;4.2
+2021;9;WZ08-56;Gastronomie;103.7;0.4
+2021;9;WZ08-561;Restaurants & Cafes;110.1;-0.9
+2021;9;WZ08-562;Caterer;96.1;7.9
+2021;9;WZ08-563;Bars & Clubs;80.4;10
+2021;10;WZ08-55;Beherbergung;116.1;39.9
+2021;10;WZ08-551;Hotels;115.5;42.2
+2021;10;WZ08-552;Ferienunterkünfte;145.2;50.8
+2021;10;WZ08-553;Campingplätze;114.8;4.5
+2021;10;WZ08-56;Gastronomie;104.7;12.7
+2021;10;WZ08-561;Restaurants & Cafes;112;12.4
+2021;10;WZ08-562;Caterer;93.7;14.1
+2021;10;WZ08-563;Bars & Clubs;86.7;38.3
+2021;11;WZ08-55;Beherbergung;89.9;310.5
+2021;11;WZ08-551;Hotels;93.6;345.7
+2021;11;WZ08-552;Ferienunterkünfte;76.2;238.7
+2021;11;WZ08-553;Campingplätze;59.2;62.2
+2021;11;WZ08-56;Gastronomie;88.9;86
+2021;11;WZ08-561;Restaurants & Cafes;88.6;105.6
+2021;11;WZ08-562;Caterer;95.3;29.7
+2021;11;WZ08-563;Bars & Clubs;65.9;241.5
+2021;12;WZ08-55;Beherbergung;61;216.1
+2021;12;WZ08-551;Hotels;62.4;239.1
+2021;12;WZ08-552;Ferienunterkünfte;53.9;165.5
+2021;12;WZ08-553;Campingplätze;54.5;49.7
+2021;12;WZ08-56;Gastronomie;84.2;85.1
+2021;12;WZ08-561;Restaurants & Cafes;86.7;111.5
+2021;12;WZ08-562;Caterer;85.8;21.7
+2021;12;WZ08-563;Bars & Clubs;55.5;230.4
+2022;1;WZ08-55;Beherbergung;53.7;210.4
+2022;1;WZ08-551;Hotels;51.4;280.7
+2022;1;WZ08-552;Ferienunterkünfte;52.7;211.8
+2022;1;WZ08-553;Campingplätze;136.9;21.7
+2022;1;WZ08-56;Gastronomie;90;99.6
+2022;1;WZ08-561;Restaurants & Cafes;93.8;122.3
+2022;1;WZ08-562;Caterer;92.4;57.4
+2022;1;WZ08-563;Bars & Clubs;48.2;234.7
+2022;2;WZ08-55;Beherbergung;59.1;260.4
+2022;2;WZ08-551;Hotels;59.3;298
+2022;2;WZ08-552;Ferienunterkünfte;59.4;318.3
+2022;2;WZ08-553;Campingplätze;65.5;37
+2022;2;WZ08-56;Gastronomie;92.5;106
+2022;2;WZ08-561;Restaurants & Cafes;96.2;135.8
+2022;2;WZ08-562;Caterer;94.5;55.9
+2022;2;WZ08-563;Bars & Clubs;53.1;251.7
+2022;3;WZ08-55;Beherbergung;78.5;261.8
+2022;3;WZ08-551;Hotels;79.2;296
+2022;3;WZ08-552;Ferienunterkünfte;74.2;385
+2022;3;WZ08-553;Campingplätze;104;40.5
+2022;3;WZ08-56;Gastronomie;105.3;97.9
+2022;3;WZ08-561;Restaurants & Cafes;109.5;121.7
+2022;3;WZ08-562;Caterer;104.3;50.1
+2022;3;WZ08-563;Bars & Clubs;74;308.8
+2022;4;WZ08-55;Beherbergung;102.1;395.6
+2022;4;WZ08-551;Hotels;99.5;429.3
+2022;4;WZ08-552;Ferienunterkünfte;131.7;656.9
+2022;4;WZ08-553;Campingplätze;142.8;118.3
+2022;4;WZ08-56;Gastronomie;113.1;123.1
+2022;4;WZ08-561;Restaurants & Cafes;119.1;150.7
+2022;4;WZ08-562;Caterer;106.5;63.1
+2022;4;WZ08-563;Bars & Clubs;89.1;395
+2022;5;WZ08-55;Beherbergung;131.7;323.5
+2022;5;WZ08-551;Hotels;132;368.1
+2022;5;WZ08-552;Ferienunterkünfte;149.6;302.2
+2022;5;WZ08-553;Campingplätze;152.2;69.3
+2022;5;WZ08-56;Gastronomie;129.9;109.2
+2022;5;WZ08-561;Restaurants & Cafes;138;122.2
+2022;5;WZ08-562;Caterer;118.5;67.8
+2022;5;WZ08-563;Bars & Clubs;107;297.8
+2022;6;WZ08-55;Beherbergung;140.3;96.8
+2022;6;WZ08-551;Hotels;138.8;106.2
+2022;6;WZ08-552;Ferienunterkünfte;164.4;89
+2022;6;WZ08-553;Campingplätze;203;14.4
+2022;6;WZ08-56;Gastronomie;127.5;45.1
+2022;6;WZ08-561;Restaurants & Cafes;135.3;43.2
+2022;6;WZ08-562;Caterer;116.1;44.9
+2022;6;WZ08-563;Bars & Clubs;108.2;71.2
+2022;7;WZ08-55;Beherbergung;141.7;41.3
+2022;7;WZ08-551;Hotels;135.8;48.1
+2022;7;WZ08-552;Ferienunterkünfte;187.8;20.8
+2022;7;WZ08-553;Campingplätze;276.6;8.8
+2022;7;WZ08-56;Gastronomie;130.9;27.8
+2022;7;WZ08-561;Restaurants & Cafes;142.8;23.6
+2022;7;WZ08-562;Caterer;110.6;36.9
+2022;7;WZ08-563;Bars & Clubs;112.4;40.9
+2022;8;WZ08-55;Beherbergung;142.2;22
+2022;8;WZ08-551;Hotels;135.8;26.2
+2022;8;WZ08-552;Ferienunterkünfte;199;7.9
+2022;8;WZ08-553;Campingplätze;257.9;-0.8
+2022;8;WZ08-56;Gastronomie;127.3;23.2
+2022;8;WZ08-561;Restaurants & Cafes;139.4;19.6
+2022;8;WZ08-562;Caterer;106.1;30.3
+2022;8;WZ08-563;Bars & Clubs;110.7;38.7
+2022;9;WZ08-55;Beherbergung;160.3;34.7
+2022;9;WZ08-551;Hotels;163.8;38.6
+2022;9;WZ08-552;Ferienunterkünfte;165.3;21.4
+2022;9;WZ08-553;Campingplätze;158.8;-7.5
+2022;9;WZ08-56;Gastronomie;126;21.5
+2022;9;WZ08-561;Restaurants & Cafes;128.8;17
+2022;9;WZ08-562;Caterer;126.4;31.5
+2022;9;WZ08-563;Bars & Clubs;101.3;26
+2022;10;WZ08-55;Beherbergung;152.3;31.2
+2022;10;WZ08-551;Hotels;155.9;35
+2022;10;WZ08-552;Ferienunterkünfte;161.1;11
+2022;10;WZ08-553;Campingplätze;120.1;4.6
+2022;10;WZ08-56;Gastronomie;124;18.4
+2022;10;WZ08-561;Restaurants & Cafes;130.1;16.2
+2022;10;WZ08-562;Caterer;117.1;25
+2022;10;WZ08-563;Bars & Clubs;100.6;16
