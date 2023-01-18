@@ -145,10 +145,10 @@ const CoronaGraph = () => {
 
                     {/* Subventions Events */}
                     {subventionsEvents.map((event, i) =>
-                        <>
+                        <g key={i}>
                             <rect x={xScale(event.Date)} y={i === 2 ? 20 : 0} style={{ width: ".5px", height: i === 0 ? dms.innerHeight + 37 : (i === 1 ? dms.innerHeight : (i === 2 ? dms.innerHeight + 34 : dms.innerHeight + 36)), fill: "none", stroke: '#00000085', strokeDasharray: '1 1', strokeWidth: "1px" }} />
                             <text x={xScale(event.Date) + 5} y={i === 0 ? dms.innerHeight + 36 : (i === 1 ? 12 : (i === 2 ? dms.innerHeight + 53 : dms.innerHeight + 36))} style={{ fontSize: "0.8rem" }} >{event.EventName}</text>
-                        </>
+                        </g>
                     )}
 
 
