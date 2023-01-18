@@ -11,15 +11,26 @@
 
   th{
     padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    .SourceName{
+      width: 20px;
+    }
   }
 
   &:hover {
     color:$sourceHover;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
 
     a{
       color: $sourceHover;
-      transition: all 0.2s ease-in-out;  
+      transition: all 0.1s ease-in-out;  
+    }
+
+    p{
+      color: $sourceHover;
+      transition: all 0.1s ease-in-out;  
     }
   }
 }
