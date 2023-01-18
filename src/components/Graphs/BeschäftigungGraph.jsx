@@ -4,15 +4,16 @@ import { useAppContext } from '../../contexts/appContext'
 import useChartDimensions from '../../hooks/useChartDimensions';
 import { useD3 } from '../../hooks/useD3';
 
-const BeschäftigungGraph = () => {
+//set margins of Graph
+const chartSettings = {
+    "marginTop": 20,
+    "marginRight": 30,
+    "marginBottom": 30,
+    "marginLeft": 200
+}
 
-    //set margins of Graph
-    const chartSettings = {
-        "marginTop": 20,
-        "marginRight": 30,
-        "marginBottom": 30,
-        "marginLeft": 200
-    }
+
+const BeschäftigungGraph = () => {
 
     //2_Auspraegung_Label
     const svgRef = useRef()

@@ -31,22 +31,19 @@ const EmploymentBarChart = (props) => {
     const [showTooltip, setShowTooltip] = useState(false)
     const [filteredData, setFilteredData] = useState([])
 
-    const xAccessor = (d) => d.BeschaeftigteGesamt;
-    const yAccessor = (d) => d.Branche;
+    const xAccessor = (d) => d.Beschaeftigte;
+    const yAccessor = (d) => d.Branche_Label;
 
     useEffect(() => {
 
         const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth() + 1].join("-")
-        const filteredDataCreate = employmentData.filter((row) => {
-            if ((row.Jahr + "-" + row.Monat) === yearMonthTime) { return true }
-        })
+        const filteredDataCreate = employmentData.filter((row) => ((row.Jahr + "-" + row.Monat) === yearMonthTime))
 
         setFilteredData(filteredDataCreate)
-    }, [selectedDate])
+    }, [selectedDate.getMonth()])
 
     //X-Scale for graph
     const xScale = useMemo(() => (
-
         d3.scaleLinear()
             .domain([0, d3.max(employmentData, row => xAccessor(row))])
             .range([0, dms.innerWidth])
@@ -85,58 +82,60 @@ const EmploymentBarChart = (props) => {
 
     const transitionStyle = { transition: "all 1s ease-in-out 0s" }
 
-    const getFill = (dataType) => {
-        if (dataType === "Gastronomie") return categories.Gastronomie.color
-        else return categories.Beherbergung.color
+    const getFill = (type) => {
+        return (type.includes("WZ08-56")) ? categories.Gastronomie.color : categories.Beherbergung.color
     }
 
     return (
         <>
-        <div className="graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
-            <svg width={dms.width} height={dms.height} ref={svgRef}>
-                <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
+            <div className="graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
+                <svg width={dms.width} height={dms.height} ref={svgRef}>
+                    <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
-                    {filteredData.map((row, i) =>
-                        <>
-                            <rect className="bar"
-                                key={i}
-                                x={0}
-                                y={yScale(row.Branche_Label) - yScale.bandwidth() / 2}
-                                width={xScale(xAccessor(row))}
-                                height={yScale.bandwidth()}
-                                style={{ ...transitionStyle, fill: getFill(row.Typ) }} />
-                        </>
-                    )}
+                        {filteredData.map((row, i) =>
+                            <>
+                                <rect className="bar"
+                                    key={i}
+                                    x={0}
+                                    y={yScale(row.Branche_Label) - yScale.bandwidth() / 2}
+                                    width={xScale(xAccessor(row))}
+                                    height={yScale.bandwidth()}
+                                    style={{ ...transitionStyle, fill: getFill(row.Branche_Code) }} />
 
-                    <XAxisLinear
-                        dms={dms}
-                        domain={xScale.domain()}
-                        range={xScale.range()}>
-                    </XAxisLinear>
+                                <text x={0} y={yScale(row.Branche_Label) + yScale.bandwidth() / 4} style={{ ...transitionStyle, fontSize: "11px", transform: `translateX(${xScale(row.Beschaeftigte) + 8}px)` }} >{row.Beschaeftigte}%</text>
 
-                    <YAxisNominal
-                        dms={dms}
-                        domain={yScale.domain()}
-                        range={yScale.range()}>
-                    </YAxisNominal>
+                            </>
+                        )}
 
-                    {/* Tooltip */}
-                    <div className="tooltip" style={{ display: showTooltip ? "block" : "none" }}>
-                        <p>Tooltip</p>
-                    </div>
+                        <XAxisLinear
+                            dms={dms}
+                            domain={xScale.domain()}
+                            range={xScale.range()}>
+                        </XAxisLinear>
 
-                    {/* actionListener rect over graph area*/}
-                    <rect className="actionListener" width={dms.innerWidth} height={dms.innerHeight}
-                        fill='transparent'
-                        onMouseEnter={mouseEnterEvent}
-                        onMouseMove={mouseMoveEvent}
-                        onMouseLeave={mouseLeaveEvent}
-                    />
+                        <YAxisNominal
+                            dms={dms}
+                            domain={yScale.domain()}
+                            range={yScale.range()}>
+                        </YAxisNominal>
 
-                </g>
-            </svg>
-        </div >
-        <Legend vertical={false} />
+                        {/* Tooltip */}
+                        <div className="tooltip" style={{ display: showTooltip ? "block" : "none" }}>
+                            <p>Tooltip</p>
+                        </div>
+
+                        {/* actionListener rect over graph area*/}
+                        <rect className="actionListener" width={dms.innerWidth} height={dms.innerHeight}
+                            fill='transparent'
+                            onMouseEnter={mouseEnterEvent}
+                            onMouseMove={mouseMoveEvent}
+                            onMouseLeave={mouseLeaveEvent}
+                        />
+
+                    </g>
+                </svg>
+            </div >
+            <Legend vertical={false} />
         </>
     )
 }

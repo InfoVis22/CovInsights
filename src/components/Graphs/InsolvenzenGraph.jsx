@@ -9,7 +9,6 @@ import { categories } from "../../settings.js"
 import * as d3 from 'd3'
 
 
-
 //set margins of Graph
 const chartSettings = {
     height: 150,
@@ -22,14 +21,14 @@ const chartSettings = {
 const InsolvenzGraph = () => {
     const svgRef = useRef()
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
-    const { insolvenzData, setShowTooltipsTime, hoveredTime, setHoveredTime, showTooltipsTime, selectedDate, setSelectedDate } = useAppContext()
+    const { InsolvencyBarData, setShowTooltipsTime, hoveredTime, setHoveredTime, showTooltipsTime, selectedDate, setSelectedDate } = useAppContext()
     const [closestXValueBeherbergung, setClosestXValueBeherbergung] = useState(0)
     const [closestYValueBeherbergung, setClosestYValueBeherbergung] = useState(0)
     const [closestXValueGastronomie, setClosestXValueGastronomie] = useState(0)
     const [closestYValueGastronomie, setClosestYValueGastronomie] = useState(0)
 
     const xAccessor = (d) => d.Date;
-    const yAccessor = (d) => d.Insolvenzverfahren;
+    const yAccessor = (d) => d.Insolvenzen;
 
 
     //X-Scale for graph
@@ -41,14 +40,16 @@ const InsolvenzGraph = () => {
             .nice()
     ), [dms.innerWidth])
 
+
     //Y-Scale for graph
     const yScale = useMemo(() => (d3.scaleLinear()
-        .domain([0, d3.max(insolvenzData, (d) => yAccessor(d))])
+        .domain([0, d3.max(InsolvencyBarData, (d) => yAccessor(d))])
         .range([dms.innerHeight, 0])
         .nice()
     ), [dms.innerWidth])
 
     const lineGenerator = d3.line(d => xScale(xAccessor(d)), d => yScale(yAccessor(d))).curve(d3.curveMonotoneX)
+    const lineGeneratorNew = d3.line(d => xScale(d.Date), d => yScale(d.Insolvenzen)).curve(d3.curveMonotoneX)
 
 
     //mouse events
@@ -75,12 +76,12 @@ const InsolvenzGraph = () => {
         const getDistanceFromHoveredDate = (d) => Math.abs(xAccessor(d) - selectedDate);
 
         //Beherbergung: WZ08-55; Gastronomie: WZ08-56
-        const closestIndexBeherbergung = d3.scan(insolvenzData, (a, b) => getDistanceFromHoveredDate(a) - getDistanceFromHoveredDate(b));
+        const closestIndexBeherbergung = d3.scan(InsolvencyBarData, (a, b) => getDistanceFromHoveredDate(a) - getDistanceFromHoveredDate(b));
         const closestIndexGastronomie = closestIndexBeherbergung + 1 //hahah shitty quick fix aber funktioniert
 
         //Grab the data point at that index
-        const closestDataPointBeherbergung = insolvenzData[closestIndexBeherbergung];
-        const closestDataPointGastronomie = insolvenzData[closestIndexGastronomie];
+        const closestDataPointBeherbergung = InsolvencyBarData[closestIndexBeherbergung];
+        const closestDataPointGastronomie = InsolvencyBarData[closestIndexGastronomie];
 
         setClosestXValueBeherbergung(xAccessor(closestDataPointBeherbergung))
         setClosestYValueBeherbergung(yAccessor(closestDataPointBeherbergung))
@@ -92,73 +93,79 @@ const InsolvenzGraph = () => {
 
     return (
         <>
-        <div className="Graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
-            <svg width={dms.width} height={dms.height} ref={svgRef}>
-                <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
+            <div className="Graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
+                <svg width={dms.width} height={dms.height} ref={svgRef}>
+                    <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
-                    <XAxisTime
-                        dms={dms}
-                        domain={xScale.domain()}
-                        range={xScale.range()}>
-                    </XAxisTime>
+                        <XAxisTime
+                            dms={dms}
+                            domain={xScale.domain()}
+                            range={xScale.range()}>
+                        </XAxisTime>
 
-                    <YAxisLinear
-                        dms={dms}
-                        domain={yScale.domain()}
-                        range={yScale.range()}>
-                    </YAxisLinear>
+                        <YAxisLinear
+                            dms={dms}
+                            domain={yScale.domain()}
+                            range={yScale.range()}>
+                        </YAxisLinear>
 
-                    {/* Line for Beherbergung */}
-                    <Line
-                        data={insolvenzData.filter(d => d["4_Auspraegung_Code"] === "WZ08-56")}
-                        lineGenerator={lineGenerator}
-                        color={categories.Beherbergung.color}
-                        strokeWidth={3}
-                    />
-
-                    {/* Line Graph for Gastgewerbe */}
-                    <Line
-                        data={insolvenzData.filter(d => d["4_Auspraegung_Code"] !== "WZ08-56")}
-                        lineGenerator={lineGenerator}
-                        color={categories.Gastronomie.color}
-                        strokeWidth={3}
-                    />
+                        {/* Line Graph for Gastronomie */}
+                        <path
+                            stroke={categories.Gastronomie.color}
+                            strokeWidth={2}
+                            fill="none"
+                            d={lineGeneratorNew(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-56"))}
+                            style={{ transition: "all 1s ease-in-out" }}
+                        />
 
 
-                    {/* selected grey rectangle */}
-                    <rect x={xScale(selectedDate)} style={{ width: "10px", fill: '#B8B8B87f', height: dms.innerHeight }} />
-
-                    {showTooltipsTime && <>
-                        {/* hover dotted line */}
-                        <rect x={xScale(hoveredTime)} style={{ width: ".5px", height: dms.innerHeight, stroke: '#5c5c5c', strokeDasharray: '1 1', strokeWidth: "1px" }} />
-                    </>}
-
-                    {/* hover Beherbergung circle*/}
-                    <circle cx={xScale(closestXValueBeherbergung)} cy={yScale(closestYValueBeherbergung)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
-
-                    {/* hover Gastronomie circle*/}
-                    <circle cx={xScale(closestXValueGastronomie)} cy={yScale(closestYValueGastronomie)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
+                        {/* Line for Beherbergung */}
+                        <path
+                            stroke={categories.Beherbergung.color}
+                            d={lineGeneratorNew(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-55"))}
+                            strokeWidth={2}
+                            fill="none"
+                            style={{ transition: "all 1s ease-in-out" }}
+                        />
 
 
 
 
 
-                    {/* actionListener rect over graph area*/}
-                    <rect className="actionListener" width={dms.innerWidth} height={dms.innerHeight}
-                        fill='transparent'
-                        onMouseEnter={mouseEnterEvent}
-                        onMouseMove={mouseMoveEvent}
-                        onMouseLeave={mouseLeaveEvent}
-                    // onTouchStart={mouseEnterEvent}
-                    // onTouchMove={mouseMoveEvent}
-                    // onTouchEnd={mouseLeaveEvent}
-                    />
+                        {/* selected grey rectangle */}
+                        <rect x={xScale(selectedDate)} style={{ width: "10px", fill: '#B8B8B87f', height: dms.innerHeight }} />
 
-                </g>
-            </svg>
-        </div >
-        <div style={{height: "20px"}}></div>
-        <Legend vertical={false} />
+                        {showTooltipsTime && <>
+                            {/* hover dotted line */}
+                            <rect x={xScale(hoveredTime)} style={{ width: ".5px", height: dms.innerHeight, stroke: '#5c5c5c', strokeDasharray: '1 1', strokeWidth: "1px" }} />
+                        </>}
+
+                        {/* hover Beherbergung circle*/}
+                        <circle cx={xScale(closestXValueBeherbergung)} cy={yScale(closestYValueBeherbergung)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
+
+                        {/* hover Gastronomie circle*/}
+                        <circle cx={xScale(closestXValueGastronomie)} cy={yScale(closestYValueGastronomie)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
+
+
+
+
+
+                        {/* actionListener rect over graph area*/}
+                        <rect className="actionListener" width={dms.innerWidth} height={dms.innerHeight}
+                            fill='transparent'
+                            onMouseEnter={mouseEnterEvent}
+                            onMouseMove={mouseMoveEvent}
+                            onMouseLeave={mouseLeaveEvent}
+                        // onTouchStart={mouseEnterEvent}
+                        // onTouchMove={mouseMoveEvent}
+                        // onTouchEnd={mouseLeaveEvent}
+                        />
+
+                    </g>
+                </svg>
+            </div >
+            <div style={{ height: "20px" }}></div>
+            <Legend vertical={false} />
         </>
     )
 }

@@ -34,8 +34,6 @@ const RevenueBarChart = () => {
         const filteredData = umsatzData.filter((row) => ((row.Jahr + "-" + row.Monat) === yearMonthTime))
 
         setFilteredData(filteredData)
-        console.log(filteredData)
-
     }, [selectedDate.getMonth()])
 
     //X-Scale for graph
@@ -77,10 +75,6 @@ const RevenueBarChart = () => {
 
     const transitionStyle = { transition: "all 1s ease-in-out 0s" }
 
-    const getFill = (type) => {
-        return (type.includes("WZ08-56")) ? categories.Gastronomie.color : categories.Beherbergung.color
-    }
-
     return (
         <>
             <div className="graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
@@ -99,16 +93,16 @@ const RevenueBarChart = () => {
                             range={yScale.range()}>
                         </YAxisNominal>
 
-                        {filteredData.map((d, i) => <>
+                        {filteredData.map((row, i) => <>
                             <rect className="bar"
                                 key={i}
                                 x={0}
-                                y={yScale(d.Branche_Label) - yScale.bandwidth() / 2}
-                                width={xScale(d.Umsatz)}
+                                y={yScale(row.Branche_Label) - yScale.bandwidth() / 2}
+                                width={xScale(row.Umsatz)}
                                 height={yScale.bandwidth()}
-                                style={{ ...transitionStyle, fill: getFill(d.Branche_Code) }} />
+                                style={{ ...transitionStyle, fill: (row.Branche_Code.includes("WZ08-56")) ? categories.Gastronomie.color : categories.Beherbergung.color }} />
 
-                            <text x={xScale(d.Umsatz) + 10} y={yScale(d.Branche_Label) + 3} style={{ ...transitionStyle, fontSize: "11px" }} >{d.Umsatz}</text>
+                            <text x={0} y={yScale(row.Branche_Label) + yScale.bandwidth() / 4} style={{ ...transitionStyle, fontSize: "11px", transform: `translateX(${xScale(row.Umsatz) + 8}px)` }} >{row.Umsatz}</text>
 
                         </>
 

@@ -33,16 +33,11 @@ const Dashboard = () => {
         console.log("Load Data...")
 
         //load Employment BarChart
-        const rawEmployment = await d3.dsv(";", "../cleaned_data/Beschäftigung.csv")
-        const employmentData = rawEmployment.filter((row) => {
-            if (row.Jahr >= 2018) {
-                return true;
-            }
-        }).map((row) => {
-            const newRow = row
-            newRow.BeschaeftigteGesamt = parseFloat(row.BeschaeftigteGesamt)
-            return newRow
-        })
+        const rawEmployment = await d3.dsv(";", "../data/BeschäftigungGastgewerbe.csv")
+        const employmentData = rawEmployment
+            .filter(d => +d.Jahr >= 2018 && (d.Branche_Code !== "WZ08-55" && d.Branche_Code !== "WZ08-56"))
+            .map((row) => ({ ...row, Date: new Date(row.Jahr, (+row.Monat - 1)), Beschaeftigte: +row.Beschaeftigte, Vollzeitbeschaeftigte: +row.Vollzeitbeschaeftigte, Teilzeitbeschaeftigte: +row.Teilzeitbeschaeftigte }))
+
         console.log("Beschäftigte Bar")
         console.log(employmentData)
         setEmploymentData(employmentData)
@@ -51,21 +46,20 @@ const Dashboard = () => {
         //load Revenue BarChart
         const rawUmsatzData = await d3.dsv(";", "../data/UmsatzGastgewerbe.csv")
         const umsatzData = rawUmsatzData
-            .filter(d => +d.Jahr >= 2018 && (d.Branche_Code !== "WZ08-55" && d.Branche_Code !== "WZ08-56"))
-            .map(d => ({ ...d, Date: new Date(d.Jahr, (+d.Monat - 1)), Umsatz: +d.Umsatz, Veraenderung: +d.Veraenderung }))
+            .filter(row => +row.Jahr >= 2018 && (row.Branche_Code !== "WZ08-55" && row.Branche_Code !== "WZ08-56"))
+            .map(row => ({ ...row, Date: new Date(row.Jahr, (+row.Monat - 1)), Umsatz: +row.Umsatz, Veraenderung: +row.Veraenderung }))
+
         console.log("Umsatz Bar")
         console.log(umsatzData)
         setUmsatzData(umsatzData)
 
+
         //load Insolvency BarChart
-        const rawInsolvencyBarData = await d3.dsv(";", "../data/Insolvenzen_veränderung.csv")
-        const InsolvencyBarData = rawInsolvencyBarData.filter((row) => {
-            if (row.Jahr >= 2018) {
-                return true;
-            }
-        }).map((row) => {
-            return { ...row, Date: new Date(row.Jahr, row.Monat - 1), Veraenderung: (+row.Veraenderung) * 100 }
-        })
+        const rawInsolvencyBarData = await d3.dsv(";", "../data/InsolvenzenGastgewerbe.csv")
+        const InsolvencyBarData = rawInsolvencyBarData
+            .filter(row => +row.Jahr >= 2018)
+            .map((row) => ({ ...row, Date: new Date(row.Jahr, (+row.Monat - 1)), Ins_opened: +row.Ins_opened, Ins_rejected: +row.Ins_rejected, Insolvenzen: +row.Insolvenzen, Arbeitnehmer: +row.Arbeitnehmer, Forderungen: +row.Forderungen, InsolvenzenVeraenderung: (+row.InsolvenzenVeraenderung * 100) }))
+
         console.log("Insolvencies Bar")
         console.log(InsolvencyBarData)
         setInsolvencyBarData(InsolvencyBarData)
@@ -115,7 +109,7 @@ const Dashboard = () => {
                 <Card title="Umsatz im Gastgewerbe" subtitle={"in Mio € (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
                     <RevenueBarChart />
                 </Card>
-                <Card title="Beschäftigung im Gastgewerbe" subtitle={"in Tausend Mitarbeiter (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
+                <Card title="Beschäftigung im Gastgewerbe" subtitle={"Im Vergleich zum Jahr 2015 (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
                     <EmploymentBarChart />
                 </Card>
                 <Card title="Insolvenzen im Gastgewerbe" subtitle={"in Anzahl der Insolvenzen (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>

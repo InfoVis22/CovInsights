@@ -5,6 +5,9 @@ import useChartDimensions from '../../hooks/useChartDimensions';
 import * as d3 from 'd3'
 import YAxisLinear from '../D3Elements/YAxisLinear';
 import { useEffect } from 'react';
+import { categories } from "../../settings.js"
+import { transition } from 'd3';
+import { transform } from 'typescript';
 
 
 //set margins of Graph
@@ -26,25 +29,28 @@ const InsolvenzenProzent = () => {
 
 
     useEffect(() => {
-        const filteredData = InsolvencyBarData.filter((d) => {
-            return (d.Wirtschaftsbereich !== "Beherbergung" && d.Wirtschaftsbereich !== "Gastronomie" && (d.Date.getMonth() + "-" + d.Date.getYear() === selectedDate.getMonth() + "-" + selectedDate.getYear()))
-        })
+        const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth() + 1].join("-")
+
+        const filteredData = InsolvencyBarData
+            .filter(row => (row.Branche_Code !== "WZ08-55" && row.Branche_Code !== "WZ08-56") &&
+                ((row.Jahr + "-" + row.Monat) === yearMonthTime))
 
         setInsolvenzData(filteredData)
+
 
     }, [InsolvencyBarData, selectedDate])
 
 
     //X-Scale for graph
     const xScale = d3.scaleBand()
-        .domain(insolvenzData.map(d => d.Wirtschaftsbereich))
+        .domain(insolvenzData.map(d => d.Branche_Lable))
         .range([0, dms.innerWidth])
         .padding(0.6)
 
 
     //Y-Scale for graph
     const yScale = d3.scaleLinear()
-        .domain([-100, 100])
+        .domain([100, -100])
         .range([0, dms.innerHeight])
         .nice()
 
@@ -87,15 +93,25 @@ const InsolvenzenProzent = () => {
 
                     {/* Create Prozent Bars */}
                     {insolvenzData.map((row, i) => (
-                        <rect className="bar"
-                            key={i}
-                            x={xScale(row.Wirtschaftsbereich)}
-                            y={dms.innerHeight / 2}
-                            width={xScale.bandwidth()}
-                            height={yScale(row.Veraenderung ? row.Veraenderung : 0)}
-                            style={{ ...transitionStyle, fill: "#000" }} />
-                    )
-                    )}
+                        <>
+                            <rect className="bar"
+                                key={i}
+                                x={xScale(row.Branche_Lable)}
+                                y={100}
+                                width={xScale.bandwidth()}
+                                height={Math.abs(yScale(row.InsolvenzenVeraenderung) - yScale(0))}
+                                style={{
+                                    ...transitionStyle,
+                                    fill: (row.Branche_Code.includes("WZ08-56")) ? categories.Gastronomie.color : categories.Beherbergung.color,
+                                    transform: (yScale(row.InsolvenzenVeraenderung) - yScale(0)) < 0 ? `translateY(${yScale(row.InsolvenzenVeraenderung) - yScale(0)}px)` : ""
+                                    //transform: `translateY(-58px)`
+                                }} />
+
+                            {/* To debug - show labels */}
+                            {/* <text x={xScale(row.Branche_Lable) + 3} y={yScale(row.InsolvenzenVeraenderung) + 10} style={{ ...transitionStyle, fontSize: "11px" }} >{row.InsolvenzenVeraenderung}</text> */}
+
+                        </>
+                    ))}
 
                 </g>
             </svg>

@@ -23,13 +23,11 @@ const InsolvenciesBarChart = (props) => {
     //Component State
     const svgRef = useRef();
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
-    const [closestXValue, setClosestXValue] = useState(0)
-    const [closestYValue, setClosestYValue] = useState(0)
     const [showTooltip, setShowTooltip] = useState(false)
     const [filteredData, setFilteredData] = useState([])
 
-    const xAccessor = (d) => d.Total;
-    const yAccessor = (d) => d.Branche_Label;
+    const xAccessor = (d) => d.Branche_Lable;
+    const yAccessor = (d) => d.Branche_Lable;
 
     useEffect(() => {
 
@@ -42,17 +40,16 @@ const InsolvenciesBarChart = (props) => {
     }, [selectedDate])
 
     //X-Scale for graph
-    const xScale = useMemo(() => (
-
+    const yScale = useMemo(() => (
         d3.scaleLinear()
-            .domain([0, d3.max(InsolvencyBarData, row => xAccessor(row))])
+            .domain([0, d3.max(InsolvencyBarData, d => d.InsolvenzenVeraenderung)])
             .range([0, dms.innerWidth])
             .nice()
 
     ), [dms.innerWidth])
 
     //Y-Scale for graph
-    const yScale = useMemo(() => (
+    const xScale = useMemo(() => (
         d3.scaleBand()
             .domain(InsolvencyBarData.map(d => d.Branche_Label))
             .range([dms.innerHeight, 0])
@@ -81,7 +78,7 @@ const InsolvenciesBarChart = (props) => {
     }
 
 
-    const transitionStyle = { transition: "all 2s ease-in-out 0s" }
+    const transitionStyle = { transition: "all 1s ease-in-out 0s" }
 
     const getFill = (IndustryType) => {
         if (IndustryType == "Beherbergung") {
@@ -106,6 +103,9 @@ const InsolvenciesBarChart = (props) => {
                                 width={xScale(xAccessor(row))}
                                 height={yScale.bandwidth()}
                                 style={{ ...transitionStyle, fill: getFill(row.Typ) }} />
+
+                            <text x={xScale(row.Umsatz) + 10} y={yScale(d.Branche_Label) + 3} style={{ ...transitionStyle, fontSize: "11px" }} >{d.Umsatz}</text>
+
                         </>
                     )}
 
