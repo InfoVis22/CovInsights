@@ -91,8 +91,8 @@ Run one of the following commands to start the app
 
 <!-- Features in Progress -->
 ### Features in Progress
-- [x] Refining and combine Play and Pause buttons
-- [x] Half time job deployment numbers from 2018 to 2023 in a timeline
+- [ ] Refining and combine Play and Pause buttons
+- [ ] Half time job deployment numbers from 2018 to 2023 in a timeline
 
 <!-- Planned Features -->
 ### Planned Features
