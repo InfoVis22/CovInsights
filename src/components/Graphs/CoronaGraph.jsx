@@ -117,8 +117,8 @@ const CoronaGraph = () => {
                     <Line
                         data={coronaData}
                         lineGenerator={lineGenerator}
-                        color={'#2D2327'}
-                        strokeWidth={3}
+                        color={'#BB5160'}
+                        strokeWidth={2}
                     />
 
 
