@@ -1,8 +1,6 @@
 // IMPORTS
 import './Card.scss'
 import { AiOutlineInfoCircle } from 'react-icons/ai';
-import Legend from '../D3Elements/legend';
-
 
 const Card = ({ title, subtitle, children }) => {
 
