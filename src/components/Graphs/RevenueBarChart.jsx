@@ -20,7 +20,6 @@ const chartSettings = {
 
 const RevenueBarChart = () => {
 
-    const svgRef = useRef();
     const tooltipRef = useRef();
 
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
@@ -89,12 +88,15 @@ const RevenueBarChart = () => {
         setShowTooltip(false)
     }
 
+    const getFill = (row) => selectedBranchen.find(b => row.Branche_Code.includes(b.code)) ? selectedBranchen.find(b => row.Branche_Code.includes(b.code)).color : "#909090"
+
+
     const transitionStyle = { transition: "all 1s ease-in-out 0s" }
 
     return (
         <>
             <div className="graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
-                <svg width={dms.width} height={dms.height} ref={svgRef}>
+                <svg width={dms.width} height={dms.height}>
                     <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
                         <XAxisLinear
@@ -109,18 +111,18 @@ const RevenueBarChart = () => {
                             range={yScale.range()}>
                         </YAxisNominal>
 
-                        {filteredData.map((row, i) => <>
-                            <rect className="bar"
-                                key={i}
-                                x={0}
-                                y={yScale(row.Branche_Label) - yScale.bandwidth() / 2}
-                                width={xScale(row.Umsatz)}
-                                height={yScale.bandwidth()}
-                                style={{ ...transitionStyle, fill: selectedBranchen.find(b => row.Branche_Code.includes(b.code)) ? selectedBranchen.find(b => row.Branche_Code.includes(b.code)).color : "#909090" }} />
+                        {filteredData.map((row, i) =>
+                            <g key={i}>
+                                <rect className="bar"
+                                    key={i}
+                                    x={0}
+                                    y={yScale(row.Branche_Label) - yScale.bandwidth() / 2}
+                                    width={xScale(row.Umsatz)}
+                                    height={yScale.bandwidth()}
+                                    style={{ ...transitionStyle, fill: getFill(row) }} />
 
-                            <text x={0} y={yScale(row.Branche_Label) + yScale.bandwidth() / 4} style={{ ...transitionStyle, fontSize: "11px", transform: `translateX(${xScale(row.Umsatz) + 8}px)` }} >{row.Umsatz}</text>
-
-                        </>
+                                <text x={0} y={yScale(row.Branche_Label) + yScale.bandwidth() / 4} style={{ ...transitionStyle, fontSize: "11px", transform: `translateX(${xScale(row.Umsatz) + 8}px)` }} >{row.Umsatz}</text>
+                            </g>
 
                         )}
 

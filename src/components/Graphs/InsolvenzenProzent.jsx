@@ -6,8 +6,6 @@ import * as d3 from 'd3'
 import YAxisLinear from '../D3Elements/YAxisLinear';
 import { useEffect } from 'react';
 import { categories } from "../../settings.js"
-import { transition } from 'd3';
-import { transform } from 'typescript';
 
 
 //set margins of Graph
@@ -22,7 +20,6 @@ const chartSettings = {
 const InsolvenzenProzent = () => {
 
     //setup Hooks
-    const svgRef = useRef();
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
     const { InsolvencyBarData, hoveredTime, selectedDate } = useAppContext()
     const [insolvenzData, setInsolvenzData] = useState([])
@@ -56,14 +53,11 @@ const InsolvenzenProzent = () => {
 
     const ticks = xScale.domain().map(value => ({ value, xOffset: xScale(value) }))
 
-    console.log(xScale.bandwidth())
-    yScale(insolvenzData[0]?.Veraenderung)
-
-    const transitionStyle = { transition: "all 1s ease-in-out 0s" }
+    const transitionStyle = { transition: "all 0.5s ease-in-out 0s" }
 
     return (
         <div className="graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
-            <svg width={dms.width} height={dms.height} ref={svgRef}>
+            <svg width={dms.width} height={dms.height}>
                 <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
                     {/* Create Y-Axis */}
@@ -93,7 +87,7 @@ const InsolvenzenProzent = () => {
 
                     {/* Create Prozent Bars */}
                     {insolvenzData.map((row, i) => (
-                        <>
+                        <g key={i}>
                             <rect className="bar"
                                 key={i}
                                 x={xScale(row.Branche_Lable)}
@@ -110,7 +104,7 @@ const InsolvenzenProzent = () => {
                             {/* To debug - show labels */}
                             {/* <text x={xScale(row.Branche_Lable) + 3} y={yScale(row.InsolvenzenVeraenderung) + 10} style={{ ...transitionStyle, fontSize: "11px" }} >{row.InsolvenzenVeraenderung}</text> */}
 
-                        </>
+                        </g>
                     ))}
 
                 </g>

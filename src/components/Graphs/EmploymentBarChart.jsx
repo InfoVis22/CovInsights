@@ -24,18 +24,21 @@ const EmploymentBarChart = (props) => {
     const { employmentData, setEmploymentData, selectedDate, setSelectedDate } = useAppContext()
 
     //Component State
-    const svgRef = useRef();
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
     const [closestXValue, setClosestXValue] = useState(0)
     const [closestYValue, setClosestYValue] = useState(0)
     const [showTooltip, setShowTooltip] = useState(false)
     const [filteredData, setFilteredData] = useState([])
 
+    //to select and deselect Sectors
+    const legendItems = [{ name: "Beherbergung", code: "WZ08-55", color: categories.Beherbergung.color }, { name: "Gastronomie", code: "WZ08-56", color: categories.Gastronomie.color }]
+    const [selectedBranchen, setSelectedBranchen] = useState(legendItems)
+
+
     const xAccessor = (d) => d.Beschaeftigte;
     const yAccessor = (d) => d.Branche_Label;
 
     useEffect(() => {
-
         const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth() + 1].join("-")
         const filteredDataCreate = employmentData.filter((row) => ((row.Jahr + "-" + row.Monat) === yearMonthTime))
 
@@ -79,32 +82,28 @@ const EmploymentBarChart = (props) => {
         setShowTooltip(false)
     }
 
-
     const transitionStyle = { transition: "all 1s ease-in-out 0s" }
 
-    const getFill = (type) => {
-        return (type.includes("WZ08-56")) ? categories.Gastronomie.color : categories.Beherbergung.color
-    }
+    const getFill = (row) => selectedBranchen.find(b => row.Branche_Code.includes(b.code)) ? selectedBranchen.find(b => row.Branche_Code.includes(b.code)).color : "#909090"
 
     return (
         <>
             <div className="graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
-                <svg width={dms.width} height={dms.height} ref={svgRef}>
+                <svg width={dms.width} height={dms.height} >
                     <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
                         {filteredData.map((row, i) =>
-                            <>
+                            <g key={i}>
                                 <rect className="bar"
-                                    key={i}
                                     x={0}
                                     y={yScale(row.Branche_Label) - yScale.bandwidth() / 2}
                                     width={xScale(xAccessor(row))}
                                     height={yScale.bandwidth()}
-                                    style={{ ...transitionStyle, fill: getFill(row.Branche_Code) }} />
+                                    style={{ ...transitionStyle, fill: getFill(row) }} />
 
                                 <text x={0} y={yScale(row.Branche_Label) + yScale.bandwidth() / 4} style={{ ...transitionStyle, fontSize: "11px", transform: `translateX(${xScale(row.Beschaeftigte) + 8}px)` }} >{row.Beschaeftigte}%</text>
 
-                            </>
+                            </g>
                         )}
 
                         <XAxisLinear
@@ -135,7 +134,11 @@ const EmploymentBarChart = (props) => {
                     </g>
                 </svg>
             </div >
-            <Legend vertical={false} />
+            <Legend
+                vertical={false}
+                legendItems={legendItems}
+                selected={selectedBranchen}
+                setSelected={setSelectedBranchen} />
         </>
     )
 }
