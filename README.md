@@ -38,9 +38,9 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="#implementedFeatures">Implemented Features</a></li>
+    <li><a href="#featuresInProgress">Features in Progress</a></li>
+    <li><a href="#plannedFeatures">Planned Features</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -50,58 +50,54 @@
 ## About The Project
 This project is done as part of the lecture Data Visualization (DataVis) at the LMU Munich. Our goal is to visualize the effects of the covid pandemic on the german gastronomy industry with respect to insolvency, turnover and subventions.
 
-<!-- GETTING STARTED -->
-## Getting Started
-
 ### Demo Application
 
 See the Demo: [Dashboard Demo](https://covinsight.mmt-lmu.de/)
 
-
+<!-- Installation -->
 ### Installation
 To run this application node.js and npm is required.
 node.js can be downloaded here -> https://nodejs.org/en/download/
 The installer also contains the npm package manager.
 Run npm install to install the packages specified in the dependencies
 
+<!-- Usage -->
 ### Usage
 Run one of the following commands to start the app
 - npm run dev
 - npm run build
 - npm run preview
 
-
-<!-- ROADMAP -->
-## Roadmap
-
+<!-- Overview -->
 ### Overview
 ![Gant Chart](Gant.jpg)
 
-### Done Features
-- [x] Find Research Question
-- [x] Setup Projektmanagement/ Task Distribution in Asana
-- [x] Create Paper Prototype
-- [x] Setup Technical Infrastructure
-- [x] Create First Structure of the Dashboard
-- [x] Create About Us Page with little facts about the team
-- [x] Prioritize Features
-- [x] Create Gantt
-- [x] Create time slider to select time
-- [x] Implement play, stop and rewind controls
-- [x] Create line grapth to show Covid Cases
-- [x] Create bar charts for employment, revenue and insovencies
-- [x] List used sources on about page
+<!-- Implemented Features -->
+### Implemented Features
+- [x] About Us Page with short descriptions about project members
+- [x] Source collection for displayed datasets on About Page
+- [x] Displaying deployment as bar chart 
+- [x] Displaying bankrupt businesses in percentages represented as bar chart 
+- [x] Displaying revenue figures as bar chart 
+- [x] Timeline which represents covid infections from 2018 to 2023
+- [x] Covid infections from 2018 to 2023 on a timeline
+- [x] Bankrupt businesses in numbers from 2018 to 2023 on a timeline
+- [x] Chart details on hovering over revenue and deployment bar charts
+- [x] Synchronized cursors of covid and bankrupt timelines
+- [x] All charts synchronize with the current cursor state on the timelines and are animated
+- [x] Play Pause and Reset functionality of the timeline cursors.
+- [x] Important events on timeline are marked and labeled.
+- [x] Interactable Legend on all bar charts. Legend features can be grayed on on click.
 
-### In Progress Features
-- [x] Clean and add data for Insolvencies (per Month and per type of establishment) > Double Check
-- [x] Clean and add data for Employment (per Month and per type of establishment) > Double Check
-- [ ] Add different types of employement to middle bar chart?
+<!-- Features in Progress -->
+### Features in Progress
+- [x] Refining and combine Play and Pause buttons
+- [x] Half time job deployment numbers from 2018 to 2023 in a timeline
 
-### Backlog Features
-
-- [ ] Use accessibility colors (Current: https://coolors.co/eaa361-56a3a6-b8b8b8-45364b-2d2327)
-- [ ] Implement tooltips
-- [ ] Implement industry filter > Do we even need it? The current categories are already easy to read
+<!-- Planned Features -->
+### Planned Features
+- [ ] Tooltips for Charts
+- [ ] Use of accessibility colors in charts
 
 <!-- CONTACT -->
 ## Contact
