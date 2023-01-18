@@ -5,7 +5,7 @@ export const categories =
         color: "#0B6262"
     },
     Gastronomie: {
-        subCategories: ["Restaurant /Cafe", "Bars", "Caterer"],
+        subCategories: { Restaurant: "#6D86D6", Bars: "#95ABFF", Caterer: "#BED2FF" },
         color: "#124188"
     }
 }

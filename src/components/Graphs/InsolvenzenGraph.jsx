@@ -48,13 +48,15 @@ const InsolvenzGraph = () => {
         .nice()
     ), [dms.innerWidth])
 
-    const lineGenerator = d3.line(d => xScale(xAccessor(d)), d => yScale(yAccessor(d))).curve(d3.curveMonotoneX)
-    const lineGeneratorNew = d3.line(d => xScale(d.Date), d => yScale(d.Insolvenzen)).curve(d3.curveMonotoneX)
+    const lineGenerator = d3.line(d => xScale(d.Date), d => yScale(d.Insolvenzen)).curve(d3.curveMonotoneX)
 
 
-    //mouse events
     const mouseEnterEvent = (e) => {
         setShowTooltipsTime(true)
+    }
+
+    const mouseEventDown = (e) => {
+        setSelectedDate(hoveredTime);
     }
 
     const mouseMoveEvent = (e) => {
@@ -73,20 +75,24 @@ const InsolvenzGraph = () => {
 
     useMemo(() => {
         //calculate closest data point from mouse position
-        const getDistanceFromHoveredDate = (d) => Math.abs(xAccessor(d) - selectedDate);
+        //get the date closest to the hovered date
+        const getDistanceFromHoveredDate = (d) => Math.abs(d.Date - selectedDate);
 
         //Beherbergung: WZ08-55; Gastronomie: WZ08-56
-        const closestIndexBeherbergung = d3.scan(InsolvencyBarData, (a, b) => getDistanceFromHoveredDate(a) - getDistanceFromHoveredDate(b));
-        const closestIndexGastronomie = closestIndexBeherbergung + 1 //hahah shitty quick fix aber funktioniert
+        const BeherbergungSubset = InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-55")
+        const GastronomieSubset = InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-56")
+
+        const closestIndexBeherbergung = d3.scan(BeherbergungSubset, (a, b) => getDistanceFromHoveredDate(a) - getDistanceFromHoveredDate(b));
+        const closestIndexGastronomie = d3.scan(GastronomieSubset, (a, b) => getDistanceFromHoveredDate(a) - getDistanceFromHoveredDate(b));
 
         //Grab the data point at that index
-        const closestDataPointBeherbergung = InsolvencyBarData[closestIndexBeherbergung];
-        const closestDataPointGastronomie = InsolvencyBarData[closestIndexGastronomie];
+        const closestDataPointBeherbergung = BeherbergungSubset[closestIndexBeherbergung];
+        const closestDataPointGastronomie = GastronomieSubset[closestIndexGastronomie];
 
-        setClosestXValueBeherbergung(xAccessor(closestDataPointBeherbergung))
-        setClosestYValueBeherbergung(yAccessor(closestDataPointBeherbergung))
-        setClosestXValueGastronomie(xAccessor(closestDataPointGastronomie))
-        setClosestYValueGastronomie(yAccessor(closestDataPointGastronomie))
+        setClosestXValueBeherbergung(closestDataPointBeherbergung.Date)
+        setClosestYValueBeherbergung(closestDataPointBeherbergung.Insolvenzen)
+        setClosestXValueGastronomie(closestDataPointGastronomie.Date)
+        setClosestYValueGastronomie(closestDataPointGastronomie.Insolvenzen)
     }, [selectedDate])
 
 
@@ -114,7 +120,34 @@ const InsolvenzGraph = () => {
                             stroke={categories.Gastronomie.color}
                             strokeWidth={2}
                             fill="none"
-                            d={lineGeneratorNew(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-56"))}
+                            d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-56"))}
+                            style={{ transition: "all 1s ease-in-out" }}
+                        />
+
+                        {/* Line Graph for Restaurants & Cafes */}
+                        <path
+                            stroke={categories.Gastronomie.subCategories.Restaurant}
+                            strokeWidth={2}
+                            fill="none"
+                            d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-561"))}
+                            style={{ transition: "all 1s ease-in-out" }}
+                        />
+
+                        {/* Line Graph for Bars & Clubs */}
+                        <path
+                            stroke={categories.Gastronomie.subCategories.Caterer}
+                            strokeWidth={2}
+                            fill="none"
+                            d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-563"))}
+                            style={{ transition: "all 1s ease-in-out" }}
+                        />
+
+                        {/* Line Graph for Caterer */}
+                        <path
+                            stroke={categories.Gastronomie.subCategories.Caterer}
+                            strokeWidth={2}
+                            fill="none"
+                            d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-562"))}
                             style={{ transition: "all 1s ease-in-out" }}
                         />
 
@@ -122,13 +155,11 @@ const InsolvenzGraph = () => {
                         {/* Line for Beherbergung */}
                         <path
                             stroke={categories.Beherbergung.color}
-                            d={lineGeneratorNew(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-55"))}
+                            d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-55"))}
                             strokeWidth={2}
                             fill="none"
                             style={{ transition: "all 1s ease-in-out" }}
                         />
-
-
 
 
 
@@ -140,13 +171,12 @@ const InsolvenzGraph = () => {
                             <rect x={xScale(hoveredTime)} style={{ width: ".5px", height: dms.innerHeight, stroke: '#5c5c5c', strokeDasharray: '1 1', strokeWidth: "1px" }} />
                         </>}
 
+
                         {/* hover Beherbergung circle*/}
-                        <circle cx={xScale(closestXValueBeherbergung)} cy={yScale(closestYValueBeherbergung)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
+                        <circle cx={xScale(closestXValueBeherbergung)} cy={yScale(closestYValueBeherbergung)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1, transition: "all 0.2s ease-in-out" }} />
 
                         {/* hover Gastronomie circle*/}
-                        <circle cx={xScale(closestXValueGastronomie)} cy={yScale(closestYValueGastronomie)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
-
-
+                        <circle cx={xScale(closestXValueGastronomie)} cy={yScale(closestYValueGastronomie)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1, transition: "all 0.2s ease-in-out" }} />
 
 
 
@@ -156,6 +186,7 @@ const InsolvenzGraph = () => {
                             onMouseEnter={mouseEnterEvent}
                             onMouseMove={mouseMoveEvent}
                             onMouseLeave={mouseLeaveEvent}
+                            onMouseDown={mouseEventDown}
                         // onTouchStart={mouseEnterEvent}
                         // onTouchMove={mouseMoveEvent}
                         // onTouchEnd={mouseLeaveEvent}

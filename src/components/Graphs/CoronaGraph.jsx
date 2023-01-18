@@ -53,8 +53,7 @@ const CoronaGraph = () => {
     }
 
     const mouseEventDown = (e) => {
-        const clickedDate = hoveredTime;
-        setSelectedDate(clickedDate);
+        setSelectedDate(hoveredTime);
     }
 
     const mouseMoveEvent = (e) => {

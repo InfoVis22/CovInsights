@@ -117,16 +117,15 @@ const Dashboard = () => {
                 </Card>
             </div>
             <div className="Middle">
-                <Timeline title="Insolvenzen" subtitle="in Anzahl">
-                    <InsolvenzenGraph />
-                </Timeline>
-            </div>
-            <div className="Bottom">
                 <Timeline title="Coronainfektionen in Deutschland" subtitle="als 7-Tage-Inzidenz je 100.000 Einwohner">
                     <CoronaGraph />
                 </Timeline>
                 <DateControls />
-
+            </div>
+            <div className="Bottom">
+                <Timeline title="Insolvenzen" subtitle="in Anzahl">
+                    <InsolvenzenGraph />
+                </Timeline>
             </div>
         </div>
     )
