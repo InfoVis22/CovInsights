@@ -1,13 +1,13 @@
 <!-- PROJECT LOGO -->
-![CovInsights]()
 <a name="readme-top"></a>
 <div align="center">
-  <a href="https://github.com/InfoVis22/CovInsights/tree/main"><img src="https://github.com/InfoVis22/CovInsights/tree/sourceSpecifications/public/images/logo.png?raw=true"></a>
 
-  <h3 align="center">CovInsights WS22/23</h3>
+  <a href="https://github.com/InfoVis22/CovInsights/tree/main"><img src="./src/images/Logo.png"></a>
+
+  <h3 align="center">Informationvisualisation WS22/23</h3>
 
   <p align="center">
-    A project to visualize datasets of the germans gastronomy industry in relation to corona incidences
+    A project to visualize datasets of the german gastronomy industry in relation to the global COVID-19 pandemic.
     <br />
     <a href="https://github.com/InfoVis22/CovInsights"><strong>GitHub Repo »</strong></a>
     <br />
@@ -53,10 +53,6 @@ This project is done as part of the lecture Data Visualization (DataVis) at the 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-### Demo Application
-
-See the Demo: [Dashboard Demo](https://covinsight.mmt-lmu.de/)
-
 
 ### Installation
 To run this application node.js and npm is required.
@@ -65,17 +61,19 @@ The installer also contains the npm package manager.
 Run npm install to install the packages specified in the dependencies
 
 ### Usage
-Run one of the following commands to start the app
+Run the following commands to start the app locally
 - npm run dev
-- npm run build
+- npm run build and open the index.html
 - npm run preview
+
+### Demo Application
+See the Demo: [CovInsight Demo](https://covinsight.mmt-lmu.de/) ✅
 
 
 <!-- ROADMAP -->
 ## Roadmap
-
 ### Overview
-![Gant Chart](Gant.jpg)
+![Gant Chart](./public/images/Gant.png)
 
 ### Done Features
 - [x] Find Research Question
@@ -101,7 +99,7 @@ Run one of the following commands to start the app
 
 - [ ] Use accessibility colors (Current: https://coolors.co/eaa361-56a3a6-b8b8b8-45364b-2d2327)
 - [ ] Implement tooltips
-- [ ] Implement industry filter > Do we even need it? The current categories are already easy to read
+- [ ] Implement industry filter
 
 <!-- CONTACT -->
 ## Contact
@@ -111,13 +109,11 @@ Sofie Henghuber - sofie.henghuber@campus.lmu.de <br/>
 Manuel Totzauer - m.totzauer@campus.lmu.de <br/>
 Maximilian Brandmaier - m.brandmaier@campus.lmu.de
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 * [React Icons](https://react-icons.github.io/react-icons/search)
-  
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
