@@ -38,9 +38,9 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#implementedFeatures">Implemented Features</a></li>
-    <li><a href="#featuresInProgress">Features in Progress</a></li>
-    <li><a href="#plannedFeatures">Planned Features</a></li>
+    <li><a href="#implemented-features">Implemented Features</a></li>
+    <li><a href="#features-in-progress">Features in Progress</a></li>
+    <li><a href="#planned-features">Planned Features</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
