@@ -21,10 +21,10 @@ const chartSettings = {
 const RevenueBarChart = () => {
 
     const svgRef = useRef();
+    const tooltipRef = useRef();
+
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
     const { umsatzData, hoveredTime, selectedDate } = useAppContext()
-    const [closestXValue, setClosestXValue] = useState(0)
-    const [closestYValue, setClosestYValue] = useState(0)
     const [showTooltip, setShowTooltip] = useState(false)
     const [filteredData, setFilteredData] = useState([])
 
@@ -60,12 +60,16 @@ const RevenueBarChart = () => {
     const mouseMoveEvent = (e) => {
         //get x and y position relative to hovered event element
         const mousePosition = d3.pointer(e)
+
+        console.log(mousePosition)
         //get date from x and y coordinates
         //const hoveredSector = yScale.invert(mousePosition[1]);
         //console.log(yScale.step())
 
         //const band = d3.select(this.parentNode).datum().key;
         console.log(e)
+        tooltipRef.current.style.left = mousePosition[0] + "px"
+        tooltipRef.current.style.top = mousePosition[1] + "px"
     }
 
     const mouseLeaveEvent = (e) => {
@@ -126,6 +130,12 @@ const RevenueBarChart = () => {
             </div >
 
             <Legend vertical={false} />
+
+            <div className="tooltip" ref={tooltipRef} style={{ top: 10, left: 10 }}>
+                <h3>Bars & Clubs</h3>
+                <p>Umsatz: 1.000.000€</p>
+
+            </div>
         </>
     )
 }

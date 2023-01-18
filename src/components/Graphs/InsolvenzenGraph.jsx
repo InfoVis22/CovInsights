@@ -187,9 +187,6 @@ const InsolvenzGraph = () => {
                             onMouseMove={mouseMoveEvent}
                             onMouseLeave={mouseLeaveEvent}
                             onMouseDown={mouseEventDown}
-                        // onTouchStart={mouseEnterEvent}
-                        // onTouchMove={mouseMoveEvent}
-                        // onTouchEnd={mouseLeaveEvent}
                         />
 
                     </g>

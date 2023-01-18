@@ -65,31 +65,13 @@ const Dashboard = () => {
         setInsolvencyBarData(InsolvencyBarData)
 
 
-        //load Insolvenz data timeline
-        const rawInsolvenzData = await d3.dsv(";", "../data/Insolvenzverfahren_2008_2022.csv")
-
-        //Beherbergung: WZ08-55; Gastronomie: WZ08-56
-        let insolvenzData = rawInsolvenzData.filter(d => d["3_Auspraegung_Label"] == "eröffnet" && (d["4_Auspraegung_Code"] == "WZ08-55" || d["4_Auspraegung_Code"] == "WZ08-56")) //
-        insolvenzData = insolvenzData.map(d => {
-            const month = +d["2_Auspraegung_Code"].slice(-2) - 1
-            const date = new Date(d.Zeit, month)
-            return ({
-                ...d,
-                Date: date,
-                Insolvenzverfahren: +d.Insolvenzverfahren
-            })
-        })
-        setInsolvenzData(insolvenzData)
-
 
         //load Corona Data 2020-2022
         const rawCoronaInzidenzData = await d3.dsv(";", "../data/Coronainfektionen_7-Tage_Trend_DE20_22.csv")
-        const coronaData = rawCoronaInzidenzData.map(d => ({
-            Date: new Date(d.Date),
-            Inzidenz: +d.Inzidenz
-        }))
+        const coronaData = rawCoronaInzidenzData.map(d => ({ Date: new Date(d.Date), Inzidenz: +d.Inzidenz }))
         setCoronaData(coronaData)
 
+        // if everything is loaded, set loading to false
         setIsLoadingData(false)
         console.log("loading complete!")
     }
@@ -98,10 +80,11 @@ const Dashboard = () => {
         //---- Initialize State ----
         setTimeFrame({ min: new Date(2018, 0), max: new Date() })
 
+        //---- Load Data ----
         loadData()
     }, [])
 
-    if (isLoadingData) return
+    if (isLoadingData) return <p>Loading Data</p>
 
     return (
         <div className="Page Home">

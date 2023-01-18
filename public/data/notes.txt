@@ -1,0 +1,13 @@
+45213-0002: Beschäftigte im Gastgewerbe
+von destatis (Statistisches Bundesamt)
+https://www-genesis.destatis.de/genesis//online?operation=table&code=45213-0002&bypass=true&levelindex=1&levelid=1674038667920
+
+
+45213-0004: Umsatz im Gastgewerbe
+von destatis (Statistisches Bundesamt)
+https://www-genesis.destatis.de/genesis//online?operation=table&code=45213-0004&bypass=true&levelindex=1&levelid=1674038667920
+
+
+Coronainfektionen_7-Tage_Trend_DE20_22
+von Robert Koch-Institut
+https://github.com/robert-koch-institut/COVID-19_7-Tage-Inzidenz_in_Deutschland

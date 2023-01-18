@@ -24,20 +24,33 @@
         margin-top: 2rem;
         position: relative;
     }
-    .Debug{
+
+    .Debug {
         margin-top: 1rem;
         display: none;
 
-        &.visible{
+        &.visible {
             display: block;
         }
-        p{
+
+        p {
             margin-top: 1rem;
         }
     }
 }
 
 
-.tooltip{
+.tooltip {
     position: absolute;
+    background-color: #ffffffae;
+    padding: 10px;
+    border-radius: 5px;
+
+    h3 {
+        font-weight: 800;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
 }
