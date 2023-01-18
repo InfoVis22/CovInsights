@@ -5,6 +5,7 @@ import useChartDimensions from '../../hooks/useChartDimensions';
 import * as d3 from 'd3'
 import YAxisLinear from '../D3Elements/YAxisLinear';
 import { useEffect } from 'react';
+import Legend from "../D3Elements/Legend.jsx";
 import { categories } from "../../settings.js"
 
 
@@ -23,6 +24,10 @@ const InsolvenzenProzent = () => {
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
     const { InsolvencyBarData, hoveredTime, selectedDate } = useAppContext()
     const [insolvenzData, setInsolvenzData] = useState([])
+
+    //to select and deselect Sectors
+    const legendItems = [{ name: "Beherbergung", code: "WZ08-55", color: categories.Beherbergung.color }, { name: "Restaurants & Cafes", code: "WZ08-561", color: categories.Gastronomie.subCategories.Restaurant },{ name: "Caterer", code: "WZ08-562", color: categories.Gastronomie.subCategories.Caterer }, { name: "Bars & Clubs", code: "WZ08-563", color: categories.Gastronomie.subCategories.Bars }]
+    const [selectedBranchen, setSelectedBranchen] = useState(legendItems)
 
 
     useEffect(() => {
@@ -53,63 +58,73 @@ const InsolvenzenProzent = () => {
 
     const ticks = xScale.domain().map(value => ({ value, xOffset: xScale(value) }))
 
+    //helper functions & constants
+    const getFill = (row) => selectedBranchen.find(b => row.Branche_Code.includes(b.code)) ? selectedBranchen.find(b => row.Branche_Code.includes(b.code)).color : "#909090"
     const transitionStyle = { transition: "all 0.5s ease-in-out 0s" }
 
     return (
-        <div className="graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
-            <svg width={dms.width} height={dms.height}>
-                <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
+        <>
+            <div className="graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
+                <svg width={dms.width} height={dms.height}>
+                    <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
-                    {/* Create Y-Axis */}
-                    <YAxisLinear
-                        dms={dms}
-                        domain={yScale.domain()}
-                        range={yScale.range()}
-                        labelSuffix="%">
-                    </YAxisLinear>
+                        {/* Create Y-Axis */}
+                        <YAxisLinear
+                            dms={dms}
+                            domain={yScale.domain()}
+                            range={yScale.range()}
+                            labelSuffix="%">
+                        </YAxisLinear>
 
-                    {/* Create X-Axis */}
-                    <g className="x-axis">
-                        {/* Generate middle Line */}
-                        <line x1="0" x2={dms.innerWidth} stroke="currentColor" transform={`translate(0, ${dms.innerHeight / 2})`} />
+                        {/* Create X-Axis */}
+                        <g className="x-axis">
+                            {/* Generate middle Line */}
+                            <line x1="0" x2={dms.innerWidth} stroke="currentColor" transform={`translate(0, ${dms.innerHeight / 2})`} />
 
-                        {/* Generate Ticks */}
-                        {ticks.map(({ value, xOffset }) => (
-                            <g key={value} transform={`translate(${xOffset}, ${dms.innerHeight})`}>
-                                <line y1="0" y2="6" stroke="currentColor" />
-                                <text style={{ fontSize: "11px", textAnchor: "middle", fontWeight: "500", transform: "translateY(16px)" }}>
-                                    {value}
-                                </text>
+                            {/* Generate Ticks */}
+                            {ticks.map(({ value, xOffset }) => (
+                                <g key={value} transform={`translate(${xOffset}, ${dms.innerHeight})`}>
+                                    <line y1="0" y2="6" stroke="currentColor" />
+                                    <text style={{ fontSize: "11px", textAnchor: "middle", fontWeight: "500", transform: "translateY(16px)" }}>
+                                        {value}
+                                    </text>
+                                </g>
+                            ))}
+                        </g>
+
+
+                        {/* Create Prozent Bars */}
+                        {insolvenzData.map((row, i) => (
+                            <g key={i}>
+                                <rect className="bar"
+                                    key={i}
+                                    x={xScale(row.Branche_Lable)}
+                                    y={100}
+                                    width={xScale.bandwidth()}
+                                    height={Math.abs(yScale(row.InsolvenzenVeraenderung) - yScale(0))}
+                                    style={{
+                                        ...transitionStyle,
+                                        fill: getFill(row),
+                                        transform: (yScale(row.InsolvenzenVeraenderung) - yScale(0)) < 0 ? `translateY(${yScale(row.InsolvenzenVeraenderung) - yScale(0)}px)` : ""
+                                        //transform: `translateY(-58px)`
+                                    }} />
+
+                                {/* To debug - show labels */}
+                                {/* <text x={xScale(row.Branche_Lable) + 3} y={yScale(row.InsolvenzenVeraenderung) + 10} style={{ ...transitionStyle, fontSize: "11px" }} >{row.InsolvenzenVeraenderung}</text> */}
+
                             </g>
                         ))}
+
                     </g>
-
-
-                    {/* Create Prozent Bars */}
-                    {insolvenzData.map((row, i) => (
-                        <g key={i}>
-                            <rect className="bar"
-                                key={i}
-                                x={xScale(row.Branche_Lable)}
-                                y={100}
-                                width={xScale.bandwidth()}
-                                height={Math.abs(yScale(row.InsolvenzenVeraenderung) - yScale(0))}
-                                style={{
-                                    ...transitionStyle,
-                                    fill: (row.Branche_Code.includes("WZ08-56")) ? categories.Gastronomie.color : categories.Beherbergung.color,
-                                    transform: (yScale(row.InsolvenzenVeraenderung) - yScale(0)) < 0 ? `translateY(${yScale(row.InsolvenzenVeraenderung) - yScale(0)}px)` : ""
-                                    //transform: `translateY(-58px)`
-                                }} />
-
-                            {/* To debug - show labels */}
-                            {/* <text x={xScale(row.Branche_Lable) + 3} y={yScale(row.InsolvenzenVeraenderung) + 10} style={{ ...transitionStyle, fontSize: "11px" }} >{row.InsolvenzenVeraenderung}</text> */}
-
-                        </g>
-                    ))}
-
-                </g>
-            </svg>
-        </div >
+                </svg>
+            </div >
+            <Legend
+                vertical={false}
+                legendItems={legendItems}
+                selected={selectedBranchen}
+                setSelected={setSelectedBranchen}
+            />
+        </>
     )
 }
 
