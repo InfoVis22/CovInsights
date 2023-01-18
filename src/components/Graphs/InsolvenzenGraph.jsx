@@ -71,6 +71,8 @@ const InsolvenzGraph = () => {
     const mouseLeaveEvent = (e) => {
         setHoveredTime(null)
         setShowTooltipsTime(false)
+
+        console.log("LEAVE COVV")
     }
 
     useMemo(() => {

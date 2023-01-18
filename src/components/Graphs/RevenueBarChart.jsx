@@ -27,22 +27,30 @@ const RevenueBarChart = () => {
     const { umsatzData, hoveredTime, selectedDate } = useAppContext()
     const [showTooltip, setShowTooltip] = useState(false)
     const [filteredData, setFilteredData] = useState([])
+    const [hoveredBar, setHoveredBar] = useState(null)
+
+    //to select and deselect Sectors
+    const legendItems = [{ name: "Beherbergung", code: "WZ08-55", color: categories.Beherbergung.color }, { name: "Gastronomie", code: "WZ08-56", color: categories.Gastronomie.color }]
+    const [selectedBranchen, setSelectedBranchen] = useState(legendItems)
+
 
     useEffect(() => {
-
         const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth() + 1].join("-")
         const filteredData = umsatzData.filter((row) => ((row.Jahr + "-" + row.Monat) === yearMonthTime))
+        //to filter out not selected
+        //&& selectedBranchen.find(b => row.Branche_Code.includes(b.code))
+
 
         setFilteredData(filteredData)
-    }, [selectedDate.getMonth()])
+    }, [selectedDate.getMonth(), selectedBranchen])
 
     //X-Scale for graph
-    const xScale = useMemo(() => (
-        d3.scaleLinear()
+    const xScale = useMemo(() => {
+        return (d3.scaleLinear()
             .domain([0, d3.max(umsatzData, d => d.Umsatz)])
             .range([0, dms.innerWidth])
-            .nice()
-    ), [dms.innerWidth])
+            .nice())
+    }, [dms.innerWidth, selectedBranchen])
 
     //Y-Scale for graph
     const yScale = useMemo(() => (
@@ -50,7 +58,7 @@ const RevenueBarChart = () => {
             .domain(umsatzData.map(d => d.Branche_Label))
             .range([dms.innerHeight, 0])
             .padding(0.4)
-    ), [dms.innerHeight])
+    ), [dms.innerHeight, selectedBranchen])
 
     //mouse events
     const mouseEnterEvent = (e) => {
@@ -61,21 +69,25 @@ const RevenueBarChart = () => {
         //get x and y position relative to hovered event element
         const mousePosition = d3.pointer(e)
 
-        console.log(mousePosition)
-        //get date from x and y coordinates
-        //const hoveredSector = yScale.invert(mousePosition[1]);
-        //console.log(yScale.step())
+        const eachBand = yScale.step();
+        const index = Math.max(yScale.domain().length - 1 - Math.floor((mousePosition[1] / eachBand)), 0)
 
-        //const band = d3.select(this.parentNode).datum().key;
-        console.log(e)
-        tooltipRef.current.style.left = mousePosition[0] + "px"
-        tooltipRef.current.style.top = mousePosition[1] + "px"
+        //set the hovered bar to the string e.g. Ferienunterkunft
+        const hoveredDomain = yScale.domain()[index]
+        setHoveredBar(hoveredDomain)
+
+        //set the position of the tooltip
+        const tooltipX = xScale(filteredData.find(d => d.Branche_Label === hoveredBar)?.Umsatz) + 6
+        const tooltipY = yScale(hoveredDomain) - 25 //25: half width of tooltip
+
+        console.log(tooltipRef.current.style.height)
+        //tooltipRef.current.style.transform = `translate(${mousePosition[0] + 10}px, ${mousePosition[1] + 10}px)`
+        tooltipRef.current.style.transform = `translate(${tooltipX}px, ${tooltipY}px)`
     }
 
     const mouseLeaveEvent = (e) => {
         setShowTooltip(false)
     }
-
 
     const transitionStyle = { transition: "all 1s ease-in-out 0s" }
 
@@ -104,7 +116,7 @@ const RevenueBarChart = () => {
                                 y={yScale(row.Branche_Label) - yScale.bandwidth() / 2}
                                 width={xScale(row.Umsatz)}
                                 height={yScale.bandwidth()}
-                                style={{ ...transitionStyle, fill: (row.Branche_Code.includes("WZ08-56")) ? categories.Gastronomie.color : categories.Beherbergung.color }} />
+                                style={{ ...transitionStyle, fill: selectedBranchen.find(b => row.Branche_Code.includes(b.code)) ? selectedBranchen.find(b => row.Branche_Code.includes(b.code)).color : "#909090" }} />
 
                             <text x={0} y={yScale(row.Branche_Label) + yScale.bandwidth() / 4} style={{ ...transitionStyle, fontSize: "11px", transform: `translateX(${xScale(row.Umsatz) + 8}px)` }} >{row.Umsatz}</text>
 
@@ -113,9 +125,16 @@ const RevenueBarChart = () => {
                         )}
 
                         {/* Tooltip */}
-                        <div className="tooltip" style={{ display: showTooltip ? "block" : "none" }}>
-                            <p>Tooltip</p>
-                        </div>
+                        <g className="tooltip" ref={tooltipRef} style={{ display: showTooltip ? "block" : "none", transition: "all 0.1s ease-in-out 0s" }}>
+                            <rect width="200" height="50" fill="#ffffffc0" stroke="black" strokeWidth="1" rx="5" ry="5" />
+                            <text x={10} y={20} style={{ fontSize: "1rem", fontWeight: "bold" }}>
+                                {hoveredBar}
+                            </text>
+                            <text x={10} y={40} style={{ fontSize: "0.9rem" }}>
+                                Umsatz: {filteredData.find(d => d.Branche_Label === hoveredBar)?.Umsatz}
+                            </text>
+                        </g>
+
 
                         {/* actionListener rect over graph area*/}
                         <rect className="actionListener" width={dms.innerWidth} height={dms.innerHeight}
@@ -129,13 +148,11 @@ const RevenueBarChart = () => {
                 </svg>
             </div >
 
-            <Legend vertical={false} />
-
-            <div className="tooltip" ref={tooltipRef} style={{ top: 10, left: 10 }}>
-                <h3>Bars & Clubs</h3>
-                <p>Umsatz: 1.000.000€</p>
-
-            </div>
+            <Legend
+                vertical={false}
+                legendItems={legendItems}
+                selected={selectedBranchen}
+                setSelected={setSelectedBranchen} />
         </>
     )
 }
