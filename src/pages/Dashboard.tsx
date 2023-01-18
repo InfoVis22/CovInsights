@@ -23,7 +23,7 @@ import InsolvenzenProzent from '../components/Graphs/InsolvenzenProzent'
 const Dashboard = () => {
 
     //---- define AppContext ----
-    const { hoveredTime, setEmploymentData, setInsolvencyBarData, setCoronaData, setInsolvenzData, setTimeFrame, setUmsatzData, selectedDate, setSelectedDate } = useAppContext()
+    const { setEmploymentData, setInsolvencyBarData, setCoronaData, setTimeFrame, setUmsatzData, selectedDate, kurzarbeitData, setKurzarbeitData } = useAppContext()
 
     //---- Dashboard State ----
     const [isLoadingData, setIsLoadingData] = useState(true)
@@ -38,8 +38,7 @@ const Dashboard = () => {
             .filter(d => +d.Jahr >= 2018 && (d.Branche_Code !== "WZ08-55" && d.Branche_Code !== "WZ08-56"))
             .map((row) => ({ ...row, Date: new Date(row.Jahr, (+row.Monat - 1)), Beschaeftigte: +row.Beschaeftigte, Vollzeitbeschaeftigte: +row.Vollzeitbeschaeftigte, Teilzeitbeschaeftigte: +row.Teilzeitbeschaeftigte }))
 
-        console.log("Beschäftigte Bar")
-        console.log(employmentData)
+        console.log("Beschäftigte Bar: ", employmentData)
         setEmploymentData(employmentData)
 
 
@@ -49,8 +48,7 @@ const Dashboard = () => {
             .filter(row => +row.Jahr >= 2018 && (row.Branche_Code !== "WZ08-55" && row.Branche_Code !== "WZ08-56"))
             .map(row => ({ ...row, Date: new Date(row.Jahr, (+row.Monat - 1)), Umsatz: +row.Umsatz, Veraenderung: +row.Veraenderung }))
 
-        console.log("Umsatz Bar")
-        console.log(umsatzData)
+        console.log("Umsatz Daten: ", umsatzData)
         setUmsatzData(umsatzData)
 
 
@@ -60,16 +58,25 @@ const Dashboard = () => {
             .filter(row => +row.Jahr >= 2018)
             .map((row) => ({ ...row, Date: new Date(row.Jahr, (+row.Monat - 1)), Ins_opened: +row.Ins_opened, Ins_rejected: +row.Ins_rejected, Insolvenzen: +row.Insolvenzen, Arbeitnehmer: +row.Arbeitnehmer, Forderungen: +row.Forderungen, InsolvenzenVeraenderung: (+row.InsolvenzenVeraenderung * 100) }))
 
-        console.log("Insolvencies Bar")
-        console.log(InsolvencyBarData)
+        console.log("Insolvencies Bar: ", InsolvencyBarData)
         setInsolvencyBarData(InsolvencyBarData)
-
 
 
         //load Corona Data 2020-2022
         const rawCoronaInzidenzData = await d3.dsv(";", "../data/Coronainfektionen_7-Tage_Trend_DE20_22.csv")
-        const coronaData = rawCoronaInzidenzData.map(d => ({ Date: new Date(d.Date), Inzidenz: +d.Inzidenz }))
+        const coronaData = rawCoronaInzidenzData.map(row => ({ Date: new Date(row.Date), Inzidenz: +row.Inzidenz }))
+
+        console.log("Covid Trend Daten: ", coronaData)
         setCoronaData(coronaData)
+
+
+        //load Kurzarbeit Data
+        const rawKurzarbeitData = await d3.dsv(";", "../data/KurzarbeitGastgewerbe.csv")
+        const kurzarbeitData = rawKurzarbeitData
+            .map(row => ({ ...row, Date: new Date(row.Jahr, (+row.Monat - 1)), BetriebeKurzarbeit: +row.BetriebeKurzarbeit, Kurzarbeiter: +row.Kurzarbeiter }))
+
+        console.log("Kurzarbeit Daten: ", kurzarbeitData)
+        setKurzarbeitData(kurzarbeitData)
 
         // if everything is loaded, set loading to false
         setIsLoadingData(false)
