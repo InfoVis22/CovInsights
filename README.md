@@ -1,13 +1,13 @@
 <!-- PROJECT LOGO -->
-![CovInsights]()
 <a name="readme-top"></a>
 <div align="center">
-  <a href="https://github.com/InfoVis22/CovInsights/tree/main"><img src="https://github.com/InfoVis22/CovInsights/tree/sourceSpecifications/public/images/logo.png?raw=true"></a>
 
-  <h3 align="center">CovInsights WS22/23</h3>
+  <a href="https://github.com/InfoVis22/CovInsights/tree/main"><img src="./src/images/Logo.png"></a>
+
+  <h3 align="center">Informationvisualisation WS22/23</h3>
 
   <p align="center">
-    A project to visualize datasets of the germans gastronomy industry in relation to corona incidences
+    A project to visualize datasets of the german gastronomy industry in relation to the global COVID-19 pandemic.
     <br />
     <a href="https://github.com/InfoVis22/CovInsights"><strong>GitHub Repo »</strong></a>
     <br />
@@ -50,10 +50,6 @@
 ## About The Project
 This project is done as part of the lecture Data Visualization (DataVis) at the LMU Munich. Our goal is to visualize the effects of the covid pandemic on the german gastronomy industry with respect to insolvency, turnover and subventions.
 
-### Demo Application
-
-See the Demo: [Dashboard Demo](https://covinsight.mmt-lmu.de/)
-
 <!-- Installation -->
 ### Installation
 To run this application node.js and npm is required.
@@ -63,14 +59,19 @@ Run npm install to install the packages specified in the dependencies
 
 <!-- Usage -->
 ### Usage
-Run one of the following commands to start the app
+Run the following commands to start the app locally
 - npm run dev
-- npm run build
+- npm run build and open the index.html
 - npm run preview
 
-<!-- Overview -->
-### Overview
-![Gant Chart](Gant.jpg)
+### Demo Application
+See the Demo: [CovInsight Demo](https://covinsight.mmt-lmu.de/) ✅
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+![Gant Chart](./public/images/Gant.png)
 
 <!-- Implemented Features -->
 ### Implemented Features
@@ -79,14 +80,14 @@ Run one of the following commands to start the app
 - [x] Displaying deployment as bar chart 
 - [x] Displaying bankrupt businesses in percentages represented as bar chart 
 - [x] Displaying revenue figures as bar chart 
-- [x] Covid infections from 2018 to 2023 on a timeline
+- [x] COVID infections from 2018 to 2023 on a timeline
 - [x] Bankrupt businesses in numbers from 2018 to 2023 on a timeline
 - [x] Chart details on hovering over revenue and deployment bar charts
-- [x] Synchronized cursors of covid and bankrupt timelines
+- [x] Synchronized cursors of COVID and bankrupt timelines
 - [x] All charts synchronize with the current cursor state on the timelines and are animated
 - [x] Play Pause and Reset functionality of the timeline cursors.
 - [x] Important events on timeline are marked and labeled.
-- [x] Interactable Legend on all bar charts. Legend features can be grayed on on click.
+- [x] Intractable legend on all bar charts. Legend features can be grayed on on click.
 
 <!-- Features in Progress -->
 ### Features in Progress
@@ -108,13 +109,11 @@ Sofie Henghuber - sofie.henghuber@campus.lmu.de <br/>
 Manuel Totzauer - m.totzauer@campus.lmu.de <br/>
 Maximilian Brandmaier - m.brandmaier@campus.lmu.de
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 * [React Icons](https://react-icons.github.io/react-icons/search)
-  
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
