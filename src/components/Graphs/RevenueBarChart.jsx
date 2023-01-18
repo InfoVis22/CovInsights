@@ -20,10 +20,11 @@ const chartSettings = {
 
 const RevenueBarChart = () => {
 
-    const tooltipRef = useRef();
-
-    const [wrapperRef, dms] = useChartDimensions(chartSettings)
+    //Context
     const { umsatzData, hoveredTime, selectedDate } = useAppContext()
+
+    //Component State
+    const [wrapperRef, dms] = useChartDimensions(chartSettings)
     const [showTooltip, setShowTooltip] = useState(false)
     const [filteredData, setFilteredData] = useState([])
     const [hoveredBar, setHoveredBar] = useState(null)
@@ -32,13 +33,15 @@ const RevenueBarChart = () => {
     const legendItems = [{ name: "Beherbergung", code: "WZ08-55", color: categories.Beherbergung.color }, { name: "Gastronomie", code: "WZ08-56", color: categories.Gastronomie.color }]
     const [selectedBranchen, setSelectedBranchen] = useState(legendItems)
 
+    //refs
+    const tooltipRef = useRef();
 
+    //initialize component
     useEffect(() => {
         const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth() + 1].join("-")
         const filteredData = umsatzData.filter((row) => ((row.Jahr + "-" + row.Monat) === yearMonthTime))
         //to filter out not selected
         //&& selectedBranchen.find(b => row.Branche_Code.includes(b.code))
-
 
         setFilteredData(filteredData)
     }, [selectedDate.getMonth(), selectedBranchen])
@@ -59,6 +62,7 @@ const RevenueBarChart = () => {
             .padding(0.4)
     ), [dms.innerHeight, selectedBranchen])
 
+
     //mouse events
     const mouseEnterEvent = (e) => {
         setShowTooltip(true)
@@ -68,6 +72,7 @@ const RevenueBarChart = () => {
         //get x and y position relative to hovered event element
         const mousePosition = d3.pointer(e)
 
+        //calculate index if scale by dividing the mouse position by the height of each band
         const eachBand = yScale.step();
         const index = Math.max(yScale.domain().length - 1 - Math.floor((mousePosition[1] / eachBand)), 0)
 
@@ -79,7 +84,6 @@ const RevenueBarChart = () => {
         const tooltipX = xScale(filteredData.find(d => d.Branche_Label === hoveredBar)?.Umsatz) + 6
         const tooltipY = yScale(hoveredDomain) - 25 //25: half width of tooltip
 
-        console.log(tooltipRef.current.style.height)
         //tooltipRef.current.style.transform = `translate(${mousePosition[0] + 10}px, ${mousePosition[1] + 10}px)`
         tooltipRef.current.style.transform = `translate(${tooltipX}px, ${tooltipY}px)`
     }
@@ -88,10 +92,10 @@ const RevenueBarChart = () => {
         setShowTooltip(false)
     }
 
+    //helper functions & constants
     const getFill = (row) => selectedBranchen.find(b => row.Branche_Code.includes(b.code)) ? selectedBranchen.find(b => row.Branche_Code.includes(b.code)).color : "#909090"
-
-
     const transitionStyle = { transition: "all 1s ease-in-out 0s" }
+
 
     return (
         <>
@@ -126,6 +130,7 @@ const RevenueBarChart = () => {
 
                         )}
 
+
                         {/* Tooltip */}
                         <g className="tooltip" ref={tooltipRef} style={{ display: showTooltip ? "block" : "none", transition: "all 0.1s ease-in-out 0s" }}>
                             <rect width="200" height="50" fill="#ffffffc0" stroke="black" strokeWidth="1" rx="5" ry="5" />
@@ -154,7 +159,8 @@ const RevenueBarChart = () => {
                 vertical={false}
                 legendItems={legendItems}
                 selected={selectedBranchen}
-                setSelected={setSelectedBranchen} />
+                setSelected={setSelectedBranchen}
+            />
         </>
     )
 }

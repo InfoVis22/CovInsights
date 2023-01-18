@@ -18,30 +18,31 @@ const chartSettings = {
     marginLeft: 100
 }
 
-const EmploymentBarChart = (props) => {
+const EmploymentBarChart = () => {
 
-    //Context
-    const { employmentData, setEmploymentData, selectedDate, setSelectedDate } = useAppContext()
+    //App context
+    const { employmentData, selectedDate } = useAppContext()
 
     //Component State
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
-    const [closestXValue, setClosestXValue] = useState(0)
-    const [closestYValue, setClosestYValue] = useState(0)
     const [showTooltip, setShowTooltip] = useState(false)
     const [filteredData, setFilteredData] = useState([])
+    const [hoveredBar, setHoveredBar] = useState(null)
 
     //to select and deselect Sectors
     const legendItems = [{ name: "Beherbergung", code: "WZ08-55", color: categories.Beherbergung.color }, { name: "Gastronomie", code: "WZ08-56", color: categories.Gastronomie.color }]
     const [selectedBranchen, setSelectedBranchen] = useState(legendItems)
 
+    //refs
+    const tooltipRef = useRef();
 
+    //Accessors
     const xAccessor = (d) => d.Beschaeftigte;
-    const yAccessor = (d) => d.Branche_Label;
 
+    //initialize component
     useEffect(() => {
         const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth() + 1].join("-")
         const filteredDataCreate = employmentData.filter((row) => ((row.Jahr + "-" + row.Monat) === yearMonthTime))
-
         setFilteredData(filteredDataCreate)
     }, [selectedDate.getMonth()])
 
@@ -64,27 +65,38 @@ const EmploymentBarChart = (props) => {
     ), [dms.innerHeight])
 
     //mouse events
-    const mouseEnterEvent = (e) => {
+    const mouseEnterEvent = () => {
         setShowTooltip(true)
     }
 
     const mouseMoveEvent = (e) => {
         //get x and y position relative to hovered event element
         const mousePosition = d3.pointer(e)
-        //get date from x and y coordinates
-        //const hoveredSector = yScale.invert(mousePosition[1]);
-        //console.log(yScale.step())
 
-        //const band = d3.select(this.parentNode).datum().key;
+        //calculate index if scale by dividing the mouse position by the height of each band
+        const eachBand = yScale.step();
+        const index = Math.max(yScale.domain().length - 1 - Math.floor((mousePosition[1] / eachBand)), 0)
+
+        //set the hovered bar to the string e.g. Ferienunterkunft
+        const hoveredDomain = yScale.domain()[index]
+        setHoveredBar(hoveredDomain)
+
+        //set the position of the tooltip
+        //const tooltipX = xScale(filteredData.find(d => d.Branche_Label === hoveredBar)?.Beschaeftigte) + 6
+        const tooltipX = mousePosition[0] + 6
+        const tooltipY = yScale(hoveredDomain) - 25 //25: half width of tooltip
+
+        //tooltipRef.current.style.transform = `translate(${mousePosition[0] + 10}px, ${mousePosition[1] + 10}px)`
+        tooltipRef.current.style.transform = `translate(${tooltipX}px, ${tooltipY}px)`
     }
 
-    const mouseLeaveEvent = (e) => {
+    const mouseLeaveEvent = () => {
         setShowTooltip(false)
     }
 
-    const transitionStyle = { transition: "all 1s ease-in-out 0s" }
-
+    //helper functions & constants
     const getFill = (row) => selectedBranchen.find(b => row.Branche_Code.includes(b.code)) ? selectedBranchen.find(b => row.Branche_Code.includes(b.code)).color : "#909090"
+    const transitionStyle = { transition: "all 1s ease-in-out 0s" }
 
     return (
         <>
@@ -119,9 +131,17 @@ const EmploymentBarChart = (props) => {
                         </YAxisNominal>
 
                         {/* Tooltip */}
-                        <div className="tooltip" style={{ display: showTooltip ? "block" : "none" }}>
-                            <p>Tooltip</p>
-                        </div>
+                        <g className="tooltip" ref={tooltipRef} style={{ display: showTooltip ? "block" : "none", transition: "all 0.05s ease-in-out 0s" }}>
+                            <rect width="200" height="80" fill="#ffffff8c" stroke="black" strokeWidth="1" rx="5" ry="5" style={{ backdropFilter: "blur(10px)" }} />
+                            <text x={10} y={20} style={{ fontSize: "1rem", fontWeight: "bold" }}>
+                                {hoveredBar}
+                            </text>
+                            <text x={10} y={20} style={{ fontSize: "0.9rem" }}>
+                                <tspan x="10" dy="1.2em">Beschäftigte: {filteredData.find(d => d.Branche_Label === hoveredBar)?.Beschaeftigte}%</tspan>
+                                <tspan x="10" dy="1.2em">Vollzeitbeschäftigte: {filteredData.find(d => d.Branche_Label === hoveredBar)?.Vollzeitbeschaeftigte}%</tspan>
+                                <tspan x="10" dy="1.2em">Teilzeitbeschaeftigte: {filteredData.find(d => d.Branche_Label === hoveredBar)?.Teilzeitbeschaeftigte}%</tspan>
+                            </text>
+                        </g>
 
                         {/* actionListener rect over graph area*/}
                         <rect className="actionListener" width={dms.innerWidth} height={dms.innerHeight}

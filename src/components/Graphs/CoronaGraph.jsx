@@ -11,21 +11,42 @@ const chartSettings = {
     height: 150,
     marginTop: 20,
     marginRight: 30,
-    marginBottom: 20,
+    marginBottom: 40,
     marginLeft: 40
 }
 
 const CoronaGraph = () => {
-    const svgRef = useRef();
-    const [wrapperRef, dms] = useChartDimensions(chartSettings)
+
+    //App context
     const { setHoveredTime, hoveredTime, coronaData, showTooltipsTime, setShowTooltipsTime, selectedDate, setSelectedDate } = useAppContext()
+
+    //Component State
+    const [wrapperRef, dms] = useChartDimensions(chartSettings)
     const [closestXValue, setClosestXValue] = useState(0)
     const [closestYValue, setClosestYValue] = useState(0)
-
     const [closestYValueToSelected, setclosestYValueToSelected] = useState(0)
+    const [subventionsEvents, setSubventionsEvents] = useState([])
 
+    //refs
+    const svgRef = useRef();
+
+    //Accessors and Constants
     const xAccessor = (d) => d.Date;
     const yAccessor = (d) => d.Inzidenz;
+
+    useEffect(() => {
+        loadData()
+    }, [])
+
+    const loadData = async () => {
+        //load Subventions Events to display
+        let subventionsEvents = await d3.dsv(";", "../../data/SubventionEvents.csv")
+        subventionsEvents = subventionsEvents
+            .map((row) => ({ ...row, Date: new Date(row.Date) }))
+
+        console.log(subventionsEvents)
+        setSubventionsEvents(subventionsEvents)
+    }
 
     //X-Scale for graph
     const xScale = useMemo(() => (
@@ -114,6 +135,7 @@ const CoronaGraph = () => {
                         range={yScale.range()}>
                     </YAxisLinear>
 
+                    {/* Corona Trendlinie */}
                     <Line
                         data={coronaData}
                         lineGenerator={lineGenerator}
@@ -121,10 +143,19 @@ const CoronaGraph = () => {
                         strokeWidth={2}
                     />
 
+                    {/* Subventions Events */}
+                    {subventionsEvents.map((event, index) =>
+                        <>
+                            <rect x={xScale(event.Date)} y={0} style={{ width: ".5px", height: dms.innerHeight + 50, fill: "none", stroke: '#5e8358b3', strokeDasharray: '1 1', strokeWidth: "1px" }} />
+                            <text x={xScale(event.Date) + 5} y={dms.innerHeight + 40} style={{ fontSize: "0.8rem" }} >{event.EventName}</text>
+                        </>
+                    )}
+
 
                     {/* selected grey rectangle */}
                     <rect x={xScale(selectedDate)} style={{ width: "10px", fill: '#B8B8B87f', height: dms.innerHeight }} />
 
+                    {/* selected dot */}
                     <circle cx={xScale(selectedDate) + 2} cy={yScale(closestYValueToSelected)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
 
 
