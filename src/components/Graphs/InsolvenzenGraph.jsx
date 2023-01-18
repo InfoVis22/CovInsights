@@ -15,7 +15,7 @@ const chartSettings = {
     marginTop: 20,
     marginRight: 30,
     marginBottom: 20,
-    marginLeft: 40
+    marginLeft: 30
 }
 
 const InsolvenzGraph = () => {

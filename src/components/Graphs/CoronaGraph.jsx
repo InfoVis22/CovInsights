@@ -9,10 +9,10 @@ import Line from "../D3Elements/Line"
 //set margins of Graph
 const chartSettings = {
     height: 150,
-    marginTop: 20,
+    marginTop: 1,
     marginRight: 30,
-    marginBottom: 40,
-    marginLeft: 40
+    marginBottom: 57,
+    marginLeft: 30
 }
 
 const CoronaGraph = () => {
@@ -129,11 +129,11 @@ const CoronaGraph = () => {
                         range={xScale.range()}>
                     </XAxisTime>
 
-                    <YAxisLinear
+                    {/* <YAxisLinear
                         dms={dms}
                         domain={yScale.domain()}
                         range={yScale.range()}>
-                    </YAxisLinear>
+                    </YAxisLinear> */}
 
                     {/* Corona Trendlinie */}
                     <Line
@@ -144,10 +144,10 @@ const CoronaGraph = () => {
                     />
 
                     {/* Subventions Events */}
-                    {subventionsEvents.map((event, index) =>
+                    {subventionsEvents.map((event, i) =>
                         <>
-                            <rect x={xScale(event.Date)} y={0} style={{ width: ".5px", height: dms.innerHeight + 50, fill: "none", stroke: '#5e8358b3', strokeDasharray: '1 1', strokeWidth: "1px" }} />
-                            <text x={xScale(event.Date) + 5} y={dms.innerHeight + 40} style={{ fontSize: "0.8rem" }} >{event.EventName}</text>
+                            <rect x={xScale(event.Date)} y={i === 2 ? 20 : 0} style={{ width: ".5px", height: i === 0 ? dms.innerHeight + 37 : (i === 1 ? dms.innerHeight : (i === 2 ? dms.innerHeight + 34 : dms.innerHeight + 36)), fill: "none", stroke: '#00000085', strokeDasharray: '1 1', strokeWidth: "1px" }} />
+                            <text x={xScale(event.Date) + 5} y={i === 0 ? dms.innerHeight + 36 : (i === 1 ? 12 : (i === 2 ? dms.innerHeight + 53 : dms.innerHeight + 36))} style={{ fontSize: "0.8rem" }} >{event.EventName}</text>
                         </>
                     )}
 
