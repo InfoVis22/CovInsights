@@ -79,7 +79,6 @@ Run one of the following commands to start the app
 - [x] Displaying deployment as bar chart 
 - [x] Displaying bankrupt businesses in percentages represented as bar chart 
 - [x] Displaying revenue figures as bar chart 
-- [x] Timeline which represents covid infections from 2018 to 2023
 - [x] Covid infections from 2018 to 2023 on a timeline
 - [x] Bankrupt businesses in numbers from 2018 to 2023 on a timeline
 - [x] Chart details on hovering over revenue and deployment bar charts
@@ -92,12 +91,14 @@ Run one of the following commands to start the app
 <!-- Features in Progress -->
 ### Features in Progress
 - [ ] Refining and combine Play and Pause buttons
-- [ ] Half time job deployment numbers from 2018 to 2023 in a timeline
+- [ ] Short time work deployment numbers from 2018 to 2023 in a timeline
 
 <!-- Planned Features -->
 ### Planned Features
 - [ ] Tooltips for Charts
 - [ ] Use of accessibility colors in charts
+- [ ] User Tutorial
+- [ ] Rich user interaction analysis
 
 <!-- CONTACT -->
 ## Contact
