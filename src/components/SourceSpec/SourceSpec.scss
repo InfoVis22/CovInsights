@@ -1,0 +1,25 @@
+//IMPORTS
+
+@import '../../Variables.scss';
+
+//SCSS
+
+.SourceSpec {
+  border-radius: $borderradius;
+  width: 100%;
+  text-align: left;
+
+  th{
+    padding-left: 20px;
+  }
+
+  &:hover {
+    color:$sourceHover;
+    transition: all 0.2s ease-in-out;
+
+    a{
+      color: $sourceHover;
+      transition: all 0.2s ease-in-out;  
+    }
+  }
+}

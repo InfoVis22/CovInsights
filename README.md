@@ -1,9 +1,8 @@
 <!-- PROJECT LOGO -->
+![CovInsights]()
 <a name="readme-top"></a>
 <div align="center">
-  <a href="">
-    <img src="images/logo.png" alt="CovInsights" width="80" height="80">
-  </a>
+  <a href="https://github.com/InfoVis22/CovInsights/tree/main"><img src="https://github.com/InfoVis22/CovInsights/tree/sourceSpecifications/public/images/logo.png?raw=true"></a>
 
   <h3 align="center">CovInsights WS22/23</h3>
 
@@ -84,18 +83,19 @@ Run one of the following commands to start the app
 - [x] Create Paper Prototype
 - [x] Setup Technical Infrastructure
 - [x] Create First Structure of the Dashboard
-- [x] Create About Us Page
+- [x] Create About Us Page with little facts about the team
 - [x] Prioritize Features
 - [x] Create Gantt
 - [x] Create time slider to select time
 - [x] Implement play, stop and rewind controls
 - [x] Create line grapth to show Covid Cases
 - [x] Create bar charts for employment, revenue and insovencies
+- [x] List used sources on about page
 
 ### In Progress Features
 - [x] Clean and add data for Insolvencies (per Month and per type of establishment) > Double Check
 - [x] Clean and add data for Employment (per Month and per type of establishment) > Double Check
-- [] Add different types of employement to middle bar chart?
+- [ ] Add different types of employement to middle bar chart?
 
 ### Backlog Features
 
