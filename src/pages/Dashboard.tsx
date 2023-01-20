@@ -14,6 +14,7 @@ import RevenueBarChart from '../components/Graphs/RevenueBarChart'
 //Timeline
 import InsolvenzenGraph from '../components/Graphs/InsolvenzenGraph'
 import CoronaGraph from '../components/Graphs/CoronaGraph'
+import KurzarbeitGraph from '../components/Graphs/KurzarbeitGraph'
 
 //Controls
 import DateControls from '../components/DateControls/DateControls'
@@ -72,9 +73,15 @@ const Dashboard = () => {
 
         //load Kurzarbeit Data
         const rawKurzarbeitData = await d3.dsv(";", "../data/KurzarbeitGastgewerbe.csv")
-        const kurzarbeitData = rawKurzarbeitData
+        let kurzarbeitData = rawKurzarbeitData
             .map(row => ({ ...row, Date: new Date(row.Jahr, (+row.Monat - 1)), BetriebeKurzarbeit: +row.BetriebeKurzarbeit, Kurzarbeiter: +row.Kurzarbeiter }))
 
+        kurzarbeitData = kurzarbeitData.map(row => {
+            let newRow = row;
+            newRow.Kurzarbeiter = (newRow.Kurzarbeiter / 1000)
+            return newRow
+
+        })
         console.log("Kurzarbeit Daten: ", kurzarbeitData)
         setKurzarbeitData(kurzarbeitData)
 
@@ -115,6 +122,11 @@ const Dashboard = () => {
             <div className="Bottom">
                 <Timeline title="Insolvenzen" subtitle="in Anzahl">
                     <InsolvenzenGraph />
+                </Timeline>
+            </div>
+            <div className="Bottom-Bottom">
+                <Timeline title="Kurzarbeit" subtitle="in Tausend Mitarbeiter">
+                    <KurzarbeitGraph />
                 </Timeline>
             </div>
         </div>

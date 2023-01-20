@@ -51,8 +51,14 @@ const DateControls = () => {
     return (
         <div className="DateControls">
             <div className="buttons">
-                <button onClick={() => handlePlay()}>Play</button>
-                <button  onClick={() => handlePause()}>Pause</button>
+                {!isPlaying ? (
+                    <button onClick={() => handlePlay()}>Play</button>
+                ):(
+                    <button  onClick={() => handlePause()}>Pause</button>
+                )
+
+                }
+
                 <button  onClick={() => handleReset()}>Reset</button>
             </div>
 
