@@ -7,6 +7,8 @@ import Line from "../D3Elements/Line"
 import Legend from "../D3Elements/Legend.jsx";
 import { categories } from "../../settings.js"
 import * as d3 from 'd3'
+import {Button, Popover, Text} from "@nextui-org/react";
+import {AiOutlineInfoCircle} from "react-icons/ai";
 
 
 //set margins of Graph
@@ -170,6 +172,17 @@ const KurzarbeitGraph = () => {
             </div >
             <div style={{ height: "20px" }}></div>
             <Legend vertical={false} />
+
+            <div className="InfoButtonGraph">
+                <Popover isBordered disableShadow>
+                    <Popover.Trigger>
+                        <Button auto flat color="white"  size = "xxs"><AiOutlineInfoCircle /></Button>
+                    </Popover.Trigger>
+                    <Popover.Content>
+                        <Text css={{ p: "$8" }}>Kurzarbeit in absoluten Zahlen (in Tsd Mitarbeiter) unterteilt in Gastronomie und Beherbergung</Text>
+                    </Popover.Content>
+                </Popover>
+            </div>
         </>
     )
 }

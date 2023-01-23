@@ -6,7 +6,9 @@ import YAxisNominal from "../D3Elements/YAxisNominal";
 import XAxisLinear from "../D3Elements/XAxisLinear";
 import { filter } from "d3";
 import Legend from "../D3Elements/Legend.jsx";
-import { categories } from "../../settings.js"
+import { categories } from "../../settings.js";
+import { Popover, Button, Text } from "@nextui-org/react";
+import { AiOutlineInfoCircle } from 'react-icons/ai';
 
 
 //set margins of Graph

@@ -7,6 +7,8 @@ import Line from "../D3Elements/Line"
 import Legend from "../D3Elements/Legend.jsx";
 import { categories } from "../../settings.js"
 import * as d3 from 'd3'
+import {Button, Popover, Text} from "@nextui-org/react";
+import {AiOutlineInfoCircle} from "react-icons/ai";
 
 
 //set margins of Graph
@@ -101,6 +103,7 @@ const InsolvenzGraph = () => {
 
     return (
         <>
+
             <div className="Graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
                 <svg width={dms.width} height={dms.height} ref={svgRef}>
                     <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
@@ -196,6 +199,16 @@ const InsolvenzGraph = () => {
             </div >
             <div style={{ height: "20px" }}></div>
             <Legend vertical={false} />
+            <div className="InfoButtonGraph">
+                <Popover isBordered disableShadow>
+                    <Popover.Trigger>
+                        <Button auto flat color="white"  size = "xxs"><AiOutlineInfoCircle /></Button>
+                    </Popover.Trigger>
+                    <Popover.Content>
+                        <Text css={{ p: "$8" }}>Insolvenzen in absoluten Zahlen für Beherbergung und Gastronomie</Text>
+                    </Popover.Content>
+                </Popover>
+            </div>
         </>
     )
 }

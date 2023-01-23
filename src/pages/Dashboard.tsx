@@ -103,13 +103,20 @@ const Dashboard = () => {
     return (
         <div className="Page Home">
             <div className="Top">
-                <Card title="Umsatz im Gastgewerbe" subtitle={"in Mio € (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
+                <Card
+                    title="Umsatz im Gastgewerbe"
+                    description = "Umsatz im Gastgewerbe (Mio €) unterteilt in Beherbergung und Gastronomie"
+                    subtitle={"in Mio € (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
                     <RevenueBarChart />
                 </Card>
-                <Card title="Beschäftigung im Gastgewerbe" subtitle={"Im Vergleich zum Jahr 2015 (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
+                <Card title="Beschäftigung im Gastgewerbe"
+                      description = "Relative Verteilung der Beschäftigung, gemessen an der durchschnittlichen Beschäftigung 2015, unterteilt nach Gastronomie und Beherbergung"
+                      subtitle={"Im Vergleich zum Jahr 2015 (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
                     <EmploymentBarChart />
                 </Card>
-                <Card title="Insolvenzen im Gastgewerbe" subtitle={"in Anzahl der Insolvenzen (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
+                <Card title="Insolvenzen im Gastgewerbe"
+                      description = "Insolvenzen im Gastgewerbe und deren prozentuale Veränderung, gemessen an dem Durchschnitt 2013-2019"
+                      subtitle={"in Anzahl der Insolvenzen (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
                     <InsolvenzenProzent />
                 </Card>
             </div>

@@ -5,6 +5,8 @@ import * as d3 from 'd3'
 import XAxisTime from "../D3Elements/XAxisTime"
 import YAxisLinear from "../D3Elements/YAxisLinear"
 import Line from "../D3Elements/Line"
+import {Button, Popover, Text} from "@nextui-org/react";
+import {AiOutlineInfoCircle} from "react-icons/ai";
 
 //set margins of Graph
 const chartSettings = {
@@ -117,6 +119,7 @@ const CoronaGraph = () => {
 
 
     return (
+        <>
         <div className="Graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
 
             <svg width={dms.width} height={dms.height} ref={svgRef}
@@ -179,6 +182,17 @@ const CoronaGraph = () => {
                 </g>
             </svg>
         </div >
+            <div className="CoronaGraphInfo">
+                <Popover isBordered disableShadow>
+                    <Popover.Trigger>
+                        <Button auto flat color="white"  size = "xxs"><AiOutlineInfoCircle /></Button>
+                    </Popover.Trigger>
+                    <Popover.Content>
+                        <Text css={{ p: "$8" }}>Coronainfektionen in absoluten Zahlen. Nutzen Sie die Play, Reset Buttons um den Zeitverlauf zu kontrollieren. Klicken Sie auf die Zeitachse um einen Zeitpunkt zu markieren</Text>
+                    </Popover.Content>
+                </Popover>
+            </div>
+        </>
     )
 }
 
