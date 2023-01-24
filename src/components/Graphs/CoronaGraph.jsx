@@ -28,6 +28,7 @@ const CoronaGraph = () => {
     const [closestYValue, setClosestYValue] = useState(0)
     const [closestYValueToSelected, setclosestYValueToSelected] = useState(0)
     const [subventionsEvents, setSubventionsEvents] = useState([])
+    
 
     //refs
     const svgRef = useRef();
@@ -44,7 +45,7 @@ const CoronaGraph = () => {
         //load Subventions Events to display
         let subventionsEvents = await d3.dsv(";", "../../data/SubventionEvents.csv")
         subventionsEvents = subventionsEvents
-            .map((row) => ({ ...row, Date: new Date(row.Date) }))
+            .map((row) => ({ ...row, Date: new Date(row.Date), Display: row.EventNameShort}))
 
         console.log(subventionsEvents)
         setSubventionsEvents(subventionsEvents)
@@ -77,6 +78,31 @@ const CoronaGraph = () => {
 
     const mouseEventDown = (e) => {
         setSelectedDate(hoveredTime);
+    }
+
+    const mouseEnterCoronaEvent = (event, i) => {
+        const oldSubventionEvents = subventionsEvents;
+        const newSubventionEvents = oldSubventionEvents.map((e, j) => {
+            if(e.EventNameShort === event.EventNameShort)
+            {
+                e.Display = e.EventName;
+            }else if(j % 2 == i  % 2){
+                e.Display = "";
+            }
+            return e;
+        })
+        
+        setSubventionsEvents(newSubventionEvents);
+    }
+
+    const mouseLeaveCoronaEvent = (event, i) => {
+        const oldSubventionEvents = subventionsEvents;
+        const newSubventionEvents = oldSubventionEvents.map((e) => {
+            e.Display = e.EventNameShort;
+            return e;
+        })
+        
+        setSubventionsEvents(newSubventionEvents);
     }
 
     const mouseMoveEvent = (e) => {
@@ -146,14 +172,6 @@ const CoronaGraph = () => {
                         strokeWidth={2}
                     />
 
-                    {/* Subventions Events */}
-                    {subventionsEvents.map((event, i) =>
-                        <g key={i}>
-                            <rect x={xScale(event.Date)} y={i === 2 ? 20 : 0} style={{ width: ".5px", height: i === 0 ? dms.innerHeight + 37 : (i === 1 ? dms.innerHeight : (i === 2 ? dms.innerHeight + 34 : dms.innerHeight + 36)), fill: "none", stroke: '#00000085', strokeDasharray: '1 1', strokeWidth: "1px" }} />
-                            <text x={xScale(event.Date) + 5} y={i === 0 ? dms.innerHeight + 36 : (i === 1 ? 12 : (i === 2 ? dms.innerHeight + 53 : dms.innerHeight + 36))} style={{ fontSize: "0.8rem" }} >{event.EventName}</text>
-                        </g>
-                    )}
-
 
                     {/* selected grey rectangle */}
                     <rect x={xScale(selectedDate)} style={{ width: "10px", fill: '#B8B8B87f', height: dms.innerHeight }} />
@@ -178,6 +196,19 @@ const CoronaGraph = () => {
                         onMouseLeave={mouseLeaveEvent}
                         onMouseDown={mouseEventDown}
                     />
+
+                    {/* Subventions Events */}
+                    {subventionsEvents.map((event, i) =>
+                        <g key={i}
+                        onMouseEnter={()=>{console.log("Mouse enter"); mouseEnterCoronaEvent(event, i)}}
+                        onMouseLeave={()=>{console.log("Mouse leave"); mouseLeaveCoronaEvent(event, i)}}
+                        >
+                            <rect x={xScale(event.Date)} y={i % 2 === 0 ? 95 : 0} style={{ visibility:event.Display === "" ? "hidden" : "unset", width: ".5px", height:i % 2 === 0 ? 50 : 90, fill: "none", stroke: '#00000085', strokeDasharray: '1 1', strokeWidth: "1px" }} />
+                            <text x={xScale(event.Date) + 5} y={i % 2 === 0 ? dms.innerHeight + 50 : 15} style={{ fontSize: "0.8rem" }}
+                            
+                        >{event.Display}</text>
+                        </g>
+                    )}
 
                 </g>
             </svg>
