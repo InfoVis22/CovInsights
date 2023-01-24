@@ -126,16 +126,17 @@ const Dashboard = () => {
                 </Timeline>
                 <DateControls />
             </div>
-            <div className="Bottom">
-                <Timeline title="Insolvenzen" subtitle="in Anzahl">
-                    <InsolvenzenGraph />
-                </Timeline>
-            </div>
             <div className="Bottom-Bottom">
                 <Timeline title="Kurzarbeit" subtitle="in Tausend Mitarbeiter">
                     <KurzarbeitGraph />
                 </Timeline>
             </div>
+            <div className="Bottom">
+                <Timeline title="Insolvenzen" subtitle="in Anzahl">
+                    <InsolvenzenGraph />
+                </Timeline>
+            </div>
+
         </div>
     )
 }
