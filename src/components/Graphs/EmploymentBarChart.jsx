@@ -106,6 +106,9 @@ const EmploymentBarChart = () => {
                 <svg width={dms.width} height={dms.height} >
                     <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
+                    <path d={`M ${xScale(100)} 0 h 0 V ${dms.innerHeight} h 0`} fill="none" stroke="#aaa" strokeWidth={1.5} />
+
+
                         {filteredData.map((row, i) =>
                             <g key={i}>
                                 <rect className="bar"
@@ -115,7 +118,7 @@ const EmploymentBarChart = () => {
                                     height={yScale.bandwidth()}
                                     style={{ ...transitionStyle, fill: getFill(row) }} />
 
-                                <text x={0} y={yScale(row.Branche_Label) + yScale.bandwidth() / 4} style={{ ...transitionStyle, fontSize: "11px", transform: `translateX(${xScale(row.Beschaeftigte) + 8}px)` }} >{row.Beschaeftigte}%</text>
+                                <text x={0} y={yScale(row.Branche_Label) + yScale.bandwidth() / 4} style={{ ...transitionStyle, fontSize: "11px", transform: `translateX(${xScale(row.Beschaeftigte) + 8}px)` }} >{row.Beschaeftigte} %</text>
 
                             </g>
                         )}
@@ -123,7 +126,8 @@ const EmploymentBarChart = () => {
                         <XAxisLinear
                             dms={dms}
                             domain={xScale.domain()}
-                            range={xScale.range()}>
+                            range={xScale.range()}
+                            labelSuffix=" %">
                         </XAxisLinear>
 
                         <YAxisNominal
@@ -132,13 +136,15 @@ const EmploymentBarChart = () => {
                             range={yScale.range()}>
                         </YAxisNominal>
 
+
+
                         {/* Tooltip */}
                         <g className="tooltip" ref={tooltipRef} style={{ display: showTooltip ? "block" : "none", transition: "all 0.05s ease-in-out 0s" }}>
-                            <rect width="200" height="80" fill="#ffffff8c" stroke="black" strokeWidth="1" rx="5" ry="5" style={{ backdropFilter: "blur(10px)" }} />
-                            <text x={10} y={20} style={{ fontSize: "1rem", fontWeight: "bold" }}>
+                            <rect width="180" height="80" fill="#ffffff" stroke="#bbb" strokeWidth="1" filter="drop-shadow( 0px 0px 1px rgba(0, 0, 0, 0.2))" rx="5" ry="5" style={{ backdropFilter: "blur(10px)" }} />
+                            <text x={10} y={20} style={{ fontSize: "0.7rem", fontWeight: "bold" }}>
                                 {hoveredBar}
                             </text>
-                            <text x={10} y={20} style={{ fontSize: "0.9rem" }}>
+                            <text x={10} y={20} style={{ fontSize: "0.7rem" }}>
                                 <tspan x="10" dy="1.2em">Beschäftigte: {filteredData.find(d => d.Branche_Label === hoveredBar)?.Beschaeftigte}%</tspan>
                                 <tspan x="10" dy="1.2em">Vollzeitbeschäftigte: {filteredData.find(d => d.Branche_Label === hoveredBar)?.Vollzeitbeschaeftigte}%</tspan>
                                 <tspan x="10" dy="1.2em">Teilzeitbeschaeftigte: {filteredData.find(d => d.Branche_Label === hoveredBar)?.Teilzeitbeschaeftigte}%</tspan>

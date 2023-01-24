@@ -3,7 +3,7 @@ import * as d3 from 'd3'
 
 //domain: data values
 //range: pixel values
-const XAxisLinear = ({ dms, domain = [0, 100], range = [0, 300] }) => {
+const XAxisLinear = ({ dms, domain = [0, 100], range = [0, 300], labelSuffix }) => {
 
     const axisRef = useRef()
 
@@ -32,8 +32,8 @@ const XAxisLinear = ({ dms, domain = [0, 100], range = [0, 300] }) => {
             {ticks.map(({ value, xOffset }) => (
                 <g key={value} transform={`translate(${xOffset}, 0)`} style={{ transition: "all 0.5s ease-in-out 0s" }}>
                     <line y2="6" stroke="#626262" />
-                    <text key={value} style={{ fontSize: "11px", textAnchor: "middle", transform: "translateY(16px)" }}>
-                        {value}
+                    <text key={value} style={{ fontSize: "11px", textAnchor: "middle", transform: "translate(5px, 17px)" }}>
+                        {value}{labelSuffix}
                     </text>
                 </g>
             ))}

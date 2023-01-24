@@ -35,7 +35,15 @@
     top: 1rem;
     right: 1rem;
     color: $grey;
+    margin-top: -3px;
     cursor: pointer;
+    .nextui-button {
+        background-color: white;
+        padding: 0px;
+        .nextui-button-text{
+            font-size: 18px;
+        }
+    }
 }
 
 .Info :hover {

@@ -15,7 +15,7 @@ const Card = ({ title, subtitle,description, children }) => {
 
                 <Popover isBordered disableShadow>
                     <Popover.Trigger>
-                        <Button auto flat color="white"  size = "xxs"><AiOutlineInfoCircle /></Button>
+                        <Button auto flat color="white"  size = "xs"><AiOutlineInfoCircle /></Button>
                     </Popover.Trigger>
                     <Popover.Content>
                         <Text css={{ p: "$8" }}>{description}</Text>

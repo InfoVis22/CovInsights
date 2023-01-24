@@ -20,7 +20,9 @@ const XAxisTime = ({ dms, domain = [0, 100], range = [0, 300] }) => {
         return ticks
     }, [domain.join("-"), range.join("-")])
 
-
+    const pad = (d) => {
+        return (d < 10) ? '0' + d.toString() : d.toString();
+    }
 
     return (
         <g className="x-axis" transform={`translate(0,${dms.innerHeight})`} ref={axisRef}>
@@ -33,7 +35,7 @@ const XAxisTime = ({ dms, domain = [0, 100], range = [0, 300] }) => {
                 <g key={value} transform={`translate(${xOffset}, 0)`}>
                     <line y2="6" stroke="currentColor" />
                     <text key={value} style={{ fontSize: "11px", textAnchor: "middle", transform: "translateY(16px)" }}>
-                        {value.getMonth() + 1 + "/" + value.getFullYear()}
+                        {pad(value.getMonth() + 1) + "." + value.getFullYear()}
                     </text>
                 </g>
             ))}

@@ -108,7 +108,10 @@ const RevenueBarChart = () => {
                         <XAxisLinear
                             dms={dms}
                             domain={xScale.domain()}
-                            range={xScale.range()}>
+                            range={xScale.range()}
+                            labelSuffix=" M€"
+                        >
+                                
                         </XAxisLinear>
 
                         <YAxisNominal
@@ -127,7 +130,7 @@ const RevenueBarChart = () => {
                                     height={yScale.bandwidth()}
                                     style={{ ...transitionStyle, fill: getFill(row) }} />
 
-                                <text x={0} y={yScale(row.Branche_Label) + yScale.bandwidth() / 4} style={{ ...transitionStyle, fontSize: "11px", transform: `translateX(${xScale(row.Umsatz) + 8}px)` }} >{row.Umsatz}</text>
+                                <text x={0} y={yScale(row.Branche_Label) + yScale.bandwidth() / 4} style={{ ...transitionStyle, fontSize: "11px", transform: `translateX(${xScale(row.Umsatz) + 8}px)` }} >{row.Umsatz} M€</text>
                             </g>
 
                         )}
@@ -135,12 +138,12 @@ const RevenueBarChart = () => {
 
                         {/* Tooltip */}
                         <g className="tooltip" ref={tooltipRef} style={{ display: showTooltip ? "block" : "none", transition: "all 0.1s ease-in-out 0s" }}>
-                            <rect width="200" height="50" fill="#ffffffc0" stroke="black" strokeWidth="1" rx="5" ry="5" />
-                            <text x={10} y={20} style={{ fontSize: "1rem", fontWeight: "bold" }}>
+                            <rect width="150" height="45" fill="#ffffff" stroke="#bbb" filter="drop-shadow( 0px 0px 1px rgba(0, 0, 0, 0.2))" strokeWidth="1" rx="5" ry="5" />
+                            <text x={10} y={20} style={{ fontSize: "0.7rem", fontWeight: "bold" }}>
                                 {hoveredBar}
                             </text>
-                            <text x={10} y={40} style={{ fontSize: "0.9rem" }}>
-                                Umsatz: {filteredData.find(d => d.Branche_Label === hoveredBar)?.Umsatz}
+                            <text x={10} y={34} style={{ fontSize: "0.7rem" }}>
+                                Umsatz: {filteredData.find(d => d.Branche_Label === hoveredBar)?.Umsatz} M€
                             </text>
                         </g>
 

@@ -98,25 +98,25 @@ const Dashboard = () => {
         loadData()
     }, [])
 
-    if (isLoadingData) return <p>Loading Data</p>
+    if (isLoadingData) return <div className='loading-div'><div className="lds-dual-ring"></div></div>
 
     return (
         <div className="Page Home">
             <div className="Top">
                 <Card
                     title="Umsatz im Gastgewerbe"
-                    description = "Umsatz im Gastgewerbe (Mio €) unterteilt in Beherbergung und Gastronomie"
+                    description = "Umsatz im Gastgewerbe in Millionen Euro unterteilt in Beherbergung und Gastronomie"
                     subtitle={"in Mio € (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
                     <RevenueBarChart />
                 </Card>
                 <Card title="Beschäftigung im Gastgewerbe"
-                      description = "Relative Verteilung der Beschäftigung, gemessen an der durchschnittlichen Beschäftigung 2015, unterteilt nach Gastronomie und Beherbergung"
-                      subtitle={"Im Vergleich zum Jahr 2015 (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
+                      description = "Anzahl der Beschäftigen in Prozent verglichen mit der durchschnittlichen Beschäftigung in 2015, unterteilt nach Gastronomie und Beherbergung"
+                      subtitle={"in % im Vergleich zum Jahr 2015 (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
                     <EmploymentBarChart />
                 </Card>
                 <Card title="Insolvenzen im Gastgewerbe"
-                      description = "Insolvenzen im Gastgewerbe und deren prozentuale Veränderung, gemessen an dem Durchschnitt 2013-2019"
-                      subtitle={"in Anzahl der Insolvenzen (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
+                      description = "Insolvenzen im Gastgewerbe in Prozent verglichen mit den durchschnittlichen Insolvenzen von 2013 bis 2019"
+                      subtitle={"in % im Vergleich zu 2013 bis 2019 (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
                     <InsolvenzenProzent />
                 </Card>
             </div>
@@ -127,12 +127,12 @@ const Dashboard = () => {
                 <DateControls />
             </div>
             <div className="Bottom-Bottom">
-                <Timeline title="Kurzarbeit" subtitle="in Tausend Mitarbeiter">
+                <Timeline title="Kurzarbeit im Gastgewerbe" subtitle="in Tausend Mitarbeiter">
                     <KurzarbeitGraph />
                 </Timeline>
             </div>
             <div className="Bottom">
-                <Timeline title="Insolvenzen" subtitle="in Anzahl">
+                <Timeline title="Insolvenzen im Gastgewerbe" subtitle="in Anzahl der eingereichten? Insolvenzen">
                     <InsolvenzenGraph />
                 </Timeline>
             </div>

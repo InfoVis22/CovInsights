@@ -17,7 +17,7 @@ const chartSettings = {
     marginTop: 20,
     marginRight: 30,
     marginBottom: 20,
-    marginLeft: 30
+    marginLeft: 45
 }
 
 const KurzarbeitGraph = () => {
@@ -118,13 +118,15 @@ const KurzarbeitGraph = () => {
                         <YAxisLinear
                             dms={dms}
                             domain={yScale.domain()}
-                            range={yScale.range()}>
+                            range={yScale.range()}
+                            labelSuffix=" T"
+                            >
                         </YAxisLinear>
 
                         {/* Line Graph for Gastronomie */}
                         <path
                             stroke={categories.Gastronomie.color}
-                            strokeWidth={2}
+                            strokeWidth={2.5}
                             fill="none"
                             d={lineGenerator(kurzarbeitData.filter(row => row.Branche_Code === "WZ08-56"))}
                             style={{ transition: "all 1s ease-in-out" }}
@@ -134,7 +136,7 @@ const KurzarbeitGraph = () => {
                         <path
                             stroke={categories.Beherbergung.color}
                             d={lineGenerator(kurzarbeitData.filter(row => row.Branche_Code === "WZ08-55"))}
-                            strokeWidth={2}
+                            strokeWidth={2.5}
                             fill="none"
                             style={{ transition: "all 1s ease-in-out" }}
                         />
@@ -142,7 +144,7 @@ const KurzarbeitGraph = () => {
 
 
                         {/* selected grey rectangle */}
-                        <rect x={xScale(selectedDate)} style={{ width: "10px", fill: '#B8B8B87f', height: dms.innerHeight }} />
+                        <rect x={xScale(selectedDate)-12} style={{ width: "20px", fill: '#B8B8B87f', height: dms.innerHeight }} />
 
                         {showTooltipsTime && <>
                             {/* hover dotted line */}

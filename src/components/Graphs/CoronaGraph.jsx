@@ -14,7 +14,7 @@ const chartSettings = {
     marginTop: 1,
     marginRight: 30,
     marginBottom: 57,
-    marginLeft: 30
+    marginLeft: 45
 }
 
 const CoronaGraph = () => {
@@ -168,13 +168,13 @@ const CoronaGraph = () => {
                     <Line
                         data={coronaData}
                         lineGenerator={lineGenerator}
-                        color={'#BB5160'}
-                        strokeWidth={2}
+                        color={'#464646'}
+                        strokeWidth={2.5}
                     />
 
 
                     {/* selected grey rectangle */}
-                    <rect x={xScale(selectedDate)} style={{ width: "10px", fill: '#B8B8B87f', height: dms.innerHeight }} />
+                    <rect x={xScale(selectedDate)-10} style={{ width: "20px", fill: '#B8B8B87f', height: dms.innerHeight }} />
 
                     {/* selected dot */}
                     <circle cx={xScale(selectedDate) + 2} cy={yScale(closestYValueToSelected)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
@@ -203,8 +203,8 @@ const CoronaGraph = () => {
                         onMouseEnter={()=>{mouseEnterCoronaEvent(event, i)}}
                         onMouseLeave={()=>{mouseLeaveCoronaEvent(event, i)}}
                         >
-                            <rect x={xScale(event.Date)} y={i % 2 === 0 ? 95 : 0} style={{ visibility:event.Display === "" ? "hidden" : "unset", width: ".5px", height:i % 2 === 0 ? 50 : 90, fill: "none", stroke: '#00000085', strokeDasharray: '1 1', strokeWidth: "1px" }} />
-                            <text x={xScale(event.Date) + 5} y={i % 2 === 0 ? dms.innerHeight + 50 : 15} style={{ fontSize: "0.8rem" }}
+                            <rect x={xScale(event.Date)} y={0} style={{ visibility:event.Display === "" ? "hidden" : "unset", width: ".5px", height: 90, fill: "none", stroke: '#00000085', strokeDasharray: '1 1', strokeWidth: "1px" }} />
+                            <text x={xScale(event.Date) + 5} y={15} style={{ fontSize: "0.8rem", fill: "#636060" }}
                             
                         >{event.Display}</text>
                         </g>

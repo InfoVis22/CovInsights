@@ -73,7 +73,7 @@ const InsolvenzenProzent = () => {
                             dms={dms}
                             domain={yScale.domain()}
                             range={yScale.range()}
-                            labelSuffix="%">
+                            labelSuffix=" %">
                         </YAxisLinear>
 
                         {/* Create X-Axis */}

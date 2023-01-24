@@ -17,7 +17,7 @@ const chartSettings = {
     marginTop: 20,
     marginRight: 30,
     marginBottom: 20,
-    marginLeft: 30
+    marginLeft: 45
 }
 
 const InsolvenzGraph = () => {
@@ -123,45 +123,50 @@ const InsolvenzGraph = () => {
                         {/* Line Graph for Gastronomie */}
                         <path
                             stroke={categories.Gastronomie.color}
-                            strokeWidth={2}
+                            strokeWidth={2.5}
                             fill="none"
                             d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-56"))}
                             style={{ transition: "all 1s ease-in-out" }}
                         />
 
+                        {false && (
+                            <>
                         {/* Line Graph for Restaurants & Cafes */}
-                        <path
-                            stroke={categories.Gastronomie.subCategories.Restaurant}
-                            strokeWidth={2}
-                            fill="none"
-                            d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-561"))}
-                            style={{ transition: "all 1s ease-in-out" }}
-                        />
+                            <path
+                                stroke={categories.Gastronomie.subCategories.Restaurant}
+                                strokeWidth={2}
+                                fill="none"
+                                d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-561"))}
+                                style={{ transition: "all 1s ease-in-out" }}
+                            />
 
-                        {/* Line Graph for Bars & Clubs */}
-                        <path
-                            stroke={categories.Gastronomie.subCategories.Caterer}
-                            strokeWidth={2}
-                            fill="none"
-                            d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-563"))}
-                            style={{ transition: "all 1s ease-in-out" }}
-                        />
+                            {/* Line Graph for Bars & Clubs */}
+                            <path
+                                stroke={categories.Gastronomie.subCategories.Caterer}
+                                strokeWidth={2}
+                                fill="none"
+                                d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-563"))}
+                                style={{ transition: "all 1s ease-in-out" }}
+                            />
 
-                        {/* Line Graph for Caterer */}
-                        <path
-                            stroke={categories.Gastronomie.subCategories.Caterer}
-                            strokeWidth={2}
-                            fill="none"
-                            d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-562"))}
-                            style={{ transition: "all 1s ease-in-out" }}
-                        />
+                            {/* Line Graph for Caterer */}
+                            <path
+                                stroke={categories.Gastronomie.subCategories.Caterer}
+                                strokeWidth={2}
+                                fill="none"
+                                d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-562"))}
+                                style={{ transition: "all 1s ease-in-out" }}
+                            />
+                            </>
+                        )}
+ 
 
 
                         {/* Line for Beherbergung */}
                         <path
                             stroke={categories.Beherbergung.color}
                             d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-55"))}
-                            strokeWidth={2}
+                            strokeWidth={2.5}
                             fill="none"
                             style={{ transition: "all 1s ease-in-out" }}
                         />
@@ -169,7 +174,7 @@ const InsolvenzGraph = () => {
 
 
                         {/* selected grey rectangle */}
-                        <rect x={xScale(selectedDate)} style={{ width: "10px", fill: '#B8B8B87f', height: dms.innerHeight }} />
+                        <rect x={xScale(selectedDate)-12} style={{ width: "20px", fill: '#B8B8B87f', height: dms.innerHeight }} />
 
                         {showTooltipsTime && <>
                             {/* hover dotted line */}
