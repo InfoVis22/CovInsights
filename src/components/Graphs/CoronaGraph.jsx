@@ -200,8 +200,8 @@ const CoronaGraph = () => {
                     {/* Subventions Events */}
                     {subventionsEvents.map((event, i) =>
                         <g key={i}
-                        onMouseEnter={()=>{console.log("Mouse enter"); mouseEnterCoronaEvent(event, i)}}
-                        onMouseLeave={()=>{console.log("Mouse leave"); mouseLeaveCoronaEvent(event, i)}}
+                        onMouseEnter={()=>{mouseEnterCoronaEvent(event, i)}}
+                        onMouseLeave={()=>{mouseLeaveCoronaEvent(event, i)}}
                         >
                             <rect x={xScale(event.Date)} y={i % 2 === 0 ? 95 : 0} style={{ visibility:event.Display === "" ? "hidden" : "unset", width: ".5px", height:i % 2 === 0 ? 50 : 90, fill: "none", stroke: '#00000085', strokeDasharray: '1 1', strokeWidth: "1px" }} />
                             <text x={xScale(event.Date) + 5} y={i % 2 === 0 ? dms.innerHeight + 50 : 15} style={{ fontSize: "0.8rem" }}
