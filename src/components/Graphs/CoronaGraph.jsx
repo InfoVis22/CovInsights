@@ -203,8 +203,8 @@ const CoronaGraph = () => {
                         onMouseEnter={()=>{mouseEnterCoronaEvent(event, i)}}
                         onMouseLeave={()=>{mouseLeaveCoronaEvent(event, i)}}
                         >
-                            <rect x={xScale(event.Date)} y={0} style={{ visibility:event.Display === "" ? "hidden" : "unset", width: ".5px", height: 90, fill: "none", stroke: '#00000085', strokeDasharray: '1 1', strokeWidth: "1px" }} />
-                            <text x={xScale(event.Date) + 5} y={15} style={{ fontSize: "0.8rem", fill: "#636060" }}
+                                                        <rect x={xScale(event.Date)} y={i % 2 === 0 ? 95 : 0} style={{ visibility:event.Display === "" ? "hidden" : "unset", width: ".5px", height:i % 2 === 0 ? 50 : 90, fill: "none", stroke: '#00000085', strokeDasharray: '1 1', strokeWidth: "1px" }} />
+                            <text x={xScale(event.Date) + 5} y={i % 2 === 0 ? dms.innerHeight + 50 : 15} style={{ fontSize: "0.8rem", fill: "#636060"}}
                             
                         >{event.Display}</text>
                         </g>
