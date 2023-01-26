@@ -21,7 +21,6 @@ const XAxisLinear = ({ dms, domain = [0, 100], range = [0, 300], labelSuffix }) 
     }, [domain.join("-"), range.join("-")])
 
 
-
     return (
         <g className="x-axis" transform={`translate(0,${dms.innerHeight})`} ref={axisRef}>
 

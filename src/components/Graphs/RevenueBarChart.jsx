@@ -41,7 +41,10 @@ const RevenueBarChart = () => {
     //initialize component
     useEffect(() => {
         const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth() + 1].join("-")
-        const filteredData = umsatzData.filter((row) => ((row.Jahr + "-" + row.Monat) === yearMonthTime))
+        const filteredData = umsatzData.filter((row) => (
+            (row.Jahr + "-" + row.Monat) === yearMonthTime &&
+            selectedBranchen.find(b => row.Branche_Code.includes(b.code))))
+
         //to filter out not selected
         //&& selectedBranchen.find(b => row.Branche_Code.includes(b.code))
 
@@ -54,15 +57,15 @@ const RevenueBarChart = () => {
             .domain([0, d3.max(umsatzData, d => d.Umsatz)])
             .range([0, dms.innerWidth])
             .nice())
-    }, [dms.innerWidth, selectedBranchen])
+    }, [dms.innerWidth])
 
     //Y-Scale for graph
     const yScale = useMemo(() => (
         d3.scaleBand()
-            .domain(umsatzData.map(d => d.Branche_Label))
+            .domain(filteredData.map(d => d.Branche_Label))
             .range([dms.innerHeight, 0])
             .padding(0.4)
-    ), [dms.innerHeight, selectedBranchen])
+    ), [dms.innerHeight, filteredData])
 
 
     //mouse events
@@ -111,7 +114,7 @@ const RevenueBarChart = () => {
                             range={xScale.range()}
                             labelSuffix=" M€"
                         >
-                                
+
                         </XAxisLinear>
 
                         <YAxisNominal

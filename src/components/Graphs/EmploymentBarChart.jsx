@@ -44,9 +44,12 @@ const EmploymentBarChart = () => {
     //initialize component
     useEffect(() => {
         const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth() + 1].join("-")
-        const filteredDataCreate = employmentData.filter((row) => ((row.Jahr + "-" + row.Monat) === yearMonthTime))
+        const filteredDataCreate = employmentData.filter((row) => (
+            (row.Jahr + "-" + row.Monat) === yearMonthTime &&
+            selectedBranchen.find(b => row.Branche_Code.includes(b.code))
+        ))
         setFilteredData(filteredDataCreate)
-    }, [selectedDate.getMonth()])
+    }, [selectedDate.getMonth(), selectedBranchen])
 
     //X-Scale for graph
     const xScale = useMemo(() => (
@@ -54,17 +57,16 @@ const EmploymentBarChart = () => {
             .domain([0, d3.max(employmentData, row => xAccessor(row))])
             .range([0, dms.innerWidth])
             .nice()
-
     ), [dms.innerWidth])
 
     //Y-Scale for graph
     const yScale = useMemo(() => (
         d3.scaleBand()
-            .domain(employmentData.map(d => d.Branche_Label))
+            .domain(filteredData.map(d => d.Branche_Label))
             .range([dms.innerHeight, 0])
             .padding(0.4)
 
-    ), [dms.innerHeight])
+    ), [dms.innerHeight, filteredData])
 
     //mouse events
     const mouseEnterEvent = () => {
@@ -96,6 +98,7 @@ const EmploymentBarChart = () => {
         setShowTooltip(false)
     }
 
+
     //helper functions & constants
     const getFill = (row) => selectedBranchen.find(b => row.Branche_Code.includes(b.code)) ? selectedBranchen.find(b => row.Branche_Code.includes(b.code)).color : "#909090"
     const transitionStyle = { transition: "all 1s ease-in-out 0s" }
@@ -106,7 +109,7 @@ const EmploymentBarChart = () => {
                 <svg width={dms.width} height={dms.height} >
                     <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
-                    <path d={`M ${xScale(100)} 0 h 0 V ${dms.innerHeight} h 0`} fill="none" stroke="#aaa" strokeWidth={1.5} />
+                        <path d={`M ${xScale(100)} 0 h 0 V ${dms.innerHeight} h 0`} fill="none" stroke="#aaa" strokeWidth={1.5} />
 
 
                         {filteredData.map((row, i) =>
@@ -117,6 +120,8 @@ const EmploymentBarChart = () => {
                                     width={xScale(xAccessor(row))}
                                     height={yScale.bandwidth()}
                                     style={{ ...transitionStyle, fill: getFill(row) }} />
+                                {/* onMouseEnter={mouseEnterBar}
+                                    onMouseLeave={mouseLeaveBar} /> */}
 
                                 <text x={0} y={yScale(row.Branche_Label) + yScale.bandwidth() / 4} style={{ ...transitionStyle, fontSize: "11px", transform: `translateX(${xScale(row.Beschaeftigte) + 8}px)` }} >{row.Beschaeftigte} %</text>
 
@@ -139,7 +144,7 @@ const EmploymentBarChart = () => {
 
 
                         {/* Tooltip */}
-                        <g className="tooltip" ref={tooltipRef} style={{ display: showTooltip ? "block" : "none", transition: "all 0.05s ease-in-out 0s" }}>
+                        <g className="tooltip" ref={tooltipRef} style={{ opacity: showTooltip ? 1 : 0, transition: "all 0.15s ease-in-out 0s" }}>
                             <rect width="180" height="80" fill="#ffffff" stroke="#bbb" strokeWidth="1" filter="drop-shadow( 0px 0px 1px rgba(0, 0, 0, 0.2))" rx="5" ry="5" style={{ backdropFilter: "blur(10px)" }} />
                             <text x={10} y={20} style={{ fontSize: "0.7rem", fontWeight: "bold" }}>
                                 {hoveredBar}

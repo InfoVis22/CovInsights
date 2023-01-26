@@ -1,4 +1,4 @@
-﻿Jahr;Monat;Branche_Code;Branche_Lable;Ins_opened;Ins_rejected;Insolvenzen;Ins_total(t-1);Delta(t-1);Arbeitnehmer;Forderungen;InsolvenzenVeraenderung
+﻿Jahr;Monat;Branche_Code;Branche_Label;Ins_opened;Ins_rejected;Insolvenzen;Ins_total(t-1);Delta(t-1);Arbeitnehmer;Forderungen;InsolvenzenVeraenderung
 2022;8;WZ08-55;Beherbergung;4;1;5;4;25;75;2.1;-0.6132
 2022;8;WZ08-551;Hotels;3;1;4;4;0;75;2.1;-0.6273
 2022;8;WZ08-56;Gastronomie;59;24;83;92;-9.8;262;9.8;-0.4851
