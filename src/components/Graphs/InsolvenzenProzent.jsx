@@ -80,16 +80,19 @@ const InsolvenzenProzent = () => {
         console.log(row)
 
         //set the position of the tooltip
-        const tooltipX = xScale(row.Branche_Label) + 40
-        const tooltipY = y - 20
+        const tooltipX = x + 130
+        const tooltipY = y + 70
 
         console.log("Tooltip: ", tooltipX, tooltipY)
 
         //tooltipRef.current.style.transform = `translate(${mousePosition[0] + 10}px, ${mousePosition[1] + 10}px)`
-        tooltipRef.current.style.transform = `translate(${tooltipX}px, ${tooltipY}px)`
+        //tooltipRef.current.style.transform = `translate(${tooltipX}px, ${tooltipY}px)`
+
+        tooltipRef.current.style.top = tooltipY + "px"
+        tooltipRef.current.style.left = tooltipX + "px"
     }
 
-    const mouseLeaveEvent = (e) => {
+    const mouseLeaveEvent = () => {
         setShowTooltip(false)
     }
 
@@ -151,7 +154,7 @@ const InsolvenzenProzent = () => {
 
 
                         {/* Tooltip */}
-                        <g className="tooltip" ref={tooltipRef} style={{ opacity: showTooltip ? "1" : "0", transition: "all 0.15s ease-in-out 0s" }}>
+                        {/* <g className="tooltip" ref={tooltipRef} style={{ opacity: showTooltip ? "1" : "0", transition: "all 0.15s ease-in-out 0s" }}>
                             <rect width="180" height="80" fill="#ffffff" stroke="#bbb" strokeWidth="1" filter="drop-shadow( 0px 0px 1px rgba(0, 0, 0, 0.2))" rx="5" ry="5" style={{ backdropFilter: "blur(10px)" }} />
                             <text x={10} y={20} style={{ fontSize: "0.8rem", fontWeight: "900" }}>
                                 {hoveredBar?.Branche_Label}
@@ -161,7 +164,7 @@ const InsolvenzenProzent = () => {
                                 <tspan x="10" dy="1.2em">Insolvenzen: {hoveredBar?.Insolvenzen}%</tspan>
                                 <tspan x="10" dy="1.2em">Davon abgewiesen: {hoveredBar?.Ins_rejected}</tspan>
                             </text>
-                        </g>
+                        </g> */}
 
                     </g>
                 </svg>
@@ -175,6 +178,13 @@ const InsolvenzenProzent = () => {
                 setSelected={setSelectedBranchen}
             />
 
+
+            <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0", display: showTooltip ? "inline-block" : "none" }}>
+                <h3>{hoveredBar?.Branche_Label}</h3>
+                <p>Veränderung zu 2015: {Math.round((hoveredBar?.InsolvenzenVeraenderung + Number.EPSILON) * 100) / 100}%</p>
+                <p>Insolvenzen: {hoveredBar?.Insolvenzen}</p>
+                <p>Davon abgewiesen: {hoveredBar?.Ins_rejected}</p>
+            </div>
 
         </>
     )

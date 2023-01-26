@@ -46,7 +46,7 @@
     }
 }
 
-.loading-div{
+.loading-div {
     height: 100vh;
     width: 100%;
     position: absolute;
@@ -54,12 +54,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     .lds-dual-ring {
         display: inline-block;
         width: 80px;
         height: 80px;
-      }
-      .lds-dual-ring:after {
+    }
+
+    .lds-dual-ring:after {
         content: " ";
         display: block;
         width: 64px;
@@ -69,15 +71,17 @@
         border: 10px solid #31688e;
         border-color: #31688e transparent #31688e transparent;
         animation: lds-dual-ring 1.2s linear infinite;
-      }
-      @keyframes lds-dual-ring {
+    }
+
+    @keyframes lds-dual-ring {
         0% {
-          transform: rotate(0deg);
+            transform: rotate(0deg);
         }
+
         100% {
-          transform: rotate(360deg);
+            transform: rotate(360deg);
         }
-      }
+    }
 }
 
 .tooltip {
@@ -85,8 +89,12 @@
     background-color: #ffffffc0;
     padding: 10px;
     border-radius: 5px;
+    border: #00000029 solid 0.5px;
+    transition: "all 0.15s ease-in-out 0s";
+    backdrop-filter: blur(2px);
 
     h3 {
+        font-size: 1rem;
         font-weight: 800;
     }
 
@@ -94,6 +102,7 @@
         font-size: 0.8rem;
     }
 }
+
 .InfoButtonGraph {
     position: absolute;
     top: 20px;
