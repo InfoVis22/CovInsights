@@ -7,8 +7,9 @@ import Line from "../D3Elements/Line"
 import Legend from "../D3Elements/Legend.jsx";
 import { categories } from "../../settings.js"
 import * as d3 from 'd3'
-import {Button, Popover, Text} from "@nextui-org/react";
-import {AiOutlineInfoCircle} from "react-icons/ai";
+import { Button, Popover, Text } from "@nextui-org/react";
+import { AiOutlineInfoCircle } from "react-icons/ai";
+import moment from "moment"
 
 
 //set margins of Graph
@@ -106,7 +107,7 @@ const KurzarbeitGraph = () => {
     return (
         <>
             <div className="Graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
-                <svg width={dms.width} height={dms.height} ref={svgRef}>
+                <svg width="100%" height={dms.height} ref={svgRef}>
                     <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
                         <XAxisTime
@@ -120,7 +121,7 @@ const KurzarbeitGraph = () => {
                             domain={yScale.domain()}
                             range={yScale.range()}
                             labelSuffix=" T"
-                            >
+                        >
                         </YAxisLinear>
 
                         {/* Line Graph for Gastronomie */}
@@ -142,9 +143,12 @@ const KurzarbeitGraph = () => {
                         />
 
 
-
                         {/* selected grey rectangle */}
-                        <rect x={xScale(selectedDate)-12} style={{ width: "20px", fill: '#B8B8B87f', height: dms.innerHeight }} />
+                        <rect
+                            x={xScale(moment(selectedDate).startOf('month').toDate())}
+                            style={{ width: (xScale(moment(selectedDate).endOf('month').toDate()) - xScale(moment(selectedDate).startOf('month').toDate())) + "px", fill: '#B8B8B87f', height: dms.innerHeight, transition: "all 0.25s ease-in-out" }}
+                        />
+
 
                         {showTooltipsTime && <>
                             {/* hover dotted line */}
@@ -178,7 +182,7 @@ const KurzarbeitGraph = () => {
             <div className="InfoButtonGraph">
                 <Popover isBordered disableShadow>
                     <Popover.Trigger>
-                        <Button auto flat color="white"  size = "xxs"><AiOutlineInfoCircle /></Button>
+                        <Button auto flat color="white" size="xxs"><AiOutlineInfoCircle /></Button>
                     </Popover.Trigger>
                     <Popover.Content>
                         <Text css={{ p: "$8" }}>Kurzarbeit in absoluten Zahlen (in Tsd Mitarbeiter) unterteilt in Gastronomie und Beherbergung</Text>

@@ -1,14 +1,32 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
 
-//create empty context
-const Context = createContext({});
+//define interface for AppContext
+interface IAppContext {
+    employmentData: null;
+    setEmploymentData: React.Dispatch<React.SetStateAction<null>>;
+    coronaData: null;
+    setCoronaData: React.Dispatch<React.SetStateAction<null>>;
+    hoveredTime: Date;
+    setHoveredTime: React.Dispatch<React.SetStateAction<Date>>;
+    timeFrame: { min: Date; max: Date; };
+    setTimeFrame: React.Dispatch<React.SetStateAction<{ min: Date; max: Date; }>>;
+    showTooltipsTime: boolean;
+    setShowTooltipsTime: React.Dispatch<React.SetStateAction<boolean>>;
+    selectedDate: Date;
+    setSelectedDate: React.Dispatch<React.SetStateAction<Date>>;
+    umsatzData: null;
+    setUmsatzData: React.Dispatch<React.SetStateAction<null>>;
+    InsolvencyBarData: null;
+    setInsolvencyBarData: React.Dispatch<React.SetStateAction<null>>;
+}
+
+//create Context
+const Context = createContext<IAppContext>({} as IAppContext);
 
 //hook that makes Context usable from everywhere in the app
 export const useAppContext = () => useContext(Context);
 
-export const AppContext = ({ children }) => {
-
-    const [currentUser, setCurrentUser] = useState(null);
+export const AppContext = ({ children }: { children: ReactNode }) => {
 
     const [employmentData, setEmploymentData] = useState(null);
     const [umsatzData, setUmsatzData] = useState(null);
@@ -20,16 +38,16 @@ export const AppContext = ({ children }) => {
     const [showTooltipsTime, setShowTooltipsTime] = useState(false);
     const [selectedDate, setSelectedDate] = useState(new Date("2018-01-01"))
     const [kurzarbeitData, setKurzarbeitData] = useState(null)
+    const [verticalLayout, setVerticalLayout] = useState(false)
 
 
     //custom functions to ensure that all data is in the timeFrame range
-    const setInsolvenzData = (data) => {
+    const setInsolvenzData = (data: []) => {
         const filtered = data.filter(d => d.Date >= timeFrame.min && d.Date <= timeFrame.max)
         setInsolvenzDataFiltered(filtered)
     }
 
     const AppValues = {
-        currentUser, setCurrentUser,
         employmentData, setEmploymentData,
         coronaData, setCoronaData,
         insolvenzData, setInsolvenzData,
@@ -40,6 +58,7 @@ export const AppContext = ({ children }) => {
         selectedDate, setSelectedDate,
         InsolvencyBarData, setInsolvencyBarData,
         kurzarbeitData, setKurzarbeitData,
+        verticalLayout, setVerticalLayout
     }
 
     return (

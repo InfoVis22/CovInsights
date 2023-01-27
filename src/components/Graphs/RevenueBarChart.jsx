@@ -69,31 +69,25 @@ const RevenueBarChart = () => {
 
 
     //mouse events
-    const mouseEnterEvent = (e) => {
+    const mouseEnterEvent = (e, row) => {
         setShowTooltip(true)
+        setHoveredBar(row)
+        console.log(row)
     }
 
     const mouseMoveEvent = (e) => {
         //get x and y position relative to hovered event element
-        const mousePosition = d3.pointer(e)
-
-        //calculate index if scale by dividing the mouse position by the height of each band
-        const eachBand = yScale.step();
-        const index = Math.max(yScale.domain().length - 1 - Math.floor((mousePosition[1] / eachBand)), 0)
-
-        //set the hovered bar to the string e.g. Ferienunterkunft
-        const hoveredDomain = yScale.domain()[index]
-        setHoveredBar(hoveredDomain)
+        const [x, y] = d3.pointer(e)
 
         //set the position of the tooltip
-        const tooltipX = xScale(filteredData.find(d => d.Branche_Label === hoveredBar)?.Umsatz) + 6
-        const tooltipY = yScale(hoveredDomain) - 25 //25: half width of tooltip
+        const tooltipX = x + 130
+        const tooltipY = y + 70
 
-        //tooltipRef.current.style.transform = `translate(${mousePosition[0] + 10}px, ${mousePosition[1] + 10}px)`
-        tooltipRef.current.style.transform = `translate(${tooltipX}px, ${tooltipY}px)`
+        tooltipRef.current.style.top = tooltipY + "px"
+        tooltipRef.current.style.left = tooltipX + "px"
     }
 
-    const mouseLeaveEvent = (e) => {
+    const mouseLeaveEvent = () => {
         setShowTooltip(false)
     }
 
@@ -105,7 +99,7 @@ const RevenueBarChart = () => {
     return (
         <>
             <div className="graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
-                <svg width={dms.width} height={dms.height}>
+                <svg width="100%" height={dms.height}>
                     <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
                         <XAxisLinear
@@ -124,7 +118,11 @@ const RevenueBarChart = () => {
                         </YAxisNominal>
 
                         {filteredData.map((row, i) =>
-                            <g key={i}>
+                            <g key={i}
+                                onMouseEnter={(e) => mouseEnterEvent(e, row)}
+                                onMouseMove={(e) => mouseMoveEvent(e, row)}
+                                onMouseLeave={(e) => mouseLeaveEvent(e)}
+                            >
                                 <rect className="bar"
                                     key={i}
                                     x={0}
@@ -137,28 +135,6 @@ const RevenueBarChart = () => {
                             </g>
 
                         )}
-
-
-                        {/* Tooltip */}
-                        <g className="tooltip" ref={tooltipRef} style={{ display: showTooltip ? "block" : "none", transition: "all 0.1s ease-in-out 0s" }}>
-                            <rect width="150" height="45" fill="#ffffff" stroke="#bbb" filter="drop-shadow( 0px 0px 1px rgba(0, 0, 0, 0.2))" strokeWidth="1" rx="5" ry="5" />
-                            <text x={10} y={20} style={{ fontSize: "0.7rem", fontWeight: "bold" }}>
-                                {hoveredBar}
-                            </text>
-                            <text x={10} y={34} style={{ fontSize: "0.7rem" }}>
-                                Umsatz: {filteredData.find(d => d.Branche_Label === hoveredBar)?.Umsatz} M€
-                            </text>
-                        </g>
-
-
-                        {/* actionListener rect over graph area*/}
-                        <rect className="actionListener" width={dms.innerWidth} height={dms.innerHeight}
-                            fill='transparent'
-                            onMouseEnter={mouseEnterEvent}
-                            onMouseMove={mouseMoveEvent}
-                            onMouseLeave={mouseLeaveEvent}
-                        />
-
                     </g>
                 </svg>
             </div >
@@ -169,6 +145,14 @@ const RevenueBarChart = () => {
                 selected={selectedBranchen}
                 setSelected={setSelectedBranchen}
             />
+
+
+            <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0" }}>
+                <h3>{hoveredBar?.Branche_Label}</h3>
+                <p>Umsatz: {hoveredBar?.Umsatz}%</p>
+                <p>Insolvenzen: {hoveredBar?.Insolvenzen}</p>
+                <p>Davon abgewiesen: {hoveredBar?.Ins_rejected}</p>
+            </div>
         </>
     )
 }

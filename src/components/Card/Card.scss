@@ -5,16 +5,13 @@
 //SCSS
 
 .Card {
+    flex: 1;
+
     position: relative;
-    width: 100%;
     background-color: $white;
     padding: 1rem;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.171);
     border-radius: $borderradius;
-
-    @media(max-width: $tablet) {
-        padding: 1rem 1rem;
-    }
 
     .Heading {
         h2 {}
@@ -37,10 +34,12 @@
     color: $grey;
     margin-top: -3px;
     cursor: pointer;
+
     .nextui-button {
         background-color: white;
         padding: 0px;
-        .nextui-button-text{
+
+        .nextui-button-text {
             font-size: 18px;
         }
     }

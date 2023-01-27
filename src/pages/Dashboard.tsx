@@ -7,9 +7,9 @@ import { useEffect, useState } from 'react'
 import moment from 'moment'
 
 //Barcharts
-import InsolvenciesBarChart from "../components/Graphs/InsolvenciesBarChart";
-import EmploymentBarChart from '../components/Graphs/EmploymentBarChart'
 import RevenueBarChart from '../components/Graphs/RevenueBarChart'
+import EmploymentBarChart from '../components/Graphs/EmploymentBarChart'
+import InsolvenzenProzent from '../components/Graphs/InsolvenzenProzent'
 
 //Timeline
 import InsolvenzenGraph from '../components/Graphs/InsolvenzenGraph'
@@ -18,13 +18,12 @@ import KurzarbeitGraph from '../components/Graphs/KurzarbeitGraph'
 
 //Controls
 import DateControls from '../components/DateControls/DateControls'
-import InsolvenzenProzent from '../components/Graphs/InsolvenzenProzent'
 
 
 const Dashboard = () => {
 
     //---- define AppContext ----
-    const { setEmploymentData, setInsolvencyBarData, setCoronaData, setTimeFrame, setUmsatzData, selectedDate, kurzarbeitData, setKurzarbeitData } = useAppContext()
+    const { setEmploymentData, setInsolvencyBarData, setCoronaData, setKurzarbeitData, setTimeFrame, setUmsatzData, selectedDate, verticalLayout, } = useAppContext()
 
     //---- Dashboard State ----
     const [isLoadingData, setIsLoadingData] = useState(true)
@@ -101,8 +100,8 @@ const Dashboard = () => {
     if (isLoadingData) return <div className='loading-div'><div className="lds-dual-ring"></div></div>
 
     return (
-        <div className="Page Home">
-            <div className="Top">
+        <div className={"Page dashboard " + (verticalLayout && "vertical")}>
+            <div className={"BarCards " + (verticalLayout && "vertical")}>
                 <Card
                     title="Umsatz im Gastgewerbe"
                     description="Umsatz im Gastgewerbe in Millionen Euro unterteilt in Beherbergung und Gastronomie"
@@ -120,22 +119,24 @@ const Dashboard = () => {
                     <InsolvenzenProzent />
                 </Card>
             </div>
-            <div className="Middle">
+
+            <div className={"GraphCards " + (verticalLayout && "vertical")}>
+
                 <Timeline title="Coronainfektionen in Deutschland" subtitle="als 7-Tage-Inzidenz je 100.000 Einwohner">
                     <CoronaGraph />
+                    <DateControls />
                 </Timeline>
-                <DateControls />
-            </div>
-            <div className="Bottom-Bottom">
+
                 <Timeline title="Kurzarbeit im Gastgewerbe" subtitle="in Tausend Mitarbeiter">
                     <KurzarbeitGraph />
                 </Timeline>
-            </div>
-            <div className="Bottom">
+
                 <Timeline title="Insolvenzen im Gastgewerbe" subtitle="in Anzahl der eingereichten? Insolvenzen">
                     <InsolvenzenGraph />
                 </Timeline>
+
             </div>
+
 
         </div>
     )

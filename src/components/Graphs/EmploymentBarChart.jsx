@@ -83,11 +83,6 @@ const EmploymentBarChart = () => {
         const tooltipX = x + 130
         const tooltipY = y + 70
 
-        console.log("Tooltip: ", tooltipX, tooltipY)
-
-        //tooltipRef.current.style.transform = `translate(${mousePosition[0] + 10}px, ${mousePosition[1] + 10}px)`
-        //tooltipRef.current.style.transform = `translate(${tooltipX}px, ${tooltipY}px)`
-
         tooltipRef.current.style.top = tooltipY + "px"
         tooltipRef.current.style.left = tooltipX + "px"
     }
@@ -104,7 +99,7 @@ const EmploymentBarChart = () => {
     return (
         <>
             <div className="graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
-                <svg width={dms.width} height={dms.height} >
+                <svg width="100%" height={dms.height} >
                     <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
                         <path d={`M ${xScale(100)} 0 h 0 V ${dms.innerHeight} h 0`} fill="none" stroke="#aaa" strokeWidth={1.5} />
@@ -141,29 +136,6 @@ const EmploymentBarChart = () => {
                             range={yScale.range()}>
                         </YAxisNominal>
 
-
-
-                        {/* Tooltip */}
-                        {/* <g className="tooltip" ref={tooltipRef} style={{ opacity: showTooltip ? 1 : 0, transition: "all 0.15s ease-in-out 0s" }}>
-                            <rect width="180" height="80" fill="#ffffff" stroke="#bbb" strokeWidth="1" filter="drop-shadow( 0px 0px 1px rgba(0, 0, 0, 0.2))" rx="5" ry="5" style={{ backdropFilter: "blur(10px)" }} />
-                            <text x={10} y={20} style={{ fontSize: "0.7rem", fontWeight: "bold" }}>
-                                {hoveredBar}
-                            </text>
-                            <text x={10} y={20} style={{ fontSize: "0.7rem" }}>
-                                <tspan x="10" dy="1.2em">Beschäftigte: {filteredData.find(d => d.Branche_Label === hoveredBar)?.Beschaeftigte}%</tspan>
-                                <tspan x="10" dy="1.2em">Vollzeitbeschäftigte: {filteredData.find(d => d.Branche_Label === hoveredBar)?.Vollzeitbeschaeftigte}%</tspan>
-                                <tspan x="10" dy="1.2em">Teilzeitbeschaeftigte: {filteredData.find(d => d.Branche_Label === hoveredBar)?.Teilzeitbeschaeftigte}%</tspan>
-                            </text>
-                        </g> */}
-
-                        {/* actionListener rect over graph area*/}
-                        {/* <rect className="actionListener" width={dms.innerWidth} height={dms.innerHeight}
-                            fill='transparent'
-                            onMouseEnter={mouseEnterEvent}
-                            onMouseMove={mouseMoveEvent}
-                            onMouseLeave={mouseLeaveEvent}
-                        /> */}
-
                     </g>
                 </svg>
             </div >
@@ -175,7 +147,7 @@ const EmploymentBarChart = () => {
 
 
 
-            <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0", display: showTooltip ? "inline-block" : "none" }}>
+            <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0" }}>
                 <h3>{hoveredBar?.Branche_Label}</h3>
                 <p>Beschäftigte zu 2015: {hoveredBar?.Beschaeftigte}%</p>
                 <p>Vollzeitbeschäftigte: {hoveredBar?.Vollzeitbeschaeftigte}%</p>

@@ -3,47 +3,44 @@
 @import '../Variables.scss';
 
 //SCSS
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 
-.Home {
-    .Top {
+    &.vertical {
+        flex-direction: row;
+    }
+
+
+    .BarCards {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        flex-wrap: wrap;
         gap: 2rem;
 
-        @media(max-width: $mobile) {
+
+        &.vertical {
+            flex-grow: 1;
             flex-direction: column;
         }
     }
 
-    .Middle {
-        margin-top: 2rem;
-        position: relative;
 
-    }
+    .GraphCards {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 2rem;
 
-    .Bottom {
-        margin-top: 2rem;
-        position: relative;
-    }
-
-    .Bottom-Bottom {
-        margin-top: 2rem;
-        position: relative;
-    }
-
-    .Debug {
-        margin-top: 1rem;
-        display: none;
-
-        &.visible {
-            display: block;
-        }
-
-        p {
-            margin-top: 1rem;
+        &.vertical {
+            flex-grow: 7;
+            flex-direction: column;
         }
     }
+
+
+
 }
 
 .loading-div {
@@ -87,10 +84,10 @@
 .tooltip {
     position: absolute;
     background-color: #ffffffc0;
-    padding: 10px;
+    padding: 5px 10px 10px 10px;
     border-radius: 5px;
     border: #00000029 solid 0.5px;
-    transition: "all 0.15s ease-in-out 0s";
+    transition: opacity 0.2s ease-in-out 0s;
     backdrop-filter: blur(2px);
 
     h3 {

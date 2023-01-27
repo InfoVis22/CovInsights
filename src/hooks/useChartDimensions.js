@@ -22,6 +22,7 @@ const useChartDimensions = (passedSettings) => {
         //rerender graph if size of container changes
         const resizeObserver = new ResizeObserver(
             entries => {
+                console.log("CHANGE")
                 if (!Array.isArray(entries)) return
                 if (!entries.length) return
                 const entry = entries[0]
