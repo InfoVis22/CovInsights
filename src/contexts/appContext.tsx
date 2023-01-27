@@ -1,9 +1,10 @@
 import { createContext, ReactNode, useContext, useState } from "react";
+import { IEmploymentData } from "../index";
 
 //define interface for AppContext
 interface IAppContext {
-    employmentData: null;
-    setEmploymentData: React.Dispatch<React.SetStateAction<null>>;
+    employmentData: IEmploymentData;
+    setEmploymentData: React.Dispatch<React.SetStateAction<IEmploymentData>>;
     coronaData: null;
     setCoronaData: React.Dispatch<React.SetStateAction<null>>;
     hoveredTime: Date;
@@ -28,7 +29,7 @@ export const useAppContext = () => useContext(Context);
 
 export const AppContext = ({ children }: { children: ReactNode }) => {
 
-    const [employmentData, setEmploymentData] = useState(null);
+    const [employmentData, setEmploymentData] = useState(null as IEmploymentData);
     const [umsatzData, setUmsatzData] = useState(null);
     const [InsolvencyBarData, setInsolvencyBarData] = useState(null);
     const [insolvenzData, setInsolvenzDataFiltered] = useState(null);

@@ -34,6 +34,7 @@ const RevenueBarChart = () => {
     //to select and deselect Sectors
     const legendItems = [{ name: "Beherbergung", code: "WZ08-55", color: categories.Beherbergung.color }, { name: "Gastronomie", code: "WZ08-56", color: categories.Gastronomie.color }]
     const [selectedBranchen, setSelectedBranchen] = useState(legendItems)
+    const [hoveredBranche, setHoveredBranche] = useState(null)
 
     //refs
     const tooltipRef = useRef();
@@ -44,9 +45,6 @@ const RevenueBarChart = () => {
         const filteredData = umsatzData.filter((row) => (
             (row.Jahr + "-" + row.Monat) === yearMonthTime &&
             selectedBranchen.find(b => row.Branche_Code.includes(b.code))))
-
-        //to filter out not selected
-        //&& selectedBranchen.find(b => row.Branche_Code.includes(b.code))
 
         setFilteredData(filteredData)
     }, [selectedDate.getMonth(), selectedBranchen])
@@ -94,7 +92,11 @@ const RevenueBarChart = () => {
     //helper functions & constants
     const getFill = (row) => selectedBranchen.find(b => row.Branche_Code.includes(b.code)) ? selectedBranchen.find(b => row.Branche_Code.includes(b.code)).color : "#909090"
     const transitionStyle = { transition: "all 1s ease-in-out 0s" }
-
+    const calculateOpacity = (branchenCode) => {
+        if (!selectedBranchen.find(b => branchenCode.includes(b.code))) return 0
+        if (hoveredBranche && !branchenCode.includes(hoveredBranche.code) && selectedBranchen.find(b => hoveredBranche.code.includes(b.code))) return 0.2
+        return 1
+    }
 
     return (
         <>
@@ -122,6 +124,7 @@ const RevenueBarChart = () => {
                                 onMouseEnter={(e) => mouseEnterEvent(e, row)}
                                 onMouseMove={(e) => mouseMoveEvent(e, row)}
                                 onMouseLeave={(e) => mouseLeaveEvent(e)}
+                                style={{ opacity: calculateOpacity(row.Branche_Code), transition: "opacity 0.2s ease-in-out 0s" }}
                             >
                                 <rect className="bar"
                                     key={i}
@@ -144,6 +147,8 @@ const RevenueBarChart = () => {
                 legendItems={legendItems}
                 selected={selectedBranchen}
                 setSelected={setSelectedBranchen}
+                hovered={hoveredBranche}
+                setHovered={setHoveredBranche}
             />
 
 

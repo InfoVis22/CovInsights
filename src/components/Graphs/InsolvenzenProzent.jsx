@@ -30,6 +30,7 @@ const InsolvenzenProzent = () => {
     //to select and deselect Sectors
     const legendItems = [{ name: "Beherbergung", code: "WZ08-55", color: categories.Beherbergung.color }, { name: "Restaurants & Cafes", code: "WZ08-561", color: categories.Gastronomie.subCategories.Restaurant }, { name: "Caterer", code: "WZ08-562", color: categories.Gastronomie.subCategories.Caterer }, { name: "Bars & Clubs", code: "WZ08-563", color: categories.Gastronomie.subCategories.Bars }]
     const [selectedBranchen, setSelectedBranchen] = useState(legendItems)
+    const [hoveredBranche, setHoveredBranche] = useState(null)
 
     //refs
     const tooltipRef = useRef();
@@ -61,10 +62,6 @@ const InsolvenzenProzent = () => {
 
     const ticks = xScale.domain().map(value => ({ value, xOffset: xScale(value) }))
 
-    //helper functions & constants
-    const getFill = (row) => selectedBranchen.find(b => row.Branche_Code.includes(b.code)) ? selectedBranchen.find(b => row.Branche_Code.includes(b.code)).color : "#909090"
-    const transitionStyle = { transition: "all 0.5s ease-in-out 0s" }
-
 
     const mouseEnterEvent = (e, row) => {
         setShowTooltip(true)
@@ -74,7 +71,6 @@ const InsolvenzenProzent = () => {
     const onMouseMove = (e, row) => {
         //get x and y position relative to hovered event element
         const [x, y] = d3.pointer(e)
-
 
         //set the position of the tooltip
         const tooltipX = x + 80
@@ -86,6 +82,15 @@ const InsolvenzenProzent = () => {
 
     const mouseLeaveEvent = () => {
         setShowTooltip(false)
+    }
+
+    //helper functions & constants
+    const getFill = (row) => selectedBranchen.find(b => row.Branche_Code.includes(b.code)) ? selectedBranchen.find(b => row.Branche_Code.includes(b.code)).color : "#909090"
+    const transitionStyle = { transition: "all 0.5s ease-in-out 0s" }
+    const calculateOpacity = (branchenCode) => {
+        if (!selectedBranchen.find(b => branchenCode.includes(b.code))) return 0
+        if (hoveredBranche && !branchenCode.includes(hoveredBranche.code) && selectedBranchen.find(b => hoveredBranche.code.includes(b.code))) return 0.2
+        return 1
     }
 
     return (
@@ -123,7 +128,9 @@ const InsolvenzenProzent = () => {
                             <g key={i}
                                 onMouseEnter={(e) => mouseEnterEvent(e, row)}
                                 onMouseMove={(e) => onMouseMove(e, row)}
-                                onMouseLeave={(e) => mouseLeaveEvent(e)}>
+                                onMouseLeave={(e) => mouseLeaveEvent(e)}
+                                style={{ opacity: calculateOpacity(row.Branche_Code), transition: "opacity 0.2s ease-in-out 0s" }}
+                            >
 
                                 <rect className="bar"
                                     key={i}
@@ -155,6 +162,8 @@ const InsolvenzenProzent = () => {
                 legendItems={legendItems}
                 selected={selectedBranchen}
                 setSelected={setSelectedBranchen}
+                hovered={hoveredBranche}
+                setHovered={setHoveredBranche}
             />
 
 

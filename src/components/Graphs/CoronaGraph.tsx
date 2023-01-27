@@ -7,8 +7,9 @@ import YAxisLinear from "../D3Elements/YAxisLinear"
 import Line from "../D3Elements/Line"
 import { Button, Popover, Text } from "@nextui-org/react";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { categories } from "../../settings.js";
 import moment from "moment"
-import { transition } from "d3"
+import Legend from "../D3Elements/Legend.jsx";
 
 //set margins of Graph
 const chartSettings = {
@@ -146,7 +147,6 @@ const CoronaGraph = () => {
     return (
         <>
             <div className="Graph" ref={wrapperRef} style={{ height: chartSettings.height }}>
-
                 <svg width="100%" height={dms.height} ref={svgRef}>
                     <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
 
@@ -214,6 +214,7 @@ const CoronaGraph = () => {
                     </g>
                 </svg>
             </div >
+
             <div className="CoronaGraphInfo">
                 <Popover isBordered disableShadow>
                     <Popover.Trigger>
@@ -224,6 +225,8 @@ const CoronaGraph = () => {
                     </Popover.Content>
                 </Popover>
             </div>
+
+
         </>
     )
 }

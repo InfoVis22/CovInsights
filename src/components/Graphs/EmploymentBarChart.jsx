@@ -34,6 +34,7 @@ const EmploymentBarChart = () => {
     //to select and deselect Sectors
     const legendItems = [{ name: "Beherbergung", code: "WZ08-55", color: categories.Beherbergung.color }, { name: "Gastronomie", code: "WZ08-56", color: categories.Gastronomie.color }]
     const [selectedBranchen, setSelectedBranchen] = useState(legendItems)
+    const [hoveredBranche, setHoveredBranche] = useState(null)
 
     //refs
     const tooltipRef = useRef();
@@ -45,8 +46,8 @@ const EmploymentBarChart = () => {
     useEffect(() => {
         const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth() + 1].join("-")
         const filteredDataCreate = employmentData.filter((row) => (
-            (row.Jahr + "-" + row.Monat) === yearMonthTime &&
-            selectedBranchen.find(b => row.Branche_Code.includes(b.code))
+            (row.Jahr + "-" + row.Monat) === yearMonthTime
+            && selectedBranchen.find(b => row.Branche_Code.includes(b.code))
         ))
         setFilteredData(filteredDataCreate)
     }, [selectedDate.getMonth(), selectedBranchen])
@@ -62,7 +63,7 @@ const EmploymentBarChart = () => {
     //Y-Scale for graph
     const yScale = useMemo(() => (
         d3.scaleBand()
-            .domain(filteredData.map(d => d.Branche_Label))
+            .domain(filteredData.filter(row => selectedBranchen.find(b => row.Branche_Code.includes(b.code))).map(d => d.Branche_Label))
             .range([dms.innerHeight, 0])
             .padding(0.4)
 
@@ -95,6 +96,11 @@ const EmploymentBarChart = () => {
     //helper functions & constants
     const getFill = (row) => selectedBranchen.find(b => row.Branche_Code.includes(b.code)) ? selectedBranchen.find(b => row.Branche_Code.includes(b.code)).color : "#909090"
     const transitionStyle = { transition: "all 1s ease-in-out 0s" }
+    const calculateOpacity = (branchenCode) => {
+        if (!selectedBranchen.find(b => branchenCode.includes(b.code))) return 0
+        if (hoveredBranche && !branchenCode.includes(hoveredBranche.code) && selectedBranchen.find(b => hoveredBranche.code.includes(b.code))) return 0.2
+        return 1
+    }
 
     return (
         <>
@@ -104,9 +110,9 @@ const EmploymentBarChart = () => {
 
                         <path d={`M ${xScale(100)} 0 h 0 V ${dms.innerHeight} h 0`} fill="none" stroke="#aaa" strokeWidth={1.5} />
 
-
                         {filteredData.map((row, i) =>
-                            <g key={i}>
+                            <g key={i} style={{ opacity: calculateOpacity(row.Branche_Code), transition: "opacity 0.2s ease-in-out 0s" }}
+                            >
                                 <rect className="bar"
                                     x={0}
                                     y={yScale(row.Branche_Label) - yScale.bandwidth() / 2}
@@ -143,7 +149,10 @@ const EmploymentBarChart = () => {
                 vertical={false}
                 legendItems={legendItems}
                 selected={selectedBranchen}
-                setSelected={setSelectedBranchen} />
+                setSelected={setSelectedBranchen}
+                hovered={hoveredBranche}
+                setHovered={setHoveredBranche}
+            />
 
 
 

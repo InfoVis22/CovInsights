@@ -26,8 +26,8 @@ const YAxisNominal = ({ dms, domain = ["item1", "item2", "item3"], range = [0, 3
 
             {/* Generate Ticks */}
             {ticks.map(({ value, yOffset }) => (
-                <g key={value} transform={`translate(0, ${yOffset})`}> 
-                    <text key={value} style={{ fontSize: "11px", textAnchor: "end", transform: "translate(-5px, 0.32em)", fontWeight: "500" }}>
+                <g key={value} transform={`translate(-10, ${yOffset}) rotate(-45)`}>
+                    <text key={value} style={{ fontSize: "11px", textAnchor: "end", transform: "translate(0px, 0.32em)", fontWeight: "500" }}>
                         {value}
                     </text>
                 </g>
