@@ -20,8 +20,8 @@ const DateControls = () => {
         //if (count === 1835) clearInterval(timer)
     }
 
-    const handleSpacebar = (e) => {
-        if (e.keyCode === 32) {
+    const handleKeyPress = (e) => {
+        if (e.keyCode === 32 && e.ctrlKey) {
             setPlaying(old => !old)
         }
     }
@@ -49,11 +49,11 @@ const DateControls = () => {
 
     useEffect(() => {
         //add eventlistener to spacebar
-        document.addEventListener("keyup", handleSpacebar);
+        document.addEventListener("keydown", handleKeyPress);
         console.log("Adding eventHandler")
 
         return () => {
-            document.removeEventListener("keyup", handleSpacebar);
+            document.removeEventListener("keydown", handleKeyPress);
             console.log("Removing eventHandler")
         }
     }, [])

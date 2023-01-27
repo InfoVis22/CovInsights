@@ -1,19 +1,21 @@
 // IMPORTS
 import LogoImage from '../../images/Logo.png'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import './NavBar.scss'
 import { useAppContext } from '../../contexts/appContext'
 import { BsDistributeVertical } from 'react-icons/bs';
-import { AiFillSetting, AiOutlineSetting } from 'react-icons/ai';
+import { AiOutlineSetting } from 'react-icons/ai';
 import { useState } from 'react';
-import { Button, Input, Popover, Text } from '@nextui-org/react';
+import { Input, Popover } from '@nextui-org/react';
 
 
 function NavBar() {
 
-    const { verticalLayout, setVerticalLayout, } = useAppContext()
+    const { verticalLayout, setVerticalLayout, timeFrame, setTimeFrame } = useAppContext()
     const [activeSetting, setActiveSetting] = useState(false)
-    let location = useLocation();
+
+    const navigate = useNavigate();
+    const location = useLocation();
 
 
     return (
@@ -38,8 +40,11 @@ function NavBar() {
                             <Popover.Content>
                                 <div className='settingsPopover'>
                                     <h3>Settings</h3>
-                                    <Input type="date" label='Min Date' />
-                                    <Input type="date" label='Max Date' />
+                                    <Input type="date" label='Min Date' value={timeFrame.min} />
+                                    <Input type="date" label='Max Date' value={timeFrame.max} />
+
+                                    <h3 style={{ paddingTop: "10px" }}>Shortcuts</h3>
+                                    <p> CTRL + SPACE : Play / Pause</p>
                                 </div>
                             </Popover.Content>
                         </Popover>

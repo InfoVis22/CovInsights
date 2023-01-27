@@ -98,7 +98,7 @@ const CoronaGraph = () => {
         const newSubventionEvents = oldSubventionEvents.map((e, j) => {
             if (e.EventNameShort === event.EventNameShort) {
                 e.Display = e.EventName;
-            } else if (j % 2 == i % 2) {
+            } else {
                 e.Display = "";
             }
             return e;

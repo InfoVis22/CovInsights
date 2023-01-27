@@ -34,12 +34,15 @@ export const AppContext = ({ children }: { children: ReactNode }) => {
     const [InsolvencyBarData, setInsolvencyBarData] = useState(null);
     const [insolvenzData, setInsolvenzDataFiltered] = useState(null);
     const [coronaData, setCoronaData] = useState(null);
-    const [hoveredTime, setHoveredTime] = useState(new Date(2020, 5));
-    const [timeFrame, setTimeFrame] = useState({ min: new Date(2018, 0), max: new Date() });
-    const [showTooltipsTime, setShowTooltipsTime] = useState(false);
-    const [selectedDate, setSelectedDate] = useState(new Date("2018-01-01"))
     const [kurzarbeitData, setKurzarbeitData] = useState(null)
+
+    const [hoveredTime, setHoveredTime] = useState(new Date(2020, 5));
+    const [selectedDate, setSelectedDate] = useState(new Date("2018-01-01"))
+
+    const [showTooltipsTime, setShowTooltipsTime] = useState(false);
     const [verticalLayout, setVerticalLayout] = useState(false)
+
+    const [timeFrame, setTimeFrame] = useState({ min: new Date(2018, 0), max: new Date(2023, 0) });
 
 
     //custom functions to ensure that all data is in the timeFrame range
@@ -47,6 +50,8 @@ export const AppContext = ({ children }: { children: ReactNode }) => {
         const filtered = data.filter(d => d.Date >= timeFrame.min && d.Date <= timeFrame.max)
         setInsolvenzDataFiltered(filtered)
     }
+
+
 
     const AppValues = {
         employmentData, setEmploymentData,
