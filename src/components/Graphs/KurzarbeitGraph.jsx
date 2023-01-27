@@ -12,38 +12,46 @@ import { AiOutlineInfoCircle } from "react-icons/ai";
 import moment from "moment"
 
 
-//set margins of Graph
-const chartSettings = {
-    height: 150,
-    marginTop: 20,
-    marginRight: 30,
-    marginBottom: 30,
-    marginLeft: 45
-}
+
 
 const KurzarbeitGraph = () => {
+    //Context hook
+    const { kurzarbeitData, setShowTooltipsTime, hoveredTime, setHoveredTime, showTooltipsTime, selectedDate, setSelectedDate, verticalLayout } = useAppContext()
+
+    //set margins of Graph
+    const chartSettings = {
+        height: verticalLayout ? 250 : 150,
+        marginTop: 20,
+        marginRight: 30,
+        marginBottom: 30,
+        marginLeft: 45
+    }
 
     //hooks
     const svgRef = useRef()
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
-
-    //Context hook
-    const { kurzarbeitData, setShowTooltipsTime, hoveredTime, setHoveredTime, showTooltipsTime, selectedDate, setSelectedDate } = useAppContext()
 
     //Component State
     const [closestXValueBeherbergung, setClosestXValueBeherbergung] = useState(0)
     const [closestYValueBeherbergung, setClosestYValueBeherbergung] = useState(0)
     const [closestXValueGastronomie, setClosestXValueGastronomie] = useState(0)
     const [closestYValueGastronomie, setClosestYValueGastronomie] = useState(0)
+    const [kurzarbeitDataFiltered, setKurzarbeitDataFiltered] = useState([])
 
     //to select and deselect Sectors
-    const legendItems = [{ name: "Beherbergung", code: "WZ08-55", color: categories.Beherbergung.color }, { name: "Gastronomie", code: "WZ08-56", color: categories.Gastronomie.color }]
+    const legendItems = categories.filter(c => c.name === "Beherbergung" || c.name === "Gastronomie")
     const [selectedBranchen, setSelectedBranchen] = useState(legendItems)
     const [hoveredBranche, setHoveredBranche] = useState(null)
 
     //accessors
     const xAccessor = (d) => d.Date;
     const yAccessor = (d) => d.Kurzarbeiter;
+
+    useEffect(() => {
+        const filtered = kurzarbeitData.fil
+
+    }, [])
+
 
 
     //X-Scale for graph
@@ -135,27 +143,22 @@ const KurzarbeitGraph = () => {
                             dms={dms}
                             domain={yScale.domain()}
                             range={yScale.range()}
-                            labelSuffix=" T"
+                            labelSuffix="T"
                         >
                         </YAxisLinear>
 
-                        {/* Line for WZ08-55 – Beherbergung */}
-                        <path
-                            stroke={categories.Beherbergung.color}
-                            d={lineGenerator(kurzarbeitData.filter(row => row.Branche_Code === "WZ08-55"))}
-                            strokeWidth={2.5}
-                            fill="none"
-                            style={{ opacity: calculateOpacity("WZ08-55"), transition: "all 0.2s ease-in-out" }}
-                        />
 
-                        {/* Line Graph for WZ08-56 – Gastronomie */}
-                        <path
-                            stroke={categories.Gastronomie.color}
-                            strokeWidth={2.5}
-                            fill="none"
-                            d={lineGenerator(kurzarbeitData.filter(row => row.Branche_Code === "WZ08-56"))}
-                            style={{ opacity: calculateOpacity("WZ08-56"), transition: "all 0.2s ease-in-out" }}
-                        />
+                        {/* Line for WZ08-55 – Beherbergung and WZ08-56 – Gastronomie*/}
+                        {categories.map((category, i) =>
+                            <path
+                                key={i}
+                                stroke={category.color}
+                                d={lineGenerator(kurzarbeitData.filter(row => row.Branche_Code === category.code))}
+                                strokeWidth={2.5}
+                                fill="none"
+                                style={{ opacity: calculateOpacity(category.code), transition: "all 0.2s ease-in-out" }}
+                            />
+                        )}
 
 
                         {/* selected grey rectangle */}
@@ -171,11 +174,17 @@ const KurzarbeitGraph = () => {
                         </>}
 
 
+                        {selectedDate && <>
+                            {/* hover dotted line */}
+                            <rect x={xScale(selectedDate)} style={{ width: "0.8px", height: dms.innerHeight, fill: "#585858" }} />
+                        </>}
+
+
                         {/* selected Beherbergung circle*/}
-                        <circle cx={xScale(closestXValueBeherbergung)} cy={yScale(closestYValueBeherbergung)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1, transition: "all 0.2s ease-in-out" }} />
+                        {/* <circle cx={xScale(closestXValueBeherbergung)} cy={yScale(closestYValueBeherbergung)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1, transition: "all 0.2s ease-in-out" }} /> */}
 
                         {/* selected Gastronomie circle*/}
-                        <circle cx={xScale(closestXValueGastronomie)} cy={yScale(closestYValueGastronomie)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1, transition: "all 0.2s ease-in-out" }} />
+                        {/* <circle cx={xScale(closestXValueGastronomie)} cy={yScale(closestYValueGastronomie)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1, transition: "all 0.2s ease-in-out" }} /> */}
 
 
                         {/* actionListener rect over graph area*/}

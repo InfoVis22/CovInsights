@@ -32,7 +32,7 @@ const EmploymentBarChart = () => {
     const [hoveredBar, setHoveredBar] = useState(null)
 
     //to select and deselect Sectors
-    const legendItems = [{ name: "Beherbergung", code: "WZ08-55", color: categories.Beherbergung.color }, { name: "Gastronomie", code: "WZ08-56", color: categories.Gastronomie.color }]
+    const legendItems = categories.filter(c => c.name === "Beherbergung" || c.name === "Gastronomie")
     const [selectedBranchen, setSelectedBranchen] = useState(legendItems)
     const [hoveredBranche, setHoveredBranche] = useState(null)
 
@@ -94,7 +94,7 @@ const EmploymentBarChart = () => {
 
 
     //helper functions & constants
-    const getFill = (row) => selectedBranchen.find(b => row.Branche_Code.includes(b.code)) ? selectedBranchen.find(b => row.Branche_Code.includes(b.code)).color : "#909090"
+    const getFill = (row) => categories.find(c => row.Branche_Code.includes(c.code)).color
     const transitionStyle = { transition: "all 1s ease-in-out 0s" }
     const calculateOpacity = (branchenCode) => {
         if (!selectedBranchen.find(b => branchenCode.includes(b.code))) return 0

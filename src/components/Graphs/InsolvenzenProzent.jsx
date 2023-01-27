@@ -28,7 +28,8 @@ const InsolvenzenProzent = () => {
     const [showTooltip, setShowTooltip] = useState(false)
 
     //to select and deselect Sectors
-    const legendItems = [{ name: "Beherbergung", code: "WZ08-55", color: categories.Beherbergung.color }, { name: "Restaurants & Cafes", code: "WZ08-561", color: categories.Gastronomie.subCategories.Restaurant }, { name: "Caterer", code: "WZ08-562", color: categories.Gastronomie.subCategories.Caterer }, { name: "Bars & Clubs", code: "WZ08-563", color: categories.Gastronomie.subCategories.Bars }]
+    const legendItems = [...categories, ...categories.flatMap(c => c.subCategories)]
+        .filter(c => c.name === "Hotels" || c.name === "Restaurants & Cafes" || c.name === "Caterer" || c.name === "Bars & Clubs")
     const [selectedBranchen, setSelectedBranchen] = useState(legendItems)
     const [hoveredBranche, setHoveredBranche] = useState(null)
 
@@ -85,7 +86,7 @@ const InsolvenzenProzent = () => {
     }
 
     //helper functions & constants
-    const getFill = (row) => selectedBranchen.find(b => row.Branche_Code.includes(b.code)) ? selectedBranchen.find(b => row.Branche_Code.includes(b.code)).color : "#909090"
+    const getFill = (row) => selectedBranchen.find(b => row.Branche_Code.includes(b.code)) ? selectedBranchen.find(b => row.Branche_Code.includes(b.code)).color : "#0000"
     const transitionStyle = { transition: "all 0.5s ease-in-out 0s" }
     const calculateOpacity = (branchenCode) => {
         if (!selectedBranchen.find(b => branchenCode.includes(b.code))) return 0
@@ -142,7 +143,7 @@ const InsolvenzenProzent = () => {
                                         ...transitionStyle,
                                         fill: getFill(row),
                                         transform: (yScale(row.InsolvenzenVeraenderung) - yScale(0)) < 0 ? `translateY(${yScale(row.InsolvenzenVeraenderung) - yScale(0)}px)` : ""
-                                        //transform: `translateY(-58px)`
+                                       
                                     }}
                                 />
 

@@ -1,29 +1,28 @@
 import { useEffect, useMemo, useRef, useState } from "react"
+import { Button, Popover, Text } from "@nextui-org/react";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 import { useAppContext } from "../../contexts/appContext"
 import useChartDimensions from "../../hooks/useChartDimensions"
-import * as d3 from 'd3'
 import XAxisTime from "../D3Elements/XAxisTime"
 import YAxisLinear from "../D3Elements/YAxisLinear"
 import Line from "../D3Elements/Line"
-import { Button, Popover, Text } from "@nextui-org/react";
-import { AiOutlineInfoCircle } from "react-icons/ai";
-import { categories } from "../../settings.js";
 import moment from "moment"
-import Legend from "../D3Elements/Legend.jsx";
+import * as d3 from 'd3'
 
-//set margins of Graph
-const chartSettings = {
-    height: 150,
-    marginTop: 1,
-    marginRight: 30,
-    marginBottom: 57,
-    marginLeft: 45
-}
 
 const CoronaGraph = () => {
 
     //App context
-    const { setHoveredTime, hoveredTime, coronaData, showTooltipsTime, setShowTooltipsTime, selectedDate, setSelectedDate } = useAppContext()
+    const { setHoveredTime, hoveredTime, coronaData, showTooltipsTime, setShowTooltipsTime, selectedDate, setSelectedDate, verticalLayout } = useAppContext()
+
+    //set margins of Graph
+    const chartSettings = {
+        height: verticalLayout ? 250 : 150,
+        marginTop: 1,
+        marginRight: 30,
+        marginBottom: 57,
+        marginLeft: 45
+    }
 
     //Component State
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
@@ -177,8 +176,6 @@ const CoronaGraph = () => {
                             style={{ width: (xScale(moment(selectedDate).endOf('month').toDate()) - xScale(moment(selectedDate).startOf('month').toDate())) + "px", fill: '#B8B8B87f', height: dms.innerHeight, transition: "all 0.25s ease-in-out" }}
                         />
 
-                        {/* selected dot */}
-                        <circle cx={xScale(selectedDate) + 2} cy={yScale(closestYValueToSelected)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
 
 
                         {showTooltipsTime && <>
@@ -186,6 +183,13 @@ const CoronaGraph = () => {
                             <rect x={xScale(hoveredTime)} style={{ width: ".5px", height: dms.innerHeight, stroke: '#5c5c5c', strokeDasharray: '1 1', strokeWidth: "1px" }} />
                             {/* hover circle*/}
                             <circle cx={xScale(closestXValue)} cy={yScale(closestYValue)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
+                        </>}
+
+                        {selectedDate && <>
+                            {/* hover dotted line */}
+                            <rect x={xScale(selectedDate)} style={{ width: "0.8px", height: dms.innerHeight, fill: "#585858" }} />
+                            {/* selected dot */}
+                            <circle cx={xScale(selectedDate)} cy={yScale(closestYValueToSelected)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
                         </>}
 
 
@@ -205,6 +209,7 @@ const CoronaGraph = () => {
                                 onMouseLeave={() => { mouseLeaveCoronaEvent(event, i) }}
                             >
                                 <rect x={xScale(event.Date)} y={i % 2 === 0 ? 95 : 0} style={{ visibility: event.Display === "" ? "hidden" : "unset", width: ".5px", height: i % 2 === 0 ? 50 : 90, fill: "none", stroke: '#00000085', strokeDasharray: '1 1', strokeWidth: "1px" }} />
+
                                 <text x={xScale(event.Date) + 5} y={i % 2 === 0 ? dms.innerHeight + 50 : 15} style={{ fontSize: "0.8rem", fill: "#636060" }}
 
                                 >{event.Display}</text>

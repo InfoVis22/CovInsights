@@ -12,19 +12,21 @@ import { AiOutlineInfoCircle } from "react-icons/ai";
 import moment from "moment"
 
 
-//set margins of Graph
-const chartSettings = {
-    height: 150,
-    marginTop: 20,
-    marginRight: 30,
-    marginBottom: 30,
-    marginLeft: 45
-}
 
 const InsolvenzGraph = () => {
 
+    const { InsolvencyBarData, setShowTooltipsTime, hoveredTime, setHoveredTime, showTooltipsTime, selectedDate, setSelectedDate, verticalLayout } = useAppContext()
+
+    //set margins of Graph
+    const chartSettings = {
+        height: verticalLayout ? 250 : 150,
+        marginTop: 20,
+        marginRight: 30,
+        marginBottom: 30,
+        marginLeft: 45
+    }
+
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
-    const { InsolvencyBarData, setShowTooltipsTime, hoveredTime, setHoveredTime, showTooltipsTime, selectedDate, setSelectedDate } = useAppContext()
 
     const [closestXValueBeherbergung, setClosestXValueBeherbergung] = useState(0)
     const [closestYValueBeherbergung, setClosestYValueBeherbergung] = useState(0)
@@ -32,13 +34,10 @@ const InsolvenzGraph = () => {
     const [closestYValueGastronomie, setClosestYValueGastronomie] = useState(0)
 
     //to select and deselect Sectors
-    const legendItems = [
-        { name: "Beherbergung", code: "WZ08-55", color: categories.Beherbergung.color },
-        { name: "Gastronomie", code: "WZ08-56", color: categories.Gastronomie.color },
-        { name: "Restaurants & Cafes", code: categories.Gastronomie.subCategories.RestaurantsCafes.code, color: categories.Gastronomie.subCategories.RestaurantsCafes.color }
-    ]
-
-    const [selectedBranchen, setSelectedBranchen] = useState(legendItems)
+    //to select and deselect Sectors
+    const legendItems = [...categories, ...categories.flatMap(c => c.subCategories)]
+        .filter(c => c.name === "Beherbergung" || c.name === "Gastronomie" || c.name === "Hotels" || c.name === "Restaurants & Cafes" || c.name === "Caterer" || c.name === "Bars & Clubs")
+    const [selectedBranchen, setSelectedBranchen] = useState(legendItems.filter(c => c.name === "Beherbergung" || c.name === "Gastronomie"))
     const [hoveredBranche, setHoveredBranche] = useState(null)
 
     const svgRef = useRef()
@@ -55,7 +54,6 @@ const InsolvenzGraph = () => {
             .nice()
     ), [dms.innerWidth])
 
-
     //Y-Scale for graph
     const yScale = useMemo(() => (d3.scaleLinear()
         .domain([0, d3.max(InsolvencyBarData, (d) => yAccessor(d))])
@@ -64,7 +62,6 @@ const InsolvenzGraph = () => {
     ), [dms.innerWidth])
 
     const lineGenerator = d3.line(d => xScale(d.Date), d => yScale(d.Insolvenzen)).curve(d3.curveMonotoneX)
-
 
     const mouseEnterEvent = (e) => {
         setShowTooltipsTime(true)
@@ -86,8 +83,6 @@ const InsolvenzGraph = () => {
     const mouseLeaveEvent = (e) => {
         setHoveredTime(null)
         setShowTooltipsTime(false)
-
-        console.log("LEAVE COVV")
     }
 
     useMemo(() => {
@@ -111,6 +106,7 @@ const InsolvenzGraph = () => {
         setClosestXValueGastronomie(closestDataPointGastronomie.Date)
         setClosestYValueGastronomie(closestDataPointGastronomie.Insolvenzen)
     }, [selectedDate])
+
 
     const calculateOpacity = (branchenCode) => {
         if (!selectedBranchen.find(b => b.code === branchenCode)) return 0
@@ -137,51 +133,16 @@ const InsolvenzGraph = () => {
                             range={yScale.range()}>
                         </YAxisLinear>
 
+
                         {/* Line Graph for Gastronomie */}
-                        <path
-                            stroke={categories.Gastronomie.color}
+                        {legendItems.map((category, i) => <path key={i}
+                            stroke={category.color}
                             strokeWidth={2.5}
                             fill="none"
-                            d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-56"))}
-                            style={{ opacity: calculateOpacity("WZ08-56"), transition: "all 0.2s ease-in-out" }}
+                            d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === category.code))}
+                            style={{ opacity: calculateOpacity(category.code), transition: "all 0.2s ease-in-out" }}
                         />
-
-
-                        {/* Line Graph for Restaurants & Cafes */}
-                        <path
-                            stroke={categories.Gastronomie.subCategories.Restaurant}
-                            strokeWidth={2}
-                            fill="none"
-                            d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-561"))}
-                            style={{ transition: "all 1s ease-in-out" }}
-                        />
-
-                        {/* Line Graph for Bars & Clubs */}
-                        <path
-                            stroke={categories.Gastronomie.subCategories.Caterer}
-                            strokeWidth={2}
-                            fill="none"
-                            d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-563"))}
-                            style={{ transition: "all 1s ease-in-out" }}
-                        />
-
-                        {/* Line Graph for Caterer */}
-                        <path
-                            stroke={categories.Gastronomie.subCategories.Caterer}
-                            strokeWidth={2}
-                            fill="none"
-                            d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-562"))}
-                            style={{ transition: "all 1s ease-in-out" }}
-                        />
-
-                        {/* Line for Beherbergung */}
-                        <path
-                            stroke={categories.Beherbergung.color}
-                            d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-55"))}
-                            strokeWidth={2.5}
-                            fill="none"
-                            style={{ opacity: calculateOpacity("WZ08-55"), transition: "all 0.2s ease-in-out" }}
-                        />
+                        )}
 
 
                         {/* selected grey rectangle */}
@@ -196,13 +157,17 @@ const InsolvenzGraph = () => {
                             <rect x={xScale(hoveredTime)} style={{ width: ".5px", height: dms.innerHeight, stroke: '#5c5c5c', strokeDasharray: '1 1', strokeWidth: "1px" }} />
                         </>}
 
+                        {selectedDate && <>
+                            {/* hover dotted line */}
+                            <rect x={xScale(selectedDate)} style={{ width: "0.8px", height: dms.innerHeight, fill: "#585858" }} />
+                        </>}
+
 
                         {/* hover Beherbergung circle*/}
-                        <circle cx={xScale(closestXValueBeherbergung)} cy={yScale(closestYValueBeherbergung)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1, transition: "all 0.2s ease-in-out" }} />
+                        {/* <circle cx={xScale(closestXValueBeherbergung)} cy={yScale(closestYValueBeherbergung)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1, transition: "all 0.2s ease-in-out" }} /> */}
 
                         {/* hover Gastronomie circle*/}
-                        <circle cx={xScale(closestXValueGastronomie)} cy={yScale(closestYValueGastronomie)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1, transition: "all 0.2s ease-in-out" }} />
-
+                        {/* <circle cx={xScale(closestXValueGastronomie)} cy={yScale(closestYValueGastronomie)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1, transition: "all 0.2s ease-in-out" }} /> */}
 
 
                         {/* actionListener rect over graph area*/}
