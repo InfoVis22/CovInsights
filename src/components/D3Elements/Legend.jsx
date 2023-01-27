@@ -5,7 +5,7 @@ const Legend = ({ vertical = true, selected, setSelected, hovered = null, setHov
 
     const toggleSelected = (item) => {
         if (selected.find(i => i.name === item.name)) {
-            setSelected(selected.filter(i => i === selected.find(i => i.name === item.name)))
+            setSelected(selected.filter(i => i !== selected.find(i => i.name === item.name)))
         } else {
             setSelected([...selected, item])
         }

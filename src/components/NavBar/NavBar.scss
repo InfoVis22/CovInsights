@@ -33,7 +33,23 @@
     .links {
         display: flex;
         gap: 10px;
+        align-items: center;
+
+        button {
+            background: none;
+            color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+
+        }
 
     }
 
+}
+
+.settingsPopover {
+    padding: 15px;
 }

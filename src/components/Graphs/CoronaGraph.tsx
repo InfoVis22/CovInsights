@@ -18,9 +18,9 @@ const CoronaGraph = () => {
     //set margins of Graph
     const chartSettings = {
         height: verticalLayout ? 250 : 150,
-        marginTop: 1,
+        marginTop: 10,
         marginRight: 30,
-        marginBottom: 57,
+        marginBottom: 40,
         marginLeft: 45
     }
 
@@ -208,11 +208,14 @@ const CoronaGraph = () => {
                                 onMouseEnter={() => { mouseEnterCoronaEvent(event, i) }}
                                 onMouseLeave={() => { mouseLeaveCoronaEvent(event, i) }}
                             >
-                                <rect x={xScale(event.Date)} y={i % 2 === 0 ? 95 : 0} style={{ visibility: event.Display === "" ? "hidden" : "unset", width: ".5px", height: i % 2 === 0 ? 50 : 90, fill: "none", stroke: '#00000085', strokeDasharray: '1 1', strokeWidth: "1px" }} />
 
-                                <text x={xScale(event.Date) + 5} y={i % 2 === 0 ? dms.innerHeight + 50 : 15} style={{ fontSize: "0.8rem", fill: "#636060" }}
+                                <rect x={xScale(event.Date)} y={dms.innerHeight}
+                                    style={{ visibility: event.Display === "" ? "hidden" : "unset", width: ".5px", height: 40, fill: "none", stroke: '#00000085', strokeDasharray: '1 1', strokeWidth: "1px" }} />
 
-                                >{event.Display}</text>
+                                <text x={xScale(event.Date) + 5} y={dms.innerHeight + 40} style={{ fontSize: "0.8rem", fill: "#636060" }}>
+                                    {event.Display}
+                                </text>
+
                             </g>
                         )}
 
@@ -230,8 +233,6 @@ const CoronaGraph = () => {
                     </Popover.Content>
                 </Popover>
             </div>
-
-
         </>
     )
 }

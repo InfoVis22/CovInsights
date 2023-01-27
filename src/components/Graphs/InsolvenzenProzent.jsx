@@ -143,7 +143,7 @@ const InsolvenzenProzent = () => {
                                         ...transitionStyle,
                                         fill: getFill(row),
                                         transform: (yScale(row.InsolvenzenVeraenderung) - yScale(0)) < 0 ? `translateY(${yScale(row.InsolvenzenVeraenderung) - yScale(0)}px)` : ""
-                                       
+
                                     }}
                                 />
 

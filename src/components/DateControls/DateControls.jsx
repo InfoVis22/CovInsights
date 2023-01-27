@@ -1,6 +1,8 @@
 import './DateControls.scss'
 import { useEffect, useState, useRef } from 'react'
 import { useAppContext } from '../../contexts/appContext'
+import { IoPauseOutline, IoPlayOutline } from 'react-icons/io5'
+import { GrPowerReset } from 'react-icons/gr'
 
 const DateControls = () => {
 
@@ -65,10 +67,10 @@ const DateControls = () => {
         <div className="DateControls">
             <div className="buttons">
                 {!isPlaying ?
-                    (<button onClick={() => setPlaying(true)}>Play</button>) :
-                    (<button onClick={() => setPlaying(false)}>Pause</button>)}
+                    (<button onClick={() => setPlaying(true)}><IoPlayOutline /> Play</button>) :
+                    (<button onClick={() => setPlaying(false)}><IoPauseOutline /> Pause</button>)}
 
-                <button onClick={() => handleReset()}>Reset</button>
+                <button onClick={() => handleReset()}><GrPowerReset />Reset</button>
             </div>
 
             <p>{selectedDate.toLocaleString("de-DE", {
