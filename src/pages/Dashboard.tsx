@@ -104,17 +104,17 @@ const Dashboard = () => {
                 <Card
                     title="Umsatz im Gastgewerbe"
                     description="Umsatz im Gastgewerbe in Millionen Euro unterteilt in Beherbergung und Gastronomie"
-                    subtitle={"in Mio € (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
+                    subtitle={"in Mio € (" + selectedDate?.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
                     <RevenueBarChart />
                 </Card>
                 <Card title="Beschäftigung im Gastgewerbe"
                     description="Anzahl der Beschäftigen in Prozent verglichen mit der durchschnittlichen Beschäftigung in 2015, unterteilt nach Gastronomie und Beherbergung"
-                    subtitle={"in % im Vergleich zum Jahr 2015 (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
+                    subtitle={"in % im Vergleich zum Jahr 2015 (" + selectedDate?.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
                     <EmploymentBarChart />
                 </Card>
                 <Card title="Insolvenzen im Gastgewerbe"
                     description="Insolvenzen im Gastgewerbe in Prozent verglichen mit den durchschnittlichen Insolvenzen von 2013 bis 2019"
-                    subtitle={"in % im Vergleich zum Jahr 2015 (" + selectedDate.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
+                    subtitle={"in % im Vergleich zum Jahr 2015 (" + selectedDate?.toLocaleString("de-DE", { month: "short", year: "numeric" }) + ")"}>
                     <InsolvenzenProzent />
                 </Card>
             </div>
