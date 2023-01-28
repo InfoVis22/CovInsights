@@ -70,7 +70,6 @@ const RevenueBarChart = () => {
     const mouseEnterEvent = (e, row) => {
         setShowTooltip(true)
         setHoveredBar(row)
-        console.log(row)
     }
 
     const mouseMoveEvent = (e) => {

@@ -61,6 +61,10 @@ const DateControls = () => {
         }
     }, [])
 
+    useEffect(() => {
+        handleReset();
+    }, [timeFrame])
+
     const handleReset = () => {
         setSelectedDate(timeFrame.min)
         setPlaying(false)

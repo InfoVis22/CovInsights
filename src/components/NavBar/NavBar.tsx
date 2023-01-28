@@ -19,8 +19,6 @@ function NavBar() {
     const location = useLocation();
 
 
-
-
     return (
         <div className="NavBar">
             <img src={LogoImage} onClick={() => { navigate('/') }} />
@@ -43,11 +41,14 @@ function NavBar() {
                             <Popover.Content>
                                 <div className='settingsPopover'>
                                     <h3>Settings</h3>
-                                    <Input type="date" label='Min Date' value={moment(timeFrame.min).format("YYYY-MM-DD")} onChange={(e) => setTimeFrame(old => ({ ...old, min: new Date(e.target.value ? e.target.value : "2018-01-01") }))} />
-                                    <Input type="date" label='Max Date' value={moment(timeFrame.max).format("YYYY-MM-DD")} onChange={(e) => setTimeFrame(old => ({ ...old, max: new Date(e.target.value ? e.target.value : "2023-01-01") }))} />
+                                    <div style={{ display: "flex", gap: "5px" }}>
+                                        <Input type="date" label='Min Date' value={moment(timeFrame.min).format("YYYY-MM-DD")} onChange={(e) => setTimeFrame(old => ({ ...old, min: new Date(e.target.value ? e.target.value : "2018-01-01") }))} />
+                                        <Input type="date" label='Max Date' value={moment(timeFrame.max).format("YYYY-MM-DD")} onChange={(e) => setTimeFrame(old => ({ ...old, max: new Date(e.target.value ? e.target.value : "2023-01-01") }))} />
+                                    </div>
 
                                     <h3 style={{ paddingTop: "10px" }}>Shortcuts</h3>
                                     <p> CTRL + SPACE : Play / Pause</p>
+                                    <p> CTRL + R : Reset</p>
                                 </div>
                             </Popover.Content>
                         </Popover>
