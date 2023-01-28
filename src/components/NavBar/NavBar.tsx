@@ -7,6 +7,7 @@ import { BsDistributeVertical } from 'react-icons/bs';
 import { AiOutlineSetting } from 'react-icons/ai';
 import { useState } from 'react';
 import { Input, Popover } from '@nextui-org/react';
+import moment from 'moment';
 
 
 function NavBar() {
@@ -16,6 +17,8 @@ function NavBar() {
 
     const navigate = useNavigate();
     const location = useLocation();
+
+
 
 
     return (
@@ -40,8 +43,8 @@ function NavBar() {
                             <Popover.Content>
                                 <div className='settingsPopover'>
                                     <h3>Settings</h3>
-                                    <Input type="date" label='Min Date' value={timeFrame.min} />
-                                    <Input type="date" label='Max Date' value={timeFrame.max} />
+                                    <Input type="date" label='Min Date' value={moment(timeFrame.min).format("YYYY-MM-DD")} onChange={(e) => setTimeFrame(old => ({ ...old, min: new Date(e.target.value ? e.target.value : "2018-01-01") }))} />
+                                    <Input type="date" label='Max Date' value={moment(timeFrame.max).format("YYYY-MM-DD")} onChange={(e) => setTimeFrame(old => ({ ...old, max: new Date(e.target.value ? e.target.value : "2023-01-01") }))} />
 
                                     <h3 style={{ paddingTop: "10px" }}>Shortcuts</h3>
                                     <p> CTRL + SPACE : Play / Pause</p>

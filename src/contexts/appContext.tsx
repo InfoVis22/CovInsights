@@ -31,18 +31,16 @@ export const AppContext = ({ children }: { children: ReactNode }) => {
 
     const [employmentData, setEmploymentData] = useState(null as IEmploymentData);
     const [umsatzData, setUmsatzData] = useState(null);
-    const [InsolvencyBarData, setInsolvencyBarData] = useState(null);
-    const [insolvenzData, setInsolvenzDataFiltered] = useState(null);
+    const [insolvenzenData, setInsolvenzenData] = useState(null);
     const [coronaData, setCoronaData] = useState(null);
     const [kurzarbeitData, setKurzarbeitData] = useState(null)
-
-    const [hoveredTime, setHoveredTime] = useState(new Date(2020, 5));
-    const [selectedDate, setSelectedDate] = useState(new Date("2018-01-01"))
 
     const [showTooltipsTime, setShowTooltipsTime] = useState(false);
     const [verticalLayout, setVerticalLayout] = useState(false)
 
     const [timeFrame, setTimeFrame] = useState({ min: new Date(2018, 0), max: new Date(2023, 0) });
+    const [selectedDate, setSelectedDate] = useState(timeFrame.min)
+    const [hoveredTime, setHoveredTime] = useState(timeFrame.min);
 
 
     //custom functions to ensure that all data is in the timeFrame range
@@ -54,16 +52,15 @@ export const AppContext = ({ children }: { children: ReactNode }) => {
 
 
     const AppValues = {
-        employmentData, setEmploymentData,
-        coronaData, setCoronaData,
-        insolvenzData, setInsolvenzData,
         umsatzData, setUmsatzData,
-        hoveredTime, setHoveredTime,
-        timeFrame, setTimeFrame,
-        showTooltipsTime, setShowTooltipsTime,
-        selectedDate, setSelectedDate,
-        InsolvencyBarData, setInsolvencyBarData,
+        employmentData, setEmploymentData,
+        insolvenzenData, setInsolvenzenData,
+        coronaData, setCoronaData,
         kurzarbeitData, setKurzarbeitData,
+        timeFrame, setTimeFrame,
+        hoveredTime, setHoveredTime,
+        selectedDate, setSelectedDate,
+        showTooltipsTime, setShowTooltipsTime,
         verticalLayout, setVerticalLayout
     }
 

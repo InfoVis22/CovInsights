@@ -23,7 +23,7 @@ import DateControls from '../components/DateControls/DateControls'
 const Dashboard = () => {
 
     //---- define AppContext ----
-    const { setEmploymentData, setInsolvencyBarData, setCoronaData, setKurzarbeitData, setTimeFrame, setUmsatzData, selectedDate, verticalLayout, } = useAppContext()
+    const { setEmploymentData, setInsolvencyBarData, setCoronaData, setKurzarbeitData, insolvenzenData, setInsolvenzenData, setTimeFrame, setUmsatzData, selectedDate, verticalLayout, } = useAppContext()
 
     //---- Dashboard State ----
     const [isLoadingData, setIsLoadingData] = useState(true)
@@ -38,6 +38,7 @@ const Dashboard = () => {
             .filter(d => +d.Jahr >= 2018 && (d.Branche_Code !== "WZ08-55" && d.Branche_Code !== "WZ08-56"))
             .map((row) => ({ ...row, Date: new Date(row.Jahr, (+row.Monat - 1)), Beschaeftigte: +row.Beschaeftigte, Vollzeitbeschaeftigte: +row.Vollzeitbeschaeftigte, Teilzeitbeschaeftigte: +row.Teilzeitbeschaeftigte }))
 
+        console.log("Beschäftigungs Daten: ", employmentData)
         setEmploymentData(employmentData)
 
 
@@ -53,12 +54,12 @@ const Dashboard = () => {
 
         //load Insolvency BarChart
         const rawInsolvencyBarData = await d3.dsv(";", "../data/InsolvenzenGastgewerbe.csv")
-        const InsolvencyBarData = rawInsolvencyBarData
+        const data = rawInsolvencyBarData
             .filter(row => +row.Jahr >= 2018)
             .map((row) => ({ ...row, Date: new Date(row.Jahr, (+row.Monat - 1)), Ins_opened: +row.Ins_opened, Ins_rejected: +row.Ins_rejected, Insolvenzen: +row.Insolvenzen, Arbeitnehmer: +row.Arbeitnehmer, Forderungen: +row.Forderungen, InsolvenzenVeraenderung: (+row.InsolvenzenVeraenderung * 100) }))
 
-        console.log("Insolvencies Bar: ", InsolvencyBarData)
-        setInsolvencyBarData(InsolvencyBarData)
+        console.log("Insolvencies Bar: ", data)
+        setInsolvenzenData(data)
 
 
         //load Corona Data 2020-2022

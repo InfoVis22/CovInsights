@@ -13,14 +13,14 @@ import * as d3 from 'd3'
 const CoronaGraph = () => {
 
     //App context
-    const { setHoveredTime, hoveredTime, coronaData, showTooltipsTime, setShowTooltipsTime, selectedDate, setSelectedDate, verticalLayout } = useAppContext()
+    const { setHoveredTime, hoveredTime, coronaData, showTooltipsTime, setShowTooltipsTime, selectedDate, setSelectedDate, verticalLayout, timeFrame } = useAppContext()
 
     //set margins of Graph
     const chartSettings = {
         height: verticalLayout ? 250 : 150,
         marginTop: 10,
         marginRight: 30,
-        marginBottom: 40,
+        marginBottom: 43,
         marginLeft: 45
     }
 
@@ -30,6 +30,7 @@ const CoronaGraph = () => {
     const [closestYValue, setClosestYValue] = useState(0)
     const [closestYValueToSelected, setClosestYValueToSelected] = useState(0)
     const [subventionsEvents, setSubventionsEvents] = useState([])
+    const [covDataFiltered, setCovDataFiltered] = useState([])
 
     //refs
     const svgRef = useRef();
@@ -39,14 +40,21 @@ const CoronaGraph = () => {
     const yAccessor = (d) => d.Inzidenz;
 
     useEffect(() => {
-        loadData()
-    }, [])
 
-    const loadData = async () => {
+        //set filteredData by timeFrame
+        const filtered = coronaData.filter((row) => row.Date >= timeFrame.min && row.Date <= timeFrame.max)
+        setCovDataFiltered(filtered)
+
+        loadEventData()
+    }, [timeFrame])
+
+    const loadEventData = async () => {
+
         //load Subventions Events to display
         let subventionsEvents = await d3.dsv(";", "../../data/SubventionEvents.csv")
         subventionsEvents = subventionsEvents
             .map((row) => ({ ...row, Date: new Date(row.Date), Display: row.EventNameShort }))
+            .filter((row) => row.Date >= timeFrame.min && row.Date <= timeFrame.max)
 
         setSubventionsEvents(subventionsEvents)
     }
@@ -54,20 +62,20 @@ const CoronaGraph = () => {
     //X-Scale for graph
     const xScale = useMemo(() => (
         d3.scaleTime()
-            .domain([new Date(2018, 1), new Date(2022, 12)])
+            .domain([timeFrame.min, timeFrame.max])
             // .domain([new Date(2018, 1), d3.max(coronaData, d => xAccessor(d))])
             .range([0, dms.innerWidth])
-            .nice()
-    ), [dms.innerWidth])
+
+    ), [dms.innerWidth, timeFrame])
 
 
     //Y-Scale for graph
     const yScale = useMemo(() => (
         d3.scaleLinear()
-            .domain([0, d3.max(coronaData, d => yAccessor(d))])
+            .domain([0, d3.max(covDataFiltered, d => yAccessor(d))])
             .range([dms.innerHeight, 0])
             .nice()
-    ), [dms.innerHeight])
+    ), [dms.innerHeight, covDataFiltered])
 
     //define lineGenerator for the graphs line
     const lineGenerator = d3.line(d => xScale(xAccessor(d)), d => yScale(yAccessor(d)))
@@ -118,8 +126,6 @@ const CoronaGraph = () => {
     }
 
 
-
-
     useMemo(() => {
         //calculate closest data point from mouse position
         const getDistanceFromHoveredDate = (d) => Math.abs(xAccessor(d) - hoveredTime);
@@ -163,7 +169,7 @@ const CoronaGraph = () => {
 
                         {/* Corona Trendlinie */}
                         <Line
-                            data={coronaData}
+                            data={covDataFiltered}
                             lineGenerator={lineGenerator}
                             color={'#464646'}
                             strokeWidth={2.5}

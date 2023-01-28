@@ -15,7 +15,7 @@ import moment from "moment"
 
 const InsolvenzGraph = () => {
 
-    const { InsolvencyBarData, setShowTooltipsTime, hoveredTime, setHoveredTime, showTooltipsTime, selectedDate, setSelectedDate, verticalLayout } = useAppContext()
+    const { insolvenzenData, setShowTooltipsTime, hoveredTime, setHoveredTime, showTooltipsTime, selectedDate, setSelectedDate, verticalLayout, timeFrame } = useAppContext()
 
     //set margins of Graph
     const chartSettings = {
@@ -25,13 +25,9 @@ const InsolvenzGraph = () => {
         marginBottom: 30,
         marginLeft: 45
     }
-
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
 
-    const [closestXValueBeherbergung, setClosestXValueBeherbergung] = useState(0)
-    const [closestYValueBeherbergung, setClosestYValueBeherbergung] = useState(0)
-    const [closestXValueGastronomie, setClosestXValueGastronomie] = useState(0)
-    const [closestYValueGastronomie, setClosestYValueGastronomie] = useState(0)
+    const [insolvenzenDataFiltered, setInsolvenzenDataFiltered] = useState([])
 
     //to select and deselect Sectors
     //to select and deselect Sectors
@@ -40,23 +36,30 @@ const InsolvenzGraph = () => {
     const [selectedBranchen, setSelectedBranchen] = useState(legendItems.filter(c => c.name === "Beherbergung" || c.name === "Gastronomie"))
     const [hoveredBranche, setHoveredBranche] = useState(null)
 
+
     const svgRef = useRef()
 
     const xAccessor = (d) => d.Date;
     const yAccessor = (d) => d.Insolvenzen;
 
+    useEffect(() => {
+        const filtered = insolvenzenData.filter((row) => row.Date >= timeFrame.min && row.Date <= timeFrame.max)
+        setInsolvenzenDataFiltered(filtered)
+    }, [timeFrame])
+
+
+
     //X-Scale for graph
     const xScale = useMemo(() => (
         d3.scaleTime()
-            .domain([new Date(2018, 1), new Date(2022, 12)])
+            .domain([timeFrame.min, timeFrame.max])
             // .domain([new Date(2018, 1), d3.max(insolvenzData, (d) => d.Date)])
             .range([0, dms.innerWidth])
-            .nice()
-    ), [dms.innerWidth])
+    ), [dms.innerWidth, timeFrame])
 
     //Y-Scale for graph
     const yScale = useMemo(() => (d3.scaleLinear()
-        .domain([0, d3.max(InsolvencyBarData, (d) => yAccessor(d))])
+        .domain([0, d3.max(insolvenzenData, (d) => yAccessor(d))])
         .range([dms.innerHeight, 0])
         .nice()
     ), [dms.innerWidth])
@@ -84,28 +87,6 @@ const InsolvenzGraph = () => {
         setHoveredTime(null)
         setShowTooltipsTime(false)
     }
-
-    useMemo(() => {
-        //calculate closest data point from mouse position
-        //get the date closest to the hovered date
-        const getDistanceFromHoveredDate = (d) => Math.abs(d.Date - selectedDate);
-
-        //Beherbergung: WZ08-55; Gastronomie: WZ08-56
-        const BeherbergungSubset = InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-55")
-        const GastronomieSubset = InsolvencyBarData.filter(row => row.Branche_Code === "WZ08-56")
-
-        const closestIndexBeherbergung = d3.scan(BeherbergungSubset, (a, b) => getDistanceFromHoveredDate(a) - getDistanceFromHoveredDate(b));
-        const closestIndexGastronomie = d3.scan(GastronomieSubset, (a, b) => getDistanceFromHoveredDate(a) - getDistanceFromHoveredDate(b));
-
-        //Grab the data point at that index
-        const closestDataPointBeherbergung = BeherbergungSubset[closestIndexBeherbergung];
-        const closestDataPointGastronomie = GastronomieSubset[closestIndexGastronomie];
-
-        setClosestXValueBeherbergung(closestDataPointBeherbergung.Date)
-        setClosestYValueBeherbergung(closestDataPointBeherbergung.Insolvenzen)
-        setClosestXValueGastronomie(closestDataPointGastronomie.Date)
-        setClosestYValueGastronomie(closestDataPointGastronomie.Insolvenzen)
-    }, [selectedDate])
 
 
     const calculateOpacity = (branchenCode) => {
@@ -139,7 +120,7 @@ const InsolvenzGraph = () => {
                             stroke={category.color}
                             strokeWidth={2.5}
                             fill="none"
-                            d={lineGenerator(InsolvencyBarData.filter(row => row.Branche_Code === category.code))}
+                            d={lineGenerator(insolvenzenDataFiltered.filter(row => row.Branche_Code === category.code))}
                             style={{ opacity: calculateOpacity(category.code), transition: "all 0.2s ease-in-out" }}
                         />
                         )}

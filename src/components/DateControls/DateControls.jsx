@@ -9,7 +9,7 @@ const DateControls = () => {
     let timer
     const [count, setCount] = useState(0)
     const [isPlaying, setPlaying] = useState(false)
-    const { selectedDate, setSelectedDate } = useAppContext();
+    const { selectedDate, setSelectedDate, timeFrame } = useAppContext();
 
     const updateCount = () => {
         timer = !timer && setInterval(() => {
@@ -21,8 +21,13 @@ const DateControls = () => {
     }
 
     const handleKeyPress = (e) => {
-        if (e.keyCode === 32 && e.ctrlKey) {
+        //CTRL + spacebar 
+        if (e.ctrlKey && e.keyCode === 32) {
             setPlaying(old => !old)
+        }
+        //CTRL + R
+        else if (e.ctrlKey && e.keyCode === 82) {
+            handleReset();
         }
     }
 
@@ -48,21 +53,19 @@ const DateControls = () => {
     }, [isPlaying, count])
 
     useEffect(() => {
-        //add eventlistener to spacebar
+        //add eventListener to all keypress events
         document.addEventListener("keydown", handleKeyPress);
-        console.log("Adding eventHandler")
 
         return () => {
             document.removeEventListener("keydown", handleKeyPress);
-            console.log("Removing eventHandler")
         }
     }, [])
 
     const handleReset = () => {
-        const resetDate = new Date("2018-01-01")
-        setSelectedDate(resetDate)
+        setSelectedDate(timeFrame.min)
         setPlaying(false)
     }
+
     return (
         <div className="DateControls">
             <div className="buttons">
@@ -73,7 +76,7 @@ const DateControls = () => {
                 <button onClick={() => handleReset()}><GrPowerReset />Reset</button>
             </div>
 
-            <p>{selectedDate.toLocaleString("de-DE", {
+            <p>{selectedDate?.toLocaleString("de-DE", {
                 day: "numeric",
                 month: "short",
                 year: "numeric",

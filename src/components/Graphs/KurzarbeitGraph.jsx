@@ -16,7 +16,7 @@ import moment from "moment"
 
 const KurzarbeitGraph = () => {
     //Context hook
-    const { kurzarbeitData, setShowTooltipsTime, hoveredTime, setHoveredTime, showTooltipsTime, selectedDate, setSelectedDate, verticalLayout } = useAppContext()
+    const { kurzarbeitData, setShowTooltipsTime, hoveredTime, setHoveredTime, showTooltipsTime, selectedDate, setSelectedDate, verticalLayout, timeFrame } = useAppContext()
 
     //set margins of Graph
     const chartSettings = {
@@ -48,19 +48,18 @@ const KurzarbeitGraph = () => {
     const yAccessor = (d) => d.Kurzarbeiter;
 
     useEffect(() => {
-        const filtered = kurzarbeitData.fil
-
-    }, [])
+        const filtered = kurzarbeitData.filter((row) => row.Date >= timeFrame.min && row.Date <= timeFrame.max)
+        setKurzarbeitDataFiltered(filtered)
+    }, [timeFrame])
 
 
 
     //X-Scale for graph
     const xScale = useMemo(() => (
         d3.scaleTime()
-            .domain([new Date(2018, 1), new Date(2022, 12)])
+            .domain([timeFrame.min, timeFrame.max])
             .range([0, dms.innerWidth])
-            .nice()
-    ), [dms.innerWidth])
+    ), [dms.innerWidth, timeFrame])
 
 
     //Y-Scale for graph
@@ -153,7 +152,7 @@ const KurzarbeitGraph = () => {
                             <path
                                 key={i}
                                 stroke={category.color}
-                                d={lineGenerator(kurzarbeitData.filter(row => row.Branche_Code === category.code))}
+                                d={lineGenerator(kurzarbeitDataFiltered.filter(row => row.Branche_Code === category.code))}
                                 strokeWidth={2.5}
                                 fill="none"
                                 style={{ opacity: calculateOpacity(category.code), transition: "all 0.2s ease-in-out" }}

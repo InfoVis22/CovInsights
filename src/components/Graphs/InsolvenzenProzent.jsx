@@ -22,7 +22,7 @@ const InsolvenzenProzent = () => {
 
     //setup Hooks
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
-    const { InsolvencyBarData, hoveredTime, selectedDate } = useAppContext()
+    const { insolvenzenData, hoveredTime, selectedDate } = useAppContext()
     const [insolvenzData, setInsolvenzData] = useState([])
     const [hoveredBar, setHoveredBar] = useState(null)
     const [showTooltip, setShowTooltip] = useState(false)
@@ -39,7 +39,7 @@ const InsolvenzenProzent = () => {
     useEffect(() => {
         const yearMonthTime = [selectedDate.getFullYear(), selectedDate.getMonth() + 1].join("-")
 
-        const filteredData = InsolvencyBarData
+        const filteredData = insolvenzenData
             .filter(row => (row.Branche_Code !== "WZ08-55" && row.Branche_Code !== "WZ08-56") &&
                 ((row.Jahr + "-" + row.Monat) === yearMonthTime) &&
                 selectedBranchen.find(b => row.Branche_Code.includes(b.code)))
