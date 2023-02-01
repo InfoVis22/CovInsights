@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, Outlet, useNavigate, useLocation, } from "react-router-dom";
 import Dashboard from './pages/Dashboard'
 import About from './pages/About'
+import UserGuide from "./pages/UserGuide";
 import ErrorPage from './pages/ErrorPage';
 import NavBar from './components/NavBar/NavBar';
 
@@ -43,6 +44,9 @@ const router = createBrowserRouter([
       }, {
         path: "about",
         element: <About />
+      },{
+        path: "userguide",
+        element: <UserGuide />
       }
     ]
   },
