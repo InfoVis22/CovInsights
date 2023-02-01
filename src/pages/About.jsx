@@ -22,7 +22,7 @@ const About = () => {
           imageName={"maxiAvatar.jpeg"} />
         <BusinessCard name={"Alexander Welling"}
           infoText={"Ich bin Alex und studiere Informatik an der LMU München im Master. In meiner Freizeit schreibe ich gerne About Pages und Masterarbeiten"}
-          imageName={"alexAvatar.jpg"} />
+          imageName={"alexAvatar.png"} />
       </div>
 
       <div className="Sources">
