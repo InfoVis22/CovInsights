@@ -32,12 +32,32 @@
         }
     }
 
-    .SourceSpecifications{
+    .Sources {
+        h2 {
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+
+        .lastVisit {
+            color: #797979;
+            font-size: 1rem;
+            font-weight: 300;
+
+            margin-bottom: 10px;
+        }
+    }
+
+    .SourceSpecifications {
         margin: auto;
         margin-top: 100px;
         justify-content: center;
 
-        table{
+        table {
             margin: auto;
         }
     }
