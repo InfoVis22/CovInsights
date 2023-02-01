@@ -32,16 +32,16 @@ const About = () => {
           <h2>Statistisches Bundesamt</h2>
           <p>45342-0001: Unternehmen, Beschäftigte, Umsatz und weitere betriebs- und
             volkswirtschaftliche Kennzahlen im Gastgewerbe</p>
-          <p className='lastVisit'>Abgerufen am: 06.01.2023, <a href='https://www-genesis.destatis.de/genesis//online?operation=table&code=45342-0001&bypass=true&levelindex=0&levelid=1675257245756#abreadcrumb' target="_blank">Link</a></p>
+          <p className='lastVisit'>Abgerufen am: 17.11.2023, <a href='https://www-genesis.destatis.de/genesis//online?operation=table&code=45342-0001&bypass=true&levelindex=0&levelid=1675257245756#abreadcrumb' target="_blank">Link</a></p>
 
           <p>45213-0002: Beschäftigte im Gastgewerbe, Deutschland, Monate, Wirtschaftszweige</p>
-          <p className='lastVisit'>Abgerufen am: 06.01.2023, <a href='https://www-genesis.destatis.de/genesis//online?operation=table&code=45213-0002&bypass=true&levelindex=1&levelid=1675257314387#abreadcrumb' target="_blank">Link</a></p>
+          <p className='lastVisit'>Abgerufen am: 10.12.2023, <a href='https://www-genesis.destatis.de/genesis//online?operation=table&code=45213-0002&bypass=true&levelindex=1&levelid=1675257314387#abreadcrumb' target="_blank">Link</a></p>
 
           <p>45213-0004: Umsatz im Gastgewerbe: Deutschland, Monate, Wirtschaftszweige</p>
-          <p className='lastVisit'>Abgerufen am: 06.01.2023, <a href='https://www-genesis.destatis.de/genesis//online?operation=table&code=45213-0004&bypass=true&levelindex=1&levelid=1675257314387#abreadcrumb' target="_blank">Link</a></p>
+          <p className='lastVisit'>Abgerufen am: 10.12.2023, <a href='https://www-genesis.destatis.de/genesis//online?operation=table&code=45213-0004&bypass=true&levelindex=1&levelid=1675257314387#abreadcrumb' target="_blank">Link</a></p>
 
           <p>52411-0004: Insolvenzen im Gastgewerbe in Deutschland gesamt</p>
-          <p className='lastVisit'>Abgerufen am: 06.01.2023, <a href='https://www-genesis.destatis.de/genesis//online?operation=table&code=52411-0004&bypass=true&levelindex=0&levelid=1671466031511#abreadcrumb' target="_blank">Link</a></p>
+          <p className='lastVisit'>Abgerufen am: 19.12.2023, <a href='https://www-genesis.destatis.de/genesis//online?operation=table&code=52411-0004&bypass=true&levelindex=0&levelid=1671466031511#abreadcrumb' target="_blank">Link</a></p>
 
 
           <h2>Statistische Ämter des Bundes und der Länder</h2>
@@ -51,7 +51,7 @@ const About = () => {
 
           <h2>Robert Koch-Institut</h2>
           <p>Corona 7-Tage Inzidenzen in Deutschland</p>
-          <p className='lastVisit'>Abgerufen am: 06.01.2023, <a href='https://github.com/robert-koch-institut/COVID-19_7-Tage-Inzidenz_in_Deutschland/blob/main/COVID-19-Faelle_7-Tage-Inzidenz_Deutschland.csv' target="_blank">Link</a></p>
+          <p className='lastVisit'>Abgerufen am: 10.12.2023, <a href='https://github.com/robert-koch-institut/COVID-19_7-Tage-Inzidenz_in_Deutschland/blob/main/COVID-19-Faelle_7-Tage-Inzidenz_Deutschland.csv' target="_blank">Link</a></p>
 
 
           <h2>Bundesagentur für Arbeit</h2>
