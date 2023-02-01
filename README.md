@@ -77,29 +77,32 @@ See the Demo: [CovInsight Demo](https://covinsight.mmt-lmu.de/) ✅
 ### Implemented Features
 - [x] About Us Page with short descriptions about project members
 - [x] Source collection for displayed datasets on About Page
-- [x] Displaying deployment as bar chart 
-- [x] Displaying bankrupt businesses in percentages represented as bar chart 
+- [x] Displaying employment as bar chart 
+- [x] Displaying change in bankrupt businesses in percentages represented as bar chart 
 - [x] Displaying revenue figures as bar chart 
 - [x] COVID infections from 2018 to 2023 on a timeline
 - [x] Bankrupt businesses in numbers from 2018 to 2023 on a timeline
-- [x] Chart details on hovering over revenue and deployment bar charts
-- [x] Synchronized cursors of COVID and bankrupt timelines
+- [x] Tooltip: Chart details on hovering over bars in bar charts
+- [x] Synchronized cursors of COVID, bankruptcies and short time work x-axis
 - [x] All charts synchronize with the current cursor state on the timelines and are animated
-- [x] Play Pause and Reset functionality of the timeline cursors.
-- [x] Important events on timeline are marked and labeled.
-- [x] Intractable legend on all bar charts. Legend features can be grayed on on click.
+- [x] Play Pause and Reset functionality of the timeline cursors
+- [x] Important events on timeline are marked and labeled
+- [x] Interactive legend on all bar charts: Legend features can be hide/unhide per click
+- [x] Short time work employment numbers from 2018 to 2023 in a timeline
+- [x] Refining and combine Play and Pause buttons
+- [x] Chart explanation if the user clicks on the info icon
+- [x] Opportunity to manually select the time period which should be displayed in all graphs (right upper corner)
+- [x] Implementation of a second Dashboard layout logic: User can switch between two options based on preferences (right upper corner)
 
 <!-- Features in Progress -->
 ### Features in Progress
-- [ ] Refining and combine Play and Pause buttons
-- [ ] Short time work deployment numbers from 2018 to 2023 in a timeline
+- [ ] HotJar User Testing: Rich user interaction analysis
+- [ ] User Guide: User Tutorial
+
 
 <!-- Planned Features -->
 ### Planned Features
-- [ ] Tooltips for Charts
-- [ ] Use of accessibility colors in charts
-- [ ] User Tutorial
-- [ ] Rich user interaction analysis
+No planned Feature
 
 <!-- CONTACT -->
 ## Contact
