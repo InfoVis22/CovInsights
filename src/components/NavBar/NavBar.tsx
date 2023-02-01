@@ -62,7 +62,7 @@ function NavBar() {
                     <NavLink to="about">About</NavLink> :
                     <NavLink to="dashboard">Dashboard</NavLink>
                 }
-
+                <NavLink to="userguide">User Guide</NavLink>
             </div>
         </div>
     )
