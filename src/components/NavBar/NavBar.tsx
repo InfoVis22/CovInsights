@@ -40,15 +40,19 @@ function NavBar() {
                             </Popover.Trigger>
                             <Popover.Content>
                                 <div className='settingsPopover'>
-                                    <h3>Settings</h3>
+                                    <h3 style={{ fontSize: "1rem" }}>Settings</h3>
                                     <div style={{ display: "flex", gap: "5px" }}>
                                         <Input type="date" label='Min Date' value={moment(timeFrame.min).format("YYYY-MM-DD")} onChange={(e) => setTimeFrame(old => ({ ...old, min: new Date(e.target.value ? e.target.value : "2018-01-01") }))} />
                                         <Input type="date" label='Max Date' value={moment(timeFrame.max).format("YYYY-MM-DD")} onChange={(e) => setTimeFrame(old => ({ ...old, max: new Date(e.target.value ? e.target.value : "2023-01-01") }))} />
                                     </div>
 
-                                    <h3 style={{ paddingTop: "10px" }}>Shortcuts</h3>
+                                    <h3 style={{ paddingTop: "10px", fontSize: "1rem" }}>Shortcuts</h3>
                                     <p> CTRL + SPACE : Play / Pause</p>
                                     <p> CTRL + R : Reset</p>
+
+                                    <h3 style={{ paddingTop: "10px", fontSize: "1rem" }}>Tutorial</h3>
+                                    <NavLink to="userguide">User Guide</NavLink>
+
                                 </div>
                             </Popover.Content>
                         </Popover>
@@ -62,7 +66,6 @@ function NavBar() {
                     <NavLink to="about">About</NavLink> :
                     <NavLink to="dashboard">Dashboard</NavLink>
                 }
-                <NavLink to="userguide">User Guide</NavLink>
             </div>
         </div>
     )
