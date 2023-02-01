@@ -2,9 +2,17 @@ import React from 'react';
 
 const UserGuide = () => {
     return (
-        <div className='User Guide'>
-            <script src="https://js.storylane.io/js/v1/storylane.js"></script>
-            <div className="sl-embed" style={{position:"relative",padding:"0 50px",paddingBottom:"calc(62.67% + 27px)",width:"100%",height:"0",transform:"scale(1)"}}>
+        <div className='User Guide' style={{
+            display: "flex", justifyContent: "center",
+            paddingTop: "50px",
+        }}>
+            <div className="sl-embed" style={{
+                position: "relative",
+                paddingBottom: "calc(62.67% + -38px)",
+                width: "calc(100% - 100px)",
+                height: "0",
+                transform: "scale(1)"
+            }}>
                 <iframe
                     src="https://app.storylane.io/demo/l2ekzl2owm9g"
                     allowFullScreen=""
