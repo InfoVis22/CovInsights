@@ -31,26 +31,19 @@ const UserGuideModal = () => {
                 width={"600px"}
             >
                 <Modal.Body className="p-0">
+                    <h2>Willkommen bei CovInsight!</h2>
                     <p className="text-center">
-                        We have created an app tutorial for you to introduce you to the new
-                        shift planner.
+                        Wir haben ein Tutorial für dich erstellt, um dir die grundlegenden Funktionen von CovInsight zu vorzustellen.
                     </p>
 
-                    <Button
-                        style={{
-                            backgroundColor: "#3730A3",
-                            color: "#ffffff",
-                            marginLeft: "auto",
-                            marginRight: "auto",
-                        }}
-                        onPress={() => setUserGuideModalShown(true)}
-                    >
-                        Start Tutorial
+                    <Button auto onPress={() => setUserGuideModalShown(true)}                    >
+                        Starte UserGuide
                     </Button>
 
                     <p className="text-center">
-                        You can find the in app tutorial in{" "}
-                        <span className="italic">Menu → User Guide</span>.
+                        Außerdem kannst du es jederzeit über
+                        <span style={{ textDecoration: "italic" }}> Menu → User Guide</span>
+                        finden.
                     </p>
                 </Modal.Body>
                 <Modal.Footer></Modal.Footer>

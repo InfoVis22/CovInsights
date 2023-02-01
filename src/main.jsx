@@ -6,6 +6,7 @@ import About from './pages/About'
 import UserGuide from "./pages/UserGuide";
 import ErrorPage from './pages/ErrorPage';
 import NavBar from './components/NavBar/NavBar';
+import UserGuideModal from './components/UserGuideModal/UserGuideModal';
 
 //Import global style
 import './App.scss'
@@ -27,6 +28,7 @@ const AppLayout = () => {
       <div className="App" >
         <NavBar />
         <Outlet />
+        <UserGuideModal />
       </div>
     </AppContext>
   )
@@ -44,7 +46,7 @@ const router = createBrowserRouter([
       }, {
         path: "about",
         element: <About />
-      },{
+      }, {
         path: "userguide",
         element: <UserGuide />
       }
