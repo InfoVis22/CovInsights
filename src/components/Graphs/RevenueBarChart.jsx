@@ -38,6 +38,7 @@ const RevenueBarChart = () => {
 
     //refs
     const tooltipRef = useRef();
+    let lastHoveredBar = null;
 
     //initialize component
     useEffect(() => {
@@ -66,6 +67,13 @@ const RevenueBarChart = () => {
     ), [dms.innerHeight, filteredData])
 
 
+    useMemo(() => {
+        if (hoveredBar) {
+            setHoveredBar(filteredData.find(d => d.Branche_Code === hoveredBar.Branche_Code))
+        }
+    }, [selectedDate.getMonth()])
+
+
     //mouse events
     const mouseEnterEvent = (e, row) => {
         setShowTooltip(true)
@@ -82,6 +90,7 @@ const RevenueBarChart = () => {
 
         tooltipRef.current.style.top = tooltipY + "px"
         tooltipRef.current.style.left = tooltipX + "px"
+
     }
 
     const mouseLeaveEvent = () => {

@@ -52,6 +52,10 @@ const EmploymentBarChart = () => {
         setFilteredData(filteredDataCreate)
     }, [selectedDate.getMonth() + selectedDate.getFullYear(), selectedBranchen])
 
+    useMemo(() => {
+        if (hoveredBar) setHoveredBar(filteredData.find(d => d.Branche_Code === hoveredBar.Branche_Code))
+    }, [selectedDate.getMonth()])
+
     //X-Scale for graph
     const xScale = useMemo(() => (
         d3.scaleLinear()
@@ -155,7 +159,7 @@ const EmploymentBarChart = () => {
 
 
 
-            <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0", zIndex: showTooltip ? "20" : "-100"}}>
+            <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0", zIndex: showTooltip ? "20" : "-100" }}>
                 <h3>{hoveredBar?.Branche_Label}</h3>
                 <p>Beschäftigte zu 2015: {hoveredBar?.Beschaeftigte}%</p>
                 <p>Vollzeitbeschäftigte: {hoveredBar?.Vollzeitbeschaeftigte}%</p>

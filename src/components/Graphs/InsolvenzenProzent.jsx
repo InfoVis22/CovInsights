@@ -47,6 +47,10 @@ const InsolvenzenProzent = () => {
         setInsolvenzData(filteredData)
     }, [selectedDate.getMonth() + selectedDate.getFullYear(), selectedBranchen])
 
+    useMemo(() => {
+        if (hoveredBar) setHoveredBar(insolvenzData.find(d => d.Branche_Code === hoveredBar.Branche_Code))
+    }, [selectedDate.getMonth()])
+
 
     //X-Scale for graph
     const xScale = d3.scaleBand()
@@ -84,6 +88,7 @@ const InsolvenzenProzent = () => {
     const mouseLeaveEvent = () => {
         setShowTooltip(false)
     }
+
 
     //helper functions & constants
     const getFill = (row) => selectedBranchen.find(b => row.Branche_Code.includes(b.code)) ? selectedBranchen.find(b => row.Branche_Code.includes(b.code)).color : "#0000"
