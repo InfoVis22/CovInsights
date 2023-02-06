@@ -1,5 +1,16 @@
 <!-- PROJECT LOGO -->
-![Logo](./src/images/Logo.png "CovInsight Logo")
+<a name="readme-top"></a>
+<div align="center">
+
+  <a href="https://github.com/InfoVis22/CovInsights/tree/main"><img src="./src/images/Logo.png"></a>
+
+  <h3 align="center">Informationvisualisation WS22/23</h3>
+
+  <p align="center">
+    A project to visualize datasets of the german gastronomy industry in relation to the global COVID-19 pandemic.
+  </p>
+</div>
+
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
