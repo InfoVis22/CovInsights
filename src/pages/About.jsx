@@ -25,6 +25,12 @@ const About = () => {
           imageName={"alexAvatar.png"} />
       </div>
 
+      <section id="ganttchart">
+        <h1>Gantt Chart</h1>
+        <img src="/images/Gant.png" alt="Gant Chart" />
+      </section>
+
+
       <div className="Sources">
         <h1>Sources</h1>
 
@@ -58,14 +64,20 @@ const About = () => {
           <p>Kurzarbeit im Gastgewerbe in Deutschland</p>
           <p className='lastVisit'>Abgerufen am: 06.01.2023, <a href='https://statistik.arbeitsagentur.de/SiteGlobals/Forms/Suche/Einzelheftsuche_Formular.html;jsessionid=C4ABF408301BFF733C01B9D8D9DFDEFF?gtp=15084_list%253D8&topic_f=kurzarbeit-endg' target="_blank">Link</a></p>
 
+          <h2>Bundesministerium der Finanzen</h2>
+          <p>Überblickspapier Corona-Hilfen</p>
+          <p className='lastVisit'>Abgerufen am: 13.01.2023, <a href='https://www.bmwk.de/Redaktion/DE/Downloads/C-D/Corona/ueberblickspapier-corona-hilfen.pdf?__blob=publicationFile&v=8' target="_blank">Link</a></p>
+
+
         </div>
 
 
-        <div id="gant">
-          <img src="/images/Gant.png" alt="Gant Chart" />
-        </div>
+
 
       </div>
+
+
+
     </div>
   )
 }

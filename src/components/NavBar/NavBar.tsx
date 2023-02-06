@@ -21,7 +21,7 @@ function NavBar() {
 
     return (
         <div className="NavBar">
-            <img src={LogoImage} onClick={() => { navigate('/') }} />
+            <img src={LogoImage} onClick={() => { navigate('/') }} style={{ cursor: "pointer" }} />
             <h1 className='title'>Insolvenzen während der Corona Pandemie</h1>
             <div className='links'>
 

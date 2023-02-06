@@ -32,7 +32,22 @@
         }
     }
 
+    #ganttchart {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 70%;
+        }
+    }
+
+
     .Sources {
+        margin-top: 80px;
+
         h2 {
             font-size: 1.3rem;
             margin-top: 30px;
@@ -62,14 +77,5 @@
         }
     }
 
-    #gant {
-        margin-top: 100px;
-        display: flex;
-        justify-content: center;
 
-        img {
-            width: 70%;
-            color: #ffffff8c
-        }
-    }
 }

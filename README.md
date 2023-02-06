@@ -20,92 +20,81 @@
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#implemented-features">Implemented Features</a></li>
-    <li><a href="#features-in-progress">Features in Progress</a></li>
-    <li><a href="#planned-features">Planned Features</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-This project is done as part of the lecture Data Visualization (DataVis) at the LMU Munich. Our goal is to visualize the effects of the covid pandemic on the german gastronomy industry with respect to insolvency, turnover and subventions.
+This project is done as part of the lecture Data Visualization (DataVis) at the LMU Munich. Our goal is to visualize the effects of the COVID pandemic on the german gastronomy industry with respect to revenue, employment, insolvency, turnover and subventions.
+
+![React.js] ![D3_logo]
+
+
+<!-- DEMO -->
+### Demo Application
+See the Demo: [CovInsight Demo](https://covinsight.mmt-lmu.de/) ✅
+
+
+![Screenshot of Webapp](./public/images/CovInsightDemo.png "Screenshot of Webapp")
+
 
 <!-- Installation -->
 ### Installation
 To run this application node.js and npm is required.
-node.js can be downloaded here -> https://nodejs.org/en/download/
-The installer also contains the npm package manager.
-Run npm install to install the packages specified in the dependencies
+
+Run `npm install` to install the packages specified in the dependencies
 
 <!-- Usage -->
 ### Usage
 Run the following commands to start the app locally
-- npm run dev
-- npm run build and open the index.html
-- npm run preview
+```
+npm run dev
+npm run build and open the index.html
+npm run preview
+```
 
-### Demo Application
-See the Demo: [CovInsight Demo](https://covinsight.mmt-lmu.de/) ✅
+
+<!-- Features -->
+## Feature list
+
+### Visualizations: Bar Graphs
+- [x] Employment as Bar chart
+- [x] Revenue as Bar chart
+- [x] Change in bankruptcies as Bar chart 
+
+
+### Visualizations: Bar Graphs
+- [x] COV19 7-Day-Incidencies
+- [x] Short time work
+- [x] Bankrupt businesses
+
+### Main Interactions
+- [x] Synchronized cursors on all timelines
+- [x] Auto Play / Pause and Reset
+- [x] Important events on timeline
+
+### Additional interactions
+- [x] Tooltips on hover
+- [x] Responsive Design
+- [x] Settings menu to change overall timeframe
+- [x] Chart explanation behind info icons
+- [x] Interactive legend: hide/unhide sectors
+- [x] Toggle between alternative Layout 
+- [x] Interactive User guide / Tutorial
+- [x] Keyboard Shortcuts
+
+### Pages
+- [x] Dashboard (6 visuals)
+- [x] About (incl. Sources & Gantt Chart)
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-![Gant Chart](./public/images/Gant.png)
-
-<!-- Implemented Features -->
-### Implemented Features
-- [x] About Us Page with short descriptions about project members
-- [x] Source collection for displayed datasets on About Page
-- [x] Displaying employment as bar chart 
-- [x] Displaying change in bankrupt businesses in percentages represented as bar chart 
-- [x] Displaying revenue figures as bar chart 
-- [x] COVID infections from 2018 to 2023 on a timeline
-- [x] Bankrupt businesses in numbers from 2018 to 2023 on a timeline
-- [x] Tooltip: Chart details on hovering over bars in bar charts
-- [x] Synchronized cursors of COVID, bankruptcies and short time work x-axis
-- [x] All charts synchronize with the current cursor state on the timelines and are animated
-- [x] Play Pause and Reset functionality of the timeline cursors
-- [x] Important events on timeline are marked and labeled
-- [x] Interactive legend on all bar charts: Legend features can be hide/unhide per click
-- [x] Short time work employment numbers from 2018 to 2023 in a timeline
-- [x] Refining and combine Play and Pause buttons
-- [x] Chart explanation if the user clicks on the info icon
-- [x] Opportunity to manually select the time period which should be displayed in all graphs (right upper corner)
-- [x] Implementation of a second Dashboard layout logic: User can switch between two options based on preferences (right upper corner)
-
-<!-- Features in Progress -->
-### Features in Progress
-- [ ] HotJar User Testing: Rich user interaction analysis
-- [ ] User Guide: User Tutorial
+![Gantt Chart](./public/images/Gant.png "Gantt Chart od Team 03")
 
 
-<!-- Planned Features -->
-### Planned Features
-No planned Feature
 
 <!-- CONTACT -->
-## Contact
+## Contributors
 Alexander Welling - j.welling@campus.lmu.de <br/>
 Lennard Greve - l.greve@campus.lmu.de <br/>
 Sofie Henghuber - sofie.henghuber@campus.lmu.de <br/>
@@ -121,4 +110,5 @@ Maximilian Brandmaier - m.brandmaier@campus.lmu.de
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[D3_logo]: https://camo.githubusercontent.com/67c208d052be83838e7481b47cc2fcf47b9e1faf527aed94f109876212cbab72/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f7374796c653d666f722d7468652d6261646765266d6573736167653d44332e6a7326636f6c6f723d323232323232266c6f676f3d44332e6a73266c6f676f436f6c6f723d463941303343266c6162656c3d
 [React-url]: https://reactjs.org/
