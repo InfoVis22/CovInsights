@@ -16,7 +16,7 @@ import moment from "moment"
 
 const KurzarbeitGraph = () => {
     //Context hook
-    const { kurzarbeitData, setShowTooltipsTime, hoveredTime, setHoveredTime, showTooltipsTime, selectedDate, setSelectedDate, verticalLayout, timeFrame } = useAppContext()
+    const { kurzarbeitData, setShowHoveredTimeLine, hoveredTime, setHoveredTime, showHoveredTimeLine, selectedDate, setSelectedDate, verticalLayout, timeFrame } = useAppContext()
 
     //set margins of Graph
     const chartSettings = {
@@ -37,6 +37,9 @@ const KurzarbeitGraph = () => {
     const [closestXValueGastronomie, setClosestXValueGastronomie] = useState(0)
     const [closestYValueGastronomie, setClosestYValueGastronomie] = useState(0)
     const [kurzarbeitDataFiltered, setKurzarbeitDataFiltered] = useState([])
+    const [showTooltip, setShowTooltip] = useState(false)
+    const [hoveredDataPoint, setHoveredDataPoint] = useState({ Date: timeFrame.min, Beherbergung: 0, Gastronomie: 0 })
+
 
     //to select and deselect Sectors
     const legendItems = categories.filter(c => c.name === "Beherbergung" || c.name === "Gastronomie")
@@ -47,11 +50,15 @@ const KurzarbeitGraph = () => {
     const xAccessor = (d) => d.Date;
     const yAccessor = (d) => d.Kurzarbeiter;
 
+    //refs
+    const tooltipRef = useRef();
+
+
+    //filter data based on timeFrame
     useEffect(() => {
         const filtered = kurzarbeitData.filter((row) => row.Date >= timeFrame.min && row.Date <= timeFrame.max)
         setKurzarbeitDataFiltered(filtered)
     }, [timeFrame])
-
 
 
     //X-Scale for graph
@@ -72,27 +79,45 @@ const KurzarbeitGraph = () => {
     const lineGenerator = d3.line(d => xScale(d.Date), d => yScale(d.Kurzarbeiter)).curve(d3.curveMonotoneX)
 
 
-    const mouseEnterEvent = (e) => {
-        setShowTooltipsTime(true)
-    }
 
+    //mouse events
     const mouseEventDown = (e) => {
         setSelectedDate(hoveredTime);
     }
 
+    const mouseEnterEvent = (e) => {
+        setShowTooltip(true)
+        setShowHoveredTimeLine(true)
+    }
+
     const mouseMoveEvent = (e) => {
         //get x and y position relative to hovered event element
-        const mousePosition = d3.pointer(e)
+        const [x, y] = d3.pointer(e)
+
+        //set the position of the tooltip
+        const tooltipX = x + 70
+        const tooltipY = y + 50
+
+        tooltipRef.current.style.top = tooltipY + "px"
+        tooltipRef.current.style.left = tooltipX + "px"
+
+
         //get date from x and y coordinates
-        const hoveredDate = xScale.invert(mousePosition[0]);
+        const hoveredDate = xScale.invert(x);
+
+        const closestDataPointBeherbergung = d3.least(kurzarbeitDataFiltered.filter(row => row.Branche_Code === "WZ08-55"), d => Math.abs(d.Date - hoveredDate))
+        const closestDataPointGastronomie = d3.least(kurzarbeitDataFiltered.filter(row => row.Branche_Code === "WZ08-56"), d => Math.abs(d.Date - hoveredDate))
+
         //set global state of selected line
         setHoveredTime(hoveredDate)
+        setHoveredDataPoint({ Date: moment(closestDataPointBeherbergung.Date).endOf("month"), Beherbergung: closestDataPointBeherbergung, Gastronomie: closestDataPointGastronomie })
     }
 
     const mouseLeaveEvent = (e) => {
         setHoveredTime(null)
-        setShowTooltipsTime(false)
+        setShowTooltip(false)
     }
+
 
     useMemo(() => {
         //calculate closest data point from mouse position
@@ -167,7 +192,7 @@ const KurzarbeitGraph = () => {
                         />
 
 
-                        {showTooltipsTime && <>
+                        {showHoveredTimeLine && <>
                             {/* hover dotted line */}
                             <rect x={xScale(hoveredTime)} style={{ width: ".5px", height: dms.innerHeight, stroke: '#5c5c5c', strokeDasharray: '1 1', strokeWidth: "1px" }} />
                         </>}
@@ -210,6 +235,26 @@ const KurzarbeitGraph = () => {
                 </Popover>
             </div>
 
+            <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0", zIndex: showTooltip ? "20" : "-100" }}>
+                <h3>Kurzarbeit - {moment(hoveredDataPoint.Date).format("MMMM YYYY")}</h3>
+
+                {selectedBranchen.find(b => b.code === "WZ08-56") &&
+                    <>
+                        <h4>Gastronomie</h4>
+                        <p>Kurzarbeiter: {hoveredDataPoint.Gastronomie.Kurzarbeiter}</p>
+                        <p>Betreibe mit Kurzarbeit: {hoveredDataPoint.Gastronomie.BetriebeKurzarbeit}</p>
+                    </>
+                }
+
+                {selectedBranchen.find(b => b.code === "WZ08-55") &&
+                    <>
+                        <h4>Beherbergung</h4>
+                        <p>Kurzarbeiter: {hoveredDataPoint.Beherbergung.Kurzarbeiter}</p>
+                        <p>Betreibe mit Kurzarbeit: {hoveredDataPoint.Beherbergung.BetriebeKurzarbeit}</p>
+                    </>
+                }
+
+            </div>
 
             <Legend
                 vertical={false}

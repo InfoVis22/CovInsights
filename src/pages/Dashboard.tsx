@@ -66,12 +66,6 @@ const Dashboard = () => {
         let kurzarbeitData = rawKurzarbeitData
             .map(row => ({ ...row, Date: new Date(row.Jahr, (+row.Monat - 1)), BetriebeKurzarbeit: +row.BetriebeKurzarbeit, Kurzarbeiter: +row.Kurzarbeiter }))
 
-        kurzarbeitData = kurzarbeitData.map(row => {
-            let newRow = row;
-            newRow.Kurzarbeiter = (newRow.Kurzarbeiter / 1000)
-            return newRow
-
-        })
         setKurzarbeitData(kurzarbeitData)
 
         // if everything is loaded, set loading to false

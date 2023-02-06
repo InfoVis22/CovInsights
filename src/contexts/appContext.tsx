@@ -11,8 +11,8 @@ interface IAppContext {
     setHoveredTime: React.Dispatch<React.SetStateAction<Date>>;
     timeFrame: { min: Date; max: Date; };
     setTimeFrame: React.Dispatch<React.SetStateAction<{ min: Date; max: Date; }>>;
-    showTooltipsTime: boolean;
-    setShowTooltipsTime: React.Dispatch<React.SetStateAction<boolean>>;
+    showHoveredTimeLine: boolean;
+    setShowHoveredTimeLine: React.Dispatch<React.SetStateAction<boolean>>;
     selectedDate: Date;
     setSelectedDate: React.Dispatch<React.SetStateAction<Date>>;
     umsatzData: null;
@@ -35,7 +35,7 @@ export const AppContext = ({ children }: { children: ReactNode }) => {
     const [coronaData, setCoronaData] = useState(null);
     const [kurzarbeitData, setKurzarbeitData] = useState(null)
 
-    const [showTooltipsTime, setShowTooltipsTime] = useState(false);
+    const [showHoveredTimeLine, setShowHoveredTimeLine] = useState(false);
     const [verticalLayout, setVerticalLayout] = useState(false)
 
     const [timeFrame, setTimeFrame] = useState({ min: new Date(2018, 0), max: new Date(2023, 0) });
@@ -60,7 +60,7 @@ export const AppContext = ({ children }: { children: ReactNode }) => {
         timeFrame, setTimeFrame,
         hoveredTime, setHoveredTime,
         selectedDate, setSelectedDate,
-        showTooltipsTime, setShowTooltipsTime,
+        showHoveredTimeLine, setShowHoveredTimeLine,
         verticalLayout, setVerticalLayout
     }
 

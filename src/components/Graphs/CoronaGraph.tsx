@@ -13,7 +13,7 @@ import * as d3 from 'd3'
 const CoronaGraph = () => {
 
     //App context
-    const { setHoveredTime, hoveredTime, coronaData, showTooltipsTime, setShowTooltipsTime, selectedDate, setSelectedDate, verticalLayout, timeFrame } = useAppContext()
+    const { setHoveredTime, hoveredTime, coronaData, showHoveredTimeLine, setShowHoveredTimeLine, selectedDate, setSelectedDate, verticalLayout, timeFrame } = useAppContext()
 
     //set margins of Graph
     const chartSettings = {
@@ -31,9 +31,12 @@ const CoronaGraph = () => {
     const [closestYValueToSelected, setClosestYValueToSelected] = useState(0)
     const [subventionsEvents, setSubventionsEvents] = useState([])
     const [covDataFiltered, setCovDataFiltered] = useState([])
+    const [showTooltip, setShowTooltip] = useState(false)
+    const [hoveredDataPoint, setHoveredDataPoint] = useState({ Date: timeFrame.min, Inzidenz: 0 })
 
     //refs
     const svgRef = useRef();
+    const tooltipRef = useRef();
 
     //Accessors and Constants
     const xAccessor = (d) => d.Date;
@@ -82,20 +85,32 @@ const CoronaGraph = () => {
 
     //mouse events
     const mouseEnterEvent = (e) => {
-        setShowTooltipsTime(true)
+        setShowTooltip(true)
+        setShowHoveredTimeLine(true)
     }
+
     const mouseMoveEvent = (e) => {
         //get x and y position relative to hovered event element
-        const mousePosition = d3.pointer(e)
+        const [x, y] = d3.pointer(e)
+
+        //set the position of the tooltip
+        const tooltipX = x + 70
+        const tooltipY = y + 50
+
+        tooltipRef.current.style.top = tooltipY + "px"
+        tooltipRef.current.style.left = tooltipX + "px"
+
+
         //get date from x and y coordinates
-        const hoveredDate = xScale.invert(mousePosition[0]);
+        const hoveredDate = xScale.invert(x);
 
         //set global state of selected line
         setHoveredTime(hoveredDate)
     }
+
     const mouseLeaveEvent = (e) => {
         setHoveredTime(null)
-        setShowTooltipsTime(false)
+        setShowTooltip(false)
     }
 
     const mouseEventDown = (e) => {
@@ -135,6 +150,8 @@ const CoronaGraph = () => {
         const closestDataPoint = coronaData[closestIndex];
         setClosestXValue(xAccessor(closestDataPoint))
         setClosestYValue(yAccessor(closestDataPoint))
+
+        setHoveredDataPoint({ Date: closestDataPoint.Date, Inzidenz: closestDataPoint.Inzidenz })
 
     }, [hoveredTime])
 
@@ -184,7 +201,7 @@ const CoronaGraph = () => {
 
 
 
-                        {showTooltipsTime && <>
+                        {showHoveredTimeLine && <>
                             {/* hover line */}
                             <rect x={xScale(hoveredTime)} style={{ width: ".5px", height: dms.innerHeight, stroke: '#5c5c5c', strokeDasharray: '1 1', strokeWidth: "1px" }} />
                             {/* hover circle*/}
@@ -238,6 +255,11 @@ const CoronaGraph = () => {
                         <Text css={{ p: "$8" }}>Coronainfektionen in absoluten Zahlen. Nutzen Sie die Play, Reset Buttons um den Zeitverlauf zu kontrollieren. Klicken Sie auf die Zeitachse um einen Zeitpunkt zu markieren</Text>
                     </Popover.Content>
                 </Popover>
+            </div>
+
+            <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0", zIndex: showTooltip ? "20" : "-100" }}>
+                <h3>7-Tage Inzidenz DE</h3>
+                <p>{moment(hoveredDataPoint.Date).format("DD MMMM YYYY")}: {hoveredDataPoint.Inzidenz}</p>
             </div>
         </>
     )

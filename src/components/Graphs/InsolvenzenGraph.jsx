@@ -15,7 +15,7 @@ import moment from "moment"
 
 const InsolvenzGraph = () => {
 
-    const { insolvenzenData, setShowTooltipsTime, hoveredTime, setHoveredTime, showTooltipsTime, selectedDate, setSelectedDate, verticalLayout, timeFrame } = useAppContext()
+    const { insolvenzenData, hoveredTime, setHoveredTime, showHoveredTimeLine, setShowHoveredTimeLine, selectedDate, setSelectedDate, verticalLayout, timeFrame } = useAppContext()
 
     //set margins of Graph
     const chartSettings = {
@@ -28,16 +28,22 @@ const InsolvenzGraph = () => {
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
 
     const [insolvenzenDataFiltered, setInsolvenzenDataFiltered] = useState([])
+    const [hoveredBranche, setHoveredBranche] = useState(null)
+    const [showTooltip, setShowTooltip] = useState(false)
+    const [hoveredDataPoint, setHoveredDataPoint] = useState({ Date: timeFrame.min, Beherbergung: 0, Gastronomie: 0, Hotels: 0, Restaurants: 0, Caterer: 0, Bars: 0 })
 
-    //to select and deselect Sectors
+
+
     //to select and deselect Sectors
     const legendItems = [...categories, ...categories.flatMap(c => c.subCategories)]
         .filter(c => c.name === "Beherbergung" || c.name === "Gastronomie" || c.name === "Hotels" || c.name === "Restaurants & Cafes" || c.name === "Caterer" || c.name === "Bars & Clubs")
     const [selectedBranchen, setSelectedBranchen] = useState(legendItems.filter(c => c.name === "Beherbergung" || c.name === "Gastronomie"))
-    const [hoveredBranche, setHoveredBranche] = useState(null)
 
 
+    //refs
     const svgRef = useRef()
+    const tooltipRef = useRef();
+
 
     const xAccessor = (d) => d.Date;
     const yAccessor = (d) => d.Insolvenzen;
@@ -67,7 +73,8 @@ const InsolvenzGraph = () => {
     const lineGenerator = d3.line(d => xScale(d.Date), d => yScale(d.Insolvenzen)).curve(d3.curveMonotoneX)
 
     const mouseEnterEvent = (e) => {
-        setShowTooltipsTime(true)
+        setShowTooltip(true)
+        setShowHoveredTimeLine(true)
     }
 
     const mouseEventDown = (e) => {
@@ -76,16 +83,35 @@ const InsolvenzGraph = () => {
 
     const mouseMoveEvent = (e) => {
         //get x and y position relative to hovered event element
-        const mousePosition = d3.pointer(e)
+        const [x, y] = d3.pointer(e)
+
+        //set the position of the tooltip
+        const tooltipX = x + 70
+        const tooltipY = y + 50
+
+        tooltipRef.current.style.top = tooltipY + "px"
+        tooltipRef.current.style.left = tooltipX + "px"
+
+
         //get date from x and y coordinates
-        const hoveredDate = xScale.invert(mousePosition[0]);
+        const hoveredDate = xScale.invert(x);
+
+        const closestDataPointBeherbergung = d3.least(insolvenzenDataFiltered.filter(row => row.Branche_Code === "WZ08-55"), d => Math.abs(d.Date - hoveredDate))
+        const closestDataPointGastronomie = d3.least(insolvenzenDataFiltered.filter(row => row.Branche_Code === "WZ08-56"), d => Math.abs(d.Date - hoveredDate))
+
+
+        console.log(closestDataPointBeherbergung, closestDataPointGastronomie)
+
         //set global state of selected line
         setHoveredTime(hoveredDate)
+        setHoveredDataPoint({ Date: moment(closestDataPointBeherbergung.Date).endOf("month"), Beherbergung: closestDataPointBeherbergung, Gastronomie: closestDataPointGastronomie })
+
+
     }
 
     const mouseLeaveEvent = (e) => {
         setHoveredTime(null)
-        setShowTooltipsTime(false)
+        setShowTooltip(false)
     }
 
 
@@ -133,7 +159,7 @@ const InsolvenzGraph = () => {
                         />
 
 
-                        {showTooltipsTime && <>
+                        {showHoveredTimeLine && <>
                             {/* hover dotted line */}
                             <rect x={xScale(hoveredTime)} style={{ width: ".5px", height: dms.innerHeight, stroke: '#5c5c5c', strokeDasharray: '1 1', strokeWidth: "1px" }} />
                         </>}
@@ -173,6 +199,26 @@ const InsolvenzGraph = () => {
                         <Text css={{ p: "$8" }}>Insolvenzen in absoluten Zahlen für Beherbergung und Gastronomie</Text>
                     </Popover.Content>
                 </Popover>
+            </div>
+
+
+            <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0", zIndex: showTooltip ? "20" : "-100" }}>
+                <h3>Kurzarbeit - {moment(hoveredDataPoint.Date).format("MMMM YYYY")}</h3>
+
+                {selectedBranchen.find(b => b.code === "WZ08-56") &&
+                    <>
+                        <h4>Gastronomie</h4>
+                        <p>Insolvenzen: {hoveredDataPoint.Gastronomie.Insolvenzen}</p>
+                    </>
+                }
+
+                {selectedBranchen.find(b => b.code === "WZ08-55") &&
+                    <>
+                        <h4>Beherbergung</h4>
+                        <p>Insolvenzen: {hoveredDataPoint.Beherbergung.Insolvenzen}</p>
+                    </>
+                }
+
             </div>
 
             <Legend
