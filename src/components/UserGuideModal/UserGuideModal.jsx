@@ -17,7 +17,7 @@ const UserGuideModal = () => {
         setVisibleUserGuideModal(false);
         localStorage.setItem("UserGuideModalShown", true);
         if (showTutorial) {
-            navigate("/help");
+            navigate("/userguide");
         }
     };
 
