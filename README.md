@@ -56,9 +56,9 @@ npm run preview
 ## Feature list
 
 ### Visualizations: Bar Graphs
-- [x] Employment as Bar chart
-- [x] Revenue as Bar chart
-- [x] Change in bankruptcies as Bar chart 
+[x] Employment as Bar chart
+[x] Revenue as Bar chart
+[x] Change in bankruptcies as Bar chart 
 
 
 ### Visualizations: Bar Graphs
@@ -100,11 +100,6 @@ Lennard Greve - l.greve@campus.lmu.de <br/>
 Sofie Henghuber - sofie.henghuber@campus.lmu.de <br/>
 Manuel Totzauer - m.totzauer@campus.lmu.de <br/>
 Maximilian Brandmaier - m.brandmaier@campus.lmu.de
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-* [React Icons](https://react-icons.github.io/react-icons/search)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
