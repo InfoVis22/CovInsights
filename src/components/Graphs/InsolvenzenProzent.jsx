@@ -45,7 +45,7 @@ const InsolvenzenProzent = () => {
                 selectedBranchen.find(b => row.Branche_Code.includes(b.code)))
 
         setInsolvenzData(filteredData)
-    }, [selectedDate, selectedBranchen])
+    }, [selectedDate.getMonth() + selectedDate.getFullYear(), selectedBranchen])
 
 
     //X-Scale for graph

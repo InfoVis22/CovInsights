@@ -47,7 +47,7 @@ const RevenueBarChart = () => {
             selectedBranchen.find(b => row.Branche_Code.includes(b.code))))
 
         setFilteredData(filteredData)
-    }, [selectedDate.getMonth(), selectedBranchen])
+    }, [selectedDate.getMonth() + selectedDate.getFullYear(), selectedBranchen])
 
     //X-Scale for graph
     const xScale = useMemo(() => {
@@ -153,9 +153,8 @@ const RevenueBarChart = () => {
 
             <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0" }}>
                 <h3>{hoveredBar?.Branche_Label}</h3>
-                <p>Umsatz: {hoveredBar?.Umsatz}%</p>
-                <p>Insolvenzen: {hoveredBar?.Insolvenzen}</p>
-                <p>Davon abgewiesen: {hoveredBar?.Ins_rejected}</p>
+                <p>Umsatz: {hoveredBar?.Umsatz}M€</p>
+                <p>Δ zur Vorjahresperiode: {hoveredBar?.Veraenderung}%</p>
             </div>
         </>
     )

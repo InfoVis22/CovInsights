@@ -30,15 +30,12 @@ const Dashboard = () => {
 
     //---- load different data ----
     const loadData = async () => {
-        console.log("Load Data...")
 
         //load Employment BarChart
         const rawEmployment = await d3.dsv(";", "../data/BeschäftigungGastgewerbe.csv")
         const employmentData = rawEmployment
             .filter(d => +d.Jahr >= 2018 && (d.Branche_Code !== "WZ08-55" && d.Branche_Code !== "WZ08-56"))
             .map((row) => ({ ...row, Date: new Date(row.Jahr, (+row.Monat - 1)), Beschaeftigte: +row.Beschaeftigte, Vollzeitbeschaeftigte: +row.Vollzeitbeschaeftigte, Teilzeitbeschaeftigte: +row.Teilzeitbeschaeftigte }))
-
-        console.log("Beschäftigungs Daten: ", employmentData)
         setEmploymentData(employmentData)
 
 
@@ -47,8 +44,6 @@ const Dashboard = () => {
         const umsatzData = rawUmsatzData
             .filter(row => +row.Jahr >= 2018 && (row.Branche_Code !== "WZ08-55" && row.Branche_Code !== "WZ08-56"))
             .map(row => ({ ...row, Date: new Date(row.Jahr, (+row.Monat - 1)), Umsatz: +row.Umsatz, Veraenderung: +row.Veraenderung }))
-
-        console.log("Umsatz Daten: ", umsatzData)
         setUmsatzData(umsatzData)
 
 
@@ -57,16 +52,12 @@ const Dashboard = () => {
         const data = rawInsolvencyBarData
             .filter(row => +row.Jahr >= 2018)
             .map((row) => ({ ...row, Date: new Date(row.Jahr, (+row.Monat - 1)), Ins_opened: +row.Ins_opened, Ins_rejected: +row.Ins_rejected, Insolvenzen: +row.Insolvenzen, Arbeitnehmer: +row.Arbeitnehmer, Forderungen: +row.Forderungen, InsolvenzenVeraenderung: (+row.InsolvenzenVeraenderung * 100) }))
-
-        console.log("Insolvencies Bar: ", data)
         setInsolvenzenData(data)
 
 
         //load Corona Data 2020-2022
         const rawCoronaInzidenzData = await d3.dsv(";", "../data/Coronainfektionen_7-Tage_Trend_DE20_22.csv")
         const coronaData = rawCoronaInzidenzData.map(row => ({ Date: new Date(row.Date), Inzidenz: +row.Inzidenz }))
-
-        console.log("Covid Trend Daten: ", coronaData)
         setCoronaData(coronaData)
 
 
@@ -81,12 +72,10 @@ const Dashboard = () => {
             return newRow
 
         })
-        console.log("Kurzarbeit Daten: ", kurzarbeitData)
         setKurzarbeitData(kurzarbeitData)
 
         // if everything is loaded, set loading to false
         setIsLoadingData(false)
-        console.log("loading complete!")
     }
 
     useEffect(() => {

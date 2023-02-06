@@ -195,7 +195,7 @@ const CoronaGraph = () => {
                             {/* hover dotted line */}
                             <rect x={xScale(selectedDate)} style={{ width: "0.8px", height: dms.innerHeight, fill: "#585858" }} />
                             {/* selected dot */}
-                            <circle cx={xScale(selectedDate)} cy={yScale(closestYValueToSelected)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
+                            <circle cx={xScale(selectedDate)} cy={yScale(closestYValueToSelected) ? yScale(closestYValueToSelected) : 0} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} />
                         </>}
 
 

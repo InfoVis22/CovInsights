@@ -50,7 +50,7 @@ const EmploymentBarChart = () => {
             && selectedBranchen.find(b => row.Branche_Code.includes(b.code))
         ))
         setFilteredData(filteredDataCreate)
-    }, [selectedDate.getMonth(), selectedBranchen])
+    }, [selectedDate.getMonth() + selectedDate.getFullYear(), selectedBranchen])
 
     //X-Scale for graph
     const xScale = useMemo(() => (
