@@ -1,27 +1,16 @@
-<!-- PROJECT LOGO -->
-<a name="readme-top"></a>
-<div align="center">
-
-  <a href="https://github.com/InfoVis22/CovInsights/tree/main"><img src="./src/images/Logo.png"></a>
-
-  <h3 align="center">Informationvisualisation WS22/23</h3>
-
-  <p align="center">
-    A project to visualize datasets of the german gastronomy industry in relation to the global COVID-19 pandemic.
-  </p>
-</div>
+![Logo](./src/images/Logo.png "CovInsight Logo")
 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-This project is done as part of the lecture Data Visualization (DataVis) at the LMU Munich. Our goal is to visualize the effects of the COVID pandemic on the german gastronomy industry with respect to revenue, employment, insolvency, turnover and subventions.
+This project is done as part of the lecture Data Visualization (DataVis) at the LMU Munich. Our goal is to visualize the effects of the COV-19 pandemic on the german gastronomy industry with respect to revenue, employment, insolvency, turnover and subventions.
 
 ![React.js] ![D3_logo]
 
 
 <!-- DEMO -->
 ### Demo Application
-See the Demo: [CovInsight Demo](https://covinsight.mmt-lmu.de/) ✅
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/InfoVis22/CovInsights/azure-static-web-apps-calm-field-04d458303.yml?style=flat-square) Try the Webapp: [CovInsight Demo](https://covinsight.mmt-lmu.de/) 
 
 
 ![Screenshot of Webapp](./public/images/CovInsightDemo.png "Screenshot of Webapp")
