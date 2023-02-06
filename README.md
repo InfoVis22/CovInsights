@@ -1,25 +1,5 @@
 <!-- PROJECT LOGO -->
-<a name="readme-top"></a>
-<div align="center">
-
-  <a href="https://github.com/InfoVis22/CovInsights/tree/main"><img src="./src/images/Logo.png"></a>
-
-  <h3 align="center">Informationvisualisation WS22/23</h3>
-
-  <p align="center">
-    A project to visualize datasets of the german gastronomy industry in relation to the global COVID-19 pandemic.
-    <br />
-    <a href="https://github.com/InfoVis22/CovInsights"><strong>GitHub Repo »</strong></a>
-    <br />
-    <br />
-    <a href="https://covinsight.mmt-lmu.de/">View Demo</a>
-    ·
-    <a href="https://github.com/InfoVis22/CovInsights/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/InfoVis22/CovInsights/issues">Request Feature</a>
-  </p>
-</div>
-
+![Logo](./src/images/Logo.png "CovInsight Logo")
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -56,9 +36,9 @@ npm run preview
 ## Feature list
 
 ### Visualizations: Bar Graphs
-[x] Employment as Bar chart
-[x] Revenue as Bar chart
-[x] Change in bankruptcies as Bar chart 
+- [x] Employment as Bar chart
+- [x] Revenue as Bar chart
+- [x] Change in bankruptcies as Bar chart 
 
 
 ### Visualizations: Bar Graphs
