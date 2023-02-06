@@ -168,7 +168,7 @@ const InsolvenzenProzent = () => {
             />
 
 
-            <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0", display: showTooltip ? "inline-block" : "none" }}>
+            <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0", display: showTooltip ? "inline-block" : "none", zIndex: showTooltip ? "20" : "-100" }}>
                 <h3>{hoveredBar?.Branche_Label}</h3>
                 <p>Veränderung zu 2015: {Math.round((hoveredBar?.InsolvenzenVeraenderung + Number.EPSILON) * 100) / 100}%</p>
                 <p>Insolvenzen: {hoveredBar?.Insolvenzen}</p>

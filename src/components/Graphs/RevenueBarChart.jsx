@@ -151,10 +151,10 @@ const RevenueBarChart = () => {
             />
 
 
-            <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0" }}>
+            <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0", zIndex: showTooltip ? "20" : "-100" }}>
                 <h3>{hoveredBar?.Branche_Label}</h3>
                 <p>Umsatz: {hoveredBar?.Umsatz}M€</p>
-                <p>Δ zur Vorjahresperiode: {hoveredBar?.Veraenderung}%</p>
+                <p>Δ% zur Vorjahresperiode: {hoveredBar?.Veraenderung}%</p>
             </div>
         </>
     )
