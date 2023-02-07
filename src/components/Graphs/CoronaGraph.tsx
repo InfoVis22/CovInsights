@@ -147,7 +147,13 @@ const CoronaGraph = () => {
         const closestIndex = d3.scan(coronaData, (a, b) => getDistanceFromHoveredDate(a) - getDistanceFromHoveredDate(b));
 
         //Grab the data point at that index
-        const closestDataPoint = coronaData[closestIndex];
+        let closestDataPoint = coronaData[closestIndex];
+
+        //account for data before 2020-06-01
+        if (hoveredTime < new Date("2020-06-01")) {
+            closestDataPoint = { Date: hoveredTime, Inzidenz: 0 }
+        }
+
         setClosestXValue(xAccessor(closestDataPoint))
         setClosestYValue(yAccessor(closestDataPoint))
 

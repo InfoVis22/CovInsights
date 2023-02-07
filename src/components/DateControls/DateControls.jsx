@@ -74,10 +74,10 @@ const DateControls = () => {
         <div className="DateControls">
             <div className="buttons">
                 {!isPlaying ?
-                    (<button onClick={() => setPlaying(true)}><IoPlayOutline /> Play</button>) :
-                    (<button onClick={() => setPlaying(false)}><IoPauseOutline /> Pause</button>)}
+                    (<button onClick={() => setPlaying(true)} title="CTRL + SPACE"><IoPlayOutline /> Play</button>) :
+                    (<button onClick={() => setPlaying(false)} title="CTRL + SPACE"><IoPauseOutline /> Pause</button>)}
 
-                <button onClick={() => handleReset()}><GrPowerReset />Reset</button>
+                <button onClick={() => handleReset()} title="CTRL + R"><GrPowerReset />Reset</button>
             </div>
 
             <p>{selectedDate?.toLocaleString("de-DE", {

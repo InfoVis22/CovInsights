@@ -100,6 +100,9 @@ const InsolvenzGraph = () => {
         const closestDataPointBeherbergung = d3.least(insolvenzenDataFiltered.filter(row => row.Branche_Code === "WZ08-55"), d => Math.abs(d.Date - hoveredDate))
         const closestDataPointGastronomie = d3.least(insolvenzenDataFiltered.filter(row => row.Branche_Code === "WZ08-56"), d => Math.abs(d.Date - hoveredDate))
         const closestDataPointHotels = d3.least(insolvenzenDataFiltered.filter(row => row.Branche_Code === "WZ08-551"), d => Math.abs(d.Date - hoveredDate))
+        const closestDataPointRestaurants = d3.least(insolvenzenDataFiltered.filter(row => row.Branche_Code === "WZ08-561"), d => Math.abs(d.Date - hoveredDate))
+        const closestDataPointCaterer = d3.least(insolvenzenDataFiltered.filter(row => row.Branche_Code === "WZ08-562"), d => Math.abs(d.Date - hoveredDate))
+        const closestDataPointBars = d3.least(insolvenzenDataFiltered.filter(row => row.Branche_Code === "WZ08-563"), d => Math.abs(d.Date - hoveredDate))
 
 
         console.log(closestDataPointBeherbergung, closestDataPointGastronomie)
@@ -110,7 +113,10 @@ const InsolvenzGraph = () => {
             Date: moment(closestDataPointBeherbergung.Date).endOf("month"),
             Beherbergung: closestDataPointBeherbergung,
             Gastronomie: closestDataPointGastronomie,
-            Hotels: closestDataPointHotels
+            Hotels: closestDataPointHotels,
+            Restaurants: closestDataPointRestaurants,
+            Caterer: closestDataPointCaterer,
+            Bars: closestDataPointBars
         })
 
 
@@ -225,6 +231,31 @@ const InsolvenzGraph = () => {
                         <p>Insolvenzen: {hoveredDataPoint.Beherbergung.Insolvenzen}</p>
                     </>
                 }
+                {selectedBranchen.find(b => b.code === "WZ08-551") &&
+                    <>
+                        <h4>Hotels</h4>
+                        <p>Insolvenzen: {hoveredDataPoint.Hotels.Insolvenzen}</p>
+                    </>
+                }
+                {selectedBranchen.find(b => b.code === "WZ08-561") &&
+                    <>
+                        <h4>Restaurants</h4>
+                        <p>Insolvenzen: {hoveredDataPoint.Restaurants.Insolvenzen}</p>
+                    </>
+                }
+                {selectedBranchen.find(b => b.code === "WZ08-562") &&
+                    <>
+                        <h4>Caterer</h4>
+                        <p>Insolvenzen: {hoveredDataPoint.Caterer.Insolvenzen}</p>
+                    </>
+                }
+                {selectedBranchen.find(b => b.code === "WZ08-563") &&
+                    <>
+                        <h4>Bars & Clubs</h4>
+                        <p>Insolvenzen: {hoveredDataPoint.Bars.Insolvenzen}</p>
+                    </>
+                }
+
 
             </div>
 

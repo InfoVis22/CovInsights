@@ -32,13 +32,9 @@ const KurzarbeitGraph = () => {
     const [wrapperRef, dms] = useChartDimensions(chartSettings)
 
     //Component State
-    const [closestXValueBeherbergung, setClosestXValueBeherbergung] = useState(0)
-    const [closestYValueBeherbergung, setClosestYValueBeherbergung] = useState(0)
-    const [closestXValueGastronomie, setClosestXValueGastronomie] = useState(0)
-    const [closestYValueGastronomie, setClosestYValueGastronomie] = useState(0)
     const [kurzarbeitDataFiltered, setKurzarbeitDataFiltered] = useState([])
     const [showTooltip, setShowTooltip] = useState(false)
-    const [hoveredDataPoint, setHoveredDataPoint] = useState({ Date: timeFrame.min, Beherbergung: 0, Gastronomie: 0 })
+    const [hoveredDataPoint, setHoveredDataPoint] = useState({ Date: timeFrame.min, Beherbergung: { Kurzarbeiter: 0 }, Gastronomie: { Kurzarbeiter: 0 } })
 
 
     //to select and deselect Sectors
@@ -95,8 +91,8 @@ const KurzarbeitGraph = () => {
         const [x, y] = d3.pointer(e)
 
         //set the position of the tooltip
-        const tooltipX = x + 70
-        const tooltipY = y + 50
+        const tooltipX = x + 80
+        const tooltipY = y + 65
 
         tooltipRef.current.style.top = tooltipY + "px"
         tooltipRef.current.style.left = tooltipX + "px"
@@ -107,6 +103,8 @@ const KurzarbeitGraph = () => {
 
         const closestDataPointBeherbergung = d3.least(kurzarbeitDataFiltered.filter(row => row.Branche_Code === "WZ08-55"), d => Math.abs(d.Date - hoveredDate))
         const closestDataPointGastronomie = d3.least(kurzarbeitDataFiltered.filter(row => row.Branche_Code === "WZ08-56"), d => Math.abs(d.Date - hoveredDate))
+
+        console.log(closestDataPointBeherbergung)
 
         //set global state of selected line
         setHoveredTime(hoveredDate)
@@ -136,11 +134,11 @@ const KurzarbeitGraph = () => {
         const closestDataPointBeherbergung = BeherbergungSubset[closestIndexBeherbergung];
         const closestDataPointGastronomie = GastronomieSubset[closestIndexGastronomie];
 
-        //set state of closest data point
-        setClosestXValueBeherbergung(closestDataPointBeherbergung.Date)
-        setClosestYValueBeherbergung(closestDataPointBeherbergung.Kurzarbeiter)
-        setClosestXValueGastronomie(closestDataPointGastronomie.Date)
-        setClosestYValueGastronomie(closestDataPointGastronomie.Kurzarbeiter)
+        // //set state of closest data point
+        // setClosestXValueBeherbergung(closestDataPointBeherbergung.Date)
+        // setClosestYValueBeherbergung(closestDataPointBeherbergung.Kurzarbeiter)
+        // setClosestXValueGastronomie(closestDataPointGastronomie.Date)
+        // setClosestYValueGastronomie(closestDataPointGastronomie.Kurzarbeiter)
 
     }, [selectedDate])
 
@@ -203,6 +201,12 @@ const KurzarbeitGraph = () => {
                             <rect x={xScale(selectedDate)} style={{ width: "0.8px", height: dms.innerHeight, fill: "#585858" }} />
                         </>}
 
+
+                        {/* hover circle*/}
+                        {/* <circle cx={xScale(hoveredTime)} cy={yScale(hoveredDataPoint.Beherbergung.Kurzarbeiter)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1 }} /> */}
+
+                        {/* hovered Gastronomie circle*/}
+                        {/* <circle cx={xScale(hoveredDataPoint.Date)} cy={yScale(hoveredDataPoint.Gastronomie)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1, transition: "all 0.2s ease-in-out" }} /> */}
 
                         {/* selected Beherbergung circle*/}
                         {/* <circle cx={xScale(closestXValueBeherbergung)} cy={yScale(closestYValueBeherbergung)} r="3" style={{ stroke: '#5c5c5c', fill: '#fff', opacity: 1, transition: "all 0.2s ease-in-out" }} /> */}
