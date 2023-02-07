@@ -10,7 +10,9 @@ This project is done as part of the lecture Data Visualization (DataVis) at the 
 
 <!-- DEMO -->
 ### Demo Application
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/InfoVis22/CovInsights/azure-static-web-apps-calm-field-04d458303.yml?style=flat-square) Try the Webapp: [CovInsight Demo](https://covinsight.mmt-lmu.de/) 
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/InfoVis22/CovInsights/azure-static-web-apps-calm-field-04d458303.yml?style=flat-square) ![Online Status](https://img.shields.io/badge/status-online-brightgreen?style=flat-square) \
+Try the Webapp: [CovInsight Demo](https://covinsight.mmt-lmu.de/)\
+Interactive Tutorial: [Tutorial](https://covinsight.mmt-lmu.de/userguide)
 
 
 ![Screenshot of Webapp](./public/images/CovInsightDemo.png "Screenshot of Webapp")
