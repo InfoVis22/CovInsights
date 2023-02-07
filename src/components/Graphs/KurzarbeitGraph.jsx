@@ -93,8 +93,8 @@ const KurzarbeitGraph = () => {
         const [x, y] = d3.pointer(e)
 
         //set the position of the tooltip
-        const tooltipX = x + 80
-        const tooltipY = y + 65
+        const tooltipX = x - 40
+        const tooltipY = y - 100
 
         tooltipRef.current.style.top = tooltipY + "px"
         tooltipRef.current.style.left = tooltipX + "px"

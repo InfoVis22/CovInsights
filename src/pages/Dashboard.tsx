@@ -74,7 +74,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         //---- Initialize State ----
-        setTimeFrame({ min: new Date(2018, 0), max: new Date() })
+        setTimeFrame({ min: new Date(2019, 10), max: new Date() })
 
         //---- Load Data ----
         loadData()
@@ -114,7 +114,7 @@ const Dashboard = () => {
                     <KurzarbeitGraph />
                 </Timeline>
 
-                <Timeline title="Insolvenzen im Gastgewerbe" subtitle="in Anzahl der eingereichten? Insolvenzen">
+                <Timeline title="Insolvenzen im Gastgewerbe" subtitle="in Anzahl der akzeptierten Insolvenzen">
                     <InsolvenzenGraph />
                 </Timeline>
 
