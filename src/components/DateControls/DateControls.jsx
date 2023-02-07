@@ -22,11 +22,11 @@ const DateControls = () => {
 
     const handleKeyPress = (e) => {
         //CTRL + spacebar 
-        if (e.ctrlKey && e.keyCode === 32) {
+        if (e.keyCode === 80) {
             setPlaying(old => !old)
         }
         //CTRL + R
-        else if (e.ctrlKey && e.keyCode === 82) {
+        else if (e.keyCode === 82) {
             handleReset();
         }
     }

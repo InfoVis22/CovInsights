@@ -47,8 +47,8 @@ function NavBar() {
                                     </div>
 
                                     <h3 style={{ paddingTop: "10px", fontSize: "1rem" }}>Shortcuts</h3>
-                                    <p> CTRL + SPACE : Play / Pause</p>
-                                    <p> CTRL + R : Reset</p>
+                                    <p> P : Play / Pause</p>
+                                    <p> R : Reset</p>
 
                                     <h3 style={{ paddingTop: "10px", fontSize: "1rem" }}>Tutorial</h3>
                                     <NavLink to="userguide">User Guide</NavLink>

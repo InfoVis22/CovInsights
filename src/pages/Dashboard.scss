@@ -10,6 +10,9 @@
 
     &.vertical {
         flex-direction: row;
+        @media(max-width: $mobile){
+            flex-direction: column;
+        }
     }
 
 

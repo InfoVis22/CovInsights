@@ -216,7 +216,7 @@ const InsolvenzGraph = () => {
 
 
             <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0", zIndex: showTooltip ? "20" : "-100" }}>
-                <h3>Kurzarbeit - {moment(hoveredDataPoint.Date).format("MMMM YYYY")}</h3>
+                <h3>Kurzarbeit -  {new Date(hoveredDataPoint.Date).toLocaleString("de-DE", { month: "short", year: "numeric" })}</h3>
 
                 {selectedBranchen.find(b => b.code === "WZ08-56") &&
                     <>

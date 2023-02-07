@@ -127,7 +127,7 @@ const EmploymentBarChart = () => {
                                     onMouseLeave={(e) => mouseLeaveEvent(e)}
                                 />
 
-                                <text x={0} y={yScale(row.Branche_Label) + yScale.bandwidth() / 4} style={{ ...transitionStyle, fontSize: "11px", transform: `translateX(${xScale(row.Beschaeftigte) + 8}px)` }} >{row.Beschaeftigte} %</text>
+                                <text x={0} y={yScale(row.Branche_Label) + yScale.bandwidth() / 4} style={{ ...transitionStyle, fontSize: "11px", transform: `translateX(${xScale(row.Beschaeftigte) + 8}px)` }} >{new Intl.NumberFormat('de-DE').format(row.Beschaeftigte)} %</text>
 
                             </g>
                         )}
@@ -157,13 +157,11 @@ const EmploymentBarChart = () => {
                 setHovered={setHoveredBranche}
             />
 
-
-
             <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0", zIndex: showTooltip ? "20" : "-100" }}>
                 <h3>{hoveredBar?.Branche_Label}</h3>
-                <p>Beschäftigte zu 2015: {hoveredBar?.Beschaeftigte}%</p>
-                <p>Vollzeitbeschäftigte: {hoveredBar?.Vollzeitbeschaeftigte}%</p>
-                <p>Teilzeitbeschaeftigte: {hoveredBar?.Teilzeitbeschaeftigte}%</p>
+                <p>Beschäftigte zu 2015: {new Intl.NumberFormat('de-DE').format(hoveredBar?.Beschaeftigte)} %</p>
+                <p>Vollzeitbeschäftigte: {new Intl.NumberFormat('de-DE').format(hoveredBar?.Vollzeitbeschaeftigte)} %</p>
+                <p>Teilzeitbeschaeftigte: {new Intl.NumberFormat('de-DE').format(hoveredBar?.Teilzeitbeschaeftigte)} %</p>
             </div>
         </>
     )

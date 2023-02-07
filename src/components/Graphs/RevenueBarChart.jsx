@@ -142,7 +142,7 @@ const RevenueBarChart = () => {
                                     height={yScale.bandwidth()}
                                     style={{ ...transitionStyle, fill: getFill(row) }} />
 
-                                <text x={0} y={yScale(row.Branche_Label) + yScale.bandwidth() / 4} style={{ ...transitionStyle, fontSize: "11px", transform: `translateX(${xScale(row.Umsatz) + 8}px)` }} >{row.Umsatz} M€</text>
+                                <text x={0} y={yScale(row.Branche_Label) + yScale.bandwidth() / 4} style={{ ...transitionStyle, fontSize: "11px", transform: `translateX(${xScale(row.Umsatz) + 8}px)` }} >{new Intl.NumberFormat('de-DE').format(row.Umsatz)} M€</text>
                             </g>
 
                         )}
@@ -162,8 +162,8 @@ const RevenueBarChart = () => {
 
             <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0", zIndex: showTooltip ? "20" : "-100" }}>
                 <h3>{hoveredBar?.Branche_Label}</h3>
-                <p>Umsatz: {hoveredBar?.Umsatz}M€</p>
-                <p>Δ% zur Vorjahresperiode: {hoveredBar?.Veraenderung}%</p>
+                <p>Umsatz: {new Intl.NumberFormat('de-DE').format(hoveredBar?.Umsatz)} M€</p>
+                <p>Δ% zur Vorjahresperiode: {new Intl.NumberFormat('de-DE').format(hoveredBar?.Veraenderung)} %</p>
             </div>
         </>
     )

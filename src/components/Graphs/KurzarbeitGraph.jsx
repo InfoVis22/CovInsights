@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react"
 import { useAppContext } from "../../contexts/appContext"
 import useChartDimensions from "../../hooks/useChartDimensions"
 import XAxisTime from "../D3Elements/XAxisTime"
-import YAxisLinear from "../D3Elements/YAxisLinear"
+import YAxisLinearSpecial from "../D3Elements/YAxisLinearSpecial"
 import Line from "../D3Elements/Line"
 import Legend from "../D3Elements/Legend.jsx";
 import { categories } from "../../settings.js"
@@ -42,6 +42,7 @@ const KurzarbeitGraph = () => {
     const [selectedBranchen, setSelectedBranchen] = useState(legendItems)
     const [hoveredBranche, setHoveredBranche] = useState(null)
 
+    const [dateHoveredReadable, setDateHoveredReadable] = useState();
     //accessors
     const xAccessor = (d) => d.Date;
     const yAccessor = (d) => d.Kurzarbeiter;
@@ -55,6 +56,7 @@ const KurzarbeitGraph = () => {
         const filtered = kurzarbeitData.filter((row) => row.Date >= timeFrame.min && row.Date <= timeFrame.max)
         setKurzarbeitDataFiltered(filtered)
     }, [timeFrame])
+
 
 
     //X-Scale for graph
@@ -161,13 +163,13 @@ const KurzarbeitGraph = () => {
                             range={xScale.range()}>
                         </XAxisTime>
 
-                        <YAxisLinear
+                        <YAxisLinearSpecial
                             dms={dms}
                             domain={yScale.domain()}
                             range={yScale.range()}
                             labelSuffix="T"
                         >
-                        </YAxisLinear>
+                        </YAxisLinearSpecial>
 
 
                         {/* Line for WZ08-55 – Beherbergung and WZ08-56 – Gastronomie*/}
@@ -240,21 +242,22 @@ const KurzarbeitGraph = () => {
             </div>
 
             <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0", zIndex: showTooltip ? "20" : "-100" }}>
-                <h3>Kurzarbeit - {moment(hoveredDataPoint.Date).format("MMMM YYYY")}</h3>
+
+                <h3>Kurzarbeit - {new Date(hoveredDataPoint.Date).toLocaleString("de-DE", { month: "short", year: "numeric" })}</h3>
 
                 {selectedBranchen.find(b => b.code === "WZ08-56") &&
                     <>
                         <h4>Gastronomie</h4>
-                        <p>Kurzarbeiter: {hoveredDataPoint.Gastronomie.Kurzarbeiter}</p>
-                        <p>Betreibe mit Kurzarbeit: {hoveredDataPoint.Gastronomie.BetriebeKurzarbeit}</p>
+                        <p>Kurzarbeiter: {new Intl.NumberFormat('de-DE').format(hoveredDataPoint.Gastronomie.Kurzarbeiter) }</p>
+                        <p>Betreibe mit Kurzarbeit: {new Intl.NumberFormat('de-DE').format(hoveredDataPoint.Gastronomie.BetriebeKurzarbeit)}</p>
                     </>
                 }
 
                 {selectedBranchen.find(b => b.code === "WZ08-55") &&
                     <>
                         <h4>Beherbergung</h4>
-                        <p>Kurzarbeiter: {hoveredDataPoint.Beherbergung.Kurzarbeiter}</p>
-                        <p>Betreibe mit Kurzarbeit: {hoveredDataPoint.Beherbergung.BetriebeKurzarbeit}</p>
+                        <p>Kurzarbeiter: {new Intl.NumberFormat('de-DE').format(hoveredDataPoint.Beherbergung.Kurzarbeiter)}</p>
+                        <p>Betreibe mit Kurzarbeit: {new Intl.NumberFormat('de-DE').format(hoveredDataPoint.Beherbergung.BetriebeKurzarbeit)}</p>
                     </>
                 }
 

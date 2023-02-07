@@ -265,7 +265,7 @@ const CoronaGraph = () => {
 
             <div className='tooltip' ref={tooltipRef} style={{ top: "0px", left: "0px", opacity: showTooltip ? "1" : "0", zIndex: showTooltip ? "20" : "-100" }}>
                 <h3>7-Tage Inzidenz DE</h3>
-                <p>{moment(hoveredDataPoint.Date).format("DD MMMM YYYY")}: {hoveredDataPoint.Inzidenz}</p>
+                <p>{new Date(hoveredDataPoint.Date).toLocaleString("de-DE", {day: "2-digit", month: "2-digit", year: "numeric" })}: {new Intl.NumberFormat('de-DE').format(hoveredDataPoint.Inzidenz)}</p>
             </div>
         </>
     )
