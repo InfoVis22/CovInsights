@@ -106,8 +106,6 @@ const KurzarbeitGraph = () => {
         const closestDataPointBeherbergung = d3.least(kurzarbeitDataFiltered.filter(row => row.Branche_Code === "WZ08-55"), d => Math.abs(d.Date - hoveredDate))
         const closestDataPointGastronomie = d3.least(kurzarbeitDataFiltered.filter(row => row.Branche_Code === "WZ08-56"), d => Math.abs(d.Date - hoveredDate))
 
-        console.log(closestDataPointBeherbergung)
-
         //set global state of selected line
         setHoveredTime(hoveredDate)
         setHoveredDataPoint({ Date: moment(closestDataPointBeherbergung.Date).endOf("month"), Beherbergung: closestDataPointBeherbergung, Gastronomie: closestDataPointGastronomie })
@@ -248,7 +246,7 @@ const KurzarbeitGraph = () => {
                 {selectedBranchen.find(b => b.code === "WZ08-56") &&
                     <>
                         <h4>Gastronomie</h4>
-                        <p>Kurzarbeiter: {new Intl.NumberFormat('de-DE').format(hoveredDataPoint.Gastronomie.Kurzarbeiter) }</p>
+                        <p>Kurzarbeiter: {new Intl.NumberFormat('de-DE').format(hoveredDataPoint.Gastronomie.Kurzarbeiter)}</p>
                         <p>Betreibe mit Kurzarbeit: {new Intl.NumberFormat('de-DE').format(hoveredDataPoint.Gastronomie.BetriebeKurzarbeit)}</p>
                     </>
                 }

@@ -51,7 +51,7 @@ const InsolvenzGraph = () => {
     useEffect(() => {
         const filtered = insolvenzenData.filter((row) => row.Date >= timeFrame.min && row.Date <= timeFrame.max)
         setInsolvenzenDataFiltered(filtered)
-        console.log(filtered)
+        
     }, [timeFrame])
 
 
@@ -104,8 +104,6 @@ const InsolvenzGraph = () => {
         const closestDataPointCaterer = d3.least(insolvenzenDataFiltered.filter(row => row.Branche_Code === "WZ08-562"), d => Math.abs(d.Date - hoveredDate))
         const closestDataPointBars = d3.least(insolvenzenDataFiltered.filter(row => row.Branche_Code === "WZ08-563"), d => Math.abs(d.Date - hoveredDate))
 
-
-        console.log(closestDataPointBeherbergung, closestDataPointGastronomie)
 
         //set global state of selected line
         setHoveredTime(hoveredDate)
